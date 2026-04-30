@@ -1,0 +1,33 @@
+# Build products
+.build/
+.swiftpm/
+DerivedData/
+build/
+
+# Xcode user state — generated, never committed
+*.xcuserdata*
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+
+# Generated Xcode projects (regenerated from Package.swift)
+App/Stevedore.xcodeproj/
+
+# macOS noise
+.DS_Store
+
+# Editor / IDE state
+.idea/
+.vscode/
+
+# Local secrets — never commit
+.netrc
+.env
+.env.*
+*.pem
+*.key
+
+# Epic orchestrator / session runtime artifacts
+.epic-orchestrator.log
+.epic-worktrees/
+docs/claude-sessions/**/.session-*.log
+docs/claude-sessions/**/.session-*.tmp

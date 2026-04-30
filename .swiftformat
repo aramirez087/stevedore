@@ -1,0 +1,16 @@
+# SwiftFormat configuration for Stevedore.
+# Authoritative — do not weaken these rules to satisfy a single file.
+
+--swiftversion 6.0
+--indent 4
+--maxwidth 120
+--tabwidth 4
+--allman false
+--commas always
+--semicolons never
+--trimwhitespace always
+--stripunusedargs closure-only
+--self insert
+--patternlet inline
+--header strip
+--exclude .build,.swiftpm,DerivedData,build

@@ -1,0 +1,73 @@
+included:
+  - Sources
+  - Tests
+  - App
+  - Package.swift
+
+excluded:
+  - .build
+  - .swiftpm
+  - DerivedData
+  - build
+
+opt_in_rules:
+  - force_unwrapping
+  - implicit_return
+  - prefer_self_in_static_references
+  - empty_count
+  - empty_string
+  - sorted_imports
+  - closure_spacing
+  - operator_usage_whitespace
+  - redundant_nil_coalescing
+
+disabled_rules:
+  - todo
+
+line_length:
+  warning: 120
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+
+type_name:
+  min_length: 2
+  max_length:
+    warning: 60
+    error: 80
+
+identifier_name:
+  min_length:
+    warning: 1
+    error: 1
+  max_length:
+    warning: 60
+    error: 80
+  excluded:
+    - id
+    - x
+    - y
+    - z
+    - up
+    - to
+
+file_length:
+  warning: 600
+  error: 1000
+
+function_body_length:
+  warning: 80
+  error: 200
+
+type_body_length:
+  warning: 400
+  error: 800
+
+cyclomatic_complexity:
+  warning: 12
+  error: 25
+
+force_cast: error
+force_try: error
+
+reporter: "xcode"
