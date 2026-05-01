@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T16:38:04.697Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T22:13:08.598Z
 > Files: 358 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -501,7 +501,7 @@
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
 - `.session-1-plan.log` (~0 tok)
-- `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~6285 tok)
+- `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~7539 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)

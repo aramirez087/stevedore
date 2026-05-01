@@ -1,68 +1,68 @@
 {
-  "session_id": "session-2026-05-01-0903",
-  "started": "2026-05-01T15:03:39.192Z",
+  "session_id": "session-2026-05-01-1613",
+  "started": "2026-05-01T22:13:22.766Z",
   "files_read": {
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/OSLogger.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/FeaturesOperationsModule.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:53.751Z"
+      "tokens": 32,
+      "first_read": "2026-05-01T22:13:36.451Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogCategory.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/Operation.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:54.133Z"
+      "tokens": 294,
+      "first_read": "2026-05-01T22:13:37.059Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogEvent.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/OperationQueue.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:54.577Z"
+      "tokens": 1724,
+      "first_read": "2026-05-01T22:13:39.504Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogRingBuffer.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/OperationExecutor.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:58.155Z"
+      "tokens": 2379,
+      "first_read": "2026-05-01T22:13:40.055Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/Redaction.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/ConflictPolicy.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:58.618Z"
+      "tokens": 998,
+      "first_read": "2026-05-01T22:13:43.267Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/SignpostHelper.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/TransferProgress.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:03:59.285Z"
+      "tokens": 1170,
+      "first_read": "2026-05-01T22:13:43.590Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/RedactionTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/Throughput.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:04:03.913Z"
+      "tokens": 674,
+      "first_read": "2026-05-01T22:13:47.206Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/LogRingBufferTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/CrossProviderCopy.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:04:04.420Z"
+      "tokens": 1446,
+      "first_read": "2026-05-01T22:13:47.476Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/OSLoggerTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T15:04:08.199Z"
+      "first_read": "2026-05-01T22:13:51.630Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/LogEventTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/OperationsTests/CrossProviderCopyTests.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:04:08.949Z"
+      "tokens": 2746,
+      "first_read": "2026-05-01T22:13:51.635Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/SignpostHelperTests.swift": {
+    "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-10-handoff.md": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T15:04:09.118Z"
+      "tokens": 1899,
+      "first_read": "2026-05-01T22:14:52.303Z"
     }
   },
   "files_written": [],
   "edit_counts": {},
-  "anatomy_hits": 0,
-  "anatomy_misses": 11,
+  "anatomy_hits": 11,
+  "anatomy_misses": 0,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 1
+  "stop_count": 0
 }
