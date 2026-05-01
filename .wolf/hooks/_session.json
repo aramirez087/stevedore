@@ -1,12 +1,57 @@
 {
-  "session_id": "session-2026-05-01-0846",
-  "started": "2026-05-01T14:46:39.441Z",
-  "files_read": {},
-  "files_written": [],
-  "edit_counts": {},
+  "session_id": "session-2026-05-01-0852",
+  "started": "2026-05-01T14:52:19.316Z",
+  "files_read": {
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/SettingsStore.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:35.141Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/Settings+Catalog.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:35.534Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/JSONFileStore.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:35.927Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/BookmarksRepository.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:39.042Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/WorkspacesRepository.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:39.422Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Services/Settings/RecentConnectionsRepository.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:52:39.678Z"
+    },
+    "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-07-handoff.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T14:53:40.248Z"
+    }
+  },
+  "files_written": [
+    {
+      "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-07-handoff.md",
+      "action": "edit",
+      "tokens": 234,
+      "at": "2026-05-01T14:53:57.402Z"
+    }
+  ],
+  "edit_counts": {
+    "docs/roadmap/stevedore-mvp/session-07-handoff.md": 1
+  },
   "anatomy_hits": 0,
-  "anatomy_misses": 0,
+  "anatomy_misses": 7,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 1
+  "stop_count": 0
 }

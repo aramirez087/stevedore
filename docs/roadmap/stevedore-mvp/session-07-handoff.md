@@ -139,12 +139,14 @@ crash, no data corruption.
 
 ## Verification
 
-All commands run from the worktree root.
+All commands run from the worktree root (re-verified Session 07 verification pass, 2026-05-01).
 
-- `swift build --target ServicesSettings` — succeeded, zero warnings.
-- `swift build -Xswiftc -warnings-as-errors --target ServicesSettings` — succeeded, zero
-  warnings (strict concurrency, ExistentialAny).
-- `swift test --filter "SettingsStore|JSONFileStore|SettingsCatalog|BookmarksRepo|WorkspacesRepo|RecentConnections|ServicesSettingsSmoke"` — 37 tests, 0 failures.
-- `swift test` — 81 tests, 0 failures (no regressions in other modules; +35 new settings tests).
-- `swiftformat Sources/Services/Settings Tests/ServicesTests/SettingsTests Tests/ServicesTests/Settings --lint` — `0/13 files require formatting`.
-- `swiftlint lint --strict Sources/Services/Settings` — `Found 0 violations, 0 serious in 99 files`.
+- `swiftformat Sources/Services/Settings Tests/ServicesTests/SettingsTests --lint` — `0/12 files require formatting`.
+- `swiftlint --strict Sources/Services/Settings` — `Found 0 violations, 0 serious in 230 files`.
+- `swift build --target ServicesSettings` — `Build of target: 'ServicesSettings' complete!`, zero warnings.
+- `swift test --filter ServicesTests` — 113 tests, 0 failures.
+- `swift build -Xswiftc -warnings-as-errors` — `Build complete!`, zero warnings across all targets.
+
+Note: `--filter SettingsTests` matches zero tests because XCTest class names are
+`SettingsStoreTests`, `JSONFileStoreTests`, etc. Use `--filter ServicesTests` or the
+targeted filter from the open issues section above.
