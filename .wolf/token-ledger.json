@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 128681,
-    "total_reads": 378,
-    "total_writes": 29,
+    "total_tokens_estimated": 134926,
+    "total_reads": 380,
+    "total_writes": 33,
     "total_sessions": 22,
-    "anatomy_hits": 47,
+    "anatomy_hits": 49,
     "anatomy_misses": 329,
     "repeated_reads_blocked": 7,
-    "estimated_savings_vs_bare_cli": 15468
+    "estimated_savings_vs_bare_cli": 15868
   },
   "sessions": [
     {
@@ -2725,6 +2725,55 @@
         "writes_count": 1,
         "repeated_reads_blocked": 1,
         "anatomy_lookups": 7
+      }
+    },
+    {
+      "id": "session-2026-05-01-1643",
+      "started": "2026-05-01T22:43:23.438Z",
+      "ended": "2026-05-01T22:46:50.820Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Sync/SyncOptions.swift",
+          "tokens_estimated": 560,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Sync/SyncPlan.swift",
+          "tokens_estimated": 1066,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Sync/SyncOptions.swift",
+          "tokens_estimated": 12,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Sync/SyncPlan.swift",
+          "tokens_estimated": 101,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/SyncTests/FolderComparatorTests.swift",
+          "tokens_estimated": 3623,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-11-handoff.md",
+          "tokens_estimated": 883,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 1626,
+        "output_tokens_estimated": 4619,
+        "reads_count": 2,
+        "writes_count": 4,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 2
       }
     }
   ],
