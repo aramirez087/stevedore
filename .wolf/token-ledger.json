@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 151575,
-    "total_reads": 398,
+    "total_tokens_estimated": 158202,
+    "total_reads": 399,
     "total_writes": 34,
     "total_sessions": 25,
-    "anatomy_hits": 55,
+    "anatomy_hits": 56,
     "anatomy_misses": 341,
     "repeated_reads_blocked": 7,
-    "estimated_savings_vs_bare_cli": 17068
+    "estimated_savings_vs_bare_cli": 17268
   },
   "sessions": [
     {
@@ -2904,6 +2904,28 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-05-01-1717",
+      "started": "2026-05-01T23:17:44.676Z",
+      "ended": "2026-05-01T23:18:34.870Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-12-plan.md",
+          "tokens_estimated": 6627,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 6627,
+        "output_tokens_estimated": 0,
+        "reads_count": 1,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 1
       }
     }
   ],
