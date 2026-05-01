@@ -3,11 +3,11 @@
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
     "total_tokens_estimated": 60046,
-    "total_reads": 273,
+    "total_reads": 302,
     "total_writes": 26,
     "total_sessions": 15,
     "anatomy_hits": 11,
-    "anatomy_misses": 261,
+    "anatomy_misses": 289,
     "repeated_reads_blocked": 6,
     "estimated_savings_vs_bare_cli": 8268
   },
@@ -1981,6 +1981,196 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 1
+      }
+    },
+    {
+      "id": "session-2026-05-01-0858",
+      "started": "2026-05-01T14:58:01.052Z",
+      "ended": "2026-05-01T15:01:43.440Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/DesignSystemModule.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Theme/ColorTokens.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Theme/Theme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Theme/Spacing.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Theme/Typography.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Icons/IconSize.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Icons/IconRegistry.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Icons/FileKindIcon.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDButton.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDButtonStyle.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDTextField.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDSearchField.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDProgressBar.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDListRow.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDListRowContent.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDLabel.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Components/SDLabelVariant.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/ColorTokensPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDButtonPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDTextFieldPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDSearchFieldPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDProgressBarPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDListRowPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/SDLabelPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/TypographyPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Previews/FileKindIconPreviews.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/DesignSystemTests/DesignSystemTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-08-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 29,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
       }
     }
   ],
