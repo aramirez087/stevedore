@@ -287,3 +287,55 @@
 | 16:46 | Fixed 4 SwiftLint violations: Self() in SyncOptions, Self return type + Self() in SyncPlan, ComparatorFixture struct in FolderComparatorTests | 3 files | 0 violations, 629 tests pass |
 | 16:46 | Session 11 complete: FeaturesSync module — 8 source + 5 test files, 42 new tests, all quality gates pass | commit pending | ~25000 |
 | 16:46 | Session end: 4 writes across 4 files (SyncOptions.swift, SyncPlan.swift, FolderComparatorTests.swift, session-11-handoff.md) | 2 reads | ~6245 tok |
+
+## Session: 2026-05-01 16:46
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:55 | Created docs/claude-sessions/stevedore-mvp/.session-12-plan.md | — | ~7069 |
+| 16:55 | Session end: 1 writes across 1 files (.session-12-plan.md) | 18 reads | ~16649 tok |
+
+## Session: 2026-05-01 16:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:03 | Created Sources/Features/Rename/FeaturesRenameModule.swift | — | ~30 |
+| 17:04 | Created Sources/Features/Rename/RenameStep.swift | — | ~1770 |
+| 17:04 | Created Sources/Features/Rename/RenameRecipe.swift | — | ~59 |
+| 17:04 | Created Sources/Features/Rename/RenameOutcome.swift | — | ~121 |
+| 17:04 | Created Sources/Features/Rename/CollisionResolver.swift | — | ~562 |
+| 17:04 | Created Sources/Features/Rename/RenamePlanner.swift | — | ~556 |
+| 17:05 | Created Sources/Features/Rename/RenameExecutor.swift | — | ~486 |
+| 17:05 | Created Tests/FeaturesTests/RenameTests/RenameTestSupport.swift | — | ~849 |
+| 17:05 | Created Tests/FeaturesTests/RenameTests/RenameStepTests.swift | — | ~1691 |
+| 17:06 | Created Tests/FeaturesTests/RenameTests/RenamePlannerTests.swift | — | ~1587 |
+| 17:06 | Created Tests/FeaturesTests/RenameTests/CollisionResolverTests.swift | — | ~1329 |
+| 17:07 | Created Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | — | ~2397 |
+| 17:07 | Edited Tests/FeaturesTests/RenameTests/RenameTestSupport.swift | modified seed() | ~83 |
+| 17:07 | Edited Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | set() → setFailAtRenameIndices() | ~112 |
+| 17:07 | Edited Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | set() → setFailAtRenameIndices() | ~47 |
+| 17:07 | Edited Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | inline fix | ~14 |
+| 17:07 | Edited Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | inline fix | ~15 |
+| 17:08 | Edited Tests/FeaturesTests/RenameTests/RenameTestSupport.swift | 5→6 lines | ~83 |
+| 17:08 | Edited Tests/FeaturesTests/RenameTests/RenameTestSupport.swift | modified execute() | ~274 |
+| 17:10 | Edited Sources/Features/Rename/CollisionResolver.swift | 2→2 lines | ~36 |
+| 17:10 | Edited Sources/Features/Rename/CollisionResolver.swift | 3→3 lines | ~27 |
+| 17:10 | Edited Sources/Features/Rename/RenamePlanner.swift | 3→7 lines | ~69 |
+| 17:11 | Created Tests/FeaturesTests/RenameTests/RenameStepTests.swift | — | ~1691 |
+| 17:11 | Created Tests/FeaturesTests/RenameTests/RenamePlannerTests.swift | — | ~1585 |
+| 17:11 | Created Tests/FeaturesTests/RenameTests/CollisionResolverTests.swift | — | ~1330 |
+| 17:12 | Created Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | — | ~2413 |
+| 17:12 | Edited Sources/Features/Rename/RenameStep.swift | 2→2 lines | ~13 |
+| 17:12 | Edited Sources/Features/Rename/RenameStep.swift | 2→2 lines | ~18 |
+| 17:13 | Edited Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift | 2→1 lines | ~30 |
+| 17:15 | Created docs/roadmap/stevedore-mvp/session-12-handoff.md | — | ~2706 |
+
+## Session: 2026-05-01 17:XX (Session 12 — Rename Engine)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:05 | Created FeaturesRenameModule.swift, deleted Placeholder.swift | Sources/Features/Rename/ | Module sentinel preserved | ~500 |
+| 17:10 | Implemented RenameStep, RenameRecipe, RenameOutcome, CollisionResolver, RenamePlanner, RenameExecutor | Sources/Features/Rename/ | swift build --target FeaturesRename: clean | ~8000 |
+| 17:15 | Created 5 test files in Tests/FeaturesTests/RenameTests/ | Tests/FeaturesTests/RenameTests/ | 161 tests, 0 failures | ~6000 |
+| 17:20 | Fixed swiftformat/swiftlint violations (shorthand ops, Self., trailing commas, line length) | Sources/Features/Rename/, Tests/FeaturesTests/RenameTests/ | 0/12 format, 0 lint violations | ~2000 |
+| 17:25 | Wrote session-12-handoff.md | docs/roadmap/stevedore-mvp/ | Handoff complete | ~1000 |

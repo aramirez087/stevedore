@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T22:45:56.610Z
-> Files: 373 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:15:03.782Z
+> Files: 387 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -391,6 +391,24 @@
 
 - `openwolf.md` (~313 tok)
 
+## Sources/Features/Rename/
+
+- `FeaturesRenameModule.swift` — Module sentinel `public enum FeaturesRenameModule` with `moduleName = "FeaturesRename"`. (~30 tok)
+- `RenameStep.swift` — `public enum RenameStep` (7 cases); supporting enums `CaseTransform`, `TrimPosition`, `SequencePosition`, `ExtensionTransform`, `InsertPosition` (manual Codable); `func apply(to:ext:index:)`. (~400 tok)
+- `RenameRecipe.swift` — `public struct RenameRecipe: Sendable, Codable, Hashable`; ordered `steps: [RenameStep]`; static `identity`. (~60 tok)
+- `RenameOutcome.swift` — `public enum RenameStatus` (.ok/.collision/.invalid); `public struct RenameOutcome` with item, targetName, status. (~80 tok)
+- `CollisionResolver.swift` — `public enum CollisionResolver` with nested `Strategy` enum; pure `resolve(outcomes:existingSiblings:strategy:)`. (~200 tok)
+- `RenamePlanner.swift` — `public enum RenamePlanner`; pure `plan(items:recipe:existingSiblings:collisionStrategy:)`; regex validated at plan time. (~250 tok)
+- `RenameExecutor.swift` — `public actor RenameExecutor`; `JournalEntry`; `execute(outcomes:in:using:)` with journal-backed best-effort rollback via `os.Logger`. (~250 tok)
+
+## Tests/FeaturesTests/RenameTests/
+
+- `RenameTestSupport.swift` — `testSplitStemExt`, `testAssembled`, `applyStep` helpers; `makeItem`; `RecordingRenameProvider` actor with call-indexed failure mechanism. (~300 tok)
+- `RenameStepTests.swift` — 25 tests covering all 7 step types + Unicode, hidden files, very long names. (~500 tok)
+- `RenamePlannerTests.swift` — 15 tests covering determinism, regex plan-time rejection, collision detection, edge cases. (~400 tok)
+- `CollisionResolverTests.swift` — 10 tests covering batch/sibling collisions, auto-suffix chaining, pass-through. (~350 tok)
+- `RenameExecutorTests.swift` — 10 tests including rollback-on-5th-failure exit criterion and best-effort rollback. (~450 tok)
+
 ## Sources/Features/Operations/
 
 - `ConflictPolicy.swift` — MARK: - ConflictResolution (~998 tok)
@@ -401,6 +419,16 @@
 - `OperationQueue.swift` — / Queue-driven engine that executes batched file operations with a configurable (~1724 tok)
 - `Throughput.swift` — / Sliding-window bytes-per-second estimator for transfer ETA display. (~674 tok)
 - `TransferProgress.swift` — MARK: - TransferProgress (~1170 tok)
+
+## Sources/Features/Rename/
+
+- `CollisionResolver.swift` — Declares CollisionResolver (~565 tok)
+- `FeaturesRenameModule.swift` — Declares FeaturesRenameModule (~30 tok)
+- `RenameExecutor.swift` — Struct: JournalEntry (~486 tok)
+- `RenameOutcome.swift` — Struct: RenameOutcome (~121 tok)
+- `RenamePlanner.swift` — Declares RenamePlanner (~576 tok)
+- `RenameRecipe.swift` — Struct: RenameRecipe (~59 tok)
+- `RenameStep.swift` — MARK: - Supporting enums (~1767 tok)
 
 ## Sources/Features/Sync/
 
@@ -487,6 +515,14 @@
 - `ThroughputTests.swift` — Class: ThroughputTests (~487 tok)
 - `TransferProgressTests.swift` — Class: TransferProgressTests (~808 tok)
 
+## Tests/FeaturesTests/RenameTests/
+
+- `CollisionResolverTests.swift` — Class: CollisionResolverTests (~1330 tok)
+- `RenameExecutorTests.swift` — Class: RenameExecutorTests (~2408 tok)
+- `RenamePlannerTests.swift` — Class: RenamePlannerTests (~1585 tok)
+- `RenameStepTests.swift` — Class: RenameStepTests (~1691 tok)
+- `RenameTestSupport.swift` — MARK: - Filename helpers (mirrors private functions in RenameStep.swift) (~886 tok)
+
 ## Tests/FeaturesTests/SyncTests/
 
 - `FolderComparatorTests.swift` — MARK: - ComparatorFixture (~3382 tok)
@@ -522,6 +558,7 @@
 - `.session-1-plan.log` (~0 tok)
 - `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~7539 tok)
 - `.session-11-plan.md` — Session 11 Implementation Plan — Folder Sync & Compare Engine (~6854 tok)
+- `.session-12-plan.md` — Session 12 Implementation Plan — Multi-Rename Engine (~6627 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)
@@ -570,3 +607,4 @@
 - `session-08-handoff.md` — Session 08 Handoff — Design System; token palette, component API surface, downstream injection guide (~2100 tok)
 - `session-10-handoff.md` — Session 10 Handoff — Operations Engine (~1899 tok)
 - `session-11-handoff.md` — Session 11 Handoff — Sync Engine (~773 tok)
+- `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
