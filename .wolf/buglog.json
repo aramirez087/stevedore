@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-05-01T13:02:38.660Z",
+      "error_message": "Missing error handling in throws",
+      "file": "Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:38.660Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-05-01T13:02:47.371Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/CoreTests/Utilities/FiltersTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:47.371Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-05-01T13:02:55.724Z",
+      "error_message": "Missing await",
+      "file": "Tests/CoreTests/Utilities/ResultHelpersTests.swift",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:55.724Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-05-01T13:04:28.723Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/roadmap/stevedore-mvp/session-02-handoff.md",
+      "root_cause": "10 lines replaced/restructured",
+      "fix": "Rewrote 17→21 lines (10 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:04:28.723Z"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "session_id": "session-2026-05-01-0658",
+  "started": "2026-05-01T12:58:52.368Z",
+  "files_read": {
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:01.843Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:01.888Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileAttributes.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:03.927Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileKind.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:03.957Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:05.883Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/Progress.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:05.930Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Errors/StevedoreError.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:08.100Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/Result+Helpers.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:37.605Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/PathUtilities.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:37.755Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/ByteCountFormatter+Stevedore.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:39.871Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/DateFormatter+Stevedore.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:40.098Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/SortDescriptors.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:42.327Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/Filters.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:42.580Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/AsyncSequence+Helpers.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T12:59:45.320Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/PathUtilitiesTests.swift": {
+      "count": 2,
+      "tokens": 2021,
+      "first_read": "2026-05-01T13:00:02.644Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/FiltersTests.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T13:00:02.833Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/ByteCountFormatterTests.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T13:00:05.827Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/SortDescriptorsTests.swift": {
+      "count": 2,
+      "tokens": 2284,
+      "first_read": "2026-05-01T13:00:06.207Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/ResultHelpersTests.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T13:00:09.558Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift": {
+      "count": 2,
+      "tokens": 1763,
+      "first_read": "2026-05-01T13:00:09.918Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/DateFormatterTests.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T13:00:12.302Z"
+    },
+    "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-02-handoff.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-01T13:04:16.411Z"
+    }
+  },
+  "files_written": [
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/PathUtilitiesTests.swift",
+      "action": "edit",
+      "tokens": 533,
+      "at": "2026-05-01T13:02:10.369Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/ByteCountFormatterTests.swift",
+      "action": "edit",
+      "tokens": 382,
+      "at": "2026-05-01T13:02:17.978Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/SortDescriptorsTests.swift",
+      "action": "edit",
+      "tokens": 682,
+      "at": "2026-05-01T13:02:28.913Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift",
+      "action": "edit",
+      "tokens": 692,
+      "at": "2026-05-01T13:02:38.659Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/FiltersTests.swift",
+      "action": "edit",
+      "tokens": 463,
+      "at": "2026-05-01T13:02:47.370Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/ResultHelpersTests.swift",
+      "action": "edit",
+      "tokens": 445,
+      "at": "2026-05-01T13:02:55.723Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/DateFormatterTests.swift",
+      "action": "edit",
+      "tokens": 544,
+      "at": "2026-05-01T13:03:05.835Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift",
+      "action": "edit",
+      "tokens": 52,
+      "at": "2026-05-01T13:03:34.058Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/SortDescriptorsTests.swift",
+      "action": "edit",
+      "tokens": 17,
+      "at": "2026-05-01T13:03:36.723Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/CoreTests/Utilities/PathUtilitiesTests.swift",
+      "action": "edit",
+      "tokens": 25,
+      "at": "2026-05-01T13:03:39.267Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-02-handoff.md",
+      "action": "edit",
+      "tokens": 320,
+      "at": "2026-05-01T13:04:28.723Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-02-handoff.md",
+      "action": "edit",
+      "tokens": 121,
+      "at": "2026-05-01T13:04:33.036Z"
+    }
+  ],
+  "edit_counts": {
+    "Tests/CoreTests/Utilities/PathUtilitiesTests.swift": 2,
+    "Tests/CoreTests/Utilities/ByteCountFormatterTests.swift": 1,
+    "Tests/CoreTests/Utilities/SortDescriptorsTests.swift": 2,
+    "Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift": 2,
+    "Tests/CoreTests/Utilities/FiltersTests.swift": 1,
+    "Tests/CoreTests/Utilities/ResultHelpersTests.swift": 1,
+    "Tests/CoreTests/Utilities/DateFormatterTests.swift": 1,
+    "docs/roadmap/stevedore-mvp/session-02-handoff.md": 2
+  },
+  "anatomy_hits": 0,
+  "anatomy_misses": 22,
+  "repeated_reads_warned": 3,
+  "cerebrum_warnings": 0,
+  "stop_count": 1
+}
