@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T14:57:50.893Z
-> Files: 311 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T15:03:31.459Z
+> Files: 340 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -403,6 +403,47 @@
 - `URLResourceMapper.swift` — Internal `enum` mapping `URLResourceValues` → `FileKind` and `FileAttributes`; reads POSIX permissions via `CFFileSecurityGetMode`. (~250 tok)
 - `VolumeDiscovery.swift` — `public actor` enumerating mounted volumes and publishing mount/unmount events via DiskArbitration; actor-owned `DACallbackBox` prevents retain leaks. (~1460 tok)
 
+## Sources/UI/DesignSystem/
+
+- `DesignSystemModule.swift` — Module sentinel `DesignSystemModule.moduleName = "DesignSystem"`. (~30 tok)
+
+## Sources/UI/DesignSystem/Components/
+
+- `SDButton.swift` — `public struct SDButton: View`; all colors from theme tokens; padding via `Spacing.*`. (~150 tok)
+- `SDButtonStyle.swift` — `public enum SDButtonStyle: Sendable` (primary/secondary/destructive). (~25 tok)
+- `SDLabel.swift` — `public struct SDLabel: View`; maps variant → font and color from theme. (~130 tok)
+- `SDLabelVariant.swift` — `public enum SDLabelVariant: Sendable` (primary/secondary/caption/mono). (~25 tok)
+- `SDListRow.swift` — `public struct SDListRow: View`; single/double line; selection tint via `theme.colors.accent.opacity(0.15)`. (~170 tok)
+- `SDListRowContent.swift` — `public enum SDListRowContent: Sendable` (singleLine/doubleLine). (~30 tok)
+- `SDProgressBar.swift` — `public struct SDProgressBar: View`; value clamped to 0…1; `GeometryReader` fill; 4pt height; `Capsule()` clip. (~100 tok)
+- `SDSearchField.swift` — `public struct SDSearchField: View`; search icon prefix; capsule background via `theme.colors.surface`. (~110 tok)
+- `SDTextField.swift` — `public struct SDTextField: View`; `textFieldStyle(.plain)`, stroke border via `theme.colors.divider`. (~100 tok)
+
+## Sources/UI/DesignSystem/Icons/
+
+- `FileKindIcon.swift` — `public struct FileKindIcon: View`; resolves SF Symbol via `IconRegistry`; tinted with `theme.colors.textSecondary`. (~130 tok)
+- `IconRegistry.swift` — `public enum IconRegistry`; `symbolName(for: FileKind) -> String` switch; `symbolName(forExtension:) -> String` dictionary lookup. (~200 tok)
+- `IconSize.swift` — `public enum IconSize: Sendable` (sm=12pt, md=16pt, lg=24pt); `var points: CGFloat`. (~60 tok)
+
+## Sources/UI/DesignSystem/Previews/
+
+- `ColorTokensPreviews.swift` — Light + Dark `#Preview` blocks; `ColorSwatchRow` helper. (~180 tok)
+- `FileKindIconPreviews.swift` — Light + Dark; directory/pdf/jpg/symlink at sm/md/lg. (~160 tok)
+- `SDButtonPreviews.swift` — Light + Dark; all three button styles. (~80 tok)
+- `SDLabelPreviews.swift` — Light + Dark; all four label variants. (~90 tok)
+- `SDListRowPreviews.swift` — Light + Dark; single-line + double-line + selected rows. (~150 tok)
+- `SDProgressBarPreviews.swift` — Light + Dark; 0%, 35%, 75%, 100%. (~90 tok)
+- `SDSearchFieldPreviews.swift` — Light + Dark; `@Previewable @State`. (~70 tok)
+- `SDTextFieldPreviews.swift` — Light + Dark; `@Previewable @State`. (~70 tok)
+- `TypographyPreviews.swift` — Light + Dark; one `Text` per scale. (~130 tok)
+
+## Sources/UI/DesignSystem/Theme/
+
+- `ColorTokens.swift` — `public struct ColorTokens: Sendable`; ten semantic color tokens backed by dynamic `NSColor` (auto adapts to light/dark). (~120 tok)
+- `Spacing.swift` — `public enum Spacing` with five `CGFloat` class constants: xs=4, sm=8, md=16, lg=24, xl=32. (~40 tok)
+- `Theme.swift` — `public struct Theme: Sendable`; composes `ColorTokens` + `Typography`; `@Entry var theme` in `EnvironmentValues`; `View.theme(_:)` modifier. (~100 tok)
+- `Typography.swift` — `public struct Typography: Sendable`; five `Font` tokens: largeTitle/title/body/caption/mono. (~80 tok)
+
 ## Tests/CoreTests/Utilities/
 
 - `AsyncSequenceHelpersTests.swift` — Struct: TestError (~1770 tok)
@@ -430,6 +471,10 @@
 
 - `TempDirectoryFixture.swift` — Per-test UUID-keyed temp dir; `setUp`/`tearDown` with recursive permission restore; `@discardableResult makeFile` and `makeSubdirectory` helpers. (~540 tok)
 
+## Tests/UITests/DesignSystemTests/
+
+- `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
+
 ## docs/claude-sessions/stevedore-mvp/
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
@@ -441,6 +486,7 @@
 - `.session-6-plan.md` — Session 06 Implementation Plan — Credentials & Keychain Service (~2239 tok)
 - `.session-7-plan.md` — Session 07 Implementation Plan — Settings & Preferences Service (~3522 tok)
 - `.session-8-plan.md` — Session 08 Implementation Plan — Design System (~4057 tok)
+- `.session-9-plan.md` — Session 09 Implementation Plan — Logging Service (~2285 tok)
 - `session-00-operator-rules.md` — Operator Rules — Stevedore (ForkLift Clone) (~864 tok)
 - `session-01-charter-and-scaffolding.md` — Session 01: Charter & Scaffolding (~1125 tok)
 - `session-02-core-utilities.md` — Session 02: Core Utilities (~712 tok)
@@ -470,51 +516,6 @@
 - `session-26-main-window-shell.md` — Session 26: Main Window & Dual-Pane Shell (~961 tok)
 - `session-27-menu-commands.md` — Session 27: Menu Commands & Keyboard Shortcuts (~850 tok)
 - `session-28-ci-gate.md` — Session 28: CI Gate — Final Verification (~856 tok)
-
-## Sources/UI/DesignSystem/
-
-- `DesignSystemModule.swift` — Module sentinel `DesignSystemModule.moduleName = "DesignSystem"`. (~30 tok)
-
-## Sources/UI/DesignSystem/Theme/
-
-- `Spacing.swift` — `public enum Spacing` with five `CGFloat` class constants: xs=4, sm=8, md=16, lg=24, xl=32. (~40 tok)
-- `ColorTokens.swift` — `public struct ColorTokens: Sendable`; ten semantic color tokens backed by dynamic `NSColor` (auto adapts to light/dark). (~120 tok)
-- `Typography.swift` — `public struct Typography: Sendable`; five `Font` tokens: largeTitle/title/body/caption/mono. (~80 tok)
-- `Theme.swift` — `public struct Theme: Sendable`; composes `ColorTokens` + `Typography`; `@Entry var theme` in `EnvironmentValues`; `View.theme(_:)` modifier. (~100 tok)
-
-## Sources/UI/DesignSystem/Icons/
-
-- `IconSize.swift` — `public enum IconSize: Sendable` (sm=12pt, md=16pt, lg=24pt); `var points: CGFloat`. (~60 tok)
-- `IconRegistry.swift` — `public enum IconRegistry`; `symbolName(for: FileKind) -> String` switch; `symbolName(forExtension:) -> String` dictionary lookup. (~200 tok)
-- `FileKindIcon.swift` — `public struct FileKindIcon: View`; resolves SF Symbol via `IconRegistry`; tinted with `theme.colors.textSecondary`. (~130 tok)
-
-## Sources/UI/DesignSystem/Components/
-
-- `SDButtonStyle.swift` — `public enum SDButtonStyle: Sendable` (primary/secondary/destructive). (~25 tok)
-- `SDButton.swift` — `public struct SDButton: View`; all colors from theme tokens; padding via `Spacing.*`. (~150 tok)
-- `SDLabelVariant.swift` — `public enum SDLabelVariant: Sendable` (primary/secondary/caption/mono). (~25 tok)
-- `SDLabel.swift` — `public struct SDLabel: View`; maps variant → font and color from theme. (~130 tok)
-- `SDListRowContent.swift` — `public enum SDListRowContent: Sendable` (singleLine/doubleLine). (~30 tok)
-- `SDListRow.swift` — `public struct SDListRow: View`; single/double line; selection tint via `theme.colors.accent.opacity(0.15)`. (~170 tok)
-- `SDTextField.swift` — `public struct SDTextField: View`; `textFieldStyle(.plain)`, stroke border via `theme.colors.divider`. (~100 tok)
-- `SDSearchField.swift` — `public struct SDSearchField: View`; search icon prefix; capsule background via `theme.colors.surface`. (~110 tok)
-- `SDProgressBar.swift` — `public struct SDProgressBar: View`; value clamped to 0…1; `GeometryReader` fill; 4pt height; `Capsule()` clip. (~100 tok)
-
-## Sources/UI/DesignSystem/Previews/
-
-- `ColorTokensPreviews.swift` — Light + Dark `#Preview` blocks; `ColorSwatchRow` helper. (~180 tok)
-- `TypographyPreviews.swift` — Light + Dark; one `Text` per scale. (~130 tok)
-- `SDButtonPreviews.swift` — Light + Dark; all three button styles. (~80 tok)
-- `SDTextFieldPreviews.swift` — Light + Dark; `@Previewable @State`. (~70 tok)
-- `SDSearchFieldPreviews.swift` — Light + Dark; `@Previewable @State`. (~70 tok)
-- `SDProgressBarPreviews.swift` — Light + Dark; 0%, 35%, 75%, 100%. (~90 tok)
-- `SDListRowPreviews.swift` — Light + Dark; single-line + double-line + selected rows. (~150 tok)
-- `SDLabelPreviews.swift` — Light + Dark; all four label variants. (~90 tok)
-- `FileKindIconPreviews.swift` — Light + Dark; directory/pdf/jpg/symlink at sm/md/lg. (~160 tok)
-
-## Tests/UITests/DesignSystemTests/
-
-- `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
 
 ## docs/roadmap/stevedore-mvp/
 

@@ -137,3 +137,25 @@
 | 08:59 | swiftformat lint + swiftlint --strict | 0/27 files need formatting, 0 violations | ~30 |
 | 08:59 | swift test (full suite) | 538 tests, 0 failures | ~50 |
 | 08:59 | Session 08 complete: DesignSystem fully implemented; color tokens, typography, spacing, icon registry, 6 atomic components, previews, 21 tests. All quality gates pass. | Sources/UI/DesignSystem/ | ~500 |
+
+## Session: 2026-05-01 09:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:03 | Created docs/claude-sessions/stevedore-mvp/.session-9-plan.md | — | ~2437 |
+| 09:03 | Session end: 1 writes across 1 files (.session-9-plan.md) | 17 reads | ~2611 tok |
+
+## Session: 2026-05-01 09:03
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-01 (Session 9 verification)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:04 | Verified all Session 9 source files exist | Sources/Services/Logging/*.swift (6 files) | All present |~200 |
+| 09:04 | swift build --target ServicesLogging -warnings-as-errors | ServicesLogging | Build complete, 0 warnings | ~300 |
+| 09:04 | swift test --filter logging test classes | 32 tests: LogEvent/LogRingBuffer/OSLogger/Redaction/SignpostHelper | All pass | ~400 |
+| 09:04 | swiftformat --lint, swiftlint --strict | Sources/Services/Logging + tests | 0 violations, 0 files need formatting | ~100 |
+| 09:05 | Session 9 complete — all quality gates pass | ServicesLogging module | commit pending | ~100 |
