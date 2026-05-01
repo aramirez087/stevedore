@@ -176,6 +176,118 @@
       "related_bugs": [],
       "occurrences": 2,
       "last_seen": "2026-05-01T23:12:51.607Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-05-01T23:33:00.717Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:00.717Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-05-01T23:33:04.883Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:04.883Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-05-01T23:33:08.998Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:08.998Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-05-01T23:33:15.880Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:15.880Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-05-01T23:33:20.520Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:20.520Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-05-01T23:33:25.265Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:25.265Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-05-01T23:38:34.123Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/PreviewService.swift",
+      "root_cause": "Was returning: data.map { PreviewPayload(mimeType: \"image/png\", d",
+      "fix": "Now returns: data.flatMap { $0 }.map { PreviewPayload(mimeType:",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:38:34.123Z"
     }
   ]
 }

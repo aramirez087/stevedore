@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 158202,
-    "total_reads": 399,
-    "total_writes": 34,
-    "total_sessions": 25,
-    "anatomy_hits": 56,
-    "anatomy_misses": 341,
+    "total_tokens_estimated": 204663,
+    "total_reads": 430,
+    "total_writes": 69,
+    "total_sessions": 27,
+    "anatomy_hits": 65,
+    "anatomy_misses": 362,
     "repeated_reads_blocked": 7,
-    "estimated_savings_vs_bare_cli": 17268
+    "estimated_savings_vs_bare_cli": 19068
   },
   "sessions": [
     {
@@ -2926,6 +2926,401 @@
         "writes_count": 0,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 1
+      }
+    },
+    {
+      "id": "session-2026-05-01-1718",
+      "started": "2026-05-01T23:18:35.824Z",
+      "ended": "2026-05-01T23:24:27.664Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/PreviewSource.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/PreviewPayload.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/session-13-preview-service.md",
+          "tokens_estimated": 747,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-12-handoff.md",
+          "tokens_estimated": 2537,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-12-plan.md",
+          "tokens_estimated": 6627,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileAttributes.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Preview/FeaturesPreviewSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.swiftlint.yml",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Local/LocalFileSystemProvider.swift",
+          "tokens_estimated": 400,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-13-plan.md",
+          "tokens_estimated": 13999,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 10311,
+        "output_tokens_estimated": 13999,
+        "reads_count": 15,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 4
+      }
+    },
+    {
+      "id": "session-2026-05-01-1724",
+      "started": "2026-05-01T23:24:28.391Z",
+      "ended": "2026-05-01T23:42:41.518Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/PreviewSource.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/PreviewPayload.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Preview/FeaturesPreviewSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.swiftlint.yml",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.swiftformat",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/RenameTests/RenameTestSupport.swift",
+          "tokens_estimated": 300,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/RenameTests/CollisionResolverTests.swift",
+          "tokens_estimated": 350,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
+          "tokens_estimated": 982,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 1030,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
+          "tokens_estimated": 1141,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/FeaturesPreviewModule.swift",
+          "tokens_estimated": 32,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewCache.swift",
+          "tokens_estimated": 308,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+          "tokens_estimated": 616,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+          "tokens_estimated": 456,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+          "tokens_estimated": 3532,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/ThumbnailGenerator.swift",
+          "tokens_estimated": 609,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/QuickLookPanelController.swift",
+          "tokens_estimated": 522,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
+          "tokens_estimated": 1052,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+          "tokens_estimated": 16,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+          "tokens_estimated": 16,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+          "tokens_estimated": 16,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+          "tokens_estimated": 21,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+          "tokens_estimated": 30,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+          "tokens_estimated": 21,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
+          "tokens_estimated": 140,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewTestSupport.swift",
+          "tokens_estimated": 537,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
+          "tokens_estimated": 1204,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 1100,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift",
+          "tokens_estimated": 635,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift",
+          "tokens_estimated": 931,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ThumbnailGeneratorTests.swift",
+          "tokens_estimated": 1008,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
+          "tokens_estimated": 1721,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
+          "tokens_estimated": 141,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift",
+          "tokens_estimated": 22,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 22,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
+          "tokens_estimated": 418,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
+          "tokens_estimated": 349,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift",
+          "tokens_estimated": 26,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
+          "tokens_estimated": 76,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 74,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 73,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+          "tokens_estimated": 79,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
+          "tokens_estimated": 39,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-13-handoff.md",
+          "tokens_estimated": 2506,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 3803,
+        "output_tokens_estimated": 18348,
+        "reads_count": 16,
+        "writes_count": 34,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 5
       }
     }
   ],
