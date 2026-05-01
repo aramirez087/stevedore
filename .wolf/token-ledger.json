@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 23826,
-    "total_reads": 85,
-    "total_writes": 19,
-    "total_sessions": 5,
-    "anatomy_hits": 2,
-    "anatomy_misses": 83,
-    "repeated_reads_blocked": 3,
-    "estimated_savings_vs_bare_cli": 6468
+    "total_tokens_estimated": 31777,
+    "total_reads": 125,
+    "total_writes": 20,
+    "total_sessions": 7,
+    "anatomy_hits": 5,
+    "anatomy_misses": 119,
+    "repeated_reads_blocked": 4,
+    "estimated_savings_vs_bare_cli": 7068
   },
   "sessions": [
     {
@@ -683,6 +683,268 @@
         "writes_count": 5,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-05-01-0716",
+      "started": "2026-05-01T13:16:49.709Z",
+      "ended": "2026-05-01T13:23:01.831Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-03-handoff.md",
+          "tokens_estimated": 2400,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/session-04-remote-providers.md",
+          "tokens_estimated": 838,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/FileSystemProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/RemoteHostDescriptor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/LocalTests/Conformance.swift",
+          "tokens_estimated": 1200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Errors/StevedoreError.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/Credential.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationDescriptor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Testing/InMemoryFileSystemProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/Common/RemoteSession.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/Common/RemoteAuth.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/FileSystemRemoteModule.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/RemoteProviderRegistry.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/SFTP/SFTPProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/SFTP/SFTPTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/SFTP/CitadelSFTPTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/FTP/FTPTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/FTP/FTPProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/FTP/FTPListParser.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/WebDAV/WebDAVProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/WebDAV/WebDAVTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/S3/S3Provider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/S3/S3Transport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/WebDAV/PropFindParser.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/FTP/URLSessionFTPTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/WebDAV/URLSessionWebDAVTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Remote/S3/SotoS3Transport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileAttributes.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/RemoteTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/Fakes/FakeSFTPTransport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/Conformance/FileSystemProviderConformanceSuite.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-04-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/RemoteSessionTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/SFTPProviderTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.swiftformat",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Remote/Parsers/FTPListParserTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-4-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-4-plan.md",
+          "tokens_estimated": 3513,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 4438,
+        "output_tokens_estimated": 3513,
+        "reads_count": 40,
+        "writes_count": 1,
+        "repeated_reads_blocked": 1,
+        "anatomy_lookups": 3
       }
     }
   ],

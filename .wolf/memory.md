@@ -56,3 +56,22 @@
 | 07:15 | Edited docs/roadmap/stevedore-mvp/session-03-handoff.md | 17→14 lines | ~162 |
 | 07:16 | Session 03 complete: fixed VolumeDiscovery leak + TempDirectoryFixture @discardableResult; all 5 quality gates pass (225 tests, 0 failures, 0 lint violations, 0 strict-concurrency warnings) | VolumeDiscovery.swift, TempDirectoryFixture.swift, session-03-handoff.md | ~500 |
 | 07:16 | Session end: 5 writes across 3 files (TempDirectoryFixture.swift, VolumeDiscovery.swift, session-03-handoff.md) | 3 reads | ~561 tok |
+
+## Session: 2026-05-01 07:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 07:22 | Created docs/claude-sessions/stevedore-mvp/.session-4-plan.md | — | ~3279 |
+| 07:23 | Session end: 1 writes across 1 files (.session-4-plan.md) | 40 reads | ~7951 tok |
+
+## Session: 2026-05-01 07:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 07:23 | Verified Session 4 remote providers: swift build --target FileSystemRemote | 0 warnings | ~50 |
+| 07:24 | Verified swift test --filter FileSystemTests | 225 tests, 0 failures | ~50 |
+| 07:24 | Verified swift test --filter RemoteTests | 12 tests, 0 failures | ~50 |
+| 07:24 | Verified swiftformat --lint + swiftlint --strict | 0/34 files need formatting, 0 violations | ~30 |
+| 07:24 | Verified swift build --target FileSystemRemote -warnings-as-errors | 0 warnings, build complete | ~50 |
+| 08:30 | Verified swift test (full regression) | 538 tests, 0 failures | ~50 |
+| 08:30 | Session 04 complete: all quality gates pass. 4 remote providers (SFTP/FTP/WebDAV/S3), 92 new remote tests, session-04-handoff.md present. | Sources/FileSystem/Remote/, Tests/FileSystemTests/Remote/ | ~500 |
