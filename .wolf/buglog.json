@@ -144,6 +144,22 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-01T16:32:09.322Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-05-01T22:43:48.715Z",
+      "error_message": "Wrong reference: SyncOptions should be Self",
+      "file": "Sources/Features/Sync/SyncOptions.swift",
+      "root_cause": "Used \"SyncOptions\" instead of \"Self\"",
+      "fix": "Changed SyncOptions → Self",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T22:43:48.715Z"
     }
   ]
 }

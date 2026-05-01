@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T22:13:08.598Z
-> Files: 358 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T22:45:56.610Z
+> Files: 373 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -402,6 +402,17 @@
 - `Throughput.swift` — / Sliding-window bytes-per-second estimator for transfer ETA display. (~674 tok)
 - `TransferProgress.swift` — MARK: - TransferProgress (~1170 tok)
 
+## Sources/Features/Sync/
+
+- `Difference.swift` — MARK: - DifferenceStatus (~311 tok)
+- `FeaturesSyncModule.swift` — / Marker namespace for the `FeaturesSync` module. (~43 tok)
+- `FolderComparator.swift` — MARK: - FolderComparator (~1766 tok)
+- `HashStrategy.swift` — MARK: - SyncReadableProvider (~400 tok)
+- `SyncEngine.swift` — MARK: - SyncConflictResolution (~1467 tok)
+- `SyncOptions.swift` — MARK: - SyncMode (~551 tok)
+- `SyncPlan.swift` — MARK: - SyncStep (~1064 tok)
+- `SyncProgress.swift` — MARK: - SyncProgress (~744 tok)
+
 ## Sources/FileSystem/Local/
 
 - `ConflictDescriptor.swift` — `public struct: Hashable, Sendable` with `Reason` enum (`.destinationExists`, `.destinationIsDirectory`, `.destinationReadOnly`, `.crossDeviceMove`) for conflict metadata. (~120 tok)
@@ -476,6 +487,14 @@
 - `ThroughputTests.swift` — Class: ThroughputTests (~487 tok)
 - `TransferProgressTests.swift` — Class: TransferProgressTests (~808 tok)
 
+## Tests/FeaturesTests/SyncTests/
+
+- `FolderComparatorTests.swift` — MARK: - ComparatorFixture (~3382 tok)
+- `HashStrategyTests.swift` — Protocol: smoke (~990 tok)
+- `SyncEngineTests.swift` — MARK: - SyncEngineTests (~1592 tok)
+- `SyncPlanTests.swift` — MARK: - SyncPlanTests (~1915 tok)
+- `SyncTestSupport.swift` — MARK: - Fixture helpers (~1440 tok)
+
 ## Tests/FileSystemTests/LocalTests/
 
 - `ConflictDescriptorTests.swift` — 4 tests: no-conflict case, destinationExists, destinationIsDirectory, mkdir with no conflict. (~200 tok)
@@ -502,6 +521,7 @@
 - `.session-1-plan-stderr.tmp` (~0 tok)
 - `.session-1-plan.log` (~0 tok)
 - `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~7539 tok)
+- `.session-11-plan.md` — Session 11 Implementation Plan — Folder Sync & Compare Engine (~6854 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)
@@ -549,3 +569,4 @@
 - `session-07-handoff.md` — Session 07 Handoff — Settings Service (~2503 tok)
 - `session-08-handoff.md` — Session 08 Handoff — Design System; token palette, component API surface, downstream injection guide (~2100 tok)
 - `session-10-handoff.md` — Session 10 Handoff — Operations Engine (~1899 tok)
+- `session-11-handoff.md` — Session 11 Handoff — Sync Engine (~773 tok)
