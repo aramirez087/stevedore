@@ -27,6 +27,7 @@ final class TempDirectoryFixture {
 
     // MARK: - Helpers
 
+    @discardableResult
     func makeFile(name: String, content: String = "x") throws -> URL {
         let fileURL = self.url.appendingPathComponent(name)
         try content.write(to: fileURL, atomically: true, encoding: .utf8)

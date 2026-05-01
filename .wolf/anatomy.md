@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T13:04:33.030Z
-> Files: 281 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T13:15:39.372Z
+> Files: 285 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -391,6 +391,18 @@
 
 - `openwolf.md` (~313 tok)
 
+## Sources/FileSystem/Local/
+
+- `FileSystemLocalModule.swift` — Module sentinel `public enum FileSystemLocalModule` with `moduleName` constant; preserves smoke-test assertion. (~60 tok)
+- `LocalFileSystemProvider.swift` — `public actor` conforming to `FileSystemProvider`; `enumerate`/`watch` nonisolated, I/O dispatched via `Task.detached`; exposes `detectConflicts(for:)` preflight. (~400 tok)
+- `LocalDirectoryEnumerator.swift` — Bridges `FileManager.enumerator` into `AsyncThrowingStream<FileItem, any Error>`; honors hidden/recursive/followSymlinks options; checks readability before enumeration. (~280 tok)
+- `URLResourceMapper.swift` — Internal `enum` mapping `URLResourceValues` → `FileKind` and `FileAttributes`; reads POSIX permissions via `CFFileSecurityGetMode`. (~250 tok)
+- `LocalFileOperations.swift` — Stateless `struct: Sendable` implementing copy/move/delete/rename/mkdir/symlink/trash; creates fresh `FileManager()` per `Task.detached` call; reports progress via `OperationProgressReporting`. (~350 tok)
+- `ConflictDescriptor.swift` — `public struct: Hashable, Sendable` with `Reason` enum (`.destinationExists`, `.destinationIsDirectory`, `.destinationReadOnly`, `.crossDeviceMove`) for conflict metadata. (~120 tok)
+- `VolumeDiscovery.swift` — `public actor` enumerating mounted volumes and publishing mount/unmount events via DiskArbitration; actor-owned `DACallbackBox` prevents retain leaks. (~1460 tok)
+- `FSEventsWatcher.swift` — `public actor` wrapping `FSEventStreamCreate`; exposes `AsyncStream<FilePath>` per watch path; `onTermination` stops/invalidates/releases the stream. (~300 tok)
+- `Sandbox/SecurityScopedBookmarks.swift` — `public enum` namespace for encode/decode of security-scoped bookmarks; `withAccess(to:_:)` balances start/stop via `defer`. (~200 tok)
+
 ## Tests/CoreTests/Utilities/
 
 - `AsyncSequenceHelpersTests.swift` — Struct: TestError (~1770 tok)
@@ -401,11 +413,29 @@
 - `ResultHelpersTests.swift` — Struct: FakeError (~1458 tok)
 - `SortDescriptorsTests.swift` — Class: SortDescriptorsTests (~2284 tok)
 
+## Tests/FileSystemTests/LocalTests/
+
+- `Conformance.swift` — `ProviderConformanceTests` XCTestCase base class (13 scenarios); `LocalProviderConformanceTests` concrete subclass; reusable by remote/archive sessions. (~1200 tok)
+- `LocalFileSystemProviderTests.swift` — Tests scheme, attributes round-trip, error mapping, non-local path rejection, archive unsupported. (~300 tok)
+- `LocalDirectoryEnumeratorTests.swift` — 7 tests: empty dir, list files, hidden filter, recursive, non-recursive, cancellation, notFound error. (~400 tok)
+- `LocalFileOperationsTests.swift` — 10 tests: mkdir, copy (overwrite/rename conflict), move, delete (idempotent), rename, symlink, trash, progress phases. (~500 tok)
+- `ConflictDescriptorTests.swift` — 4 tests: no-conflict case, destinationExists, destinationIsDirectory, mkdir with no conflict. (~200 tok)
+- `PermissionDeniedTests.swift` — 2 tests: chmod 0o000 on dir triggers permissionDenied on enumerate and attributes. (~180 tok)
+- `FSEventsWatcherTests.swift` — 4 tests: event emission on file creation, stream-terminates-on-break, weak-reference leak guard, provider integration. (~350 tok)
+- `SymlinkEdgeCasesTests.swift` — 3 tests: broken symlink enumerated, symlink attributes readable, followSymlinks toggle. (~200 tok)
+- `VolumeDiscoveryTests.swift` — 3 tests: boot volume present, names non-empty, events stream installs/uninstalls cleanly. (~180 tok)
+- `SecurityScopedBookmarksTests.swift` — 3 tests: encode/decode round-trip, withAccess balances start/stop, error propagation. (~180 tok)
+
+## Tests/FileSystemTests/LocalTests/Support/
+
+- `TempDirectoryFixture.swift` — Per-test UUID-keyed temp dir; `setUp`/`tearDown` with recursive permission restore; `@discardableResult makeFile` and `makeSubdirectory` helpers. (~540 tok)
+
 ## docs/claude-sessions/stevedore-mvp/
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
 - `.session-1-plan.log` (~0 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
+- `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `session-00-operator-rules.md` — Operator Rules — Stevedore (ForkLift Clone) (~864 tok)
 - `session-01-charter-and-scaffolding.md` — Session 01: Charter & Scaffolding (~1125 tok)
 - `session-02-core-utilities.md` — Session 02: Core Utilities (~712 tok)
@@ -439,3 +469,5 @@
 ## docs/roadmap/stevedore-mvp/
 
 - `session-02-handoff.md` — Session 02 Handoff — Core Utilities (~2186 tok)
+- `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider; concurrency boundaries, supported ops, macOS quirks (~2400 tok)
+- `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider (~2937 tok)

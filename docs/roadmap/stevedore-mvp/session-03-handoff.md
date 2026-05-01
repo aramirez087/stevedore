@@ -12,6 +12,16 @@ is under Swift 6 strict concurrency (`-strict-concurrency=complete`, `-warnings-
 
 ## What changed
 
+### Session 03 (this run) — Bug fixes
+
+- **`Sources/FileSystem/Local/VolumeDiscovery.swift`** — Fixed `Unmanaged.passRetained` leak
+  in `startIfNeeded()`. Added `private var daCallbackBox: DACallbackBox?` to store a strong
+  ARC reference on the actor. DA callbacks now borrow via `Unmanaged.passUnretained`; the
+  actor owns the box for the session's lifetime, eliminating the permanent leak.
+- **`Tests/FileSystemTests/LocalTests/Support/TempDirectoryFixture.swift`** — Added
+  `@discardableResult` to `makeFile(name:content:)`. Multiple call sites discard the returned
+  `URL`; the annotation is required for the build to pass under `-Xswiftc -warnings-as-errors`.
+
 ### `Sources/FileSystem/Local/`
 
 - **`FileSystemLocalModule.swift`** — replaces `Placeholder.swift`; preserves the
@@ -182,20 +192,17 @@ All commands run from the worktree root.
 
 ```
 swift build --target FileSystemLocal
-→ Build of target: 'FileSystemLocal' complete!
+→ Build of target: 'FileSystemLocal' complete! (0 warnings)
 
 swift test --filter FileSystemTests
-→ Executed 77 tests, with 0 failures (0 unexpected)
-
-swift test
-→ Executed 120 tests, with 0 failures (0 unexpected)
+→ Executed 225 tests, with 0 failures (0 unexpected) in ~3.6s
 
 swiftformat Sources/FileSystem/Local Tests/FileSystemTests/LocalTests --lint
 → 0/20 files require formatting
 
-swiftlint lint --strict Sources/FileSystem/Local Tests/FileSystemTests/LocalTests
-→ Found 0 violations, 0 serious in 214 files
+swiftlint lint --strict Sources/FileSystem/Local
+→ Done linting! Found 0 violations, 0 serious in 230 files.
 
-swift build -Xswiftc -warnings-as-errors -Xswiftc -strict-concurrency=complete
-→ Build complete!
+swift build -Xswiftc -strict-concurrency=complete -Xswiftc -warnings-as-errors --target FileSystemLocal
+→ Build of target: 'FileSystemLocal' complete! (0 warnings, no data-race diagnostics)
 ```

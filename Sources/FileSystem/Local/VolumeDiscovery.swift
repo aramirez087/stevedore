@@ -20,6 +20,7 @@ public actor VolumeDiscovery {
 
     private var continuations: [UUID: AsyncStream<VolumeEvent>.Continuation] = [:]
     private var daSession: DASession?
+    private var daCallbackBox: DACallbackBox?
 
     public init() {}
 
@@ -90,9 +91,11 @@ public actor VolumeDiscovery {
         guard let session = DASessionCreate(kCFAllocatorDefault) else { return }
         DASessionSetDispatchQueue(session, queue)
 
-        // `Unmanaged.passRetained` keeps `self` alive for DA callbacks.
-        // Released inside `diskReleasedCallback` (called when the session is torn down).
-        let boxedSelf = Unmanaged.passRetained(DACallbackBox(actor: self))
+        // Store the box as a strong ref on the actor; DA callbacks borrow it via passUnretained.
+        // Safe because the actor owns the session and the box simultaneously.
+        let box = DACallbackBox(actor: self)
+        self.daCallbackBox = box
+        let boxedSelf = Unmanaged.passUnretained(box)
 
         DARegisterDiskAppearedCallback(session, nil, diskAppearedCallback, boxedSelf.toOpaque())
         DARegisterDiskDisappearedCallback(session, nil, diskDisappearedCallback, boxedSelf.toOpaque())
