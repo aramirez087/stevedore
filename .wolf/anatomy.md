@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T13:22:53.651Z
-> Files: 305 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T14:41:59.399Z
+> Files: 307 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -437,6 +437,7 @@
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)
+- `.session-5-plan.md` — Session 05 Implementation Plan — Archive Provider (~14437 tok)
 - `session-00-operator-rules.md` — Operator Rules — Stevedore (ForkLift Clone) (~864 tok)
 - `session-01-charter-and-scaffolding.md` — Session 01: Charter & Scaffolding (~1125 tok)
 - `session-02-core-utilities.md` — Session 02: Core Utilities (~712 tok)
@@ -472,3 +473,4 @@
 - `session-02-handoff.md` — Session 02 Handoff — Core Utilities (~2186 tok)
 - `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider; concurrency boundaries, supported ops, macOS quirks (~2400 tok)
 - `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider (~2937 tok)
+- `session-05-handoff.md` — Session 05 Handoff — Archive Provider (~2334 tok)

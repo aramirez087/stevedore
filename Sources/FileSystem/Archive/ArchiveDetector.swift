@@ -44,7 +44,7 @@ public enum ArchiveDetector {
         guard data.count >= 2 else { return nil }
         // ZIP: PK\x03\x04
         if data.count >= 4,
-            data[0] == 0x50, data[1] == 0x4B, data[2] == 0x03, data[3] == 0x04 {
+           data[0] == 0x50, data[1] == 0x4B, data[2] == 0x03, data[3] == 0x04 {
             return .zip
         }
         // GZip: \x1F\x8B

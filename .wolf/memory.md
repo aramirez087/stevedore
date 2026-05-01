@@ -75,3 +75,19 @@
 | 07:24 | Verified swift build --target FileSystemRemote -warnings-as-errors | 0 warnings, build complete | ~50 |
 | 08:30 | Verified swift test (full regression) | 538 tests, 0 failures | ~50 |
 | 08:30 | Session 04 complete: all quality gates pass. 4 remote providers (SFTP/FTP/WebDAV/S3), 92 new remote tests, session-04-handoff.md present. | Sources/FileSystem/Remote/, Tests/FileSystemTests/Remote/ | ~500 |
+
+## Session: 2026-05-01 08:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:37 | Edited docs/claude-sessions/stevedore-mvp/.session-5-plan.md | added error handling | ~4114 |
+| 08:37 | Session end: 1 writes across 1 files (.session-5-plan.md) | 38 reads | ~8008 tok |
+
+## Session: 2026-05-01 08:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:41 | Session 05: archive provider — all quality gates pass | Sources/FileSystem/Archive/ (11 files), Tests/FileSystemTests/ArchiveTests/ (9 files) | ~500 |
+| 08:41 | Fixed ArchiveDetector.swift indentation (SwiftFormat) | Sources/FileSystem/Archive/ArchiveDetector.swift | ~50 |
+| 08:41 | Wrote session-05-handoff.md | docs/roadmap/stevedore-mvp/session-05-handoff.md | ~200 |
+| 08:41 | swift test: 538 tests, 0 failures; swiftformat 0/20; swiftlint 0 violations; strict-concurrency clean | all | ~100 |
