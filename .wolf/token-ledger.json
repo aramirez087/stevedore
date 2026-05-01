@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 31777,
-    "total_reads": 127,
-    "total_writes": 20,
-    "total_sessions": 7,
-    "anatomy_hits": 5,
-    "anatomy_misses": 121,
-    "repeated_reads_blocked": 5,
-    "estimated_savings_vs_bare_cli": 7068
+    "total_tokens_estimated": 42453,
+    "total_reads": 187,
+    "total_writes": 22,
+    "total_sessions": 9,
+    "anatomy_hits": 7,
+    "anatomy_misses": 179,
+    "repeated_reads_blocked": 6,
+    "estimated_savings_vs_bare_cli": 7468
   },
   "sessions": [
     {
@@ -971,6 +971,410 @@
         "output_tokens_estimated": 0,
         "reads_count": 2,
         "writes_count": 0,
+        "repeated_reads_blocked": 1,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-05-01-0831",
+      "started": "2026-05-01T14:31:08.327Z",
+      "ended": "2026-05-01T14:37:58.841Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/FileSystemProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/ArchiveBrowser.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-03-handoff.md",
+          "tokens_estimated": 2400,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/LocalTests/Conformance.swift",
+          "tokens_estimated": 1200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-04-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileAttributes.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveTestSupport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveModule.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveDetector.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveEntry.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ZipBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/TarBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveExtractor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveCreator.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/DefaultArchiveBrowser.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveExtractionResult.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveDetectorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ZipBackendTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/TarBackendTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveExtractorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveCreatorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchivePathTraversalTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveProviderTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/DefaultArchiveBrowserTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/Archive/FileSystemArchiveSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Errors/StevedoreError.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationDescriptor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/OperationProgressReporting.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/Progress.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-5-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-5-plan.md",
+          "tokens_estimated": 4408,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 3600,
+        "output_tokens_estimated": 4408,
+        "reads_count": 38,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 2
+      }
+    },
+    {
+      "id": "session-2026-05-01-0837",
+      "started": "2026-05-01T14:37:59.591Z",
+      "ended": "2026-05-01T14:42:30.065Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveModule.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveDetector.swift",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveEntry.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ZipBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/TarBackend.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveExtractor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveCreator.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/ArchiveExtractionResult.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Archive/DefaultArchiveBrowser.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveTestSupport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveDetectorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ZipBackendTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/TarBackendTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveExtractorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchivePathTraversalTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveCreatorTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/ArchiveProviderTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/ArchiveTests/DefaultArchiveBrowserTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-05-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-05-handoff.md",
+          "tokens_estimated": 2668,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 2668,
+        "reads_count": 22,
+        "writes_count": 1,
         "repeated_reads_blocked": 1,
         "anatomy_lookups": 0
       }
