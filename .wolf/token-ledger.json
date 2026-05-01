@@ -3,12 +3,12 @@
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
     "total_tokens_estimated": 31777,
-    "total_reads": 125,
+    "total_reads": 127,
     "total_writes": 20,
     "total_sessions": 7,
     "anatomy_hits": 5,
-    "anatomy_misses": 119,
-    "repeated_reads_blocked": 4,
+    "anatomy_misses": 121,
+    "repeated_reads_blocked": 5,
     "estimated_savings_vs_bare_cli": 7068
   },
   "sessions": [
@@ -945,6 +945,34 @@
         "writes_count": 1,
         "repeated_reads_blocked": 1,
         "anatomy_lookups": 3
+      }
+    },
+    {
+      "id": "session-2026-05-01-0723",
+      "started": "2026-05-01T13:23:02.650Z",
+      "ended": "2026-05-01T14:31:06.676Z",
+      "reads": [
+        {
+          "file": "/private/tmp/claude-501/-Users-aramirez-Code-Stevedore/a842e542-138c-45f6-b7d5-1cbbbb27f21b/tasks/b79kj84er.output",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-04-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 2,
+        "writes_count": 0,
+        "repeated_reads_blocked": 1,
+        "anatomy_lookups": 0
       }
     }
   ],
