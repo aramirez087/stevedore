@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 97576,
-    "total_reads": 348,
+    "total_tokens_estimated": 110938,
+    "total_reads": 359,
     "total_writes": 28,
     "total_sessions": 19,
-    "anatomy_hits": 29,
+    "anatomy_hits": 40,
     "anatomy_misses": 317,
     "repeated_reads_blocked": 6,
-    "estimated_savings_vs_bare_cli": 11868
+    "estimated_savings_vs_bare_cli": 14068
   },
   "sessions": [
     {
@@ -2507,6 +2507,88 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 18
+      }
+    },
+    {
+      "id": "session-2026-05-01-1613",
+      "started": "2026-05-01T22:13:22.766Z",
+      "ended": "2026-05-01T22:15:28.261Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/FeaturesOperationsModule.swift",
+          "tokens_estimated": 32,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/Operation.swift",
+          "tokens_estimated": 294,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/OperationQueue.swift",
+          "tokens_estimated": 1724,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/OperationExecutor.swift",
+          "tokens_estimated": 2379,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/ConflictPolicy.swift",
+          "tokens_estimated": 998,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/TransferProgress.swift",
+          "tokens_estimated": 1170,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/Throughput.swift",
+          "tokens_estimated": 674,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Operations/CrossProviderCopy.swift",
+          "tokens_estimated": 1446,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/OperationsTests/CrossProviderCopyTests.swift",
+          "tokens_estimated": 2746,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-10-handoff.md",
+          "tokens_estimated": 1899,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 13362,
+        "output_tokens_estimated": 0,
+        "reads_count": 11,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 11
       }
     }
   ],
