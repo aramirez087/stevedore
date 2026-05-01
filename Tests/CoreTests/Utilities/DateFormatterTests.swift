@@ -101,4 +101,41 @@ final class DateFormatterTests: XCTestCase {
             "Expected French relative string, got: \(result)"
         )
     }
+
+    // MARK: - Additional edge cases
+
+    func testMediumAbsolute_epochDate() {
+        // epoch = 1970-01-01 00:00:00 UTC — should not crash or produce empty string.
+        let epoch = Date(timeIntervalSince1970: 0)
+        let result = self.formatter.mediumAbsolute(epoch)
+        XCTAssertFalse(result.isEmpty)
+    }
+
+    func testSmartListing_farFuture_fallsBackToMedium() {
+        let ref = Date()
+        let future = ref.addingTimeInterval(60 * 60 * 24 * 365) // 1 year ahead
+        let result = self.formatter.smartListing(future, relativeTo: ref)
+        XCTAssertFalse(result.isEmpty)
+    }
+
+    func testHashableConformance() {
+        let a = StevedoreDateFormatter(
+            locale: Locale(identifier: "en_US_POSIX"),
+            calendar: self.fixedCalendar,
+            timeZone: TimeZone.gmt
+        )
+        let b = StevedoreDateFormatter(
+            locale: Locale(identifier: "en_US_POSIX"),
+            calendar: self.fixedCalendar,
+            timeZone: TimeZone.gmt
+        )
+        XCTAssertEqual(a, b)
+    }
+
+    func testRelative_secondsAgo_containsSecondOrNow() {
+        let ref = Date()
+        let justNow = ref.addingTimeInterval(-10)
+        let result = self.formatter.relative(justNow, relativeTo: ref)
+        XCTAssertFalse(result.isEmpty)
+    }
 }

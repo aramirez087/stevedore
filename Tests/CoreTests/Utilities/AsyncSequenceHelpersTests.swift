@@ -137,4 +137,63 @@ final class AsyncSequenceHelpersTests: XCTestCase {
         }
         XCTAssertEqual(elements, ["a", "b"])
     }
+
+    // MARK: - chunked: error propagation
+
+    func testChunked_throwingStream_propagatesError() async {
+        struct TestError: Error {}
+        let stream = AsyncThrowingStream<Int, any Error> { continuation in
+            continuation.yield(1)
+            continuation.finish(throwing: TestError())
+        }
+        var didThrow = false
+        do {
+            for try await _ in stream.chunked(by: 10) {}
+        } catch {
+            didThrow = true
+        }
+        XCTAssertTrue(didThrow)
+    }
+
+    // MARK: - withProgress: phase is forwarded
+
+    func testWithProgress_phaseIsForwarded() async throws {
+        let stream = AsyncStream<Int> { continuation in
+            continuation.yield(1)
+            continuation.finish()
+        }
+        let collector = ProgressCollector()
+        for try await _ in stream.withProgress(phase: .verifying, report: { await collector.append($0) }) {}
+        let reports = await collector.items
+        XCTAssertEqual(reports.first?.phase, .verifying)
+    }
+
+    // MARK: - withProgress: bytesTotal is forwarded
+
+    func testWithProgress_bytesTotalIsForwarded() async throws {
+        let stream = AsyncStream<Int> { continuation in
+            continuation.yield(1)
+            continuation.finish()
+        }
+        let collector = ProgressCollector()
+        for try await _ in stream.withProgress(bytesTotal: 999, report: { await collector.append($0) }) {}
+        let reports = await collector.items
+        XCTAssertEqual(reports.first?.bytesTotal, 999)
+    }
+
+    // MARK: - chunked: size 1 emits one element per chunk
+
+    func testChunked_sizeOne_emitsIndividually() async throws {
+        let stream = AsyncStream<Int> { continuation in
+            for i in 1 ... 3 {
+                continuation.yield(i)
+            }
+            continuation.finish()
+        }
+        var chunks: [[Int]] = []
+        for try await chunk in stream.chunked(by: 1) {
+            chunks.append(chunk)
+        }
+        XCTAssertEqual(chunks, [[1], [2], [3]])
+    }
 }

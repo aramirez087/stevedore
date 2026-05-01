@@ -163,4 +163,52 @@ final class PathUtilitiesTests: XCTestCase {
         let path = FilePath.from(urlString: "smb://server/share")
         XCTAssertEqual(path?.scheme, .smb)
     }
+
+    func testFromURLString_ftpScheme() {
+        let path = FilePath.from(urlString: "ftp://server/pub/file.zip")
+        XCTAssertEqual(path?.scheme, .ftp)
+    }
+
+    func testFromURLString_httpsIsWebdav() {
+        let path = FilePath.from(urlString: "https://dav.example.com/files")
+        XCTAssertEqual(path?.scheme, .webdav)
+    }
+
+    // MARK: - Deep path edge cases
+
+    func testRelative_deepPath() {
+        let base = FilePath(scheme: .local, posix: "/a")
+        let deep = FilePath(scheme: .local, posix: "/a/b/c/d/e/f")
+        XCTAssertEqual(deep.relative(to: base), ["b", "c", "d", "e", "f"])
+    }
+
+    func testRelative_baseIsRoot() {
+        let root = FilePath.root(.local)
+        let path = FilePath(scheme: .local, posix: "/a/b")
+        XCTAssertEqual(path.relative(to: root), ["a", "b"])
+    }
+
+    func testCommonAncestor_deepDivergence() {
+        let a = FilePath(scheme: .local, posix: "/a/b/c/x/y")
+        let b = FilePath(scheme: .local, posix: "/a/b/c/p/q")
+        XCTAssertEqual(FilePath.commonAncestor(a, b), FilePath(scheme: .local, posix: "/a/b/c"))
+    }
+
+    func testRelativePosix_differentScheme_returnsNil() {
+        let a = FilePath(scheme: .local, posix: "/a/b")
+        let b = FilePath(scheme: .s3, posix: "/a")
+        XCTAssertNil(a.relativePosix(to: b))
+    }
+
+    func testDisplayName_singleComponent() {
+        let path = FilePath(scheme: .local, posix: "/Documents")
+        XCTAssertEqual(path.displayName, "Documents")
+    }
+
+    func testDisplayName_rootVariousSchemes() {
+        for scheme in ConnectionScheme.allCases {
+            let root = FilePath.root(scheme)
+            XCTAssertEqual(root.displayName, "\(scheme.rawValue):/")
+        }
+    }
 }

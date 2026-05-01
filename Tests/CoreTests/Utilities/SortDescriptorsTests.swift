@@ -189,4 +189,52 @@ final class SortDescriptorsTests: XCTestCase {
         XCTAssertEqual(FileItemSortDescriptor.byKind.key, .kind)
         XCTAssertEqual(FileItemSortDescriptor.byExtension.key, .fileExtension)
     }
+
+    // MARK: - callAsFunction
+
+    func testCallAsFunction_returnsTrueWhenAscending() {
+        let a = self.item(name: "a")
+        let b = self.item(name: "b")
+        let descriptor = FileItemSortDescriptor(key: .name, ascending: true,
+                                                directoriesFirst: false, locale: self.locale)
+        XCTAssertTrue(descriptor(a, b))
+        XCTAssertFalse(descriptor(b, a))
+    }
+
+    func testCompare_equalItems_returnsSame() {
+        let a = self.item(name: "x", size: 100)
+        let descriptor = FileItemSortDescriptor(key: .size, ascending: true,
+                                                directoriesFirst: false, locale: self.locale)
+        XCTAssertEqual(descriptor.compare(a, a), .orderedSame)
+    }
+
+    // MARK: - Sort by kind
+
+    func testSortByKind_ascending() {
+        let file = self.item(name: "a", kind: .regularFile)
+        let dir = self.item(name: "b", kind: .directory)
+        let link = self.item(name: "c", kind: .symbolicLink)
+        let sorted = [file, dir, link].sorted(by: FileItemSortDescriptor(
+            key: .kind, ascending: true, directoriesFirst: false, locale: self.locale
+        ))
+        // directory < regularFile < symbolicLink alphabetically
+        XCTAssertEqual(sorted[0].kind, .directory)
+    }
+
+    func testSortByName_numericOrdering() {
+        let file2 = self.item(name: "file2")
+        let file10 = self.item(name: "file10")
+        let sorted = [file10, file2].sorted(by: FileItemSortDescriptor(
+            key: .name, ascending: true, directoriesFirst: false, locale: self.locale
+        ))
+        XCTAssertEqual(sorted[0].displayName, "file2")
+    }
+
+    // MARK: - Sequence extension
+
+    func testSequenceSortedByDescriptor_returnsArray() {
+        let items = [self.item(name: "c"), self.item(name: "a"), self.item(name: "b")]
+        let sorted = items.sorted(by: .byName)
+        XCTAssertEqual(sorted[0].displayName, "a")
+    }
 }

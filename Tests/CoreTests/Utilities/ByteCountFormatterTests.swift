@@ -78,6 +78,39 @@ final class ByteCountFormatterTests: XCTestCase {
         XCTAssertEqual(ByteSizeFormatter.Mode.allCases.count, 2)
     }
 
+    // MARK: - Additional boundary tests
+
+    func testBinary_largeMiB() {
+        let reference = self.makeFormatter(style: .binary)
+        let bytes: Int64 = 10 * 1024 * 1024 // 10 MiB
+        XCTAssertEqual(self.binary.string(fromBytes: bytes), reference.string(fromByteCount: bytes))
+    }
+
+    func testDecimal_largeGB() {
+        let reference = self.makeFormatter(style: .decimal)
+        let bytes: Int64 = 2_000_000_000 // 2 GB
+        XCTAssertEqual(self.decimal.string(fromBytes: bytes), reference.string(fromByteCount: bytes))
+    }
+
+    func testBinary_negativeSmall() {
+        let result = self.binary.string(fromBytes: -1)
+        XCTAssertTrue(result.hasPrefix("-"))
+    }
+
+    func testHashableConformance() {
+        let a = ByteSizeFormatter(mode: .binary)
+        let b = ByteSizeFormatter(mode: .binary)
+        XCTAssertEqual(a, b)
+        let c = ByteSizeFormatter(mode: .decimal)
+        XCTAssertNotEqual(a, c)
+    }
+
+    func testAllowsZeroRepresentation_false() {
+        let f = ByteSizeFormatter(mode: .binary, allowsZeroRepresentation: false)
+        // Just confirm it returns a string without crashing.
+        XCTAssertFalse(f.string(fromBytes: 0).isEmpty)
+    }
+
     // MARK: - Helpers
 
     private func makeFormatter(style: ByteCountFormatter.CountStyle) -> ByteCountFormatter {

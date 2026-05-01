@@ -111,4 +111,35 @@ final class ResultHelpersTests: XCTestCase {
             XCTFail("Expected .invalidArgument")
         }
     }
+
+    // MARK: - asyncFlatMap: chaining
+
+    func testAsyncFlatMap_chain_appliedInOrder() async {
+        let first: Result<Int, StevedoreError> = .success(1)
+        let second = await first.asyncFlatMap { n -> Result<Int, StevedoreError> in .success(n + 1) }
+        let third = await second.asyncFlatMap { n -> Result<Int, StevedoreError> in .success(n * 10) }
+        XCTAssertEqual(try? third.get(), 20)
+    }
+
+    func testMapErrorTo_preservesSuccessValue() {
+        let result: Result<String, StevedoreError> = .success("hello")
+        let mapped = result.mapErrorTo { _ in StevedoreError.cancelled }
+        XCTAssertEqual(try? mapped.get(), "hello")
+    }
+
+    // MARK: - toStevedoreError: wraps file system errors
+
+    func testToStevedoreError_fileSystemError_becomesInvalidArgument() {
+        let path = FilePath(scheme: .local, posix: "/test")
+        let err = FileSystemError.notFound(path)
+        let result: Result<Int, any Error> = .failure(err)
+        let converted = result.toStevedoreError()
+        XCTAssertThrowsError(try converted.get()) { error in
+            if case .invalidArgument = error as? StevedoreError {
+                // expected
+            } else {
+                XCTFail("Expected .invalidArgument, got \(error)")
+            }
+        }
+    }
 }

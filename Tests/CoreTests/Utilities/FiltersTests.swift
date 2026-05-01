@@ -152,4 +152,44 @@ final class FiltersTests: XCTestCase {
     func testGlob_deepNesting() {
         XCTAssertTrue(GlobMatcher.matches(pattern: "**/deep/*.txt", path: "/a/b/c/deep/note.txt"))
     }
+
+    // MARK: - GlobMatcher: additional edge cases
+
+    func testGlob_emptyPath_noMatch() {
+        XCTAssertFalse(GlobMatcher.matches(pattern: "*.swift", path: ""))
+    }
+
+    func testGlob_patternWithDoubleStarAtRoot_matchesFlat() {
+        XCTAssertTrue(GlobMatcher.matches(pattern: "**/*.md", path: "/README.md"))
+    }
+
+    func testGlob_questionMark_matchesSingleCharAtStart() {
+        XCTAssertTrue(GlobMatcher.matches(pattern: "?.txt", path: "/a.txt"))
+    }
+
+    func testGlob_starOnly_matchesAnyName() {
+        XCTAssertTrue(GlobMatcher.matches(pattern: "*", path: "/anything"))
+    }
+
+    // MARK: - FileItemFilter: glob with caseSensitive flag
+
+    func testGlob_caseSensitiveFilter_noMatchUppercase() {
+        let filter = FileItemFilter.glob("*.TXT", caseSensitive: true)
+        let item = FileItem(path: FilePath(scheme: .local, posix: "/doc.txt"), kind: .regularFile)
+        XCTAssertFalse(filter(item))
+    }
+
+    func testGlob_caseInsensitiveFilter_matchesUppercase() {
+        let filter = FileItemFilter.glob("*.TXT", caseSensitive: false)
+        let item = FileItem(path: FilePath(scheme: .local, posix: "/doc.txt"), kind: .regularFile)
+        XCTAssertTrue(filter(item))
+    }
+
+    // MARK: - FileItemFilter: combined predicates with callAsFunction
+
+    func testFilter_callAsFunction_matchesVisible() {
+        let filter = FileItemFilter.visible
+        let visible = self.item(name: "f", hidden: false)
+        XCTAssertTrue(filter(visible))
+    }
 }

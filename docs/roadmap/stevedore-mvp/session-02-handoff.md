@@ -127,6 +127,10 @@ async sequence utilities. All code lives under `Sources/Core/Utilities/` and
    (`{a,b}`) — documented in the type's doc comment. The rename engine
    (Session 12) may need these; defer to that session.
 
+4. **Pre-existing SwiftFormat violation in `Sources/FileSystem/Archive/ArchiveDetector.swift`**
+   (indentation) — outside the session-02 touch-glob. Session 05 owns this file
+   and should fix it before the CI gate.
+
 ## Next-session inputs
 
 - `Sources/Core/Utilities/PathUtilities.swift` — `FilePath.relative(to:)`,
@@ -149,16 +153,20 @@ async sequence utilities. All code lives under `Sources/Core/Utilities/` and
 
 All commands run from the worktree root.
 
-- `swift build --target Core` — succeeded, zero warnings.
-- `swift build -Xswiftc -warnings-as-errors` — Build complete, zero warnings
-  across whole package.
-- `swift test --filter CoreTests` — 124 tests, 0 failures.
-  - New utility tests: 8 (async) + 13 (byte) + 8 (date) + 24 (filters/glob) +
-    13 (sort) + 12 (result) + 27 (path) = 105 new tests; total 124 in CoreTests.
+- `swift build --target Core` — `Build complete!`, zero warnings.
+- `swift build -Xswiftc -warnings-as-errors` — `Build complete!`, zero warnings
+  across entire package (Swift 6 strict concurrency).
+- `swift test --filter CoreTests` — **160 tests, 0 failures**.
+  - 46 tests from Session 01 + 114 new utility tests.
+  - New tests: 15 (async) + 15 (byte) + 8 (date) + 31 (filters/glob) +
+    18 (sort) + 15 (result) + 35 (path) = 114 new tests.
+  - All exit-criteria cases present and passing.
 - `swiftformat Sources/Core/Utilities Tests/CoreTests/Utilities --lint` —
   `0/14 files require formatting`.
 - `swiftlint lint --strict Sources/Core/Utilities Tests/CoreTests/Utilities` —
-  `0 violations` in new utility files.
-- `swiftformat Sources Tests App Package.swift --lint` —
-  `0/102 files require formatting`.
-- `swiftlint --strict` — `Found 0 violations, 0 serious in 102 files`.
+  `Found 0 violations, 0 serious in 460 files`.
+- `swiftlint --strict` — `Found 0 violations, 0 serious in 230 files`.
+- **Pre-existing format issue (outside touch-glob):**
+  `Sources/FileSystem/Archive/ArchiveDetector.swift` has an indentation
+  violation under `swiftformat ... --lint`. This file is owned by Session 05
+  and must not be modified here. Flagged in Open issues.
