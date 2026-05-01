@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:15:03.782Z
-> Files: 387 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:41:30.539Z
+> Files: 416 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -391,23 +391,29 @@
 
 - `openwolf.md` (~313 tok)
 
-## Sources/Features/Rename/
+## Sources/Features/Preview/
 
-- `FeaturesRenameModule.swift` — Module sentinel `public enum FeaturesRenameModule` with `moduleName = "FeaturesRename"`. (~30 tok)
-- `RenameStep.swift` — `public enum RenameStep` (7 cases); supporting enums `CaseTransform`, `TrimPosition`, `SequencePosition`, `ExtensionTransform`, `InsertPosition` (manual Codable); `func apply(to:ext:index:)`. (~400 tok)
-- `RenameRecipe.swift` — `public struct RenameRecipe: Sendable, Codable, Hashable`; ordered `steps: [RenameStep]`; static `identity`. (~60 tok)
-- `RenameOutcome.swift` — `public enum RenameStatus` (.ok/.collision/.invalid); `public struct RenameOutcome` with item, targetName, status. (~80 tok)
-- `CollisionResolver.swift` — `public enum CollisionResolver` with nested `Strategy` enum; pure `resolve(outcomes:existingSiblings:strategy:)`. (~200 tok)
-- `RenamePlanner.swift` — `public enum RenamePlanner`; pure `plan(items:recipe:existingSiblings:collisionStrategy:)`; regex validated at plan time. (~250 tok)
-- `RenameExecutor.swift` — `public actor RenameExecutor`; `JournalEntry`; `execute(outcomes:in:using:)` with journal-backed best-effort rollback via `os.Logger`. (~250 tok)
+- `FeaturesPreviewModule.swift` — Module sentinel `public enum FeaturesPreviewModule` with `moduleName = "FeaturesPreview"`. (~30 tok)
+- `PreviewCache.swift` — `public actor PreviewCache` wrapping `NSCache<NSString, CachedPreview>`; byte-limited via `totalCostLimit`; `CachedPreview: NSObject` stores payload. (~200 tok)
+- `PreviewService.swift` — `public actor PreviewService: PreviewSource`; dispatches to image/code/text renderers or QL fallback; caches results in `PreviewCache`. (~350 tok)
+- `ThumbnailGenerator.swift` — `public actor ThumbnailGenerator`; coalesces concurrent QL requests via inflight `Task` dict; returns PNG `Data` via `CGImage`. (~250 tok)
+- `QuickLookPanelController.swift` — `@MainActor public final class`; `QLPreviewPanel` bridge; `show/toggle/close` API; nonisolated protocol stubs with `MainActor.assumeIsolated`. (~200 tok)
 
-## Tests/FeaturesTests/RenameTests/
+## Sources/Features/Preview/Renderers/
 
-- `RenameTestSupport.swift` — `testSplitStemExt`, `testAssembled`, `applyStep` helpers; `makeItem`; `RecordingRenameProvider` actor with call-indexed failure mechanism. (~300 tok)
-- `RenameStepTests.swift` — 25 tests covering all 7 step types + Unicode, hidden files, very long names. (~500 tok)
-- `RenamePlannerTests.swift` — 15 tests covering determinism, regex plan-time rejection, collision detection, edge cases. (~400 tok)
-- `CollisionResolverTests.swift` — 10 tests covering batch/sibling collisions, auto-suffix chaining, pass-through. (~350 tok)
-- `RenameExecutorTests.swift` — 10 tests including rollback-on-5th-failure exit criterion and best-effort rollback. (~450 tok)
+- `TextPreviewRenderer.swift` — `public enum` namespace; reads ≤1 MB, detects BOM/UTF-8/Latin-1 encoding, returns RTF `Data`. (~200 tok)
+- `ImagePreviewRenderer.swift` — `public enum` namespace; `NSImage` decode + resample to `maxDimension`, returns PNG `Data`. (~150 tok)
+- `CodePreviewRenderer.swift` — `public enum` namespace; `Language` enum at file scope with dict-based extension/keyword lookup; regex token coloring via `NSAttributedString`, returns RTF `Data`. (~700 tok)
+
+## Tests/FeaturesTests/PreviewTests/
+
+- `PreviewTestSupport.swift` — `makePreviewItem`, `makeTempFile`, `makeMinimalPNG` fixtures. (~150 tok)
+- `PreviewCacheTests.swift` — 8 tests: store/fetch, eviction, burst-1000 cap, concurrent access. (~300 tok)
+- `TextPreviewRendererTests.swift` — 8 tests: UTF-8/UTF-16LE/UTF-16BE/Latin-1/BOM-strip encoding, large file limit, nil cases. (~300 tok)
+- `ImagePreviewRendererTests.swift` — 6 tests: PNG decode, resample, upscale prevention, nil cases. (~250 tok)
+- `CodePreviewRendererTests.swift` — 10 tests: language detection, keyword presence, RTF output, nil cases. (~250 tok)
+- `ThumbnailGeneratorTests.swift` — 5 tests: thumbnail generation, coalescing, cancellation, independent sizes. (~250 tok)
+- `PreviewServiceTests.swift` — 11 tests: renderer dispatch by extension, cache, off-main-actor, magic-byte detection, QL fallback. (~350 tok)
 
 ## Sources/Features/Operations/
 
@@ -420,14 +426,35 @@
 - `Throughput.swift` — / Sliding-window bytes-per-second estimator for transfer ETA display. (~674 tok)
 - `TransferProgress.swift` — MARK: - TransferProgress (~1170 tok)
 
+## Sources/Features/Preview/
+
+- `FeaturesPreviewModule.swift` — Declares FeaturesPreviewModule (~30 tok)
+- `PreviewCache.swift` — NSCache value wrapper — must be NSObject subclass for NSCache. (~288 tok)
+- `PreviewService.swift` (~982 tok)
+- `QuickLookPanelController.swift` — Class: QuickLookPanelController (~487 tok)
+- `ThumbnailGenerator.swift` (~568 tok)
+
+## Sources/Features/Preview/Renderers/
+
+- `CodePreviewRenderer.swift` — MARK: - Language (~3293 tok)
+- `ImagePreviewRenderer.swift` — Declares ImagePreviewRenderer (~423 tok)
+- `TextPreviewRenderer.swift` — Declares TextPreviewRenderer (~572 tok)
+
 ## Sources/Features/Rename/
 
+- `CollisionResolver.swift` — `public enum CollisionResolver` with nested `Strategy` enum; pure `resolve(outcomes:existingSiblings:strategy:)`. (~200 tok)
 - `CollisionResolver.swift` — Declares CollisionResolver (~565 tok)
+- `FeaturesRenameModule.swift` — Module sentinel `public enum FeaturesRenameModule` with `moduleName = "FeaturesRename"`. (~30 tok)
 - `FeaturesRenameModule.swift` — Declares FeaturesRenameModule (~30 tok)
+- `RenameExecutor.swift` — `public actor RenameExecutor`; `JournalEntry`; `execute(outcomes:in:using:)` with journal-backed best-effort rollback via `os.Logger`. (~250 tok)
 - `RenameExecutor.swift` — Struct: JournalEntry (~486 tok)
+- `RenameOutcome.swift` — `public enum RenameStatus` (.ok/.collision/.invalid); `public struct RenameOutcome` with item, targetName, status. (~80 tok)
 - `RenameOutcome.swift` — Struct: RenameOutcome (~121 tok)
+- `RenamePlanner.swift` — `public enum RenamePlanner`; pure `plan(items:recipe:existingSiblings:collisionStrategy:)`; regex validated at plan time. (~250 tok)
 - `RenamePlanner.swift` — Declares RenamePlanner (~576 tok)
+- `RenameRecipe.swift` — `public struct RenameRecipe: Sendable, Codable, Hashable`; ordered `steps: [RenameStep]`; static `identity`. (~60 tok)
 - `RenameRecipe.swift` — Struct: RenameRecipe (~59 tok)
+- `RenameStep.swift` — `public enum RenameStep` (7 cases); supporting enums `CaseTransform`, `TrimPosition`, `SequencePosition`, `ExtensionTransform`, `InsertPosition` (manual Codable); `func apply(to:ext:index:)`. (~400 tok)
 - `RenameStep.swift` — MARK: - Supporting enums (~1767 tok)
 
 ## Sources/Features/Sync/
@@ -515,12 +542,27 @@
 - `ThroughputTests.swift` — Class: ThroughputTests (~487 tok)
 - `TransferProgressTests.swift` — Class: TransferProgressTests (~808 tok)
 
+## Tests/FeaturesTests/PreviewTests/
+
+- `CodePreviewRendererTests.swift` — Class: CodePreviewRendererTests (~872 tok)
+- `ImagePreviewRendererTests.swift` — Class: ImagePreviewRendererTests (~595 tok)
+- `PreviewCacheTests.swift` — Class: PreviewCacheTests (~1132 tok)
+- `PreviewServiceTests.swift` — Class: PreviewServiceTests (~1687 tok)
+- `PreviewTestSupport.swift` — Declares 0x00 (~502 tok)
+- `TextPreviewRendererTests.swift` — Class: TextPreviewRendererTests (~1048 tok)
+- `ThumbnailGeneratorTests.swift` — Class: ThumbnailGeneratorTests (~941 tok)
+
 ## Tests/FeaturesTests/RenameTests/
 
+- `CollisionResolverTests.swift` — 10 tests covering batch/sibling collisions, auto-suffix chaining, pass-through. (~350 tok)
 - `CollisionResolverTests.swift` — Class: CollisionResolverTests (~1330 tok)
+- `RenameExecutorTests.swift` — 10 tests including rollback-on-5th-failure exit criterion and best-effort rollback. (~450 tok)
 - `RenameExecutorTests.swift` — Class: RenameExecutorTests (~2408 tok)
+- `RenamePlannerTests.swift` — 15 tests covering determinism, regex plan-time rejection, collision detection, edge cases. (~400 tok)
 - `RenamePlannerTests.swift` — Class: RenamePlannerTests (~1585 tok)
+- `RenameStepTests.swift` — 25 tests covering all 7 step types + Unicode, hidden files, very long names. (~500 tok)
 - `RenameStepTests.swift` — Class: RenameStepTests (~1691 tok)
+- `RenameTestSupport.swift` — `testSplitStemExt`, `testAssembled`, `applyStep` helpers; `makeItem`; `RecordingRenameProvider` actor with call-indexed failure mechanism. (~300 tok)
 - `RenameTestSupport.swift` — MARK: - Filename helpers (mirrors private functions in RenameStep.swift) (~886 tok)
 
 ## Tests/FeaturesTests/SyncTests/
@@ -559,6 +601,7 @@
 - `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~7539 tok)
 - `.session-11-plan.md` — Session 11 Implementation Plan — Folder Sync & Compare Engine (~6854 tok)
 - `.session-12-plan.md` — Session 12 Implementation Plan — Multi-Rename Engine (~6627 tok)
+- `.session-13-plan.md` — Session 13 Implementation Plan — Preview Service (Quick Look) (~12249 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)
@@ -608,3 +651,4 @@
 - `session-10-handoff.md` — Session 10 Handoff — Operations Engine (~1899 tok)
 - `session-11-handoff.md` — Session 11 Handoff — Sync Engine (~773 tok)
 - `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
+- `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)

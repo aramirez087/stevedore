@@ -345,3 +345,50 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 17:17 | Session 12 fully complete (context-continuation). All code committed as 8d617a6. 693 tests pass, 0 warnings. | — | Session end | ~500 |
+
+## Session: 2026-05-01 17:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:24 | Created docs/claude-sessions/stevedore-mvp/.session-13-plan.md | — | ~13066 |
+| 17:24 | Session end: 1 writes across 1 files (.session-13-plan.md) | 15 reads | ~24310 tok |
+
+## Session: 2026-05-01 17:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:30 | Created Sources/Features/Preview/FeaturesPreviewModule.swift | — | ~30 |
+| 17:30 | Created Sources/Features/Preview/PreviewCache.swift | — | ~288 |
+| 17:30 | Created Sources/Features/Preview/Renderers/TextPreviewRenderer.swift | — | ~575 |
+| 17:30 | Created Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift | — | ~426 |
+| 17:31 | Created Sources/Features/Preview/Renderers/CodePreviewRenderer.swift | — | ~3296 |
+| 17:32 | Created Sources/Features/Preview/ThumbnailGenerator.swift | — | ~568 |
+| 17:32 | Created Sources/Features/Preview/QuickLookPanelController.swift | — | ~487 |
+| 17:32 | Created Sources/Features/Preview/PreviewService.swift | — | ~982 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/TextPreviewRenderer.swift | inline fix | ~15 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift | inline fix | ~15 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/CodePreviewRenderer.swift | inline fix | ~15 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/TextPreviewRenderer.swift | inline fix | ~20 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift | inline fix | ~28 |
+| 17:33 | Edited Sources/Features/Preview/Renderers/CodePreviewRenderer.swift | inline fix | ~20 |
+| 17:33 | Edited Sources/Features/Preview/PreviewService.swift | modified contains() | ~130 |
+| 17:33 | Created Tests/FeaturesTests/PreviewTests/PreviewTestSupport.swift | — | ~502 |
+| 17:34 | Created Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift | — | ~1124 |
+| 17:34 | Created Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift | — | ~1027 |
+| 17:34 | Created Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift | — | ~593 |
+| 17:35 | Created Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift | — | ~869 |
+| 17:35 | Created Tests/FeaturesTests/PreviewTests/ThumbnailGeneratorTests.swift | — | ~941 |
+| 17:35 | Created Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift | — | ~1606 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift | modified testCacheKeyIsolation() | ~132 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift | 4→4 lines | ~21 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift | 4→4 lines | ~21 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift | modified testPreviewRunsOffMainActor() | ~390 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift | modified testPreviewRunsOffMainActor() | ~326 |
+| 17:37 | Edited Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift | 5→5 lines | ~24 |
+| 17:38 | Edited Sources/Features/Preview/PreviewService.swift | 3→3 lines | ~71 |
+| 17:39 | Edited Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift | modified testUtf16LeDetected() | ~69 |
+| 17:39 | Edited Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift | modified testUtf16BeDetected() | ~68 |
+| 17:39 | Edited Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift | modified testUtf8BomStripped() | ~74 |
+| 17:39 | Edited Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift | 6→4 lines | ~36 |
+| 17:41 | Created docs/roadmap/stevedore-mvp/session-13-handoff.md | — | ~2339 |
+| 17:41 | Session 13 — Preview Service | Sources/Features/Preview/** Tests/FeaturesTests/PreviewTests/** docs/roadmap/stevedore-mvp/session-13-handoff.md | 49 new tests pass, 741 total pass, 0 lint violations | ~18000 |
