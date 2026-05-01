@@ -80,6 +80,70 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-01T14:37:48.887Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-05-01T15:15:55.590Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "Sources/Features/Operations/OperationExecutor.swift",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:15:55.590Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-05-01T15:17:11.857Z",
+      "error_message": "Missing await",
+      "file": "Sources/Features/Operations/OperationQueue.swift",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:17:11.857Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-05-01T15:19:57.658Z",
+      "error_message": "Wrong reference: file should be regularFile",
+      "file": "Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift",
+      "root_cause": "Used \"file\" instead of \"regularFile\"",
+      "fix": "Changed file → regularFile",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:19:57.658Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-05-01T16:32:09.322Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Sources/Features/Operations/OperationExecutor.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T16:32:09.322Z"
     }
   ]
 }

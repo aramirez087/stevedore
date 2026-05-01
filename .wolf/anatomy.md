@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T15:03:31.459Z
-> Files: 340 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T16:38:04.697Z
+> Files: 358 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -391,6 +391,17 @@
 
 - `openwolf.md` (~313 tok)
 
+## Sources/Features/Operations/
+
+- `ConflictPolicy.swift` — MARK: - ConflictResolution (~998 tok)
+- `CrossProviderCopy.swift` — MARK: - DataReadableProvider (~1446 tok)
+- `FeaturesOperationsModule.swift` — Declares FeaturesOperationsModule (~32 tok)
+- `Operation.swift` — MARK: - OperationState (~294 tok)
+- `OperationExecutor.swift` — / Interprets an `Operation` against the appropriate provider(s) and executes it. (~2379 tok)
+- `OperationQueue.swift` — / Queue-driven engine that executes batched file operations with a configurable (~1724 tok)
+- `Throughput.swift` — / Sliding-window bytes-per-second estimator for transfer ETA display. (~674 tok)
+- `TransferProgress.swift` — MARK: - TransferProgress (~1170 tok)
+
 ## Sources/FileSystem/Local/
 
 - `ConflictDescriptor.swift` — `public struct: Hashable, Sendable` with `Reason` enum (`.destinationExists`, `.destinationIsDirectory`, `.destinationReadOnly`, `.crossDeviceMove`) for conflict metadata. (~120 tok)
@@ -454,6 +465,17 @@
 - `ResultHelpersTests.swift` — Struct: FakeError (~1458 tok)
 - `SortDescriptorsTests.swift` — Class: SortDescriptorsTests (~2284 tok)
 
+## Tests/FeaturesTests/OperationsTests/
+
+- `ConflictResolverTests.swift` — Class: ConflictResolverTests (~869 tok)
+- `CrossProviderCopyTests.swift` — Class: CrossProviderCopyTests (~2746 tok)
+- `FileOperationQueueTests.swift` — Class: FileOperationQueueTests (~1939 tok)
+- `OperationExecutorTests.swift` — Class: OperationExecutorTests (~1515 tok)
+- `OperationsTestSupport.swift` — MARK: - TestDataProvider (~1844 tok)
+- `OperationTests.swift` — Class: OperationTests (~364 tok)
+- `ThroughputTests.swift` — Class: ThroughputTests (~487 tok)
+- `TransferProgressTests.swift` — Class: TransferProgressTests (~808 tok)
+
 ## Tests/FileSystemTests/LocalTests/
 
 - `ConflictDescriptorTests.swift` — 4 tests: no-conflict case, destinationExists, destinationIsDirectory, mkdir with no conflict. (~200 tok)
@@ -479,6 +501,7 @@
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
 - `.session-1-plan.log` (~0 tok)
+- `.session-10-plan.md` — Session 10 Implementation Plan — File Operations Engine (~6285 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)
@@ -525,3 +548,4 @@
 - `session-05-handoff.md` — Session 05 Handoff — Archive Provider (~2334 tok)
 - `session-07-handoff.md` — Session 07 Handoff — Settings Service (~2503 tok)
 - `session-08-handoff.md` — Session 08 Handoff — Design System; token palette, component API surface, downstream injection guide (~2100 tok)
+- `session-10-handoff.md` — Session 10 Handoff — Operations Engine (~1899 tok)

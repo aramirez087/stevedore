@@ -159,3 +159,69 @@
 | 09:04 | swift test --filter logging test classes | 32 tests: LogEvent/LogRingBuffer/OSLogger/Redaction/SignpostHelper | All pass | ~400 |
 | 09:04 | swiftformat --lint, swiftlint --strict | Sources/Services/Logging + tests | 0 violations, 0 files need formatting | ~100 |
 | 09:05 | Session 9 complete — all quality gates pass | ServicesLogging module | commit pending | ~100 |
+
+## Session: 2026-05-01 09:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:12 | Created docs/claude-sessions/stevedore-mvp/.session-10-plan.md | — | ~6704 |
+| 09:12 | Session end: 1 writes across 1 files (.session-10-plan.md) | 15 reads | ~8033 tok |
+
+## Session: 2026-05-01 09:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:13 | Created Sources/Features/Operations/FeaturesOperationsModule.swift | — | ~32 |
+| 09:13 | Created Sources/Features/Operations/CrossProviderCopy.swift | — | ~1421 |
+| 09:13 | Created Sources/Features/Operations/Throughput.swift | — | ~786 |
+| 09:14 | Created Sources/Features/Operations/Throughput.swift | — | ~659 |
+| 09:14 | Created Sources/Features/Operations/TransferProgress.swift | — | ~1170 |
+| 09:14 | Created Sources/Features/Operations/Operation.swift | — | ~294 |
+| 09:14 | Created Sources/Features/Operations/ConflictPolicy.swift | — | ~995 |
+| 09:15 | Created Sources/Features/Operations/OperationExecutor.swift | — | ~2266 |
+| 09:15 | Edited Sources/Features/Operations/OperationExecutor.swift | 6→6 lines | ~83 |
+| 09:15 | Edited Sources/Features/Operations/OperationExecutor.swift | 6→6 lines | ~96 |
+| 09:15 | Edited Sources/Features/Operations/OperationExecutor.swift | added error handling | ~142 |
+| 09:16 | Created Sources/Features/Operations/OperationQueue.swift | — | ~1838 |
+| 09:16 | Created Sources/Features/Operations/OperationQueue.swift | — | ~1711 |
+| 09:17 | Edited Sources/Features/Operations/OperationQueue.swift | modified cancel() | ~408 |
+| 09:17 | Created Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift | — | ~1843 |
+| 09:17 | Created Tests/FeaturesTests/OperationsTests/OperationTests.swift | — | ~364 |
+| 09:18 | Created Tests/FeaturesTests/OperationsTests/ThroughputTests.swift | — | ~487 |
+| 09:18 | Created Tests/FeaturesTests/OperationsTests/TransferProgressTests.swift | — | ~811 |
+| 09:18 | Created Tests/FeaturesTests/OperationsTests/ConflictResolverTests.swift | — | ~848 |
+| 09:19 | Created Tests/FeaturesTests/OperationsTests/CrossProviderCopyTests.swift | — | ~2679 |
+| 09:19 | Created Tests/FeaturesTests/OperationsTests/OperationExecutorTests.swift | — | ~1479 |
+| 09:19 | Created Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | — | ~2064 |
+| 09:19 | Edited Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift | inline fix | ~23 |
+| 09:20 | Edited Sources/Features/Operations/ConflictPolicy.swift | inline fix | ~15 |
+| 09:20 | Edited Tests/FeaturesTests/OperationsTests/ConflictResolverTests.swift | — | ~0 |
+| 09:20 | Edited Tests/FeaturesTests/OperationsTests/TransferProgressTests.swift | inline fix | ~18 |
+| 09:20 | Edited Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | inline fix | ~18 |
+| 09:20 | Created Tests/FeaturesTests/OperationsTests/ConflictResolverTests.swift | — | ~869 |
+| 09:20 | Edited Tests/FeaturesTests/OperationsTests/OperationExecutorTests.swift | inline fix | ~15 |
+| 09:20 | Edited Tests/FeaturesTests/OperationsTests/CrossProviderCopyTests.swift | inline fix | ~15 |
+| 09:23 | Edited Tests/FeaturesTests/OperationsTests/CrossProviderCopyTests.swift | modified testCancelCleansUpPartialFile() | ~353 |
+| 10:17 | Created Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | — | ~1921 |
+| 10:32 | Edited Sources/Features/Operations/OperationExecutor.swift | added nullish coalescing | ~319 |
+| 10:32 | Edited Tests/FeaturesTests/OperationsTests/OperationExecutorTests.swift | testNoSourcesThrows() → testNoSourcesAndNoDestinationThrows() | ~171 |
+| 10:32 | Edited Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | inline fix | ~19 |
+| 10:32 | Edited Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | modified snapshot() | ~77 |
+| 10:32 | Edited Tests/FeaturesTests/OperationsTests/FileOperationQueueTests.swift | inline fix | ~25 |
+
+## Session: 2026-05-01 10:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:35 | Edited Sources/Features/Operations/Throughput.swift | modified estimatedSecondsRemaining() | ~236 |
+| 10:35 | Edited Sources/Features/Operations/CrossProviderCopy.swift | modified copy() | ~57 |
+| 10:35 | Edited Sources/Features/Operations/CrossProviderCopy.swift | 5→5 lines | ~52 |
+| 10:35 | Edited Sources/Features/Operations/OperationExecutor.swift | modified copyFile() | ~22 |
+| 10:36 | Edited Sources/Features/Operations/CrossProviderCopy.swift | modified copy() | ~132 |
+| 10:36 | Edited Sources/Features/Operations/CrossProviderCopy.swift | modified copy() | ~131 |
+| 10:36 | Edited Sources/Features/Operations/CrossProviderCopy.swift | 3→5 lines | ~23 |
+| 10:36 | Edited Sources/Features/Operations/OperationExecutor.swift | modified copyFile() | ~21 |
+| 10:36 | Edited Sources/Features/Operations/OperationExecutor.swift | modified collectPaths() | ~74 |
+| 10:38 | Created docs/roadmap/stevedore-mvp/session-10-handoff.md | — | ~2025 |
+| 10:38 | All quality gates passed: 587 tests 0 failures, 0 swiftformat, 0 swiftlint violations | FeaturesOperations + tests | ~100 |
+| 10:38 | Session 10 end: FeaturesOperations engine complete — 8 source files + 8 test files, 55 FeaturesTests pass | commit pending | ~15000 |
