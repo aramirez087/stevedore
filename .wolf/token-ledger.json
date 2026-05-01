@@ -3,11 +3,11 @@
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
     "total_tokens_estimated": 62657,
-    "total_reads": 319,
+    "total_reads": 330,
     "total_writes": 27,
     "total_sessions": 17,
     "anatomy_hits": 11,
-    "anatomy_misses": 306,
+    "anatomy_misses": 317,
     "repeated_reads_blocked": 6,
     "estimated_savings_vs_bare_cli": 8268
   },
@@ -2293,6 +2293,88 @@
         "output_tokens_estimated": 2611,
         "reads_count": 17,
         "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-05-01-0903",
+      "started": "2026-05-01T15:03:39.192Z",
+      "ended": "2026-05-01T15:06:18.942Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/OSLogger.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogCategory.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogEvent.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/LogRingBuffer.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/Redaction.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Services/Logging/SignpostHelper.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/RedactionTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/LogRingBufferTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/OSLoggerTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/LogEventTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/ServicesTests/LoggingTests/SignpostHelperTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 11,
+        "writes_count": 0,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 0
       }
