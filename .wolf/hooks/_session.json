@@ -1,21 +1,249 @@
 {
-  "session_id": "session-2026-05-02-2126",
-  "started": "2026-05-02T03:26:59.024Z",
-  "files_read": {},
+  "session_id": "session-2026-05-02-1106",
+  "started": "2026-05-02T17:06:10.770Z",
+  "files_read": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Package.swift": {
+      "count": 1,
+      "tokens": 2071,
+      "first_read": "2026-05-02T17:06:24.307Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Protocols/RemoteConnector.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:24.870Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Types/RemoteHostDescriptor.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:29.848Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Types/Credential.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:30.026Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Types/ConnectionScheme.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:30.646Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Protocols/CredentialStore.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:35.006Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Placeholder.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:06:35.249Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/Sidebar/SidebarViewModel.swift": {
+      "count": 1,
+      "tokens": 797,
+      "first_read": "2026-05-02T17:06:39.919Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/Core/Types/FilePath.swift": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-05-02T17:08:33.342Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialogViewModel.swift": {
+      "count": 2,
+      "tokens": 3289,
+      "first_read": "2026-05-02T17:16:22.892Z"
+    }
+  },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s14-git-integration/docs/roadmap/stevedore-mvp/session-14-handoff.md",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Package.swift",
+      "action": "edit",
+      "tokens": 52,
+      "at": "2026-05-02T17:07:11.491Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/AuthMode.swift",
       "action": "create",
-      "tokens": 2334,
-      "at": "2026-05-02T03:30:02.331Z"
+      "tokens": 82,
+      "at": "2026-05-02T17:07:23.420Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/TestConnectionStatus.swift",
+      "action": "create",
+      "tokens": 219,
+      "at": "2026-05-02T17:07:26.090Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ValidationErrorField.swift",
+      "action": "create",
+      "tokens": 190,
+      "at": "2026-05-02T17:07:28.532Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialogModule.swift",
+      "action": "create",
+      "tokens": 55,
+      "at": "2026-05-02T17:07:39.358Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialogViewModel.swift",
+      "action": "create",
+      "tokens": 3545,
+      "at": "2026-05-02T17:08:27.964Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialogViewModel.swift",
+      "action": "edit",
+      "tokens": 60,
+      "at": "2026-05-02T17:08:41.786Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/AuthSelector.swift",
+      "action": "create",
+      "tokens": 1082,
+      "at": "2026-05-02T17:09:07.387Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/TestConnectionButton.swift",
+      "action": "create",
+      "tokens": 627,
+      "at": "2026-05-02T17:09:13.129Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/AuthMode.swift",
+      "action": "edit",
+      "tokens": 174,
+      "at": "2026-05-02T17:09:20.077Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Forms/SFTPForm.swift",
+      "action": "create",
+      "tokens": 612,
+      "at": "2026-05-02T17:09:42.102Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Forms/FTPForm.swift",
+      "action": "create",
+      "tokens": 595,
+      "at": "2026-05-02T17:09:46.210Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Forms/WebDAVForm.swift",
+      "action": "create",
+      "tokens": 597,
+      "at": "2026-05-02T17:09:50.276Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Forms/S3Form.swift",
+      "action": "create",
+      "tokens": 1221,
+      "at": "2026-05-02T17:10:00.619Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/Forms/SMBForm.swift",
+      "action": "create",
+      "tokens": 596,
+      "at": "2026-05-02T17:10:05.165Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialog.swift",
+      "action": "create",
+      "tokens": 892,
+      "at": "2026-05-02T17:10:27.851Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogTestSupport.swift",
+      "action": "create",
+      "tokens": 458,
+      "at": "2026-05-02T17:11:21.933Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogViewModelTests.swift",
+      "action": "create",
+      "tokens": 1078,
+      "at": "2026-05-02T17:11:37.334Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogValidationTests.swift",
+      "action": "create",
+      "tokens": 1435,
+      "at": "2026-05-02T17:11:54.464Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogTestConnectionTests.swift",
+      "action": "create",
+      "tokens": 952,
+      "at": "2026-05-02T17:12:08.044Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogSaveFlowTests.swift",
+      "action": "create",
+      "tokens": 934,
+      "at": "2026-05-02T17:12:21.682Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift",
+      "action": "create",
+      "tokens": 1154,
+      "at": "2026-05-02T17:12:38.739Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift",
+      "action": "edit",
+      "tokens": 239,
+      "at": "2026-05-02T17:14:11.690Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift",
+      "action": "edit",
+      "tokens": 282,
+      "at": "2026-05-02T17:14:22.787Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/Sources/UI/ConnectDialog/ConnectDialogViewModel.swift",
+      "action": "edit",
+      "tokens": 392,
+      "at": "2026-05-02T17:16:39.808Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s23-connect-dialog-ui/docs/roadmap/stevedore-mvp/session-23-handoff.md",
+      "action": "create",
+      "tokens": 2528,
+      "at": "2026-05-02T17:18:21.535Z"
+    },
+    {
+      "file": "/tmp/s23-commit-msg.txt",
+      "action": "create",
+      "tokens": 92,
+      "at": "2026-05-02T17:19:04.688Z"
     }
   ],
   "edit_counts": {
-    "docs/roadmap/stevedore-mvp/session-14-handoff.md": 1
+    "Package.swift": 1,
+    "Sources/UI/ConnectDialog/AuthMode.swift": 2,
+    "Sources/UI/ConnectDialog/TestConnectionStatus.swift": 1,
+    "Sources/UI/ConnectDialog/ValidationErrorField.swift": 1,
+    "Sources/UI/ConnectDialog/ConnectDialogModule.swift": 1,
+    "Sources/UI/ConnectDialog/ConnectDialogViewModel.swift": 3,
+    "Sources/UI/ConnectDialog/AuthSelector.swift": 1,
+    "Sources/UI/ConnectDialog/TestConnectionButton.swift": 1,
+    "Sources/UI/ConnectDialog/Forms/SFTPForm.swift": 1,
+    "Sources/UI/ConnectDialog/Forms/FTPForm.swift": 1,
+    "Sources/UI/ConnectDialog/Forms/WebDAVForm.swift": 1,
+    "Sources/UI/ConnectDialog/Forms/S3Form.swift": 1,
+    "Sources/UI/ConnectDialog/Forms/SMBForm.swift": 1,
+    "Sources/UI/ConnectDialog/ConnectDialog.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogTestSupport.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogViewModelTests.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogValidationTests.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogTestConnectionTests.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogSaveFlowTests.swift": 1,
+    "Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift": 3,
+    "docs/roadmap/stevedore-mvp/session-23-handoff.md": 1,
+    "../../../../../../tmp/s23-commit-msg.txt": 1
   },
-  "anatomy_hits": 0,
-  "anatomy_misses": 0,
-  "repeated_reads_warned": 0,
+  "anatomy_hits": 3,
+  "anatomy_misses": 7,
+  "repeated_reads_warned": 1,
   "cerebrum_warnings": 0,
-  "stop_count": 0
+  "stop_count": 1
 }

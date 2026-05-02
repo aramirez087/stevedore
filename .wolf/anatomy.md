@@ -1,17 +1,22 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T03:30:02.326Z
-> Files: 448 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T17:19:04.680Z
+> Files: 494 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../../../../../tmp/
+
+- `s23-commit-msg.txt` (~80 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
 - `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
+- `.session-23-plan.md` — Session 23 Implementation Plan — Connect-to-Server Dialog UI (~5209 tok)
 
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2071 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2093 tok)
 
 ## .build/
 
@@ -479,6 +484,25 @@
 - `URLResourceMapper.swift` — Internal `enum` mapping `URLResourceValues` → `FileKind` and `FileAttributes`; reads POSIX permissions via `CFFileSecurityGetMode`. (~250 tok)
 - `VolumeDiscovery.swift` — `public actor` enumerating mounted volumes and publishing mount/unmount events via DiskArbitration; actor-owned `DACallbackBox` prevents retain leaks. (~1460 tok)
 
+## Sources/UI/ConnectDialog/
+
+- `AuthMode.swift` — / Authentication modes available for remote connections. (~163 tok)
+- `AuthSelector.swift` — / Renders the authentication-mode picker and credential inputs for the active mode. (~1010 tok)
+- `ConnectDialog.swift` — / Top-level connect-to-server modal. (~833 tok)
+- `ConnectDialogModule.swift` — / Marker namespace for the `UIConnectDialog` module — remote-connect dialog. (~51 tok)
+- `ConnectDialogViewModel.swift` — / Injectable closure that presents a file-picker and returns the chosen URL. (~3423 tok)
+- `TestConnectionButton.swift` — / A button that triggers `viewModel.testConnection()` and surfaces (~585 tok)
+- `TestConnectionStatus.swift` — / Current status of the test-connection action. (~205 tok)
+- `ValidationErrorField.swift` — / Identifies which form field has a validation error. (~177 tok)
+
+## Sources/UI/ConnectDialog/Forms/
+
+- `FTPForm.swift` — / Form fields for FTP connections. (~556 tok)
+- `S3Form.swift` — / Form fields for Amazon S3 connections. (~1140 tok)
+- `SFTPForm.swift` — / Form fields for SFTP connections. (~571 tok)
+- `SMBForm.swift` — / Form fields for SMB connections. (~556 tok)
+- `WebDAVForm.swift` — / Form fields for WebDAV connections. (~558 tok)
+
 ## Sources/UI/DesignSystem/
 
 - `DesignSystemModule.swift` — Module sentinel `DesignSystemModule.moduleName = "DesignSystem"`. (~30 tok)
@@ -634,6 +658,15 @@
 
 - `TempDirectoryFixture.swift` — Per-test UUID-keyed temp dir; `setUp`/`tearDown` with recursive permission restore; `@discardableResult makeFile` and `makeSubdirectory` helpers. (~540 tok)
 
+## Tests/UITests/ConnectDialogTests/
+
+- `ConnectDialogRedactionTests.swift` — Class: ConnectDialogRedactionTests (~1168 tok)
+- `ConnectDialogSaveFlowTests.swift` — Class: ConnectDialogSaveFlowTests (~872 tok)
+- `ConnectDialogTestConnectionTests.swift` — Class: ConnectDialogTestConnectionTests (~888 tok)
+- `ConnectDialogTestSupport.swift` — Struct: TestCall (~428 tok)
+- `ConnectDialogValidationTests.swift` — Class: ConnectDialogValidationTests (~1339 tok)
+- `ConnectDialogViewModelTests.swift` — Class: ConnectDialogViewModelTests (~1006 tok)
+
 ## Tests/UITests/DesignSystemTests/
 
 - `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
@@ -708,3 +741,4 @@
 - `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
 - `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)
 - `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
+- `session-23-handoff.md` — Session 23 Handoff — Connect-to-Server Dialog UI (~2212 tok)
