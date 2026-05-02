@@ -468,3 +468,36 @@
 | 21:30 | Created docs/roadmap/stevedore-mvp/session-14-handoff.md | — | ~2178 |
 | 21:30 | Session 14 complete — git status integration; all 43 Git tests pass, all quality gates green | docs/roadmap/stevedore-mvp/session-14-handoff.md | success | ~500 |
 | 21:30 | Session end: 1 writes across 1 files (session-14-handoff.md) | 0 reads | ~2334 tok |
+
+## Session: 2026-05-02 10:58
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 3→7 lines | ~84 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | expanded (+6 lines) | ~248 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 6→7 lines | ~112 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 3→8 lines | ~139 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 2→2 lines | ~30 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 5→8 lines | ~100 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 1→2 lines | ~96 |
+| 11:04 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md | 3→3 lines | ~39 |
+| 11:04 | s24 read-only plan: read catalog/store/DesignSystem/Package.swift; wrote .session-24-plan.md with 2 critical fixes (catalog count 15→24, swiftlint --path invalid) | /docs/claude-sessions/stevedore-mvp/.session-24-plan.md | plan written | ~8k |
+| 11:05 | Session end: 8 writes across 1 files (.session-24-plan.md) | 10 reads | ~3032 tok |
+
+## Session: 2026-05-02 11:05
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:11 | Edited Package.swift | 1→4 lines | ~49 |
+| 11:11 | Edited Sources/Services/Settings/Settings+Catalog.swift | expanded (+62 lines) | ~580 |
+| 11:11 | Edited Tests/ServicesTests/SettingsTests/SettingsCatalogTests.swift | 15 → 24 | ~29 |
+| 11:11 | Created Sources/UI/SettingsUI/Bindings/SettingBinding.swift | — | ~485 |
+| 11:12 | Created Sources/UI/SettingsUI/SettingsScene.swift | — | ~276 |
+| 11:12 | Created Sources/UI/SettingsUI/Tabs/GeneralTab.swift | — | ~539 |
+| 11:12 | Created Sources/UI/SettingsUI/Tabs/AppearanceTab.swift | — | ~518 |
+| 11:12 | Created Sources/UI/SettingsUI/Tabs/FileDisplayTab.swift | — | ~688 |
+| 11:12 | Created Sources/UI/SettingsUI/Tabs/AdvancedTab.swift | — | ~643 |
+| 11:12 | Created Tests/UITests/SettingsUITests/SettingBindingTests.swift | — | ~993 |
+| 11:13 | Created Tests/UITests/SettingsUITests/SettingsSceneTests.swift | — | ~332 |
+| 11:17 | Created docs/roadmap/stevedore-mvp/session-24-handoff.md | — | ~1792 |
+| 11:17 | Session 24: SettingBinding + 4 tab views + 9 catalog settings + 19 tests | Sources/UI/SettingsUI/, Tests/UITests/SettingsUITests/ | pass | ~8000 |

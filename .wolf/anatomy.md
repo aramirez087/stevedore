@@ -1,17 +1,18 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T03:30:02.326Z
-> Files: 448 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T17:17:03.601Z
+> Files: 484 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
 - `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
+- `.session-24-plan.md` — Session 24 Implementation Plan — Settings UI (~6070 tok)
 
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2071 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2095 tok)
 
 ## .build/
 
@@ -479,6 +480,10 @@
 - `URLResourceMapper.swift` — Internal `enum` mapping `URLResourceValues` → `FileKind` and `FileAttributes`; reads POSIX permissions via `CFFileSecurityGetMode`. (~250 tok)
 - `VolumeDiscovery.swift` — `public actor` enumerating mounted volumes and publishing mount/unmount events via DiskArbitration; actor-owned `DACallbackBox` prevents retain leaks. (~1460 tok)
 
+## Sources/Services/Settings/
+
+- `Settings+Catalog.swift` — / Canonical registry of every app-level `Setting`. (~1119 tok)
+
 ## Sources/UI/DesignSystem/
 
 - `DesignSystemModule.swift` — Module sentinel `DesignSystemModule.moduleName = "DesignSystem"`. (~30 tok)
@@ -519,6 +524,21 @@
 - `Spacing.swift` — `public enum Spacing` with five `CGFloat` class constants: xs=4, sm=8, md=16, lg=24, xl=32. (~40 tok)
 - `Theme.swift` — `public struct Theme: Sendable`; composes `ColorTokens` + `Typography`; `@Entry var theme` in `EnvironmentValues`; `View.theme(_:)` modifier. (~100 tok)
 - `Typography.swift` — `public struct Typography: Sendable`; five `Font` tokens: largeTitle/title/body/caption/mono. (~80 tok)
+
+## Sources/UI/SettingsUI/
+
+- `SettingsScene.swift` — / Content view for the macOS Preferences (`SwiftUI.Settings`) scene. (~276 tok)
+
+## Sources/UI/SettingsUI/Bindings/
+
+- `SettingBinding.swift` — / Bridges a `Setting<T>` to a SwiftUI `Binding<T>` by subscribing to the (~485 tok)
+
+## Sources/UI/SettingsUI/Tabs/
+
+- `AdvancedTab.swift` — SwiftUI view: AdvancedTab (~643 tok)
+- `AppearanceTab.swift` — SwiftUI view: AppearanceTab (~518 tok)
+- `FileDisplayTab.swift` — SwiftUI view: FileDisplayTab (~688 tok)
+- `GeneralTab.swift` — SwiftUI view: GeneralTab (~539 tok)
 
 ## Sources/UI/Sidebar/
 
@@ -634,9 +654,18 @@
 
 - `TempDirectoryFixture.swift` — Per-test UUID-keyed temp dir; `setUp`/`tearDown` with recursive permission restore; `@discardableResult makeFile` and `makeSubdirectory` helpers. (~540 tok)
 
+## Tests/ServicesTests/SettingsTests/
+
+- `SettingsCatalogTests.swift` — Class: SettingsCatalogTests (~287 tok)
+
 ## Tests/UITests/DesignSystemTests/
 
 - `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
+
+## Tests/UITests/SettingsUITests/
+
+- `SettingBindingTests.swift` — Class: SettingBindingTests (~993 tok)
+- `SettingsSceneTests.swift` — Class: SettingsSceneTests (~332 tok)
 
 ## Tests/UITests/SidebarTests/
 
@@ -708,3 +737,4 @@
 - `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
 - `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)
 - `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
+- `session-24-handoff.md` — Session 24 Handoff — Settings UI (~1680 tok)

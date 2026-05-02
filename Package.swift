@@ -77,7 +77,10 @@ let libraryModules: [LibraryModule] = [
     LibraryModule(name: "UISyncDialog", path: "Sources/UI/SyncDialog", extraDependencies: []),
     LibraryModule(name: "UIRenameDialog", path: "Sources/UI/RenameDialog", extraDependencies: []),
     LibraryModule(name: "UIConnectDialog", path: "Sources/UI/ConnectDialog", extraDependencies: []),
-    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: []),
+    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: [
+        .target(name: "DesignSystem"),
+        .target(name: "ServicesSettings"),
+    ]),
     LibraryModule(name: "UIUninstallerUI", path: "Sources/UI/UninstallerUI", extraDependencies: []),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
     LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),
