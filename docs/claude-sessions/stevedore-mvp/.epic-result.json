@@ -1,0 +1,87 @@
+{
+  "epic": "stevedore-mvp",
+  "status": "failed",
+  "first_failed_id": "session-23",
+  "sessions": {
+    "session-01": {
+      "status": "skipped",
+      "slug": "charter-and-scaffolding",
+      "elapsed": 0
+    },
+    "session-02": {
+      "status": "skipped",
+      "slug": "core-utilities",
+      "elapsed": 0
+    },
+    "session-03": {
+      "status": "skipped",
+      "slug": "local-fs-provider",
+      "elapsed": 0
+    },
+    "session-04": {
+      "status": "skipped",
+      "slug": "remote-providers",
+      "elapsed": 0
+    },
+    "session-05": {
+      "status": "skipped",
+      "slug": "archive-provider",
+      "elapsed": 0
+    },
+    "session-06": {
+      "status": "skipped",
+      "slug": "credentials-service",
+      "elapsed": 0
+    },
+    "session-07": {
+      "status": "skipped",
+      "slug": "settings-service",
+      "elapsed": 0
+    },
+    "session-08": {
+      "status": "skipped",
+      "slug": "design-system",
+      "elapsed": 0
+    },
+    "session-09": {
+      "status": "skipped",
+      "slug": "logging-service",
+      "elapsed": 0
+    },
+    "session-10": {
+      "status": "skipped",
+      "slug": "operations-engine",
+      "elapsed": 0
+    },
+    "session-11": {
+      "status": "skipped",
+      "slug": "sync-engine",
+      "elapsed": 0
+    },
+    "session-12": {
+      "status": "skipped",
+      "slug": "rename-engine",
+      "elapsed": 0
+    },
+    "session-13": {
+      "status": "skipped",
+      "slug": "preview-service",
+      "elapsed": 0
+    },
+    "session-14": {
+      "status": "skipped",
+      "slug": "git-integration",
+      "elapsed": 0
+    },
+    "session-15": {
+      "status": "skipped",
+      "slug": "uninstaller-engine",
+      "elapsed": 0
+    }
+  },
+  "merged_sessions": [],
+  "wave": 3,
+  "runtime_seconds": 12,
+  "started_at": 1777741029,
+  "ended_at": 1777741041
+}
