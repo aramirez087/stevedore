@@ -87,7 +87,10 @@ let libraryModules: [LibraryModule] = [
         .target(name: "DesignSystem"),
         .target(name: "ServicesSettings"),
     ]),
-    LibraryModule(name: "UIUninstallerUI", path: "Sources/UI/UninstallerUI", extraDependencies: []),
+    LibraryModule(name: "UIUninstallerUI", path: "Sources/UI/UninstallerUI", extraDependencies: [
+        .target(name: "DesignSystem"),
+        .target(name: "FeaturesUninstaller"),
+    ]),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
     LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),
 ]
@@ -174,6 +177,7 @@ let testTargetSpecs: [TestTargetSpec] = [
             .target(name: "UIConnectDialog"),
             .target(name: "UISettingsUI"),
             .target(name: "UIUninstallerUI"),
+            .target(name: "FeaturesUninstaller"),
             .target(name: "UIMenus"),
             .target(name: "MainWindow"),
         ]
