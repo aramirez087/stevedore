@@ -37,6 +37,7 @@ func makeTestMainWindowModel() -> MainWindowModel {
 }
 
 // MARK: - Fake sidebar dependencies
+
 // Prefixed MW to avoid collisions with SidebarTests fakes in the same UITests target.
 
 @MainActor
@@ -55,15 +56,15 @@ final class MWFakeBookmarksProvider: BookmarksProviding {
     var bookmarks: [Bookmark] = []
 
     func add(_ bookmark: Bookmark) {
-        bookmarks.append(bookmark)
+        self.bookmarks.append(bookmark)
     }
 
     func remove(id: Bookmark.ID) {
-        bookmarks.removeAll { $0.id == id }
+        self.bookmarks.removeAll { $0.id == id }
     }
 
     func move(fromOffsets: IndexSet, toOffset: Int) {
-        bookmarks.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        self.bookmarks.move(fromOffsets: fromOffsets, toOffset: toOffset)
     }
 }
 

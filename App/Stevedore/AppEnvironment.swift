@@ -23,28 +23,28 @@ final class AppEnvironment {
     @ObservationIgnored private let bookmarksRepository: BookmarksRepository?
 
     init() {
-        localProvider = LocalFileSystemProvider()
+        self.localProvider = LocalFileSystemProvider()
 
         let appSupport = FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("Stevedore")
 
-        workspacesRepository = try? {
+        self.workspacesRepository = try? {
             let store = try JSONFileStore(directory: appSupport, filename: "workspaces")
             return WorkspacesRepository(store: store)
         }()
 
-        bookmarksRepository = try? {
+        self.bookmarksRepository = try? {
             let store = try JSONFileStore(directory: appSupport, filename: "bookmarks")
             return BookmarksRepository(store: store)
         }()
 
         let executor = OperationExecutor(
-            providers: [ConnectionScheme.local: localProvider],
+            providers: [ConnectionScheme.local: self.localProvider],
             conflictResolver: ConflictResolver(),
             progressTracker: TransferProgressTracker()
         )
-        operationQueue = FileOperationQueue(executor: executor)
+        self.operationQueue = FileOperationQueue(executor: executor)
 
         let home = FilePath(scheme: .local, posix: NSHomeDirectory())
         let leftSession = PaneSession(id: .left, initialPath: home, provider: localProvider)
@@ -62,13 +62,13 @@ final class AppEnvironment {
             ejector: SystemVolumeEjector()
         )
 
-        mainWindowModel = MainWindowModel(
-            operationQueue: operationQueue,
+        self.mainWindowModel = MainWindowModel(
+            operationQueue: self.operationQueue,
             sidebarViewModel: sidebarVM,
             windowState: WindowState(),
             leftSession: leftSession,
             rightSession: rightSession,
-            repository: workspacesRepository
+            repository: self.workspacesRepository
         )
     }
 }
@@ -91,23 +91,23 @@ private final class BookmarksProviderAdapter: BookmarksProviding {
     }
 
     func add(_ bookmark: Bookmark) {
-        bookmarks.append(bookmark)
-        persist()
+        self.bookmarks.append(bookmark)
+        self.persist()
     }
 
     func remove(id: Bookmark.ID) {
-        bookmarks.removeAll { $0.id == id }
-        persist()
+        self.bookmarks.removeAll { $0.id == id }
+        self.persist()
     }
 
     func move(fromOffsets: IndexSet, toOffset: Int) {
-        bookmarks.move(fromOffsets: fromOffsets, toOffset: toOffset)
-        persist()
+        self.bookmarks.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        self.persist()
     }
 
     private func persist() {
         guard let repo = repository else { return }
-        let snapshot = bookmarks
+        let snapshot = self.bookmarks
         Task { try? await repo.save(snapshot) }
     }
 }
@@ -121,7 +121,7 @@ private struct VolumeDiscoveryAdaptor: VolumeDiscoveryProviding {
     }
 
     func currentVolumes() async throws -> [SidebarVolume] {
-        try await discovery.currentVolumes().map { vol in
+        try await self.discovery.currentVolumes().map { vol in
             SidebarVolume(
                 url: vol.url,
                 name: vol.name,
@@ -132,7 +132,7 @@ private struct VolumeDiscoveryAdaptor: VolumeDiscoveryProviding {
     }
 
     func volumeEvents() -> AsyncStream<SidebarVolumeEvent> {
-        let raw = discovery.events()
+        let raw = self.discovery.events()
         return AsyncStream { continuation in
             let task = Task {
                 for await event in raw {

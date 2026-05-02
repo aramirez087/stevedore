@@ -30,6 +30,11 @@
 - [2026-05-02] `swiftlint --path <dir>` is not a valid flag. Correct form: `swiftlint --strict <dir1> <dir2>` (positional path arguments).
 - [2026-05-02] `@testable import UISidebar` is required in all sidebar test files — `start()`, `ejectVolume(url:)`, and all section views are `internal`. Plain `import UISidebar` causes "inaccessible due to 'internal' protection level" errors.
 - [2026-05-02] Retain cycle pattern in `@Observable` task: capturing `let discovery = volumeDiscovery` (Sendable) and `guard let self else { break }` **inside** the `for await` loop body is correct. `guard let self else { return }` **before** the loop creates a retain cycle. Weak `self` capture plus per-iteration `guard` is the safe pattern.
+- [2026-05-02] **`@Observable` `didSet` infinite recursion**: setting a stored property inside its own `didSet` always recurses. Fix: compute clamped value, `guard clamped != self.value else { return }`, then assign.
+- [2026-05-02] **`Tab` ambiguous on macOS 15+**: SwiftUI adds `SwiftUI.Tab` in macOS 15. Any file importing both `Core` and `SwiftUI` must qualify as `Core.Tab`. Same pattern applies to `FeaturesOperations.Operation` vs `Foundation.Operation`.
+- [2026-05-02] **`ConnectionStatus` enum cases**: only `.idle`, `.connecting`, `.connected`, `.error(String)` exist — there is NO `.disconnected` case. Use `.idle` for stub/no-op providers.
+- [2026-05-02] **Test fake naming collisions in shared test target**: all `UITests` target fakes live in the same namespace. Prefix fakes with the module abbreviation (e.g. `MW` for MainWindow) to avoid "invalid redeclaration" errors when SidebarTestSupport defines the same names.
+- [2026-05-02] **`swift build 2>&1 | tee file; echo "EXIT: $?"** captures `tee`'s exit code, NOT `swift build`'s. Use `swift build; echo "EXIT:$?"` (no pipe) to get the true build exit code.
 
 ## Decision Log
 

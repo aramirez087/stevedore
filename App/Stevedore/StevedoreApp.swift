@@ -6,6 +6,6 @@ struct StevedoreApp: App {
     @State private var env = AppEnvironment()
 
     var body: some Scene {
-        MainWindowScene(model: env.mainWindowModel)
+        MainWindowScene(model: self.env.mainWindowModel)
     }
 }

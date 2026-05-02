@@ -37,32 +37,32 @@ public final class PaneSession {
 
     /// All external navigations route through here to keep back/forward history in sync.
     public func navigate(to path: FilePath) {
-        toolbarViewModel.navigate(to: path)
+        self.toolbarViewModel.navigate(to: path)
     }
 
     // MARK: - Tab management
 
     public func openTab(at path: FilePath) {
         let tab = Tab(path: path)
-        tabs.append(tab)
-        activateTab(tab.id)
+        self.tabs.append(tab)
+        self.activateTab(tab.id)
     }
 
     public func closeTab(_ tabID: Tab.ID) {
-        guard tabs.count > 1 else { return }
-        tabs.removeAll { $0.id == tabID }
-        if activeTabID == tabID {
-            activeTabID = tabs.last?.id
+        guard self.tabs.count > 1 else { return }
+        self.tabs.removeAll { $0.id == tabID }
+        if self.activeTabID == tabID {
+            self.activeTabID = self.tabs.last?.id
             if let path = tabs.last?.path {
-                toolbarViewModel.navigate(to: path)
+                self.toolbarViewModel.navigate(to: path)
             }
         }
     }
 
     public func activateTab(_ tabID: Tab.ID) {
         guard let tab = tabs.first(where: { $0.id == tabID }) else { return }
-        activeTabID = tabID
-        navigate(to: tab.path)
+        self.activeTabID = tabID
+        self.navigate(to: tab.path)
     }
 
     // MARK: - Private
@@ -70,9 +70,9 @@ public final class PaneSession {
     /// Updates `currentPath` and the active tab path. Must NOT call `navigate(to:)` or
     /// `toolbarViewModel.navigate(to:)` — only called from `toolbarViewModel.onNavigate`.
     private func updatePath(to path: FilePath) {
-        currentPath = path
+        self.currentPath = path
         if let idx = tabs.firstIndex(where: { $0.id == activeTabID }) {
-            tabs[idx] = Tab(id: tabs[idx].id, path: path, title: tabs[idx].title)
+            self.tabs[idx] = Tab(id: self.tabs[idx].id, path: path, title: self.tabs[idx].title)
         }
     }
 }

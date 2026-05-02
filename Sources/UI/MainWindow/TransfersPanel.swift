@@ -18,7 +18,7 @@ struct TransfersPanel: View {
                 .padding(.bottom, Spacing.xs)
             ScrollView {
                 LazyVStack(spacing: Spacing.xs) {
-                    ForEach(operations, id: \.id) { op in
+                    ForEach(self.operations, id: \.id) { op in
                         TransferRow(operation: op)
                     }
                 }
@@ -38,23 +38,23 @@ private struct TransferRow: View {
 
     var body: some View {
         HStack(spacing: Spacing.sm) {
-            Image(systemName: iconName)
-                .foregroundStyle(theme.colors.accent)
+            Image(systemName: self.iconName)
+                .foregroundStyle(self.theme.colors.accent)
                 .frame(width: 16)
             VStack(alignment: .leading, spacing: 2) {
-                SDLabel(operation.descriptor.kind.displayName, variant: .primary)
+                SDLabel(self.operation.descriptor.kind.displayName, variant: .primary)
                 if let dest = operation.descriptor.destination {
                     SDLabel(dest.lastComponent ?? dest.posixString, variant: .secondary)
                 }
             }
             Spacer()
-            SDLabel(operation.state.displayName, variant: .caption)
+            SDLabel(self.operation.state.displayName, variant: .caption)
         }
         .padding(.vertical, Spacing.xs)
     }
 
     private var iconName: String {
-        switch operation.descriptor.kind {
+        switch self.operation.descriptor.kind {
         case .copy: "doc.on.doc"
         case .move: "arrow.right.doc.on.clipboard"
         case .delete, .trash: "trash"

@@ -18,6 +18,17 @@
 |------|--------|---------|---------|--------|
 | 00:00 | Wrote 16 Swift source files for FeaturesUninstaller module | Sources/Features/Uninstaller/ (11 files + 3 Protocols + 3 Testing) | All files created; anatomy.md updated | ~3000 |
 | 16:14 | Ran all quality gates | swift build/test, swiftformat, swiftlint | 587 tests pass, 0 violations, 0 format issues | ~500 |
+
+## Session: 2026-05-02 16:50 (Session 26 — main window shell fixes)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:50 | Fixed WindowState.splitFraction infinite recursion | Sources/UI/MainWindow/WindowState.swift | Added guard in didSet; signal 11 crash resolved | ~300 |
+| 16:52 | Fixed Tab ambiguity in PaneHost | Sources/UI/MainWindow/PaneHost.swift | Core.Tab qualification; build error resolved | ~200 |
+| 16:53 | Fixed .disconnected -> .idle in StubConnectionStatusProvider | App/Stevedore/AppEnvironment.swift | ConnectionStatus has no .disconnected case | ~100 |
+| 16:54 | MW-prefixed fakes in MainWindowTestSupport | Tests/UITests/MainWindowTests/MainWindowTestSupport.swift | Avoids collision with SidebarTestSupport fakes | ~200 |
+| 16:57 | Build clean, 17 tests pass, swiftformat + swiftlint clean | All session 26 files | Build complete, EXIT:0, no lint violations | ~400 |
+| 17:00 | Committed fixes | 73cad9f | fix: Session 26 post-commit corrections | ~100 |
 | 16:15 | Session end: Session 10 operations engine fully verified. All quality gates pass. | — | ~100 |
 
 ## Session: 2026-05-01 20:31
@@ -621,3 +632,25 @@
 | 16:54 | Edited Sources/UI/MainWindow/TransfersPanel.swift | added 1 import(s) | ~20 |
 | 16:54 | Edited Sources/UI/MainWindow/PaneHost.swift | 2→2 lines | ~16 |
 | 16:54 | Edited Sources/UI/MainWindow/PaneHost.swift | 2→2 lines | ~16 |
+| 16:55 | Edited Sources/UI/MainWindow/WindowState.swift | 5→7 lines | ~68 |
+
+## Session: 2026-05-02 16:56
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:56 | Edited Sources/UI/MainWindow/WindowState.swift | inline fix | ~11 |
+| 16:58 | Created docs/roadmap/stevedore-mvp/session-26-handoff.md | — | ~1645 |
+| 16:58 | Session end: 2 writes across 2 files (WindowState.swift, session-26-handoff.md) | 2 reads | ~4444 tok |
+
+## Session: 2026-05-02 (Session 26 — Main Window Shell, continuation)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:55 | Verified fixes compile: Core.Tab explicit qualifier + import Core in TransfersPanel | PaneHost.swift, TransfersPanel.swift | swift build --target MainWindow EXIT:0 | ~400 tok |
+| 16:56 | Full package build -warnings-as-errors | all targets | Build complete EXIT:0 | ~1200 tok |
+| 16:57 | swift test --filter MainWindow | Tests/UITests/MainWindowTests/ | 12/12 passed | ~600 tok |
+| 16:57 | swift test (full suite) | all | 952 tests, 1 pre-existing failure, 0 regressions | ~800 tok |
+| 16:57 | swiftformat lint + swiftlint --strict | App/Stevedore, Sources/UI/MainWindow | 0 violations | ~200 tok |
+| 16:58 | Created session-26-handoff.md | docs/roadmap/stevedore-mvp/ | handoff doc written | ~600 tok |
+| 16:59 | Staged and committed Session 26 | all S26 files | feat: Session 26 — main window shell | ~200 tok |
+| 16:59 | Session end: 2 writes across 2 files (WindowState.swift, session-26-handoff.md) | 2 reads | ~4444 tok |

@@ -25,17 +25,17 @@ public struct DualPaneLayout<Left: View, Right: View>: View {
     public var body: some View {
         GeometryReader { geo in
             HStack(spacing: 0) {
-                left
-                    .frame(width: leftWidth(in: geo.size.width))
-                PaneDividerStrip(splitFraction: $splitFraction, totalWidth: geo.size.width)
-                right
+                self.left
+                    .frame(width: self.leftWidth(in: geo.size.width))
+                PaneDividerStrip(splitFraction: self.$splitFraction, totalWidth: geo.size.width)
+                self.right
                     .frame(maxWidth: .infinity)
             }
         }
     }
 
     private func leftWidth(in total: CGFloat) -> CGFloat {
-        let clamped = max(WindowState.minFraction, min(WindowState.maxFraction, splitFraction))
+        let clamped = max(WindowState.minFraction, min(WindowState.maxFraction, self.splitFraction))
         // Subtract half the divider strip (8 pt) so left + divider + right = total.
         return total * clamped - 4
     }
@@ -54,8 +54,9 @@ private struct PaneDividerStrip: View {
             .gesture(
                 DragGesture()
                     .onChanged { value in
-                        let newFraction = Double((value.location.x + totalWidth * splitFraction) / totalWidth)
-                        splitFraction = max(WindowState.minFraction, min(WindowState.maxFraction, newFraction))
+                        let newFraction = Double((value.location.x + self.totalWidth * self.splitFraction) / self
+                            .totalWidth)
+                        self.splitFraction = max(WindowState.minFraction, min(WindowState.maxFraction, newFraction))
                     }
             )
             .onHover { inside in

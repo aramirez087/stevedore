@@ -13,7 +13,7 @@ public struct MainWindowScene: Scene {
 
     public var body: some Scene {
         WindowGroup("Stevedore", id: "main") {
-            MainWindowView(model: model)
+            MainWindowView(model: self.model)
         }
         .commands { AppCommands() }
         .defaultSize(width: 1200, height: 750)

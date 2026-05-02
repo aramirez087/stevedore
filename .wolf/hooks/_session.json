@@ -1,84 +1,39 @@
 {
-  "session_id": "session-2026-05-02-1626",
-  "started": "2026-05-02T22:26:53.181Z",
+  "session_id": "session-2026-05-02-1656",
+  "started": "2026-05-02T22:56:09.414Z",
   "files_read": {
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/Sidebar/ConnectionStatus.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/WindowState.swift": {
       "count": 1,
-      "tokens": 48,
-      "first_read": "2026-05-02T22:26:56.842Z"
+      "tokens": 543,
+      "first_read": "2026-05-02T22:56:24.039Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/AppEnvironment.swift": {
-      "count": 2,
-      "tokens": 1652,
-      "first_read": "2026-05-02T22:26:58.414Z"
-    },
-    "/private/tmp/claude-501/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s26-main-window-shell/31c48ebd-776a-4fec-b854-c14b7137fde7/tasks/bg5y4p1q7.output": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/docs/roadmap/stevedore-mvp/session-25-handoff.md": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T22:42:23.820Z"
-    },
-    "/private/tmp/claude-501/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s26-main-window-shell/5b9f4505-be61-45ed-a567-7004cbaea4ce/tasks/ba551tww7.output": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T22:42:33.264Z"
-    },
-    "/private/tmp/claude-501/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s26-main-window-shell/5b9f4505-be61-45ed-a567-7004cbaea4ce/tasks/b56dk3cfk.output": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T22:53:02.468Z"
-    },
-    "/Users/aramirez/.claude/projects/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s26-main-window-shell/31c48ebd-776a-4fec-b854-c14b7137fde7/tool-results/b82ctp5sv.txt": {
-      "count": 2,
-      "tokens": 0,
-      "first_read": "2026-05-02T22:54:00.425Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneHost.swift": {
-      "count": 2,
-      "tokens": 1158,
-      "first_read": "2026-05-02T22:54:17.201Z"
+      "tokens": 2126,
+      "first_read": "2026-05-02T22:57:36.608Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/AppEnvironment.swift",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/WindowState.swift",
       "action": "edit",
-      "tokens": 26,
-      "at": "2026-05-02T22:27:01.451Z"
+      "tokens": 12,
+      "at": "2026-05-02T22:56:27.741Z"
     },
     {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/AppEnvironment.swift",
-      "action": "edit",
-      "tokens": 14,
-      "at": "2026-05-02T22:27:12.418Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Package.swift",
-      "action": "edit",
-      "tokens": 42,
-      "at": "2026-05-02T22:53:57.158Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/TransfersPanel.swift",
-      "action": "edit",
-      "tokens": 21,
-      "at": "2026-05-02T22:54:16.630Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneHost.swift",
-      "action": "edit",
-      "tokens": 17,
-      "at": "2026-05-02T22:54:19.859Z"
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/docs/roadmap/stevedore-mvp/session-26-handoff.md",
+      "action": "create",
+      "tokens": 1763,
+      "at": "2026-05-02T22:58:24.797Z"
     }
   ],
   "edit_counts": {
-    "App/Stevedore/AppEnvironment.swift": 2,
-    "Package.swift": 1,
-    "Sources/UI/MainWindow/TransfersPanel.swift": 1,
-    "Sources/UI/MainWindow/PaneHost.swift": 1
+    "Sources/UI/MainWindow/WindowState.swift": 1,
+    "docs/roadmap/stevedore-mvp/session-26-handoff.md": 1
   },
-  "anatomy_hits": 3,
-  "anatomy_misses": 4,
-  "repeated_reads_warned": 3,
+  "anatomy_hits": 2,
+  "anatomy_misses": 0,
+  "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 0
+  "stop_count": 2
 }

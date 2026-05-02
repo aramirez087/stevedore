@@ -30,25 +30,25 @@ public struct PaneHost: View {
 
     public var body: some View {
         VStack(spacing: 0) {
-            PaneToolbar(viewModel: session.toolbarViewModel)
-            PaneTabStrip(session: session)
+            PaneToolbar(viewModel: self.session.toolbarViewModel)
+            PaneTabStrip(session: self.session)
             Divider()
-            PaneContentPlaceholder(path: session.currentPath)
+            PaneContentPlaceholder(path: self.session.currentPath)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .overlay(activeBorder)
+        .overlay(self.activeBorder)
         .contentShape(Rectangle())
-        .onTapGesture { onActivate() }
+        .onTapGesture { self.onActivate() }
         .dropDestination(for: URL.self) { urls, _ in
             let paths = urls.map { FilePath(scheme: .local, posix: $0.path) }
-            onDropped(paths)
+            self.onDropped(paths)
             return !paths.isEmpty
         }
     }
 
     private var activeBorder: some View {
         Rectangle().strokeBorder(
-            isActive ? Color.accentColor : Color.clear,
+            self.isActive ? Color.accentColor : Color.clear,
             lineWidth: 2
         )
     }
@@ -64,17 +64,17 @@ private struct PaneTabStrip: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
-                ForEach(session.tabs, id: \.id) { tab in
+                ForEach(self.session.tabs, id: \.id) { tab in
                     PaneTabButton(
                         tab: tab,
-                        isActive: tab.id == session.activeTabID,
-                        onActivate: { session.activateTab(tab.id) },
-                        onClose: { session.closeTab(tab.id) }
+                        isActive: tab.id == self.session.activeTabID,
+                        onActivate: { self.session.activateTab(tab.id) },
+                        onClose: { self.session.closeTab(tab.id) }
                     )
                 }
             }
         }
-        .background(theme.colors.surface)
+        .background(self.theme.colors.surface)
         .frame(height: 30)
     }
 }
@@ -89,22 +89,22 @@ private struct PaneTabButton: View {
 
     var body: some View {
         HStack(spacing: Spacing.xs) {
-            Text(tab.title ?? tab.path.lastComponent ?? "/")
-                .font(theme.typography.caption)
-                .foregroundStyle(isActive ? theme.colors.textPrimary : theme.colors.textSecondary)
+            Text(self.tab.title ?? self.tab.path.lastComponent ?? "/")
+                .font(self.theme.typography.caption)
+                .foregroundStyle(self.isActive ? self.theme.colors.textPrimary : self.theme.colors.textSecondary)
                 .lineLimit(1)
-            Button(action: onClose) {
+            Button(action: self.onClose) {
                 Image(systemName: "xmark")
                     .font(.system(size: 9))
-                    .foregroundStyle(theme.colors.textSecondary)
+                    .foregroundStyle(self.theme.colors.textSecondary)
             }
             .buttonStyle(.plain)
         }
         .padding(.horizontal, Spacing.sm)
         .padding(.vertical, Spacing.xs)
-        .background(isActive ? theme.colors.background : Color.clear)
+        .background(self.isActive ? self.theme.colors.background : Color.clear)
         .contentShape(Rectangle())
-        .onTapGesture { onActivate() }
+        .onTapGesture { self.onActivate() }
     }
 }
 
@@ -120,16 +120,16 @@ private struct PaneContentPlaceholder: View {
             Spacer()
             Image(systemName: "folder")
                 .font(.system(size: 48))
-                .foregroundStyle(theme.colors.textSecondary)
-            Text(path.posixString)
-                .font(theme.typography.caption)
-                .foregroundStyle(theme.colors.textSecondary)
+                .foregroundStyle(self.theme.colors.textSecondary)
+            Text(self.path.posixString)
+                .font(self.theme.typography.caption)
+                .foregroundStyle(self.theme.colors.textSecondary)
                 .lineLimit(1)
                 .truncationMode(.middle)
                 .padding(.horizontal, Spacing.md)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(theme.colors.background)
+        .background(self.theme.colors.background)
     }
 }

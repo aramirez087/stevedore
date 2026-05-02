@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:54:19.853Z
-> Files: 570 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:58:24.792Z
+> Files: 571 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -588,7 +588,7 @@
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
-- `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~518 tok)
+- `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~543 tok)
 
 ## Sources/UI/SettingsUI/
 
@@ -851,3 +851,4 @@
 - `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
 - `session-24-handoff.md` — Session 24 Handoff — Settings UI (~1680 tok)
 - `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)
+- `session-26-handoff.md` — Session 26 Handoff — Main Window Shell (~1542 tok)
