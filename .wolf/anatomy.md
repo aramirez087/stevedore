@@ -1,7 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T02:30:32.256Z
-> Files: 446 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T03:30:02.326Z
+> Files: 448 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
+
+- `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
 
 ## ./
 
@@ -664,3 +668,4 @@
 - `session-11-handoff.md` — Session 11 Handoff — Sync Engine (~773 tok)
 - `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
 - `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)
+- `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
