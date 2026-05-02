@@ -1,18 +1,19 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T17:17:03.601Z
-> Files: 484 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T21:24:54.392Z
+> Files: 552 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
 - `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
 - `.session-24-plan.md` — Session 24 Implementation Plan — Settings UI (~6070 tok)
+- `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
 
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2095 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2154 tok)
 
 ## .build/
 
@@ -468,6 +469,49 @@
 - `SyncPlan.swift` — MARK: - SyncStep (~1064 tok)
 - `SyncProgress.swift` — MARK: - SyncProgress (~744 tok)
 
+## Sources/Features/Uninstaller/
+
+- `AppMetadata.swift` — Struct: AppMetadata (~187 tok)
+- `AppMetadata.swift` — Struct: AppMetadata (~71 tok)
+- `AppMetadataReader.swift` — `public struct AppMetadataReader: AppMetadataReading`; reads Info.plist, computes bundle size via FileManager enumerator. (~200 tok)
+- `AppMetadataReader.swift` — Struct: AppMetadataReader (~549 tok)
+- `AssociatedFile.swift` — `public struct AssociatedFile: Sendable, Identifiable`; url/size/lastModified/confidence/reason/requiresAdmin; memberwise init with default UUID. (~100 tok)
+- `AssociatedFile.swift` — Struct: AssociatedFile (~199 tok)
+- `AssociatedFilesScanner.swift` — `public actor AssociatedFilesScanner: AssociatedFilesScanning`; scans user + system search paths via MatchScorer; results sorted by confidence descending. (~200 tok)
+- `AssociatedFilesScanner.swift` (~564 tok)
+- `Confidence.swift` — `public enum Confidence: Int, Comparable, Sendable, CaseIterable`; low/medium/high; `from(score:)` factory. (~80 tok)
+- `Confidence.swift` — Declares Confidence (~102 tok)
+- `FeaturesUninstallerModule.swift` — Module sentinel `public enum FeaturesUninstallerModule` with `moduleName = "FeaturesUninstaller"`. (~20 tok)
+- `FeaturesUninstallerModule.swift` — Declares FeaturesUninstallerModule (~32 tok)
+- `MatchScorer.swift` — `public enum MatchScorer`; `score(url:metadata:)` returns (Double, String); `confidence(url:metadata:)` wraps into Confidence. (~100 tok)
+- `MatchScorer.swift` — Declares MatchScorer (~274 tok)
+- `SearchPaths.swift` — `public enum SearchPaths`; `userPaths`/`systemPaths` computed vars returning `[URL]`; `isSystemOwned` predicate. (~120 tok)
+- `SearchPaths.swift` — Declares SearchPaths (~294 tok)
+- `UninstallerError.swift` — `public enum UninstallerError: LocalizedError, Sendable`; cases notAnAppBundle/invalidInfoPlist/trashFailed with localized descriptions. (~120 tok)
+- `UninstallerError.swift` — Declares UninstallerError (~185 tok)
+- `UninstallExecutor.swift` — `public actor UninstallExecutor: UninstallExecuting`; trashes non-admin associated files then the app bundle. (~80 tok)
+- `UninstallExecutor.swift` (~179 tok)
+- `UninstallPlan.swift` — Struct: UninstallPlan (~122 tok)
+- `UninstallPlan.swift` — Struct: UninstallPlan (~77 tok)
+
+## Sources/Features/Uninstaller/Protocols/
+
+- `AppMetadataReading.swift` — `public protocol AppMetadataReading: Sendable`; `readMetadata(from:) throws -> AppMetadata`. (~30 tok)
+- `AppMetadataReading.swift` — Protocol: AppMetadataReading (~36 tok)
+- `AssociatedFilesScanning.swift` — `public protocol AssociatedFilesScanning: Sendable`; `scan(for:) async throws -> [AssociatedFile]`. (~30 tok)
+- `AssociatedFilesScanning.swift` — Protocol: AssociatedFilesScanning (~35 tok)
+- `UninstallExecuting.swift` — `public protocol UninstallExecuting: Sendable`; `execute(plan:) async throws`. (~25 tok)
+- `UninstallExecuting.swift` — Protocol: UninstallExecuting (~27 tok)
+
+## Sources/Features/Uninstaller/Testing/
+
+- `FakeAppMetadataReader.swift` — `public final class FakeAppMetadataReader: AppMetadataReading, @unchecked Sendable`; `Result`-backed stub. (~60 tok)
+- `FakeAppMetadataReader.swift` — Class: FakeAppMetadataReader (~98 tok)
+- `FakeAssociatedFilesScanner.swift` — `public final class FakeAssociatedFilesScanner: AssociatedFilesScanning, @unchecked Sendable`; returns preset files or throws preset error. (~60 tok)
+- `FakeAssociatedFilesScanner.swift` — Class: FakeAssociatedFilesScanner (~131 tok)
+- `FakeUninstallExecutor.swift` — `public final class FakeUninstallExecutor: UninstallExecuting, @unchecked Sendable`; records executed plans via `OSAllocatedUnfairLock`. (~80 tok)
+- `FakeUninstallExecutor.swift` — Class: FakeUninstallExecutor (~150 tok)
+
 ## Sources/FileSystem/Local/
 
 - `ConflictDescriptor.swift` — `public struct: Hashable, Sendable` with `Reason` enum (`.destinationExists`, `.destinationIsDirectory`, `.destinationReadOnly`, `.crossDeviceMove`) for conflict metadata. (~120 tok)
@@ -569,6 +613,27 @@
 - `FavoritesSection.swift` — / Editable list of user bookmarks; supports add-via-drop and remove/reorder via context menu. (~312 tok)
 - `TagsSection.swift` — / Read-only list of Finder tag names loaded by `SidebarViewModel.start()`. (~111 tok)
 
+## Sources/UI/UninstallerUI/
+
+- `AppHeader.swift` — `public struct AppHeader: View`; shows app icon (NSWorkspace), name, version, total selected size using theme tokens. (~120 tok)
+- `AppHeader.swift` — SwiftUI view: AppHeader (~380 tok)
+- `AssociatedFileSortKey.swift` — `public enum AssociatedFileSortKey: String, Sendable, CaseIterable`; cases path/size/modified/confidence. (~30 tok)
+- `AssociatedFileSortKey.swift` — Declares AssociatedFileSortKey (~37 tok)
+- `AssociatedFilesTable.swift` — `public struct AssociatedFilesTable: View`; sortable `Table` with checkbox, path, size, date, confidence badge, reason columns; low-confidence toggle row. (~250 tok)
+- `AssociatedFilesTable.swift` — SwiftUI view: AssociatedFilesTable (~1275 tok)
+- `ConfirmationFooter.swift` — `public struct ConfirmationFooter: View`; Cancel + destructive confirm SDButtons; disabled states for executing. (~80 tok)
+- `ConfirmationFooter.swift` — SwiftUI view: ConfirmationFooter (~277 tok)
+- `ScanState.swift` — `public enum ScanState: Sendable`; cases idle/scanning/ready([AssociatedFile])/failed(String). (~30 tok)
+- `ScanState.swift` — Declares ScanState (~41 tok)
+- `UIUninstallerUIModule.swift` — Module sentinel `public enum UIUninstallerUIModule` with `moduleName = "UIUninstallerUI"`. (~20 tok)
+- `UIUninstallerUIModule.swift` — Declares UIUninstallerUIModule (~30 tok)
+- `UninstallerLauncher.swift` — `public struct UninstallerLauncher: View`; idle drop-target with trash icon, prompt text, inline dropError display. (~90 tok)
+- `UninstallerLauncher.swift` — SwiftUI view: UninstallerLauncher (~334 tok)
+- `UninstallerSheet.swift` — `public struct UninstallerSheet: View`; composes AppHeader/AssociatedFilesTable/ConfirmationFooter; contentArea switches on ScanState. (~150 tok)
+- `UninstallerSheet.swift` — SwiftUI view: UninstallerSheet (~564 tok)
+- `UninstallerViewModel.swift` — Class: UninstallerViewModel (~1358 tok)
+- `UninstallerViewModel.swift` — Class: UninstallerViewModel (~1442 tok)
+
 ## Tests/CoreTests/Utilities/
 
 - `AsyncSequenceHelpersTests.swift` — Struct: TestError (~1770 tok)
@@ -637,6 +702,19 @@
 - `SyncPlanTests.swift` — MARK: - SyncPlanTests (~1915 tok)
 - `SyncTestSupport.swift` — MARK: - Fixture helpers (~1440 tok)
 
+## Tests/FeaturesTests/UninstallerTests/
+
+- `AppMetadataReaderTests.swift` — 5 tests: valid bundle metadata, missing plist → notAnAppBundle, missing bundleID → invalidInfoPlist, optional version, non-zero bundle size. (~350 tok)
+- `AppMetadataReaderTests.swift` — Class: AppMetadataReaderTests (~737 tok)
+- `AssociatedFilesScannerTests.swift` — 4 tests: finds matching top-level item, excludes non-matching items, system-path files flagged requiresAdmin, empty directory returns empty. (~280 tok)
+- `AssociatedFilesScannerTests.swift` — Class: AssociatedFilesScannerTests (~807 tok)
+- `MatchScorerTests.swift` — 5 tests: bundle-ID component high confidence, bundle name medium/high, executable name medium, short component not high, Confidence.from(score:) mapping. Uses @testable import for internal from(score:). (~300 tok)
+- `MatchScorerTests.swift` — Class: MatchScorerTests (~724 tok)
+- `UninstallerTestSupport.swift` — `makeTestBundle`, `makeAppMetadata`, `makeAssociatedFile`, `makeTempDirectory` fixture helpers shared across all Uninstaller tests. (~150 tok)
+- `UninstallerTestSupport.swift` (~546 tok)
+- `UninstallExecutorTests.swift` — Class: UninstallExecutorTests (~975 tok)
+- `UninstallExecutorTests.swift` — Class: UninstallExecutorTests (~965 tok)
+
 ## Tests/FileSystemTests/LocalTests/
 
 - `ConflictDescriptorTests.swift` — 4 tests: no-conflict case, destinationExists, destinationIsDirectory, mkdir with no conflict. (~200 tok)
@@ -675,6 +753,13 @@
 - `SidebarTestSupport.swift` — Struct: FakeTagsProvider (~1208 tok)
 - `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1171 tok)
 - `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~362 tok)
+
+## Tests/UITests/UninstallerUITests/
+
+- `UninstallerSheetTests.swift` — Struct: ScanError (~1264 tok)
+- `UninstallerSheetTests.swift` — Struct: ScanError (~1260 tok)
+- `UninstallerViewModelTests.swift` — `@MainActor final class`; 10 tests covering default selections (high/medium/admin), admin toggle lock, confirmation text, drop error handling, sort direction, and toggle round-trip. (~370 tok)
+- `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
 
 ## docs/claude-sessions/stevedore-mvp/
 
@@ -738,3 +823,4 @@
 - `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)
 - `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
 - `session-24-handoff.md` — Session 24 Handoff — Settings UI (~1680 tok)
+- `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)

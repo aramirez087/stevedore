@@ -512,6 +512,22 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T17:04:45.342Z"
+    },
+    {
+      "id": "bug-033",
+      "timestamp": "2026-05-02T21:10:40.372Z",
+      "error_message": "Incorrect value in code",
+      "file": "Package.swift",
+      "root_cause": "Had \"UIMenus\"",
+      "fix": "Changed to \"FeaturesUninstaller\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T21:10:40.372Z"
     }
   ]
 }

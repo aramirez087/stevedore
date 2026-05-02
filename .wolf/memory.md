@@ -3,11 +3,20 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
+| 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
+
 ## Session: 2026-05-01 16:10 (Session 10 verification)
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 16:10 | Verified Session 10 implementation already committed (7ef8e38) | Sources/Features/Operations/, Tests/FeaturesTests/OperationsTests/ | All 8 source + 8 test files present | ~2000 |
+
+## Session: 2026-05-02 (Session 25 — Uninstaller UI bootstrap)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+| 21:15 | Wrote 5 Uninstaller test files | Tests/FeaturesTests/UninstallerTests/{UninstallerTestSupport,AppMetadataReaderTests,MatchScorerTests,AssociatedFilesScannerTests,UninstallExecutorTests}.swift | All files created; @testable import used in MatchScorerTests for internal Confidence.from(score:) | ~3500 |
+|------|--------|---------|---------|--------|
+| 00:00 | Wrote 16 Swift source files for FeaturesUninstaller module | Sources/Features/Uninstaller/ (11 files + 3 Protocols + 3 Testing) | All files created; anatomy.md updated | ~3000 |
 | 16:14 | Ran all quality gates | swift build/test, swiftformat, swiftlint | 587 tests pass, 0 violations, 0 format issues | ~500 |
 | 16:15 | Session end: Session 10 operations engine fully verified. All quality gates pass. | — | ~100 |
 
@@ -502,3 +511,59 @@
 | 11:17 | Created docs/roadmap/stevedore-mvp/session-24-handoff.md | — | ~1792 |
 | 11:17 | Session 24: SettingBinding + 4 tab views + 9 catalog settings + 19 tests | Sources/UI/SettingsUI/, Tests/UITests/SettingsUITests/ | pass | ~8000 |
 | 11:17 | Session end: 12 writes across 12 files (Package.swift, Settings+Catalog.swift, SettingsCatalogTests.swift, SettingBinding.swift, SettingsScene.swift) | 7 reads | ~9488 tok |
+
+## Session: 2026-05-02 14:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:53 | Wrote session-25 implementation plan (read-only planning mode) | ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-25-plan.md | Plan written; Session 15 never ran — plan absorbs engine + UI | ~8000 |
+| 15:01 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-25-plan.md | — | ~7704 |
+| 15:01 | Session end: 1 writes across 1 files (.session-25-plan.md) | 12 reads | ~15067 tok |
+
+## Session: 2026-05-02 15:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:10 | Edited Package.swift | 1→4 lines | ~51 |
+| 15:10 | Edited Package.swift | 2→3 lines | ~36 |
+| 15:11 | Created Sources/Features/Uninstaller/FeaturesUninstallerModule.swift | — | ~32 |
+| 15:11 | Created Sources/Features/Uninstaller/UninstallerError.swift | — | ~185 |
+| 15:11 | Created Sources/Features/Uninstaller/Confidence.swift | — | ~102 |
+| 15:11 | Created Sources/Features/Uninstaller/AppMetadata.swift | — | ~71 |
+| 15:11 | Created Sources/Features/Uninstaller/AssociatedFile.swift | — | ~199 |
+| 15:11 | Created Sources/Features/Uninstaller/UninstallPlan.swift | — | ~77 |
+| 15:11 | Created Sources/Features/Uninstaller/SearchPaths.swift | — | ~294 |
+| 15:11 | Created Sources/Features/Uninstaller/MatchScorer.swift | — | ~274 |
+| 15:12 | Created Sources/Features/Uninstaller/AppMetadataReader.swift | — | ~549 |
+| 15:12 | Created Sources/Features/Uninstaller/AssociatedFilesScanner.swift | — | ~564 |
+| 15:12 | Created Sources/Features/Uninstaller/UninstallExecutor.swift | — | ~179 |
+| 15:12 | Created Sources/Features/Uninstaller/Protocols/AppMetadataReading.swift | — | ~36 |
+| 15:12 | Created Sources/Features/Uninstaller/Protocols/AssociatedFilesScanning.swift | — | ~35 |
+| 15:12 | Created Sources/Features/Uninstaller/Protocols/UninstallExecuting.swift | — | ~27 |
+| 15:12 | Created Sources/Features/Uninstaller/Testing/FakeAppMetadataReader.swift | — | ~98 |
+| 15:12 | Created Sources/Features/Uninstaller/Testing/FakeAssociatedFilesScanner.swift | — | ~131 |
+| 15:12 | Created Sources/Features/Uninstaller/Testing/FakeUninstallExecutor.swift | — | ~150 |
+| 15:13 | Created Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift | — | ~546 |
+| 15:13 | Created Tests/FeaturesTests/UninstallerTests/AppMetadataReaderTests.swift | — | ~737 |
+| 15:13 | Created Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift | — | ~724 |
+| 15:13 | Created Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift | — | ~807 |
+| 15:13 | Created Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | — | ~965 |
+| 15:15 | Created Sources/UI/UninstallerUI/UIUninstallerUIModule.swift | — | ~30 |
+| 15:16 | Created Sources/UI/UninstallerUI/ScanState.swift | — | ~41 |
+| 15:16 | Created Sources/UI/UninstallerUI/AssociatedFileSortKey.swift | — | ~37 |
+| 15:16 | Created Sources/UI/UninstallerUI/UninstallerViewModel.swift | — | ~1442 |
+| 15:16 | Created Sources/UI/UninstallerUI/AppHeader.swift | — | ~380 |
+| 15:16 | Created Sources/UI/UninstallerUI/AssociatedFilesTable.swift | — | ~1275 |
+| 15:16 | Created Sources/UI/UninstallerUI/ConfirmationFooter.swift | — | ~277 |
+| 15:16 | Created Sources/UI/UninstallerUI/UninstallerSheet.swift | — | ~564 |
+| 15:16 | Created Sources/UI/UninstallerUI/UninstallerLauncher.swift | — | ~334 |
+| 21:20 | wrote 9 UIUninstallerUI source files (module, ScanState, SortKey, ViewModel, AppHeader, FilesTable, Footer, Sheet, Launcher) | Sources/UI/UninstallerUI/*.swift | created | ~1100 |
+| 15:17 | Created Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | — | ~2256 |
+| 15:17 | Created Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift | — | ~1260 |
+| 15:19 | Edited Sources/Features/Uninstaller/UninstallPlan.swift | modified init() | ~88 |
+| 15:19 | Edited Sources/UI/UninstallerUI/UninstallerViewModel.swift | 7→6 lines | ~88 |
+| 15:19 | Edited Sources/Features/Uninstaller/AppMetadata.swift | modified init() | ~127 |
+| 15:20 | Edited Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift | added 1 import(s) | ~25 |
+| 15:21 | Created Sources/UI/UninstallerUI/UninstallerViewModel.swift | — | ~1358 |
+| 15:22 | Edited Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | modified testNoRemoveItemCall() | ~86 |
+| 15:24 | Created docs/roadmap/stevedore-mvp/session-25-handoff.md | — | ~2267 |
