@@ -74,7 +74,11 @@ let libraryModules: [LibraryModule] = [
     LibraryModule(name: "UIRenameDialog", path: "Sources/UI/RenameDialog", extraDependencies: []),
     LibraryModule(name: "UIConnectDialog", path: "Sources/UI/ConnectDialog", extraDependencies: []),
     LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: []),
-    LibraryModule(name: "UIUninstallerUI", path: "Sources/UI/UninstallerUI", extraDependencies: []),
+    LibraryModule(
+        name: "UIUninstallerUI",
+        path: "Sources/UI/UninstallerUI",
+        extraDependencies: [.target(name: "FeaturesUninstaller")]
+    ),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
     LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),
 ]

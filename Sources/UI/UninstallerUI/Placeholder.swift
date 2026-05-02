@@ -1,6 +1,6 @@
 import Core
 
-/// Marker namespace for the `UIUninstallerUI` module — app-uninstaller dialog.
+/// Marker namespace for the `UIUninstallerUI` module.
 public enum UIUninstallerUIModule {
     public static let moduleName: String = "UIUninstallerUI"
 }
