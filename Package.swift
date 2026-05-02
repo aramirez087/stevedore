@@ -67,7 +67,11 @@ let libraryModules: [LibraryModule] = [
     LibraryModule(name: "DesignSystem", path: "Sources/UI/DesignSystem", extraDependencies: []),
     LibraryModule(name: "UIPane", path: "Sources/UI/Pane", extraDependencies: []),
     LibraryModule(name: "UITabs", path: "Sources/UI/Tabs", extraDependencies: []),
-    LibraryModule(name: "UISidebar", path: "Sources/UI/Sidebar", extraDependencies: []),
+    LibraryModule(
+        name: "UISidebar",
+        path: "Sources/UI/Sidebar",
+        extraDependencies: [.target(name: "DesignSystem")]
+    ),
     LibraryModule(name: "UIToolbar", path: "Sources/UI/Toolbar", extraDependencies: []),
     LibraryModule(name: "UITransfers", path: "Sources/UI/Transfers", extraDependencies: []),
     LibraryModule(name: "UISyncDialog", path: "Sources/UI/SyncDialog", extraDependencies: []),
