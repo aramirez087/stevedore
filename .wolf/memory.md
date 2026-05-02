@@ -654,3 +654,31 @@
 | 16:58 | Created session-26-handoff.md | docs/roadmap/stevedore-mvp/ | handoff doc written | ~600 tok |
 | 16:59 | Staged and committed Session 26 | all S26 files | feat: Session 26 — main window shell | ~200 tok |
 | 16:59 | Session end: 2 writes across 2 files (WindowState.swift, session-26-handoff.md) | 2 reads | ~4444 tok |
+
+## Session: 2026-05-02 16:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:04 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-27-plan.md | — | ~6919 |
+| 17:05 | Session end: 1 writes across 1 files (.session-27-plan.md) | 11 reads | ~17448 tok |
+
+## Session: 2026-05-02 17:05
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:09 | Created Sources/UI/Menus/UIMenusModule.swift | — | ~44 |
+| 17:09 | Created Sources/UI/Menus/Shortcuts.swift | — | ~586 |
+| 17:10 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-27-plan.md | — | ~9771 |
+| 17:10 | Created Sources/UI/Menus/PaneCommandProxy.swift | — | ~564 |
+| 17:10 | Created Sources/UI/Menus/WindowCommandProxy.swift | — | ~186 |
+| 17:10 | Session end: 5 writes across 5 files (UIMenusModule.swift, Shortcuts.swift, .session-27-plan.md, PaneCommandProxy.swift, WindowCommandProxy.swift) | 9 reads | ~18205 tok |
+| 17:10 | Created Sources/UI/Menus/OpenInTerminal.swift | — | ~460 |
+| 17:10 | Created Sources/UI/Menus/Sections/FileMenu.swift | — | ~393 |
+| 17:10 | Created Sources/UI/Menus/Sections/EditMenu.swift | — | ~140 |
+| 17:10 | Created Sources/UI/Menus/Sections/ViewMenu.swift | — | ~364 |
+| 17:10 | Created Sources/UI/Menus/Sections/GoMenu.swift | — | ~337 |
+| 17:10 | Created Sources/UI/Menus/Sections/ConnectMenu.swift | — | ~177 |
+| 17:11 | Created Sources/UI/Menus/Sections/ToolsMenu.swift | — | ~249 |
+| 17:11 | Created Sources/UI/Menus/Sections/WindowMenu.swift | — | ~330 |
+| 17:11 | Edited Package.swift | 11→16 lines | ~152 |
+| 17:11 | Created Sources/UI/MainWindow/AppCommands.swift | — | ~160 |

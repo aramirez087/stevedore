@@ -105,6 +105,11 @@ let libraryModules: [LibraryModule] = [
             .target(name: "UIToolbar"),
             .target(name: "FeaturesOperations"),
             .target(name: "ServicesSettings"),
+            .target(name: "UIMenus"),
+            .target(name: "UIConnectDialog"),
+            .target(name: "UIUninstallerUI"),
+            .target(name: "UISyncDialog"),
+            .target(name: "UIRenameDialog"),
         ]
     ),
 ]

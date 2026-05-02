@@ -1,19 +1,20 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:58:24.792Z
-> Files: 571 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T23:11:32.545Z
+> Files: 584 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
 - `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
 - `.session-24-plan.md` — Session 24 Implementation Plan — Settings UI (~6070 tok)
 - `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
+- `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~9160 tok)
 
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2423 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2481 tok)
 
 ## .build/
 
@@ -578,7 +579,7 @@
 
 ## Sources/UI/MainWindow/
 
-- `AppCommands.swift` — / Empty `Commands` stub. Session 27 populates all menu bar entries. (~58 tok)
+- `AppCommands.swift` — / Top-level `Commands` that compose all seven menu-bar sections. (~160 tok)
 - `DualPaneLayout.swift` — / Custom horizontal split that exposes `splitFraction` as a `Binding`. (~592 tok)
 - `MainWindowModel.swift` — / Owns all window state and coordinates the sidebar, two pane sessions, and operation queue. (~1104 tok)
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
@@ -589,6 +590,24 @@
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
 - `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~543 tok)
+
+## Sources/UI/Menus/
+
+- `OpenInTerminal.swift` — / Launches a terminal application at the given local directory path. (~460 tok)
+- `PaneCommandProxy.swift` — / Per-pane command proxy injected via `FocusedValues` so menu-bar Commands can (~564 tok)
+- `Shortcuts.swift` — / Canonical keyboard shortcut registry for all Stevedore menu commands. (~586 tok)
+- `UIMenusModule.swift` — / Marker namespace for the `UIMenus` module — menu-bar commands. (~44 tok)
+- `WindowCommandProxy.swift` — / Window-level command proxy injected via `FocusedValues`. (~186 tok)
+
+## Sources/UI/Menus/Sections/
+
+- `ConnectMenu.swift` — / Connect menu: Connect to Server dialog (Cmd+K), Recent Connections submenu. (~177 tok)
+- `EditMenu.swift` — / Edit menu: Find (Cmd+F focuses the toolbar search field). (~140 tok)
+- `FileMenu.swift` — / File menu: New File, New Folder, Open, Open With, Move to Trash, Compress, Decompress. (~393 tok)
+- `GoMenu.swift` — / Go menu: Up, Back, Forward, Home, Computer, Recent Folders. (~337 tok)
+- `ToolsMenu.swift` — / Tools menu: Compare/Sync, Multi-Rename, Application Uninstaller, Open in Terminal. (~249 tok)
+- `ViewMenu.swift` — / View menu: Show Hidden Files, Refresh, Sort By submenu, View As submenu. (~364 tok)
+- `WindowMenu.swift` — / Window menu: New Tab, Close Tab, Reopen Closed Tab, Next/Previous Tab. (~330 tok)
 
 ## Sources/UI/SettingsUI/
 
