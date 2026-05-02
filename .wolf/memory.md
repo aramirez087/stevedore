@@ -468,3 +468,43 @@
 | 21:30 | Created docs/roadmap/stevedore-mvp/session-14-handoff.md | — | ~2178 |
 | 21:30 | Session 14 complete — git status integration; all 43 Git tests pass, all quality gates green | docs/roadmap/stevedore-mvp/session-14-handoff.md | success | ~500 |
 | 21:30 | Session end: 1 writes across 1 files (session-14-handoff.md) | 0 reads | ~2334 tok |
+
+## Session: 2026-05-02 10:58
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:06 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-23-plan.md | — | ~5557 |
+| 11:06 | Session end: 1 writes across 1 files (.session-23-plan.md) | 14 reads | ~10772 tok |
+
+## Session: 2026-05-02 11:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:07 | Edited Package.swift | expanded (+6 lines) | ~49 |
+| 11:07 | Created Sources/UI/ConnectDialog/AuthMode.swift | — | ~76 |
+| 11:07 | Created Sources/UI/ConnectDialog/TestConnectionStatus.swift | — | ~205 |
+| 11:07 | Created Sources/UI/ConnectDialog/ValidationErrorField.swift | — | ~177 |
+| 11:07 | Created Sources/UI/ConnectDialog/ConnectDialogModule.swift | — | ~51 |
+| 11:08 | Created Sources/UI/ConnectDialog/ConnectDialogViewModel.swift | — | ~3309 |
+| 11:08 | Edited Sources/UI/ConnectDialog/ConnectDialogViewModel.swift | 5→4 lines | ~56 |
+| 11:09 | Created Sources/UI/ConnectDialog/AuthSelector.swift | — | ~1010 |
+| 11:09 | Created Sources/UI/ConnectDialog/TestConnectionButton.swift | — | ~585 |
+| 11:09 | Edited Sources/UI/ConnectDialog/AuthMode.swift | expanded (+12 lines) | ~162 |
+| 11:09 | Created Sources/UI/ConnectDialog/Forms/SFTPForm.swift | — | ~571 |
+| 11:09 | Created Sources/UI/ConnectDialog/Forms/FTPForm.swift | — | ~556 |
+| 11:09 | Created Sources/UI/ConnectDialog/Forms/WebDAVForm.swift | — | ~558 |
+| 11:10 | Created Sources/UI/ConnectDialog/Forms/S3Form.swift | — | ~1140 |
+| 11:10 | Created Sources/UI/ConnectDialog/Forms/SMBForm.swift | — | ~556 |
+| 11:10 | Created Sources/UI/ConnectDialog/ConnectDialog.swift | — | ~833 |
+| 11:11 | Created Tests/UITests/ConnectDialogTests/ConnectDialogTestSupport.swift | — | ~428 |
+| 11:11 | Created Tests/UITests/ConnectDialogTests/ConnectDialogViewModelTests.swift | — | ~1006 |
+| 11:11 | Created Tests/UITests/ConnectDialogTests/ConnectDialogValidationTests.swift | — | ~1339 |
+| 11:12 | Created Tests/UITests/ConnectDialogTests/ConnectDialogTestConnectionTests.swift | — | ~888 |
+| 11:12 | Created Tests/UITests/ConnectDialogTests/ConnectDialogSaveFlowTests.swift | — | ~872 |
+| 11:12 | Created Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift | — | ~1078 |
+| 11:14 | Edited Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift | modified seededViewModel() | ~223 |
+| 11:14 | Edited Tests/UITests/ConnectDialogTests/ConnectDialogRedactionTests.swift | modified testSavedDescriptorContainsNoCredentialFields() | ~264 |
+| 11:16 | Edited Sources/UI/ConnectDialog/ConnectDialogViewModel.swift | modified buildCredential() | ~366 |
+| 11:18 | Created docs/roadmap/stevedore-mvp/session-23-handoff.md | — | ~2359 |
+
+| $(date +%H:%M) | Session 23: ConnectDialog UI implemented | Sources/UI/ConnectDialog/, Tests/UITests/ConnectDialogTests/ | 48 tests pass, 0 lint/format violations | ~8000 |
