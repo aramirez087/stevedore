@@ -1,12 +1,17 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T02:30:32.256Z
-> Files: 446 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T15:29:46.650Z
+> Files: 472 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
+
+- `.session-18-plan.md` — Session 18 Implementation Plan — Sidebar View (~9093 tok)
 
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2071 tok)
 
 ## .build/
 
@@ -515,6 +520,35 @@
 - `Theme.swift` — `public struct Theme: Sendable`; composes `ColorTokens` + `Typography`; `@Entry var theme` in `EnvironmentValues`; `View.theme(_:)` modifier. (~100 tok)
 - `Typography.swift` — `public struct Typography: Sendable`; five `Font` tokens: largeTitle/title/body/caption/mono. (~80 tok)
 
+## Sources/UI/Sidebar/
+
+- `ConnectionStatus.swift` — / Live status of a remote connection session. (~48 tok)
+- `Eject.swift` — / Ejects a mounted volume by URL. (~181 tok)
+- `Module.swift` — / Marker namespace for the `UISidebar` module — sidebar with Favorites, Devices, Connections, Tags. (~54 tok)
+- `Sidebar.swift` — / Top-level sidebar view composing the four sections. (~244 tok)
+- `SidebarItemID.swift` — / Uniquely identifies any selectable row in the sidebar. (~69 tok)
+- `SidebarRow.swift` — / Shared row for all sidebar sections: icon + title styled with design-system tokens. (~113 tok)
+- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~797 tok)
+- `SidebarVolume.swift` — / Local mirror of a mounted volume, keeping `UISidebar` independent of `FileSystemLocal`. (~191 tok)
+
+## Sources/UI/Sidebar/Previews/
+
+- `SidebarPreview.swift` — MARK: - Preview fakes (local to preview only) (~700 tok)
+
+## Sources/UI/Sidebar/Protocols/
+
+- `BookmarksProviding.swift` — / Provides and mutates the user's saved bookmark list. (~127 tok)
+- `ConnectionStatusProviding.swift` — / Lists saved remote host descriptors and reports live connection status. (~145 tok)
+- `TagsProviding.swift` — / Returns the Finder tag names visible on a given volume. (~84 tok)
+- `VolumeDiscoveryProviding.swift` — / Enumerates currently mounted volumes and streams mount/unmount events. (~118 tok)
+
+## Sources/UI/Sidebar/Sections/
+
+- `ConnectionsSection.swift` — / Lists saved remote host descriptors with a live status indicator. (~542 tok)
+- `DevicesSection.swift` — / Lists mounted volumes; shows an eject button for ejectable disks. (~299 tok)
+- `FavoritesSection.swift` — / Editable list of user bookmarks; supports add-via-drop and remove/reorder via context menu. (~312 tok)
+- `TagsSection.swift` — / Read-only list of Finder tag names loaded by `SidebarViewModel.start()`. (~111 tok)
+
 ## Tests/CoreTests/Utilities/
 
 - `AsyncSequenceHelpersTests.swift` — Struct: TestError (~1770 tok)
@@ -604,6 +638,15 @@
 
 - `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
 
+## Tests/UITests/SidebarTests/
+
+- `ConnectionsSectionTests.swift` — Class: SidebarConnectionsSectionTests (~783 tok)
+- `DevicesSectionTests.swift` — Class: SidebarDevicesSectionTests (~529 tok)
+- `FavoritesSectionTests.swift` — Class: SidebarFavoritesSectionTests (~500 tok)
+- `SidebarTestSupport.swift` — Struct: FakeTagsProvider (~1208 tok)
+- `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1171 tok)
+- `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~362 tok)
+
 ## docs/claude-sessions/stevedore-mvp/
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
@@ -664,3 +707,4 @@
 - `session-11-handoff.md` — Session 11 Handoff — Sync Engine (~773 tok)
 - `session-12-handoff.md` — Session 12 Handoff — Multi-Rename Engine (~2537 tok)
 - `session-13-handoff.md` — Session 13 Handoff — Preview Service (Quick Look) (~2193 tok)
+- `session-18-handoff.md` — Session 18 Handoff — Sidebar View (~2099 tok)

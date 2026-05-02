@@ -26,6 +26,16 @@
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
 
+- [2026-05-02] `swift test --filter SidebarTests` matches **zero** classes — none of the test class names contain that exact substring. Use `--filter Sidebar` instead, which matches all sidebar test classes (`SidebarViewModelTests`, `SidebarFavoritesSectionTests`, etc.).
+- [2026-05-02] `swiftlint --path <dir>` is not a valid flag. Correct form: `swiftlint --strict <dir1> <dir2>` (positional path arguments).
+- [2026-05-02] `@testable import UISidebar` is required in all sidebar test files — `start()`, `ejectVolume(url:)`, and all section views are `internal`. Plain `import UISidebar` causes "inaccessible due to 'internal' protection level" errors.
+- [2026-05-02] Retain cycle pattern in `@Observable` task: capturing `let discovery = volumeDiscovery` (Sendable) and `guard let self else { break }` **inside** the `for await` loop body is correct. `guard let self else { return }` **before** the loop creates a retain cycle. Weak `self` capture plus per-iteration `guard` is the safe pattern.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
+
+- [2026-05-02] **`@ObservationIgnored` on injected protocol existentials** in `SidebarViewModel`: prevents `@Observable` macro from wrapping `any BookmarksProviding` etc. in observation accessors, which would emit Swift 6 non-`Sendable` warnings.
+- [2026-05-02] **`@MainActor` protocols for `BookmarksProviding`/`ConnectionStatusProviding`**: eliminates `await` at every call site from the `@MainActor` view model; both consumed only on main actor.
+- [2026-05-02] **`final actor` + `nonisolated let` for `FakeVolumeDiscovery`**: allows `emit()` to be called from any context (tests run on `@MainActor`) without hop; `nonisolated let` avoids actor isolation on immutable stored properties.
+- [2026-05-02] **`OSAllocatedUnfairLock` in `FakeVolumeEjector`**: `NSLock.lock()` is `@available(*, noasync)` in Swift 6. Use `OSAllocatedUnfairLock` for mutation in `@unchecked Sendable` test helpers.

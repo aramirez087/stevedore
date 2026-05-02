@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 225702,
-    "total_reads": 459,
-    "total_writes": 79,
-    "total_sessions": 32,
-    "anatomy_hits": 78,
-    "anatomy_misses": 378,
-    "repeated_reads_blocked": 8,
-    "estimated_savings_vs_bare_cli": 22552
+    "total_tokens_estimated": 228606,
+    "total_reads": 474,
+    "total_writes": 83,
+    "total_sessions": 35,
+    "anatomy_hits": 82,
+    "anatomy_misses": 389,
+    "repeated_reads_blocked": 9,
+    "estimated_savings_vs_bare_cli": 23352
   },
   "sessions": [
     {
@@ -3595,6 +3595,133 @@
         "writes_count": 9,
         "repeated_reads_blocked": 1,
         "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-05-02-0804",
+      "started": "2026-05-02T14:04:31.278Z",
+      "ended": "2026-05-02T14:10:58.738Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/UI/Sidebar/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/FileSystem/Local/VolumeDiscovery.swift",
+          "tokens_estimated": 1460,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Types/RemoteHostDescriptor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Types/Bookmark.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Types/Workspace.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Tests/UITests/Sidebar/UISidebarSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Tests/UITests/DesignSystemTests/DesignSystemTests.swift",
+          "tokens_estimated": 550,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/UI/DesignSystem/Components/SDListRow.swift",
+          "tokens_estimated": 170,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/UI/DesignSystem/Theme/Theme.swift",
+          "tokens_estimated": 100,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Protocols",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Protocols/RemoteConnector.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s18-sidebar-view/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+          "tokens_estimated": 165,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+          "tokens_estimated": 152,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+          "tokens_estimated": 84,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+          "tokens_estimated": 223,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 2280,
+        "output_tokens_estimated": 624,
+        "reads_count": 15,
+        "writes_count": 4,
+        "repeated_reads_blocked": 1,
+        "anatomy_lookups": 4
       }
     }
   ],

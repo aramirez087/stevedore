@@ -384,6 +384,102 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T02:30:32.262Z"
+    },
+    {
+      "id": "bug-025",
+      "timestamp": "2026-05-02T14:10:27.436Z",
+      "error_message": "Missing await",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:10:27.436Z"
+    },
+    {
+      "id": "bug-026",
+      "timestamp": "2026-05-02T14:10:33.291Z",
+      "error_message": "Incorrect value in code",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+      "root_cause": "Had `SidebarViewModelTests`",
+      "fix": "Changed to `await Task.yield()`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:10:33.291Z"
+    },
+    {
+      "id": "bug-027",
+      "timestamp": "2026-05-02T14:29:20.307Z",
+      "error_message": "Wrong reference: FavoritesSectionTests should be SidebarFavoritesSectionTests",
+      "file": "Tests/UITests/SidebarTests/FavoritesSectionTests.swift",
+      "root_cause": "Used \"FavoritesSectionTests\" instead of \"SidebarFavoritesSectionTests\"",
+      "fix": "Changed FavoritesSectionTests → SidebarFavoritesSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.307Z"
+    },
+    {
+      "id": "bug-028",
+      "timestamp": "2026-05-02T14:29:20.588Z",
+      "error_message": "Wrong reference: DevicesSectionTests should be SidebarDevicesSectionTests",
+      "file": "Tests/UITests/SidebarTests/DevicesSectionTests.swift",
+      "root_cause": "Used \"DevicesSectionTests\" instead of \"SidebarDevicesSectionTests\"",
+      "fix": "Changed DevicesSectionTests → SidebarDevicesSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.588Z"
+    },
+    {
+      "id": "bug-029",
+      "timestamp": "2026-05-02T14:29:20.911Z",
+      "error_message": "Wrong reference: ConnectionsSectionTests should be SidebarConnectionsSectionTests",
+      "file": "Tests/UITests/SidebarTests/ConnectionsSectionTests.swift",
+      "root_cause": "Used \"ConnectionsSectionTests\" instead of \"SidebarConnectionsSectionTests\"",
+      "fix": "Changed ConnectionsSectionTests → SidebarConnectionsSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.911Z"
+    },
+    {
+      "id": "bug-030",
+      "timestamp": "2026-05-02T14:29:21.261Z",
+      "error_message": "Wrong reference: TagsSectionTests should be SidebarTagsSectionTests",
+      "file": "Tests/UITests/SidebarTests/TagsSectionTests.swift",
+      "root_cause": "Used \"TagsSectionTests\" instead of \"SidebarTagsSectionTests\"",
+      "fix": "Changed TagsSectionTests → SidebarTagsSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:21.261Z"
     }
   ]
 }

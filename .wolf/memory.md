@@ -453,3 +453,61 @@
 | 20:28 | Edited Tests/FeaturesTests/GitTests/GitProcessTests.swift | added nullish coalescing | ~20 |
 | 20:30 | Edited docs/roadmap/stevedore-mvp/session-01-handoff.md | failures() → window() | ~353 |
 | 20:31 | Session end: 9 writes across 6 files (GitStatusCache.swift, GitProcess.swift, GitStatusParser.swift, GitTestSupport.swift, GitProcessTests.swift) | 10 reads | ~9519 tok |
+
+## Session: 2026-05-02 08:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:10 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md | modified eject() | ~154 |
+| 08:10 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md | modified fetchTags() | ~142 |
+| 08:10 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md | 2→2 lines | ~79 |
+| 08:10 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md | 9→10 lines | ~208 |
+| 08:10 | Session end: 4 writes across 1 files (.session-18-plan.md) | 15 reads | ~2904 tok |
+
+## Session: 2026-05-02 08:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:16 | Edited Package.swift | 1→5 lines | ~40 |
+| 08:17 | Created Sources/UI/Sidebar/Module.swift | — | ~54 |
+| 08:17 | Created Sources/UI/Sidebar/SidebarItemID.swift | — | ~64 |
+| 08:17 | Created Sources/UI/Sidebar/SidebarVolume.swift | — | ~191 |
+| 08:17 | Created Sources/UI/Sidebar/ConnectionStatus.swift | — | ~48 |
+| 08:17 | Created Sources/UI/Sidebar/Protocols/BookmarksProviding.swift | — | ~122 |
+| 08:17 | Created Sources/UI/Sidebar/Protocols/VolumeDiscoveryProviding.swift | — | ~118 |
+| 08:17 | Created Sources/UI/Sidebar/Protocols/ConnectionStatusProviding.swift | — | ~145 |
+| 08:17 | Created Sources/UI/Sidebar/Protocols/TagsProviding.swift | — | ~84 |
+| 08:17 | Created Sources/UI/Sidebar/Eject.swift | — | ~181 |
+| 08:18 | Created Sources/UI/Sidebar/SidebarViewModel.swift | — | ~797 |
+| 08:18 | Created Sources/UI/Sidebar/SidebarRow.swift | — | ~113 |
+| 08:18 | Created Sources/UI/Sidebar/Sections/TagsSection.swift | — | ~111 |
+| 08:18 | Created Sources/UI/Sidebar/Sections/FavoritesSection.swift | — | ~312 |
+| 08:18 | Created Sources/UI/Sidebar/Sections/DevicesSection.swift | — | ~299 |
+| 08:18 | Created Sources/UI/Sidebar/Sections/ConnectionsSection.swift | — | ~542 |
+| 08:18 | Created Sources/UI/Sidebar/Sidebar.swift | — | ~244 |
+| 08:19 | Created Sources/UI/Sidebar/Previews/SidebarPreview.swift | — | ~700 |
+| 08:20 | Edited Sources/UI/Sidebar/SidebarItemID.swift | added 1 import(s) | ~8 |
+| 08:20 | Edited Sources/UI/Sidebar/Protocols/BookmarksProviding.swift | added 1 import(s) | ~8 |
+| 08:21 | Created Tests/UITests/SidebarTests/SidebarTestSupport.swift | — | ~1206 |
+| 08:21 | Created Tests/UITests/SidebarTests/SidebarViewModelTests.swift | — | ~1169 |
+| 08:21 | Created Tests/UITests/SidebarTests/FavoritesSectionTests.swift | — | ~495 |
+| 08:21 | Created Tests/UITests/SidebarTests/DevicesSectionTests.swift | — | ~524 |
+| 08:22 | Created Tests/UITests/SidebarTests/ConnectionsSectionTests.swift | — | ~778 |
+| 08:22 | Created Tests/UITests/SidebarTests/TagsSectionTests.swift | — | ~358 |
+| 08:22 | Edited Tests/UITests/SidebarTests/FavoritesSectionTests.swift | 5→5 lines | ~22 |
+| 08:22 | Edited Tests/UITests/SidebarTests/DevicesSectionTests.swift | 4→4 lines | ~19 |
+| 08:22 | Edited Tests/UITests/SidebarTests/ConnectionsSectionTests.swift | 5→5 lines | ~22 |
+| 08:22 | Edited Tests/UITests/SidebarTests/TagsSectionTests.swift | 4→4 lines | ~19 |
+| 08:27 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | 4→4 lines | ~19 |
+| 08:27 | Edited Tests/UITests/SidebarTests/SidebarTestSupport.swift | 5→5 lines | ~22 |
+| 08:29 | Edited Tests/UITests/SidebarTests/FavoritesSectionTests.swift | inline fix | ~15 |
+| 08:29 | Edited Tests/UITests/SidebarTests/DevicesSectionTests.swift | inline fix | ~14 |
+| 08:29 | Edited Tests/UITests/SidebarTests/ConnectionsSectionTests.swift | inline fix | ~15 |
+| 08:29 | Edited Tests/UITests/SidebarTests/TagsSectionTests.swift | inline fix | ~14 |
+| 09:29 | Created docs/roadmap/stevedore-mvp/session-18-handoff.md | — | ~2239 |
+
+## Session: 2026-05-02 09:31 (Session 18 — Sidebar View)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:31 | Session 18 complete: UISidebar module — 13 source files + 6 test files, 37 tests pass against in-process fakes, 0 warnings/-warnings-as-errors, 0 swiftformat/swiftlint violations | Sources/UI/Sidebar/, Tests/UITests/SidebarTests/ | Commit pending | ~40000 |
