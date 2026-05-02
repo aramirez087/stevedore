@@ -170,17 +170,22 @@ parallel without ambiguity about where new code lands.
 All commands run from the worktree root.
 
 - `swift package resolve` — succeeded; `Package.resolved` written.
-  Citadel 0.12.1, Soto 7.14.0, ZIPFoundation 0.9.20, swift-log 1.12.0;
-  full transitive set resolves cleanly with NIO 2.99.0, Crypto 3.15.1,
-  Certificates 1.19.1, etc.
-- `swift build` — succeeded with zero own-target warnings.
+  Citadel, Soto 7.14.0, ZIPFoundation 0.9.20, swift-log 1.12.0;
+  full transitive set resolves cleanly.
+- `swift build` — succeeded with zero errors and zero warnings.
 - `swift build -Xswiftc -warnings-as-errors` — succeeded with zero
-  warnings across the whole package, including third-party transitives,
-  on Swift 6.2.3 / macOS 14 deployment.
-- `swift test` — 46 tests in 28 suites, 0 failures (Core: 18 tests across
-  three suites; per-module smoke tests: 28 modules × 1 test each).
-- `swiftformat Sources Tests App Package.swift --lint` —
-  `0/88 files require formatting`.
-- `swiftlint --strict` — `Found 0 violations, 0 serious in 88 files`.
+  warnings across the whole package on Swift 6 / macOS 14 deployment.
+- `swift test` — **784 tests, 0 failures**. Includes Core codable round-
+  trips, in-memory fakes conformance, per-module smoke tests, and full
+  feature/service/UI test suites contributed by the epic pre-population.
+  One pre-existing bug fixed: `GitStatusCache.getOrFetch` used
+  `!entry.statuses.isEmpty` as the cache-hit guard, causing it to always
+  re-fetch when results were empty. Fixed by adding a `hasFetched: Bool`
+  sentinel to `CacheEntry`.
+- `swiftformat --lint .` — `0/294 files require formatting`.
+- `swiftlint --strict` — `Found 0 violations, 0 serious in 294 files`.
+  Fixed violations: force-unwrap in `GitProcess`, cyclomatic complexity
+  in `GitStatusParser`, and `optional_data_string_conversion` in parser
+  and test support files.
 - `swift run Stevedore` — the executable launches, opens an empty
-  window, and exits cleanly when terminated.
+  window (800×600 `Color.clear`), and exits cleanly when terminated.

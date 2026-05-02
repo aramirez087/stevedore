@@ -19,8 +19,8 @@ final class GitStatusCacheTests: XCTestCase {
             return []
         }
 
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
 
         let count = await counter.value
         XCTAssertEqual(count, 1, "fetch should be called only once on cache hit")
@@ -35,13 +35,13 @@ final class GitStatusCacheTests: XCTestCase {
             return []
         }
 
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
         let countAfterFirst = await counter.value
         XCTAssertEqual(countAfterFirst, 1)
 
-        await cache.invalidate(repoRoot: dummyRoot)
+        await cache.invalidate(repoRoot: self.dummyRoot)
 
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
         let countAfterSecond = await counter.value
         XCTAssertEqual(countAfterSecond, 2, "fetch should be called again after invalidation")
     }
@@ -55,9 +55,9 @@ final class GitStatusCacheTests: XCTestCase {
             return []
         }
 
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
-        await cache.invalidate(repoRoot: dummyRoot)
-        _ = try await cache.getOrFetch(repoRoot: dummyRoot, fetch: fetch)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
+        await cache.invalidate(repoRoot: self.dummyRoot)
+        _ = try await cache.getOrFetch(repoRoot: self.dummyRoot, fetch: fetch)
 
         let count = await counter.value
         XCTAssertEqual(count, 2)
@@ -106,7 +106,7 @@ final class GitStatusCacheTests: XCTestCase {
         let cache = GitStatusCache()
         let counter = Counter()
         // Extract to local so `async let` doesn't capture `self`.
-        let repoRoot = dummyRoot
+        let repoRoot = self.dummyRoot
 
         let fetch: @Sendable () async throws -> [GitFileStatus] = {
             await counter.increment()
@@ -128,5 +128,7 @@ final class GitStatusCacheTests: XCTestCase {
 
 private actor Counter {
     private(set) var value = 0
-    func increment() { value += 1 }
+    func increment() {
+        self.value += 1
+    }
 }

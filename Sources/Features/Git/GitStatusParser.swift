@@ -14,90 +14,67 @@ public enum GitStatusParser: Sendable {
     /// - Returns: One entry per tracked / untracked / ignored file.
     public static func parse(_ data: Data, repoRoot: FilePath) -> [GitFileStatus] {
         guard !data.isEmpty else { return [] }
-
-        // Split on NUL to produce a flat token array.
         let tokens = data.split(separator: 0, omittingEmptySubsequences: false).map {
-            String(decoding: $0, as: UTF8.self)
+            String(bytes: $0, encoding: .utf8) ?? ""
         }
-
         var results: [GitFileStatus] = []
         var cursor = 0
-
         while cursor < tokens.count {
-            let token = tokens[cursor]
-            guard !token.isEmpty else { cursor += 1; continue }
-
-            let parts = token.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: false)
-                .map(String.init)
-            guard let prefix = parts.first else { cursor += 1; continue }
-
-            switch prefix {
-            case "#":
-                // Branch / header line — skip.
-                cursor += 1
-
-            case "1":
-                // Ordinary changed entry: `1 XY sub mH mI mW hH hI path`
-                if let entry = parseOrdinary(token, repoRoot: repoRoot) {
-                    results.append(entry)
-                }
-                cursor += 1
-
-            case "2":
-                // Renamed / copied: consumes two tokens (`path` then `origPath`).
-                if let entry = parseRenamed(token, repoRoot: repoRoot) {
-                    results.append(entry)
-                }
-                cursor += 2
-
-            case "u":
-                // Unmerged: `u XY sub m1 m2 m3 mW h1 h2 h3 path`
-                if let entry = parseUnmerged(token, repoRoot: repoRoot) {
-                    results.append(entry)
-                }
-                cursor += 1
-
-            case "?":
-                // Untracked: `? path`
-                if let pathToken = parts.last, parts.count == 2 {
-                    let path = repoRoot.appending(posix: pathToken)
-                    results.append(GitFileStatus(path: path, indexState: .untracked, worktreeState: .untracked))
-                }
-                cursor += 1
-
-            case "!":
-                // Ignored: `! path`
-                if let pathToken = parts.last, parts.count == 2 {
-                    let path = repoRoot.appending(posix: pathToken)
-                    results.append(GitFileStatus(path: path, indexState: .ignored, worktreeState: .ignored))
-                }
-                cursor += 1
-
-            default:
-                cursor += 1
-            }
+            let (entry, consumed) = self.parseSingleToken(tokens[cursor], repoRoot: repoRoot)
+            if let entry { results.append(entry) }
+            cursor += consumed
         }
-
         return results
     }
 
     // MARK: - Private helpers
 
+    /// Dispatches a single NUL-delimited token to the appropriate sub-parser.
+    private static func parseSingleToken(_ token: String, repoRoot: FilePath) -> (GitFileStatus?, Int) {
+        guard !token.isEmpty else { return (nil, 1) }
+        let parts = token.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: false)
+            .map(String.init)
+        guard let prefix = parts.first else { return (nil, 1) }
+        switch prefix {
+        case "#": return (nil, 1)
+        case "1": return (self.parseOrdinary(token, repoRoot: repoRoot), 1)
+        case "2": return (self.parseRenamed(token, repoRoot: repoRoot), 2)
+        case "u": return (self.parseUnmerged(token, repoRoot: repoRoot), 1)
+        case "?": return (self.parseSimplePath(parts, state: .untracked, repoRoot: repoRoot), 1)
+        case "!": return (self.parseSimplePath(parts, state: .ignored, repoRoot: repoRoot), 1)
+        default: return (nil, 1)
+        }
+    }
+
+    /// Parses `? path` / `! path` records where index and worktree state are identical.
+    private static func parseSimplePath(
+        _ parts: [String],
+        state: GitFileStatus.WorktreeState,
+        repoRoot: FilePath
+    ) -> GitFileStatus? {
+        guard parts.count == 2, let pathToken = parts.last else { return nil }
+        let path = repoRoot.appending(posix: pathToken)
+        return GitFileStatus(path: path, indexState: state, worktreeState: state)
+    }
+
+    /// Extracts index and worktree states from the two-character XY field.
+    private static func xyStates(from fields: [String])
+        -> (index: GitFileStatus.WorktreeState, worktree: GitFileStatus.WorktreeState)? {
+        let xy = fields[1]
+        guard xy.count == 2,
+              let xScalar = xy.unicodeScalars.first,
+              let yScalar = xy.unicodeScalars.dropFirst().first else { return nil }
+        return (self.statusState(xScalar.value), self.statusState(yScalar.value))
+    }
+
     /// Parses a type-1 (ordinary changed) record.
     /// Format: `1 XY sub mH mI mW hH hI path`
     private static func parseOrdinary(_ token: String, repoRoot: FilePath) -> GitFileStatus? {
         let fields = token.split(separator: " ", omittingEmptySubsequences: false).map(String.init)
-        // Minimum fields: prefix, XY, sub, mH, mI, mW, hH, hI, path = 9
-        guard fields.count >= 9 else { return nil }
-        let xy = fields[1]
-        guard xy.count == 2 else { return nil }
-        let xChar = xy.unicodeScalars.first!.value
-        let yChar = xy.unicodeScalars.dropFirst().first!.value
-        let indexState = statusState(UInt32(xChar))
-        let worktreeState = statusState(UInt32(yChar))
+        guard fields.count >= 9, let states = xyStates(from: fields) else { return nil }
         let relativePath = fields[8...].joined(separator: " ")
         let path = repoRoot.appending(posix: relativePath)
-        return GitFileStatus(path: path, indexState: indexState, worktreeState: worktreeState)
+        return GitFileStatus(path: path, indexState: states.index, worktreeState: states.worktree)
     }
 
     /// Parses a type-2 (renamed/copied) record.
@@ -105,17 +82,10 @@ public enum GitStatusParser: Sendable {
     /// We use the *new* path and skip origPath.
     private static func parseRenamed(_ token: String, repoRoot: FilePath) -> GitFileStatus? {
         let fields = token.split(separator: " ", omittingEmptySubsequences: false).map(String.init)
-        // Minimum fields: prefix, XY, sub, mH, mI, mW, hH, hI, score, path = 10
-        guard fields.count >= 10 else { return nil }
-        let xy = fields[1]
-        guard xy.count == 2 else { return nil }
-        let xChar = xy.unicodeScalars.first!.value
-        let yChar = xy.unicodeScalars.dropFirst().first!.value
-        let indexState = statusState(UInt32(xChar))
-        let worktreeState = statusState(UInt32(yChar))
+        guard fields.count >= 10, let states = xyStates(from: fields) else { return nil }
         let relativePath = fields[9...].joined(separator: " ")
         let path = repoRoot.appending(posix: relativePath)
-        return GitFileStatus(path: path, indexState: indexState, worktreeState: worktreeState)
+        return GitFileStatus(path: path, indexState: states.index, worktreeState: states.worktree)
     }
 
     /// Parses a type-u (unmerged) record.
@@ -131,15 +101,15 @@ public enum GitStatusParser: Sendable {
     /// Maps a single porcelain v2 status character to a `WorktreeState`.
     private static func statusState(_ scalar: UInt32) -> GitFileStatus.WorktreeState {
         switch scalar {
-        case UInt32(("." as UnicodeScalar).value): return .unmodified
-        case UInt32(("M" as UnicodeScalar).value): return .modified
-        case UInt32(("T" as UnicodeScalar).value): return .typeChanged
-        case UInt32(("A" as UnicodeScalar).value): return .added
-        case UInt32(("D" as UnicodeScalar).value): return .deleted
-        case UInt32(("R" as UnicodeScalar).value): return .renamed
-        case UInt32(("C" as UnicodeScalar).value): return .copied
-        case UInt32(("U" as UnicodeScalar).value): return .conflicted
-        default: return .unmodified
+        case UInt32(("." as UnicodeScalar).value): .unmodified
+        case UInt32(("M" as UnicodeScalar).value): .modified
+        case UInt32(("T" as UnicodeScalar).value): .typeChanged
+        case UInt32(("A" as UnicodeScalar).value): .added
+        case UInt32(("D" as UnicodeScalar).value): .deleted
+        case UInt32(("R" as UnicodeScalar).value): .renamed
+        case UInt32(("C" as UnicodeScalar).value): .copied
+        case UInt32(("U" as UnicodeScalar).value): .conflicted
+        default: .unmodified
         }
     }
 }

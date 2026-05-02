@@ -13,6 +13,8 @@ public actor GitStatusCache {
 
     private struct CacheEntry {
         var statuses: [GitFileStatus]
+        /// True once a fetch has completed; distinguishes empty results from cold cache.
+        var hasFetched: Bool = false
         /// Task owning the FSEvents watch loop for this repo.
         var watchTask: Task<Void, Never>?
         /// In-flight fetch task, used to coalesce concurrent callers.
@@ -29,8 +31,8 @@ public actor GitStatusCache {
         repoRoot: FilePath,
         fetch: @Sendable @escaping () async throws -> [GitFileStatus]
     ) async throws -> [GitFileStatus] {
-        // Cache hit: return immediately.
-        if let entry = entries[repoRoot], !entry.statuses.isEmpty, entry.fetchTask == nil {
+        // Cache hit: return immediately if a completed fetch exists with no in-flight task.
+        if let entry = entries[repoRoot], entry.hasFetched, entry.fetchTask == nil {
             return entry.statuses
         }
 
@@ -45,33 +47,35 @@ public actor GitStatusCache {
         }
 
         // Ensure the entry exists before we await (actor reentrancy safe).
-        if entries[repoRoot] == nil {
-            entries[repoRoot] = CacheEntry(statuses: [], watchTask: nil, fetchTask: fetchTask)
+        if self.entries[repoRoot] == nil {
+            self.entries[repoRoot] = CacheEntry(statuses: [], watchTask: nil, fetchTask: fetchTask)
         } else {
-            entries[repoRoot]?.fetchTask = fetchTask
+            self.entries[repoRoot]?.fetchTask = fetchTask
         }
 
         // Start the FSEvents watcher the first time we see this repo.
-        if entries[repoRoot]?.watchTask == nil {
-            let watchTask = makeWatchTask(repoRoot: repoRoot)
-            entries[repoRoot]?.watchTask = watchTask
+        if self.entries[repoRoot]?.watchTask == nil {
+            let watchTask = self.makeWatchTask(repoRoot: repoRoot)
+            self.entries[repoRoot]?.watchTask = watchTask
         }
 
         do {
             let statuses = try await fetchTask.value
-            entries[repoRoot]?.statuses = statuses
-            entries[repoRoot]?.fetchTask = nil
+            self.entries[repoRoot]?.statuses = statuses
+            self.entries[repoRoot]?.hasFetched = true
+            self.entries[repoRoot]?.fetchTask = nil
             return statuses
         } catch {
-            entries[repoRoot]?.fetchTask = nil
+            self.entries[repoRoot]?.fetchTask = nil
             throw error
         }
     }
 
     /// Clears cached statuses for `repoRoot`, forcing a fresh fetch on the next call.
     public func invalidate(repoRoot: FilePath) {
-        entries[repoRoot]?.statuses = []
-        entries[repoRoot]?.fetchTask = nil
+        self.entries[repoRoot]?.statuses = []
+        self.entries[repoRoot]?.hasFetched = false
+        self.entries[repoRoot]?.fetchTask = nil
     }
 
     // MARK: - FSEvents watch task
