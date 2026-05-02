@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:54:19.853Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:56:27.718Z
 > Files: 570 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
@@ -588,7 +588,7 @@
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
-- `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~518 tok)
+- `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~543 tok)
 
 ## Sources/UI/SettingsUI/
 

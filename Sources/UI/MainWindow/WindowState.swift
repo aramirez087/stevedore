@@ -15,7 +15,9 @@ public final class WindowState {
 
     public var splitFraction: Double {
         didSet {
-            splitFraction = max(Self.minFraction, min(Self.maxFraction, splitFraction))
+            let clamped = max(Self.minFraction, min(Self.maxFraction, self.splitFraction))
+            guard clamped != self.splitFraction else { return }
+            self.splitFraction = clamped
         }
     }
 
@@ -53,7 +55,7 @@ public struct WindowStateSnapshot: Codable, Sendable, Equatable {
         self.rightActiveTabID = rightActiveTabID
     }
 
-    public static let `default` = WindowStateSnapshot(
+    public static let `default` = Self(
         splitFraction: 0.5,
         leftTabs: [],
         leftActiveTabID: nil,

@@ -26,7 +26,7 @@ public final class MainWindowModel {
     @ObservationIgnored private var streamTask: Task<Void, Never>?
 
     public var activePaneSession: PaneSession {
-        windowState.activePaneID == .left ? leftSession : rightSession
+        self.windowState.activePaneID == .left ? self.leftSession : self.rightSession
     }
 
     public init(
@@ -53,18 +53,18 @@ public final class MainWindowModel {
 
     /// Restores persisted window state and begins observing the operation queue.
     public func restore() async {
-        startObserving()
+        self.startObserving()
         guard let repo = repository else { return }
         let workspaces = await repo.all()
         if let latest = workspaces.last {
-            applySnapshot(from: latest)
+            self.applySnapshot(from: latest)
         }
     }
 
     /// Persists the current window state as the latest workspace.
     public func save() async throws {
         guard let repo = repository else { return }
-        let workspace = buildWorkspace()
+        let workspace = self.buildWorkspace()
         try await repo.save([workspace])
     }
 
@@ -72,20 +72,20 @@ public final class MainWindowModel {
 
     /// Routes a drop of paths from the opposite pane as a copy operation.
     public func handleDrop(_ paths: [FilePath], onto targetID: PaneID) {
-        let dest = (targetID == .left ? leftSession : rightSession).currentPath
+        let dest = (targetID == .left ? self.leftSession : self.rightSession).currentPath
         let descriptor = OperationDescriptor(
             kind: .copy,
             sources: paths,
             destination: dest
         )
-        Task { await operationQueue.enqueue(descriptor) }
+        Task { await self.operationQueue.enqueue(descriptor) }
     }
 
     // MARK: - Private
 
     private func startObserving() {
-        guard streamTask == nil else { return }
-        streamTask = Task { [weak self, queue = operationQueue] in
+        guard self.streamTask == nil else { return }
+        self.streamTask = Task { [weak self, queue = operationQueue] in
             for await ops in queue.operationStream() {
                 guard let self else { break }
                 self.activeOperations = ops
@@ -98,22 +98,22 @@ public final class MainWindowModel {
         // Tabs and paths are stored in WorkspacePane; navigate each pane to its last path.
         if let leftActive = workspace.leftPane.tabs.first(where: { $0.id == workspace.leftPane.activeTabID }),
            leftSession.tabs.isEmpty == false {
-            leftSession.navigate(to: leftActive.path)
+            self.leftSession.navigate(to: leftActive.path)
         }
         if let rightActive = workspace.rightPane.tabs.first(where: { $0.id == workspace.rightPane.activeTabID }),
            rightSession.tabs.isEmpty == false {
-            rightSession.navigate(to: rightActive.path)
+            self.rightSession.navigate(to: rightActive.path)
         }
     }
 
     private func buildWorkspace() -> Workspace {
         let leftPane = WorkspacePane(
             tabs: leftSession.tabs,
-            activeTabID: leftSession.activeTabID
+            activeTabID: self.leftSession.activeTabID
         )
         let rightPane = WorkspacePane(
             tabs: rightSession.tabs,
-            activeTabID: rightSession.activeTabID
+            activeTabID: self.rightSession.activeTabID
         )
         return Workspace(leftPane: leftPane, rightPane: rightPane)
     }

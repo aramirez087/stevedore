@@ -576,6 +576,22 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T22:54:19.860Z"
+    },
+    {
+      "id": "bug-037",
+      "timestamp": "2026-05-02T22:56:27.753Z",
+      "error_message": "Wrong reference: WindowStateSnapshot should be Self",
+      "file": "Sources/UI/MainWindow/WindowState.swift",
+      "root_cause": "Used \"WindowStateSnapshot\" instead of \"Self\"",
+      "fix": "Changed WindowStateSnapshot → Self",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:56:27.753Z"
     }
   ]
 }

@@ -17,24 +17,24 @@ public struct MainWindowView: View {
 
     public var body: some View {
         NavigationSplitView(columnVisibility: .constant(.all)) {
-            Sidebar(viewModel: model.sidebarViewModel)
+            Sidebar(viewModel: self.model.sidebarViewModel)
                 .navigationSplitViewColumnWidth(min: 180, ideal: 220, max: 320)
         } detail: {
             VStack(spacing: 0) {
-                dualPane
-                if !model.activeOperations.isEmpty {
+                self.dualPane
+                if !self.model.activeOperations.isEmpty {
                     Divider()
-                    TransfersPanel(operations: model.activeOperations)
+                    TransfersPanel(operations: self.model.activeOperations)
                         .frame(height: 140)
                         .transition(.move(edge: .bottom))
                 }
             }
-            .animation(.easeInOut(duration: 0.2), value: model.activeOperations.isEmpty)
+            .animation(.easeInOut(duration: 0.2), value: self.model.activeOperations.isEmpty)
         }
         .frame(minWidth: 800, minHeight: 500)
-        .task { await model.restore() }
-        .onChange(of: model.sidebarViewModel.selection) { _, newValue in
-            routeSidebarSelection(newValue)
+        .task { await self.model.restore() }
+        .onChange(of: self.model.sidebarViewModel.selection) { _, newValue in
+            self.routeSidebarSelection(newValue)
         }
     }
 
@@ -42,21 +42,21 @@ public struct MainWindowView: View {
 
     private var dualPane: some View {
         DualPaneLayout(splitFraction: Binding(
-            get: { model.windowState.splitFraction },
-            set: { model.windowState.splitFraction = $0 }
+            get: { self.model.windowState.splitFraction },
+            set: { self.model.windowState.splitFraction = $0 }
         )) {
             PaneHost(
-                session: model.leftSession,
-                isActive: model.windowState.activePaneID == .left,
-                onActivate: { model.windowState.activePaneID = .left },
-                onDropped: { model.handleDrop($0, onto: .left) }
+                session: self.model.leftSession,
+                isActive: self.model.windowState.activePaneID == .left,
+                onActivate: { self.model.windowState.activePaneID = .left },
+                onDropped: { self.model.handleDrop($0, onto: .left) }
             )
         } right: {
             PaneHost(
-                session: model.rightSession,
-                isActive: model.windowState.activePaneID == .right,
-                onActivate: { model.windowState.activePaneID = .right },
-                onDropped: { model.handleDrop($0, onto: .right) }
+                session: self.model.rightSession,
+                isActive: self.model.windowState.activePaneID == .right,
+                onActivate: { self.model.windowState.activePaneID = .right },
+                onDropped: { self.model.handleDrop($0, onto: .right) }
             )
         }
     }
@@ -65,19 +65,19 @@ public struct MainWindowView: View {
 
     private func routeSidebarSelection(_ id: SidebarItemID?) {
         guard let id, let path = filePath(for: id) else { return }
-        model.activePaneSession.navigate(to: path)
+        self.model.activePaneSession.navigate(to: path)
     }
 
     private func filePath(for id: SidebarItemID) -> FilePath? {
         switch id {
         case .volume(let url):
-            return FilePath(scheme: .local, posix: url.path)
+            FilePath(scheme: .local, posix: url.path)
         case .bookmark(let bookmarkID):
-            return model.sidebarViewModel.bookmarks.bookmarks
+            self.model.sidebarViewModel.bookmarks.bookmarks
                 .first { $0.id == bookmarkID }
                 .map(\.path)
         case .connection, .tag:
-            return nil
+            nil
         }
     }
 }
