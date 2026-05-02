@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 361931,
-    "total_reads": 589,
-    "total_writes": 154,
-    "total_sessions": 44,
-    "anatomy_hits": 154,
-    "anatomy_misses": 431,
+    "total_tokens_estimated": 378477,
+    "total_reads": 604,
+    "total_writes": 155,
+    "total_sessions": 46,
+    "anatomy_hits": 168,
+    "anatomy_misses": 432,
     "repeated_reads_blocked": 21,
-    "estimated_savings_vs_bare_cli": 49699
+    "estimated_savings_vs_bare_cli": 52499
   },
   "sessions": [
     {
@@ -4935,6 +4935,118 @@
         "writes_count": 5,
         "repeated_reads_blocked": 1,
         "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-05-02-1740",
+      "started": "2026-05-02T23:40:37.528Z",
+      "ended": "2026-05-02T23:45:46.180Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowModel.swift",
+          "tokens_estimated": 1104,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneSession.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/WindowState.swift",
+          "tokens_estimated": 543,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowScene.swift",
+          "tokens_estimated": 156,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 774,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 1158,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/AppEnvironment.swift",
+          "tokens_estimated": 1650,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/StevedoreApp.swift",
+          "tokens_estimated": 54,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/MainWindowTests.swift",
+          "tokens_estimated": 1013,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/WindowStateTests.swift",
+          "tokens_estimated": 521,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/MainWindowTestSupport.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/docs/roadmap/stevedore-mvp/session-26-handoff.md",
+          "tokens_estimated": 1542,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/DualPaneLayout.swift",
+          "tokens_estimated": 592,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/TransfersPanel.swift",
+          "tokens_estimated": 774,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md",
+          "tokens_estimated": 5179,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 11367,
+        "output_tokens_estimated": 5179,
+        "reads_count": 15,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 14
       }
     }
   ],

@@ -682,3 +682,21 @@
 | 17:11 | Created Sources/UI/Menus/Sections/WindowMenu.swift | — | ~330 |
 | 17:11 | Edited Package.swift | 11→16 lines | ~152 |
 | 17:11 | Created Sources/UI/MainWindow/AppCommands.swift | — | ~160 |
+
+## Session: 2026-05-02 17:40
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:45 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md | — | ~4834 |
+| 17:45 | Session end: 1 writes across 1 files (.session-26-plan.md) | 15 reads | ~16546 tok |
+
+## Session: 2026-05-02 17:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-02 17:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:48 | Session 26 verification — all quality gates pass | App/, Sources/UI/MainWindow/, Tests/UITests/MainWindowTests/ | ✅ Already fully implemented; 952 tests, 1 pre-existing failure | ~200 |
