@@ -1,7 +1,7 @@
 {
   "epic": "stevedore-mvp",
   "status": "failed",
-  "first_failed_id": "session-23",
+  "first_failed_id": "session-25",
   "sessions": {
     "session-01": {
       "status": "skipped",
@@ -77,11 +77,64 @@
       "status": "skipped",
       "slug": "uninstaller-engine",
       "elapsed": 0
+    },
+    "session-16": {
+      "status": "skipped",
+      "slug": "file-pane-view",
+      "elapsed": 0
+    },
+    "session-17": {
+      "status": "skipped",
+      "slug": "tabs-view",
+      "elapsed": 0
+    },
+    "session-18": {
+      "status": "skipped",
+      "slug": "sidebar-view",
+      "elapsed": 0
+    },
+    "session-19": {
+      "status": "skipped",
+      "slug": "toolbar-pathbar",
+      "elapsed": 0
+    },
+    "session-20": {
+      "status": "skipped",
+      "slug": "transfers-ui",
+      "elapsed": 0
+    },
+    "session-21": {
+      "status": "skipped",
+      "slug": "sync-dialog-ui",
+      "elapsed": 0
+    },
+    "session-22": {
+      "status": "skipped",
+      "slug": "rename-dialog-ui",
+      "elapsed": 0
+    },
+    "session-23": {
+      "status": "skipped",
+      "slug": "connect-dialog-ui",
+      "elapsed": 0
+    },
+    "session-24": {
+      "status": "skipped",
+      "slug": "settings-ui",
+      "elapsed": 0
+    },
+    "session-25": {
+      "status": "failed",
+      "slug": "uninstaller-ui",
+      "elapsed": 1312,
+      "exit_code": 1,
+      "error_type": "unknown",
+      "log_path": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-25-exec.log"
     }
   },
   "merged_sessions": [],
-  "wave": 3,
-  "runtime_seconds": 3,
-  "started_at": 1777741062,
-  "ended_at": 1777741065
+  "wave": 4,
+  "runtime_seconds": 1312,
+  "started_at": 1777742401,
+  "ended_at": 1777743713
 }

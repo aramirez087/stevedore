@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777741100.034531,
+  "started_at": 1777742401.028404,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -183,29 +183,27 @@
       "elapsed": 0.0
     },
     "23": {
-      "status": "done",
+      "status": "skipped",
       "slug": "connect-dialog-ui",
       "wave": 3,
       "title": "Connect Dialog Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 1268.0,
-      "started_at": 1777741100.489693
+      "elapsed": 0.0
     },
     "24": {
-      "status": "done",
+      "status": "skipped",
       "slug": "settings-ui",
       "wave": 3,
       "title": "Settings Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 1148.0,
-      "started_at": 1777741100.651228
+      "elapsed": 0.0
     },
     "16": {
-      "status": "pending",
+      "status": "skipped",
       "slug": "file-pane-view",
       "wave": 4,
       "title": "File Pane View",
@@ -215,7 +213,7 @@
       "elapsed": 0.0
     },
     "20": {
-      "status": "pending",
+      "status": "skipped",
       "slug": "transfers-ui",
       "wave": 4,
       "title": "Transfers Ui",
@@ -225,7 +223,7 @@
       "elapsed": 0.0
     },
     "21": {
-      "status": "pending",
+      "status": "skipped",
       "slug": "sync-dialog-ui",
       "wave": 4,
       "title": "Sync Dialog Ui",
@@ -235,7 +233,7 @@
       "elapsed": 0.0
     },
     "22": {
-      "status": "pending",
+      "status": "skipped",
       "slug": "rename-dialog-ui",
       "wave": 4,
       "title": "Rename Dialog Ui",
@@ -245,14 +243,15 @@
       "elapsed": 0.0
     },
     "25": {
-      "status": "pending",
+      "status": "failed",
       "slug": "uninstaller-ui",
       "wave": 4,
       "title": "Uninstaller Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 0.0
+      "elapsed": 1312.0,
+      "started_at": 1777742401.600559
     },
     "26": {
       "status": "pending",
