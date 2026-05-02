@@ -653,3 +653,4 @@
 | 16:57 | swiftformat lint + swiftlint --strict | App/Stevedore, Sources/UI/MainWindow | 0 violations | ~200 tok |
 | 16:58 | Created session-26-handoff.md | docs/roadmap/stevedore-mvp/ | handoff doc written | ~600 tok |
 | 16:59 | Staged and committed Session 26 | all S26 files | feat: Session 26 — main window shell | ~200 tok |
+| 16:59 | Session end: 2 writes across 2 files (WindowState.swift, session-26-handoff.md) | 2 reads | ~4444 tok |
