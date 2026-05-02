@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:41:30.539Z
-> Files: 416 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:56:55.227Z
+> Files: 445 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -391,29 +391,15 @@
 
 - `openwolf.md` (~313 tok)
 
-## Sources/Features/Preview/
+## Sources/Features/Git/
 
-- `FeaturesPreviewModule.swift` — Module sentinel `public enum FeaturesPreviewModule` with `moduleName = "FeaturesPreview"`. (~30 tok)
-- `PreviewCache.swift` — `public actor PreviewCache` wrapping `NSCache<NSString, CachedPreview>`; byte-limited via `totalCostLimit`; `CachedPreview: NSObject` stores payload. (~200 tok)
-- `PreviewService.swift` — `public actor PreviewService: PreviewSource`; dispatches to image/code/text renderers or QL fallback; caches results in `PreviewCache`. (~350 tok)
-- `ThumbnailGenerator.swift` — `public actor ThumbnailGenerator`; coalesces concurrent QL requests via inflight `Task` dict; returns PNG `Data` via `CGImage`. (~250 tok)
-- `QuickLookPanelController.swift` — `@MainActor public final class`; `QLPreviewPanel` bridge; `show/toggle/close` API; nonisolated protocol stubs with `MainActor.assumeIsolated`. (~200 tok)
-
-## Sources/Features/Preview/Renderers/
-
-- `TextPreviewRenderer.swift` — `public enum` namespace; reads ≤1 MB, detects BOM/UTF-8/Latin-1 encoding, returns RTF `Data`. (~200 tok)
-- `ImagePreviewRenderer.swift` — `public enum` namespace; `NSImage` decode + resample to `maxDimension`, returns PNG `Data`. (~150 tok)
-- `CodePreviewRenderer.swift` — `public enum` namespace; `Language` enum at file scope with dict-based extension/keyword lookup; regex token coloring via `NSAttributedString`, returns RTF `Data`. (~700 tok)
-
-## Tests/FeaturesTests/PreviewTests/
-
-- `PreviewTestSupport.swift` — `makePreviewItem`, `makeTempFile`, `makeMinimalPNG` fixtures. (~150 tok)
-- `PreviewCacheTests.swift` — 8 tests: store/fetch, eviction, burst-1000 cap, concurrent access. (~300 tok)
-- `TextPreviewRendererTests.swift` — 8 tests: UTF-8/UTF-16LE/UTF-16BE/Latin-1/BOM-strip encoding, large file limit, nil cases. (~300 tok)
-- `ImagePreviewRendererTests.swift` — 6 tests: PNG decode, resample, upscale prevention, nil cases. (~250 tok)
-- `CodePreviewRendererTests.swift` — 10 tests: language detection, keyword presence, RTF output, nil cases. (~250 tok)
-- `ThumbnailGeneratorTests.swift` — 5 tests: thumbnail generation, coalescing, cancellation, independent sizes. (~250 tok)
-- `PreviewServiceTests.swift` — 11 tests: renderer dispatch by extension, cache, off-main-actor, magic-byte detection, QL fallback. (~350 tok)
+- `FeaturesGitModule.swift` — Declares FeaturesGitModule (~28 tok)
+- `GitError.swift` — / Typed errors surfaced by the Git module. (~113 tok)
+- `GitProcess.swift` — / Stateless wrapper around `Foundation.Process` that runs git with a (~1016 tok)
+- `GitStatusCache.swift` — / Per-repository git-status cache invalidated by FSEvents. (~1753 tok)
+- `GitStatusParser.swift` — / Parses `git status --porcelain=v2 -z` NUL-delimited output into an array (~1702 tok)
+- `GitStatusService.swift` — / Concrete `GitStatusProvider` that shells out to `/usr/bin/git`. (~454 tok)
+- `RepositoryDetector.swift` — / Walks the filesystem ancestor chain to locate the git repository root for a (~384 tok)
 
 ## Sources/Features/Operations/
 
@@ -428,16 +414,24 @@
 
 ## Sources/Features/Preview/
 
+- `FeaturesPreviewModule.swift` — Module sentinel `public enum FeaturesPreviewModule` with `moduleName = "FeaturesPreview"`. (~30 tok)
 - `FeaturesPreviewModule.swift` — Declares FeaturesPreviewModule (~30 tok)
+- `PreviewCache.swift` — `public actor PreviewCache` wrapping `NSCache<NSString, CachedPreview>`; byte-limited via `totalCostLimit`; `CachedPreview: NSObject` stores payload. (~200 tok)
 - `PreviewCache.swift` — NSCache value wrapper — must be NSObject subclass for NSCache. (~288 tok)
+- `PreviewService.swift` — `public actor PreviewService: PreviewSource`; dispatches to image/code/text renderers or QL fallback; caches results in `PreviewCache`. (~350 tok)
 - `PreviewService.swift` (~982 tok)
+- `QuickLookPanelController.swift` — `@MainActor public final class`; `QLPreviewPanel` bridge; `show/toggle/close` API; nonisolated protocol stubs with `MainActor.assumeIsolated`. (~200 tok)
 - `QuickLookPanelController.swift` — Class: QuickLookPanelController (~487 tok)
+- `ThumbnailGenerator.swift` — `public actor ThumbnailGenerator`; coalesces concurrent QL requests via inflight `Task` dict; returns PNG `Data` via `CGImage`. (~250 tok)
 - `ThumbnailGenerator.swift` (~568 tok)
 
 ## Sources/Features/Preview/Renderers/
 
+- `CodePreviewRenderer.swift` — `public enum` namespace; `Language` enum at file scope with dict-based extension/keyword lookup; regex token coloring via `NSAttributedString`, returns RTF `Data`. (~700 tok)
 - `CodePreviewRenderer.swift` — MARK: - Language (~3293 tok)
+- `ImagePreviewRenderer.swift` — `public enum` namespace; `NSImage` decode + resample to `maxDimension`, returns PNG `Data`. (~150 tok)
 - `ImagePreviewRenderer.swift` — Declares ImagePreviewRenderer (~423 tok)
+- `TextPreviewRenderer.swift` — `public enum` namespace; reads ≤1 MB, detects BOM/UTF-8/Latin-1 encoding, returns RTF `Data`. (~200 tok)
 - `TextPreviewRenderer.swift` — Declares TextPreviewRenderer (~572 tok)
 
 ## Sources/Features/Rename/
@@ -531,6 +525,15 @@
 - `ResultHelpersTests.swift` — Struct: FakeError (~1458 tok)
 - `SortDescriptorsTests.swift` — Class: SortDescriptorsTests (~2284 tok)
 
+## Tests/FeaturesTests/GitTests/
+
+- `GitProcessTests.swift` — Class: GitProcessTests (~1028 tok)
+- `GitStatusCacheTests.swift` — Class: GitStatusCacheTests (~1210 tok)
+- `GitStatusParserTests.swift` — Class: GitStatusParserTests (~1558 tok)
+- `GitStatusProviderTests.swift` — Class: GitStatusProviderTests (~1622 tok)
+- `GitTestSupport.swift` — MARK: - Skip helper (~884 tok)
+- `RepositoryDetectorTests.swift` — Class: RepositoryDetectorTests (~689 tok)
+
 ## Tests/FeaturesTests/OperationsTests/
 
 - `ConflictResolverTests.swift` — Class: ConflictResolverTests (~869 tok)
@@ -544,12 +547,19 @@
 
 ## Tests/FeaturesTests/PreviewTests/
 
+- `CodePreviewRendererTests.swift` — 10 tests: language detection, keyword presence, RTF output, nil cases. (~250 tok)
 - `CodePreviewRendererTests.swift` — Class: CodePreviewRendererTests (~872 tok)
+- `ImagePreviewRendererTests.swift` — 6 tests: PNG decode, resample, upscale prevention, nil cases. (~250 tok)
 - `ImagePreviewRendererTests.swift` — Class: ImagePreviewRendererTests (~595 tok)
+- `PreviewCacheTests.swift` — 8 tests: store/fetch, eviction, burst-1000 cap, concurrent access. (~300 tok)
 - `PreviewCacheTests.swift` — Class: PreviewCacheTests (~1132 tok)
+- `PreviewServiceTests.swift` — 11 tests: renderer dispatch by extension, cache, off-main-actor, magic-byte detection, QL fallback. (~350 tok)
 - `PreviewServiceTests.swift` — Class: PreviewServiceTests (~1687 tok)
+- `PreviewTestSupport.swift` — `makePreviewItem`, `makeTempFile`, `makeMinimalPNG` fixtures. (~150 tok)
 - `PreviewTestSupport.swift` — Declares 0x00 (~502 tok)
+- `TextPreviewRendererTests.swift` — 8 tests: UTF-8/UTF-16LE/UTF-16BE/Latin-1/BOM-strip encoding, large file limit, nil cases. (~300 tok)
 - `TextPreviewRendererTests.swift` — Class: TextPreviewRendererTests (~1048 tok)
+- `ThumbnailGeneratorTests.swift` — 5 tests: thumbnail generation, coalescing, cancellation, independent sizes. (~250 tok)
 - `ThumbnailGeneratorTests.swift` — Class: ThumbnailGeneratorTests (~941 tok)
 
 ## Tests/FeaturesTests/RenameTests/
@@ -602,6 +612,7 @@
 - `.session-11-plan.md` — Session 11 Implementation Plan — Folder Sync & Compare Engine (~6854 tok)
 - `.session-12-plan.md` — Session 12 Implementation Plan — Multi-Rename Engine (~6627 tok)
 - `.session-13-plan.md` — Session 13 Implementation Plan — Preview Service (Quick Look) (~12249 tok)
+- `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~4801 tok)
 - `.session-2-plan.md` — Session 02 Implementation Plan — Core Utilities (~5469 tok)
 - `.session-3-plan.md` — Session 03 Implementation Plan — Local Filesystem Provider (~3218 tok)
 - `.session-4-plan.md` — Session 04 Implementation Plan — Remote Filesystem Providers (~3074 tok)

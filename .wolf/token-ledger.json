@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 204663,
-    "total_reads": 430,
-    "total_writes": 69,
-    "total_sessions": 27,
-    "anatomy_hits": 65,
-    "anatomy_misses": 362,
+    "total_tokens_estimated": 215058,
+    "total_reads": 445,
+    "total_writes": 70,
+    "total_sessions": 29,
+    "anatomy_hits": 71,
+    "anatomy_misses": 371,
     "repeated_reads_blocked": 7,
-    "estimated_savings_vs_bare_cli": 19068
+    "estimated_savings_vs_bare_cli": 20268
   },
   "sessions": [
     {
@@ -3321,6 +3321,118 @@
         "writes_count": 34,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 5
+      }
+    },
+    {
+      "id": "session-2026-05-01-1742",
+      "started": "2026-05-01T23:42:42.381Z",
+      "ended": "2026-05-01T23:48:06.287Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/GitStatusProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/GitFileStatus.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/session-14-git-integration.md",
+          "tokens_estimated": 660,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/FileSystem/Local/FSEventsWatcher.swift",
+          "tokens_estimated": 300,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Sync/SyncEngine.swift",
+          "tokens_estimated": 1467,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/SyncTests/SyncEngineTests.swift",
+          "tokens_estimated": 1592,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FileSystemTests/LocalTests/Support/TempDirectoryFixture.swift",
+          "tokens_estimated": 540,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/PreviewSource.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Git/FeaturesGitSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
+          "tokens_estimated": 350,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-mvp/.session-14-plan.md",
+          "tokens_estimated": 5486,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 4909,
+        "output_tokens_estimated": 5486,
+        "reads_count": 15,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 6
       }
     }
   ],

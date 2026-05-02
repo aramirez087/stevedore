@@ -393,3 +393,33 @@
 | 17:41 | Created docs/roadmap/stevedore-mvp/session-13-handoff.md | — | ~2339 |
 | 17:41 | Session 13 — Preview Service | Sources/Features/Preview/** Tests/FeaturesTests/PreviewTests/** docs/roadmap/stevedore-mvp/session-13-handoff.md | 49 new tests pass, 741 total pass, 0 lint violations | ~18000 |
 | 17:42 | Session end: 34 writes across 16 files (FeaturesPreviewModule.swift, PreviewCache.swift, TextPreviewRenderer.swift, ImagePreviewRenderer.swift, CodePreviewRenderer.swift) | 16 reads | ~22151 tok |
+
+## Session: 2026-05-01 17:42
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:47 | Created docs/claude-sessions/stevedore-mvp/.session-14-plan.md | — | ~5121 |
+| 17:48 | Session end: 1 writes across 1 files (.session-14-plan.md) | 15 reads | ~10395 tok |
+
+## Session: 2026-05-01 17:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:48 | Created Sources/Features/Git/FeaturesGitModule.swift | — | ~28 |
+| 17:49 | Created Sources/Features/Git/GitError.swift | — | ~113 |
+| 17:49 | Created Sources/Features/Git/GitProcess.swift | — | ~1016 |
+| 17:49 | Created Sources/Features/Git/RepositoryDetector.swift | — | ~384 |
+| 17:50 | Created Sources/Features/Git/GitStatusParser.swift | — | ~1702 |
+| 17:53 | Created Sources/Features/Git/GitStatusCache.swift | — | ~1759 |
+| 17:53 | Created Sources/Features/Git/GitStatusService.swift | — | ~454 |
+| 17:53 | Edited Sources/Features/Git/GitStatusCache.swift | 4→4 lines | ~43 |
+| 17:54 | Created Tests/FeaturesTests/GitTests/GitTestSupport.swift | — | ~830 |
+| 17:54 | Created Tests/FeaturesTests/GitTests/GitProcessTests.swift | — | ~1028 |
+| 17:54 | Created Tests/FeaturesTests/GitTests/RepositoryDetectorTests.swift | — | ~689 |
+| 17:55 | Created Tests/FeaturesTests/GitTests/GitStatusParserTests.swift | — | ~1558 |
+| 17:55 | Created Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift | — | ~1079 |
+| 17:55 | Created Tests/FeaturesTests/GitTests/GitStatusProviderTests.swift | — | ~1622 |
+| 17:56 | Edited Tests/FeaturesTests/GitTests/GitTestSupport.swift | 2→6 lines | ~78 |
+| 17:56 | Created Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift | — | ~1124 |
+| 17:56 | Created Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift | — | ~1184 |
+| 17:56 | Edited Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift | modified testConcurrentFetch() | ~209 |

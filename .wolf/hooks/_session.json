@@ -1,315 +1,171 @@
 {
-  "session_id": "session-2026-05-01-1724",
-  "started": "2026-05-01T23:24:28.391Z",
+  "session_id": "session-2026-05-01-1748",
+  "started": "2026-05-01T23:48:07.040Z",
   "files_read": {
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/PreviewSource.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Features/Git/Placeholder.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:41.473Z"
+      "first_read": "2026-05-01T23:48:15.780Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/PreviewPayload.swift": {
+    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Git/FeaturesGitSmokeTests.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:44.715Z"
+      "first_read": "2026-05-01T23:48:16.631Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Placeholder.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/GitFileStatus.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:44.846Z"
+      "first_read": "2026-05-01T23:48:26.361Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileItem.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/GitStatusProvider.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:49.317Z"
+      "first_read": "2026-05-01T23:48:26.489Z"
     },
     "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:49.325Z"
+      "first_read": "2026-05-01T23:48:28.925Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FileKind.swift": {
-      "count": 1,
+    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/PathUtilities.swift": {
+      "count": 2,
       "tokens": 0,
-      "first_read": "2026-05-01T23:24:53.410Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/ConnectionScheme.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:24:56.816Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Preview/FeaturesPreviewSmokeTests.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:25:00.460Z"
+      "first_read": "2026-05-01T23:48:34.418Z"
     },
     "/Users/aramirez/Code/Stevedore/Package.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:25:14.110Z"
-    },
-    "/Users/aramirez/Code/Stevedore/.swiftlint.yml": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:26:36.220Z"
-    },
-    "/Users/aramirez/Code/Stevedore/.swiftformat": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:26:36.227Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/RenameTests/RenameTestSupport.swift": {
-      "count": 1,
-      "tokens": 300,
-      "first_read": "2026-05-01T23:29:50.767Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/RenameTests/CollisionResolverTests.swift": {
-      "count": 1,
-      "tokens": 350,
-      "first_read": "2026-05-01T23:29:51.515Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift": {
-      "count": 1,
-      "tokens": 982,
-      "first_read": "2026-05-01T23:33:30.195Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift": {
-      "count": 1,
-      "tokens": 1030,
-      "first_read": "2026-05-01T23:39:17.540Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift": {
-      "count": 1,
-      "tokens": 1141,
-      "first_read": "2026-05-01T23:39:17.955Z"
+      "first_read": "2026-05-01T23:54:19.408Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/FeaturesPreviewModule.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/FeaturesGitModule.swift",
       "action": "create",
-      "tokens": 32,
-      "at": "2026-05-01T23:30:11.091Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewCache.swift",
-      "action": "create",
-      "tokens": 308,
-      "at": "2026-05-01T23:30:28.248Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
-      "action": "create",
-      "tokens": 616,
-      "at": "2026-05-01T23:30:46.109Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
-      "action": "create",
-      "tokens": 456,
-      "at": "2026-05-01T23:30:54.949Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
-      "action": "create",
-      "tokens": 3532,
-      "at": "2026-05-01T23:31:41.146Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/ThumbnailGenerator.swift",
-      "action": "create",
-      "tokens": 609,
-      "at": "2026-05-01T23:32:01.766Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/QuickLookPanelController.swift",
-      "action": "create",
-      "tokens": 522,
-      "at": "2026-05-01T23:32:14.016Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
-      "action": "create",
-      "tokens": 1052,
-      "at": "2026-05-01T23:32:36.583Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
-      "action": "edit",
-      "tokens": 16,
-      "at": "2026-05-01T23:33:00.716Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
-      "action": "edit",
-      "tokens": 16,
-      "at": "2026-05-01T23:33:04.883Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
-      "action": "edit",
-      "tokens": 16,
-      "at": "2026-05-01T23:33:08.997Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
-      "action": "edit",
-      "tokens": 21,
-      "at": "2026-05-01T23:33:15.879Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
-      "action": "edit",
       "tokens": 30,
-      "at": "2026-05-01T23:33:20.519Z"
+      "at": "2026-05-01T23:48:54.871Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
-      "action": "edit",
-      "tokens": 21,
-      "at": "2026-05-01T23:33:25.264Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
-      "action": "edit",
-      "tokens": 140,
-      "at": "2026-05-01T23:33:36.298Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewTestSupport.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitError.swift",
       "action": "create",
-      "tokens": 537,
-      "at": "2026-05-01T23:33:59.006Z"
+      "tokens": 121,
+      "at": "2026-05-01T23:49:05.314Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitProcess.swift",
       "action": "create",
-      "tokens": 1204,
-      "at": "2026-05-01T23:34:21.108Z"
+      "tokens": 1088,
+      "at": "2026-05-01T23:49:23.425Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/RepositoryDetector.swift",
       "action": "create",
-      "tokens": 1100,
-      "at": "2026-05-01T23:34:39.398Z"
+      "tokens": 412,
+      "at": "2026-05-01T23:49:34.614Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusParser.swift",
       "action": "create",
-      "tokens": 635,
-      "at": "2026-05-01T23:34:50.381Z"
+      "tokens": 1823,
+      "at": "2026-05-01T23:50:00.736Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusCache.swift",
       "action": "create",
-      "tokens": 931,
-      "at": "2026-05-01T23:35:04.700Z"
+      "tokens": 1884,
+      "at": "2026-05-01T23:53:23.988Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ThumbnailGeneratorTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusService.swift",
       "action": "create",
-      "tokens": 1008,
-      "at": "2026-05-01T23:35:20.833Z"
+      "tokens": 486,
+      "at": "2026-05-01T23:53:31.331Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
+      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusCache.swift",
+      "action": "edit",
+      "tokens": 46,
+      "at": "2026-05-01T23:53:49.704Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
       "action": "create",
-      "tokens": 1721,
-      "at": "2026-05-01T23:35:42.904Z"
+      "tokens": 889,
+      "at": "2026-05-01T23:54:32.765Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
-      "action": "edit",
-      "tokens": 141,
-      "at": "2026-05-01T23:37:06.339Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 22,
-      "at": "2026-05-01T23:37:13.227Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 22,
-      "at": "2026-05-01T23:37:17.283Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
-      "action": "edit",
-      "tokens": 418,
-      "at": "2026-05-01T23:37:29.686Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift",
-      "action": "edit",
-      "tokens": 349,
-      "at": "2026-05-01T23:37:46.239Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 26,
-      "at": "2026-05-01T23:37:50.217Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Preview/PreviewService.swift",
-      "action": "edit",
-      "tokens": 76,
-      "at": "2026-05-01T23:38:34.122Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 74,
-      "at": "2026-05-01T23:39:24.411Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 73,
-      "at": "2026-05-01T23:39:30.698Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift",
-      "action": "edit",
-      "tokens": 79,
-      "at": "2026-05-01T23:39:35.579Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift",
-      "action": "edit",
-      "tokens": 39,
-      "at": "2026-05-01T23:39:40.064Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-mvp/session-13-handoff.md",
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
       "action": "create",
-      "tokens": 2506,
-      "at": "2026-05-01T23:41:30.544Z"
+      "tokens": 1101,
+      "at": "2026-05-01T23:54:49.670Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/RepositoryDetectorTests.swift",
+      "action": "create",
+      "tokens": 738,
+      "at": "2026-05-01T23:54:59.274Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusParserTests.swift",
+      "action": "create",
+      "tokens": 1670,
+      "at": "2026-05-01T23:55:21.781Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+      "action": "create",
+      "tokens": 1156,
+      "at": "2026-05-01T23:55:37.064Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusProviderTests.swift",
+      "action": "create",
+      "tokens": 1738,
+      "at": "2026-05-01T23:55:55.771Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "action": "edit",
+      "tokens": 84,
+      "at": "2026-05-01T23:56:09.088Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+      "action": "create",
+      "tokens": 1205,
+      "at": "2026-05-01T23:56:24.508Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+      "action": "create",
+      "tokens": 1269,
+      "at": "2026-05-01T23:56:45.270Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+      "action": "edit",
+      "tokens": 224,
+      "at": "2026-05-01T23:56:55.233Z"
     }
   ],
   "edit_counts": {
-    "Sources/Features/Preview/FeaturesPreviewModule.swift": 1,
-    "Sources/Features/Preview/PreviewCache.swift": 1,
-    "Sources/Features/Preview/Renderers/TextPreviewRenderer.swift": 3,
-    "Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift": 3,
-    "Sources/Features/Preview/Renderers/CodePreviewRenderer.swift": 3,
-    "Sources/Features/Preview/ThumbnailGenerator.swift": 1,
-    "Sources/Features/Preview/QuickLookPanelController.swift": 1,
-    "Sources/Features/Preview/PreviewService.swift": 3,
-    "Tests/FeaturesTests/PreviewTests/PreviewTestSupport.swift": 1,
-    "Tests/FeaturesTests/PreviewTests/PreviewCacheTests.swift": 3,
-    "Tests/FeaturesTests/PreviewTests/TextPreviewRendererTests.swift": 5,
-    "Tests/FeaturesTests/PreviewTests/ImagePreviewRendererTests.swift": 2,
-    "Tests/FeaturesTests/PreviewTests/CodePreviewRendererTests.swift": 2,
-    "Tests/FeaturesTests/PreviewTests/ThumbnailGeneratorTests.swift": 1,
-    "Tests/FeaturesTests/PreviewTests/PreviewServiceTests.swift": 3,
-    "docs/roadmap/stevedore-mvp/session-13-handoff.md": 1
+    "Sources/Features/Git/FeaturesGitModule.swift": 1,
+    "Sources/Features/Git/GitError.swift": 1,
+    "Sources/Features/Git/GitProcess.swift": 1,
+    "Sources/Features/Git/RepositoryDetector.swift": 1,
+    "Sources/Features/Git/GitStatusParser.swift": 1,
+    "Sources/Features/Git/GitStatusCache.swift": 2,
+    "Sources/Features/Git/GitStatusService.swift": 1,
+    "Tests/FeaturesTests/GitTests/GitTestSupport.swift": 2,
+    "Tests/FeaturesTests/GitTests/GitProcessTests.swift": 1,
+    "Tests/FeaturesTests/GitTests/RepositoryDetectorTests.swift": 1,
+    "Tests/FeaturesTests/GitTests/GitStatusParserTests.swift": 1,
+    "Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift": 4,
+    "Tests/FeaturesTests/GitTests/GitStatusProviderTests.swift": 1
   },
-  "anatomy_hits": 5,
-  "anatomy_misses": 11,
-  "repeated_reads_warned": 0,
+  "anatomy_hits": 0,
+  "anatomy_misses": 7,
+  "repeated_reads_warned": 1,
   "cerebrum_warnings": 0,
-  "stop_count": 1
+  "stop_count": 0
 }
