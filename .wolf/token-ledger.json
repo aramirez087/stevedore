@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 275954,
-    "total_reads": 505,
-    "total_writes": 102,
+    "total_tokens_estimated": 305898,
+    "total_reads": 528,
+    "total_writes": 144,
     "total_sessions": 38,
-    "anatomy_hits": 101,
-    "anatomy_misses": 400,
-    "repeated_reads_blocked": 8,
-    "estimated_savings_vs_bare_cli": 27152
+    "anatomy_hits": 121,
+    "anatomy_misses": 403,
+    "repeated_reads_blocked": 14,
+    "estimated_savings_vs_bare_cli": 38440
   },
   "sessions": [
     {
@@ -4070,6 +4070,371 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-05-02-1501",
+      "started": "2026-05-02T21:01:59.079Z",
+      "ended": "2026-05-02T21:25:18.960Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Package.swift",
+          "tokens_estimated": 2154,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/Placeholder.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/Sidebar/SidebarViewModel.swift",
+          "tokens_estimated": 797,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/DesignSystem/Components/SDButton.swift",
+          "tokens_estimated": 150,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AppMetadata.swift",
+          "tokens_estimated": 60,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AssociatedFile.swift",
+          "tokens_estimated": 199,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Confidence.swift",
+          "tokens_estimated": 102,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallerError.swift",
+          "tokens_estimated": 185,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AppMetadataReader.swift",
+          "tokens_estimated": 549,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/MatchScorer.swift",
+          "tokens_estimated": 274,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AssociatedFilesScanner.swift",
+          "tokens_estimated": 564,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallExecutor.swift",
+          "tokens_estimated": 179,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallPlan.swift",
+          "tokens_estimated": 60,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/SyncTests/SyncPlanTests.swift",
+          "tokens_estimated": 1915,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/RenameTests/RenameExecutorTests.swift",
+          "tokens_estimated": 450,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/FeaturesUninstallerModule.swift",
+          "tokens_estimated": 32,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Testing/FakeAssociatedFilesScanner.swift",
+          "tokens_estimated": 60,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 1430,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/UITests/UninstallerUI/UIUninstallerUISmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 230,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerLauncher.swift",
+          "tokens_estimated": 90,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 320,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Package.swift",
+          "tokens_estimated": 55,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Package.swift",
+          "tokens_estimated": 38,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/FeaturesUninstallerModule.swift",
+          "tokens_estimated": 35,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallerError.swift",
+          "tokens_estimated": 198,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Confidence.swift",
+          "tokens_estimated": 109,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AppMetadata.swift",
+          "tokens_estimated": 76,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AssociatedFile.swift",
+          "tokens_estimated": 213,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallPlan.swift",
+          "tokens_estimated": 83,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/SearchPaths.swift",
+          "tokens_estimated": 315,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/MatchScorer.swift",
+          "tokens_estimated": 293,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AppMetadataReader.swift",
+          "tokens_estimated": 588,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AssociatedFilesScanner.swift",
+          "tokens_estimated": 604,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallExecutor.swift",
+          "tokens_estimated": 192,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Protocols/AppMetadataReading.swift",
+          "tokens_estimated": 38,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Protocols/AssociatedFilesScanning.swift",
+          "tokens_estimated": 37,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Protocols/UninstallExecuting.swift",
+          "tokens_estimated": 29,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Testing/FakeAppMetadataReader.swift",
+          "tokens_estimated": 104,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Testing/FakeAssociatedFilesScanner.swift",
+          "tokens_estimated": 141,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/Testing/FakeUninstallExecutor.swift",
+          "tokens_estimated": 161,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift",
+          "tokens_estimated": 585,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/AppMetadataReaderTests.swift",
+          "tokens_estimated": 789,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
+          "tokens_estimated": 776,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
+          "tokens_estimated": 865,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 1034,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UIUninstallerUIModule.swift",
+          "tokens_estimated": 32,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/ScanState.swift",
+          "tokens_estimated": 44,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/AssociatedFileSortKey.swift",
+          "tokens_estimated": 39,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 1545,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/AppHeader.swift",
+          "tokens_estimated": 407,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/AssociatedFilesTable.swift",
+          "tokens_estimated": 1366,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/ConfirmationFooter.swift",
+          "tokens_estimated": 296,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerSheet.swift",
+          "tokens_estimated": 604,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerLauncher.swift",
+          "tokens_estimated": 358,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 2417,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 1350,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/UninstallPlan.swift",
+          "tokens_estimated": 94,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 95,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/Features/Uninstaller/AppMetadata.swift",
+          "tokens_estimated": 136,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 27,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 1455,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 92,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui/docs/roadmap/stevedore-mvp/session-25-handoff.md",
+          "tokens_estimated": 2429,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 9800,
+        "output_tokens_estimated": 20144,
+        "reads_count": 23,
+        "writes_count": 42,
+        "repeated_reads_blocked": 6,
+        "anatomy_lookups": 20
       }
     }
   ],
