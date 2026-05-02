@@ -83,7 +83,10 @@ let libraryModules: [LibraryModule] = [
             .target(name: "DesignSystem"),
         ]
     ),
-    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: []),
+    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: [
+        .target(name: "DesignSystem"),
+        .target(name: "ServicesSettings"),
+    ]),
     LibraryModule(name: "UIUninstallerUI", path: "Sources/UI/UninstallerUI", extraDependencies: []),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
     LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),

@@ -36,6 +36,59 @@ public enum Settings {
     public static let gitStatusBranch = Setting<Bool>(key: "stevedore.gitStatusBranch", defaultValue: true)
     public static let defaultEditorCommand = Setting<String>(key: "stevedore.defaultEditorCommand", defaultValue: "")
 
+    // MARK: - Startup
+
+    public static let startupBehavior = Setting<String>(
+        key: "stevedore.startupBehavior",
+        defaultValue: "lastWorkspace"
+    )
+
+    public static let defaultTerminalApp = Setting<String>(
+        key: "stevedore.defaultTerminalApp",
+        defaultValue: ""
+    )
+
+    // MARK: - Appearance (extended)
+
+    public static let accentColor = Setting<String>(
+        key: "stevedore.accentColor",
+        defaultValue: "system"
+    )
+
+    public static let density = Setting<String>(
+        key: "stevedore.density",
+        defaultValue: "regular"
+    )
+
+    // MARK: - File display (extended)
+
+    public static let dateFormat = Setting<String>(
+        key: "stevedore.dateFormat",
+        defaultValue: "relative"
+    )
+
+    // MARK: - Advanced
+
+    public static let logLevel = Setting<String>(
+        key: "stevedore.logLevel",
+        defaultValue: "info"
+    )
+
+    public static let logRingBufferSize = Setting<Int>(
+        key: "stevedore.logRingBufferSize",
+        defaultValue: 500
+    )
+
+    public static let conflictPolicy = Setting<String>(
+        key: "stevedore.conflictPolicy",
+        defaultValue: "ask"
+    )
+
+    public static let transferConcurrencyCap = Setting<Int>(
+        key: "stevedore.transferConcurrencyCap",
+        defaultValue: 4
+    )
+
     // MARK: - Key index (used by SettingsCatalogTests)
 
     /// All setting keys in declaration order. Used to assert uniqueness at test time.
@@ -55,5 +108,14 @@ public enum Settings {
         gitStatusEnabled.key,
         gitStatusBranch.key,
         defaultEditorCommand.key,
+        startupBehavior.key,
+        defaultTerminalApp.key,
+        accentColor.key,
+        density.key,
+        dateFormat.key,
+        logLevel.key,
+        logRingBufferSize.key,
+        conflictPolicy.key,
+        transferConcurrencyCap.key,
     ]
 }

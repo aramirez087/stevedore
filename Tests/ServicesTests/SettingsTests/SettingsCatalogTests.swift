@@ -27,6 +27,6 @@ final class SettingsCatalogTests: XCTestCase {
     func testAllKeysCoverEveryStaticSetting() {
         // Verify the allKeys literal matches the number of static settings.
         // If a new setting is added without updating allKeys, this test fails.
-        XCTAssertEqual(Settings.allKeys.count, 15, "allKeys count must match the number of static settings")
+        XCTAssertEqual(Settings.allKeys.count, 24, "allKeys count must match the number of static settings")
     }
 }
