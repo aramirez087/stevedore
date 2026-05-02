@@ -1,0 +1,69 @@
+import AppKit
+import DesignSystem
+import SwiftUI
+
+/// Custom horizontal split that exposes `splitFraction` as a `Binding`.
+///
+/// `HSplitView` (AppKit `NSSplitView`) is intentionally NOT used: it manages its own
+/// divider position internally and does not expose a binding, making round-trip
+/// persistence via `WindowState` impossible.
+public struct DualPaneLayout<Left: View, Right: View>: View {
+    @Binding var splitFraction: Double
+    let left: Left
+    let right: Right
+
+    public init(
+        splitFraction: Binding<Double>,
+        @ViewBuilder left: () -> Left,
+        @ViewBuilder right: () -> Right
+    ) {
+        self._splitFraction = splitFraction
+        self.left = left()
+        self.right = right()
+    }
+
+    public var body: some View {
+        GeometryReader { geo in
+            HStack(spacing: 0) {
+                left
+                    .frame(width: leftWidth(in: geo.size.width))
+                PaneDividerStrip(splitFraction: $splitFraction, totalWidth: geo.size.width)
+                right
+                    .frame(maxWidth: .infinity)
+            }
+        }
+    }
+
+    private func leftWidth(in total: CGFloat) -> CGFloat {
+        let clamped = max(WindowState.minFraction, min(WindowState.maxFraction, splitFraction))
+        // Subtract half the divider strip (8 pt) so left + divider + right = total.
+        return total * clamped - 4
+    }
+}
+
+// MARK: - PaneDividerStrip
+
+private struct PaneDividerStrip: View {
+    @Binding var splitFraction: Double
+    let totalWidth: CGFloat
+
+    var body: some View {
+        Rectangle()
+            .fill(Color.primary.opacity(0.12))
+            .frame(width: 8)
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        let newFraction = Double((value.location.x + totalWidth * splitFraction) / totalWidth)
+                        splitFraction = max(WindowState.minFraction, min(WindowState.maxFraction, newFraction))
+                    }
+            )
+            .onHover { inside in
+                if inside {
+                    NSCursor.resizeLeftRight.push()
+                } else {
+                    NSCursor.pop()
+                }
+            }
+    }
+}

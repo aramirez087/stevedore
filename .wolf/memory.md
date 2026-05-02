@@ -568,3 +568,56 @@
 | 15:22 | Edited Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | modified testNoRemoveItemCall() | ~86 |
 | 15:24 | Created docs/roadmap/stevedore-mvp/session-25-handoff.md | — | ~2267 |
 | 15:25 | Session end: 42 writes across 35 files (Package.swift, FeaturesUninstallerModule.swift, UninstallerError.swift, Confidence.swift, AppMetadata.swift) | 23 reads | ~29944 tok |
+
+## Session: 2026-05-02 15:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-02 (Session 26 — Read-only planning)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:00 | Read all prior handoffs (01,02,03,07,08,09,10,13,14,18,19) | docs/roadmap/stevedore-mvp/ | Context gathered for S26 plan | ~6000 |
+| 22:10 | Read anatomy, cerebrum, Package.swift, source files for S26 scope | Multiple sources | Module inventory complete; UIPane/UITabs/UITransfers confirmed as stubs | ~3000 |
+| 22:20 | Wrote Session 26 implementation plan | epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md | 965-line plan: file list, design decisions, risks, verification steps, order of operations | ~1500 |
+
+## Session: 2026-05-02 15:38
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:40 | Edited Package.swift | expanded (+10 lines) | ~94 |
+| 15:40 | Edited Package.swift | expanded (+12 lines) | ~255 |
+| 15:40 | Edited Package.swift | 3→4 lines | ~48 |
+| 15:40 | Created Sources/UI/MainWindow/MainWindowModule.swift | — | ~53 |
+| 15:40 | Created Sources/UI/MainWindow/AppCommands.swift | — | ~58 |
+| 15:40 | Created Sources/UI/MainWindow/PaneID.swift | — | ~40 |
+| 15:40 | Created Sources/UI/MainWindow/WindowState.swift | — | ~518 |
+| 15:41 | Edited Sources/UI/MainWindow/MainWindowModule.swift | 6→4 lines | ~49 |
+| 15:41 | Created Sources/UI/MainWindow/PaneSession.swift | — | ~743 |
+| 15:41 | Created Sources/UI/MainWindow/TransfersPanel.swift | — | ~771 |
+| 15:41 | Created Sources/UI/MainWindow/PaneHost.swift | — | ~1157 |
+| 15:41 | Created Sources/UI/MainWindow/DualPaneLayout.swift | — | ~592 |
+| 15:42 | Created Sources/UI/MainWindow/MainWindowModel.swift | — | ~1104 |
+| 15:42 | Created Sources/UI/MainWindow/MainWindowView.swift | — | ~787 |
+| 15:42 | Created Sources/UI/MainWindow/MainWindowScene.swift | — | ~156 |
+| 15:42 | Edited Sources/UI/MainWindow/MainWindowView.swift | FilePath() → map() | ~48 |
+| 15:43 | Created App/Stevedore/AppEnvironment.swift | — | ~1654 |
+| 15:43 | Edited App/Stevedore/StevedoreApp.swift | 13→11 lines | ~54 |
+| 15:43 | Created App/Stevedore/Info.plist | — | ~136 |
+| 15:43 | Created App/Stevedore/Stevedore.entitlements | — | ~107 |
+| 15:44 | Created Tests/UITests/MainWindowTests/MainWindowTestSupport.swift | — | ~688 |
+| 15:44 | Created Tests/UITests/MainWindowTests/WindowStateTests.swift | — | ~521 |
+| 15:44 | Created Tests/UITests/MainWindowTests/MainWindowTests.swift | — | ~1013 |
+| 16:25 | Created Tests/UITests/MainWindowTests/MainWindowTestSupport.swift | — | ~743 |
+
+## Session: 2026-05-02 16:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:27 | Edited App/Stevedore/AppEnvironment.swift | modified status() | ~24 |
+| 16:27 | Edited App/Stevedore/AppEnvironment.swift | inline fix | ~13 |
+| 16:53 | Edited Package.swift | 1→5 lines | ~40 |
+| 16:54 | Edited Sources/UI/MainWindow/TransfersPanel.swift | added 1 import(s) | ~20 |
+| 16:54 | Edited Sources/UI/MainWindow/PaneHost.swift | 2→2 lines | ~16 |
+| 16:54 | Edited Sources/UI/MainWindow/PaneHost.swift | 2→2 lines | ~16 |

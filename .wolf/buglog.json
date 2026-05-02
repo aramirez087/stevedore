@@ -528,6 +528,54 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T21:10:40.372Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-05-02T22:27:01.451Z",
+      "error_message": "Wrong reference: disconnected should be idle",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "Used \"disconnected\" instead of \"idle\"",
+      "fix": "Changed disconnected → idle",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:27:01.451Z"
+    },
+    {
+      "id": "bug-035",
+      "timestamp": "2026-05-02T22:27:12.418Z",
+      "error_message": "Incorrect value in code",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "Had `.disconnected`",
+      "fix": "Changed to `.idle`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:27:12.418Z"
+    },
+    {
+      "id": "bug-036",
+      "timestamp": "2026-05-02T22:54:19.860Z",
+      "error_message": "Wrong reference: Tab should be Core",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "Used \"Tab\" instead of \"Core\"",
+      "fix": "Changed Tab → Core",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:54:19.860Z"
     }
   ]
 }

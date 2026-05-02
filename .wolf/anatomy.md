@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T21:24:54.392Z
-> Files: 552 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:54:19.853Z
+> Files: 570 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -13,7 +13,7 @@
 
 - `.epic-orchestrator.log` (~10719 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2154 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2423 tok)
 
 ## .build/
 
@@ -398,6 +398,13 @@
 
 - `openwolf.md` (~313 tok)
 
+## App/Stevedore/
+
+- `AppEnvironment.swift` — / Dependency-injection root: constructs every concrete service once and assembles (~1650 tok)
+- `Info.plist` (~136 tok)
+- `Stevedore.entitlements` (~107 tok)
+- `StevedoreApp.swift` — Struct: StevedoreApp (~54 tok)
+
 ## Sources/Features/Git/
 
 - `FeaturesGitModule.swift` — Declares FeaturesGitModule (~28 tok)
@@ -569,6 +576,20 @@
 - `Theme.swift` — `public struct Theme: Sendable`; composes `ColorTokens` + `Typography`; `@Entry var theme` in `EnvironmentValues`; `View.theme(_:)` modifier. (~100 tok)
 - `Typography.swift` — `public struct Typography: Sendable`; five `Font` tokens: largeTitle/title/body/caption/mono. (~80 tok)
 
+## Sources/UI/MainWindow/
+
+- `AppCommands.swift` — / Empty `Commands` stub. Session 27 populates all menu bar entries. (~58 tok)
+- `DualPaneLayout.swift` — / Custom horizontal split that exposes `splitFraction` as a `Binding`. (~592 tok)
+- `MainWindowModel.swift` — / Owns all window state and coordinates the sidebar, two pane sessions, and operation queue. (~1104 tok)
+- `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
+- `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
+- `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~774 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~1158 tok)
+- `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
+- `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
+- `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
+- `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~518 tok)
+
 ## Sources/UI/SettingsUI/
 
 - `SettingsScene.swift` — / Content view for the macOS Preferences (`SwiftUI.Settings`) scene. (~276 tok)
@@ -739,6 +760,12 @@
 ## Tests/UITests/DesignSystemTests/
 
 - `DesignSystemTests.swift` — `@MainActor final class DesignSystemTests: XCTestCase`; 21 tests covering spacing/icon/theme token values and NSHostingView rendering smoke tests for all components. (~550 tok)
+
+## Tests/UITests/MainWindowTests/
+
+- `MainWindowTests.swift` — Class: MainWindowTests (~1013 tok)
+- `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
+- `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
 ## Tests/UITests/SettingsUITests/
 

@@ -72,7 +72,11 @@ let libraryModules: [LibraryModule] = [
         path: "Sources/UI/Sidebar",
         extraDependencies: [.target(name: "DesignSystem")]
     ),
-    LibraryModule(name: "UIToolbar", path: "Sources/UI/Toolbar", extraDependencies: []),
+    LibraryModule(
+        name: "UIToolbar",
+        path: "Sources/UI/Toolbar",
+        extraDependencies: [.target(name: "DesignSystem")]
+    ),
     LibraryModule(name: "UITransfers", path: "Sources/UI/Transfers", extraDependencies: []),
     LibraryModule(name: "UISyncDialog", path: "Sources/UI/SyncDialog", extraDependencies: []),
     LibraryModule(name: "UIRenameDialog", path: "Sources/UI/RenameDialog", extraDependencies: []),
@@ -92,7 +96,17 @@ let libraryModules: [LibraryModule] = [
         .target(name: "FeaturesUninstaller"),
     ]),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
-    LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),
+    LibraryModule(
+        name: "MainWindow",
+        path: "Sources/UI/MainWindow",
+        extraDependencies: [
+            .target(name: "DesignSystem"),
+            .target(name: "UISidebar"),
+            .target(name: "UIToolbar"),
+            .target(name: "FeaturesOperations"),
+            .target(name: "ServicesSettings"),
+        ]
+    ),
 ]
 
 // MARK: - Helpers
@@ -178,6 +192,7 @@ let testTargetSpecs: [TestTargetSpec] = [
             .target(name: "UISettingsUI"),
             .target(name: "UIUninstallerUI"),
             .target(name: "FeaturesUninstaller"),
+            .target(name: "FeaturesOperations"),
             .target(name: "UIMenus"),
             .target(name: "MainWindow"),
         ]
@@ -215,6 +230,18 @@ let package = Package(
                 dependencies: [
                     .target(name: "Core"),
                     .target(name: "MainWindow"),
+                    .target(name: "FileSystemLocal"),
+                    .target(name: "ServicesLogging"),
+                    .target(name: "ServicesCredentials"),
+                    .target(name: "ServicesSettings"),
+                    .target(name: "FeaturesOperations"),
+                    .target(name: "FeaturesGit"),
+                    .target(name: "FeaturesPreview"),
+                    .target(name: "FeaturesSync"),
+                    .target(name: "FeaturesRename"),
+                    .target(name: "FeaturesUninstaller"),
+                    .target(name: "UISidebar"),
+                    .target(name: "UISettingsUI"),
                 ],
                 path: "App/Stevedore",
                 swiftSettings: baseSwiftSettings

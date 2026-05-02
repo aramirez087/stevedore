@@ -1,13 +1,11 @@
-import Core
 import MainWindow
 import SwiftUI
 
 @main
 struct StevedoreApp: App {
+    @State private var env = AppEnvironment()
+
     var body: some Scene {
-        WindowGroup("Stevedore") {
-            Color.clear
-                .frame(minWidth: 800, minHeight: 600)
-        }
+        MainWindowScene(model: env.mainWindowModel)
     }
 }
