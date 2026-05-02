@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-01T23:56:55.227Z
-> Files: 445 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T02:30:32.256Z
+> Files: 446 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -395,9 +395,9 @@
 
 - `FeaturesGitModule.swift` — Declares FeaturesGitModule (~28 tok)
 - `GitError.swift` — / Typed errors surfaced by the Git module. (~113 tok)
-- `GitProcess.swift` — / Stateless wrapper around `Foundation.Process` that runs git with a (~1016 tok)
-- `GitStatusCache.swift` — / Per-repository git-status cache invalidated by FSEvents. (~1753 tok)
-- `GitStatusParser.swift` — / Parses `git status --porcelain=v2 -z` NUL-delimited output into an array (~1702 tok)
+- `GitProcess.swift` — / Stateless wrapper around `Foundation.Process` that runs git with a (~1055 tok)
+- `GitStatusCache.swift` — / Per-repository git-status cache invalidated by FSEvents. (~1824 tok)
+- `GitStatusParser.swift` — / Parses `git status --porcelain=v2 -z` NUL-delimited output into an array (~1515 tok)
 - `GitStatusService.swift` — / Concrete `GitStatusProvider` that shells out to `/usr/bin/git`. (~454 tok)
 - `RepositoryDetector.swift` — / Walks the filesystem ancestor chain to locate the git repository root for a (~384 tok)
 
@@ -527,11 +527,11 @@
 
 ## Tests/FeaturesTests/GitTests/
 
-- `GitProcessTests.swift` — Class: GitProcessTests (~1028 tok)
+- `GitProcessTests.swift` — Class: GitProcessTests (~1029 tok)
 - `GitStatusCacheTests.swift` — Class: GitStatusCacheTests (~1210 tok)
 - `GitStatusParserTests.swift` — Class: GitStatusParserTests (~1558 tok)
 - `GitStatusProviderTests.swift` — Class: GitStatusProviderTests (~1622 tok)
-- `GitTestSupport.swift` — MARK: - Skip helper (~884 tok)
+- `GitTestSupport.swift` — MARK: - Skip helper (~905 tok)
 - `RepositoryDetectorTests.swift` — Class: RepositoryDetectorTests (~689 tok)
 
 ## Tests/FeaturesTests/OperationsTests/
@@ -653,6 +653,7 @@
 
 ## docs/roadmap/stevedore-mvp/
 
+- `session-01-handoff.md` — Session 01 Handoff — Charter & Scaffolding (~2546 tok)
 - `session-02-handoff.md` — Session 02 Handoff — Core Utilities (~2186 tok)
 - `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider; concurrency boundaries, supported ops, macOS quirks (~2400 tok)
 - `session-03-handoff.md` — Session 03 Handoff — Local Filesystem Provider (~2937 tok)

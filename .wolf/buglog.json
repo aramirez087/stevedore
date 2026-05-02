@@ -304,6 +304,86 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-01T23:56:09.089Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-05-02T02:25:50.979Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Git/GitStatusCache.swift",
+      "root_cause": "Was returning: immediately.",
+      "fix": "Now returns: immediately if a completed fetch exists with no in",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:25:50.979Z"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-05-02T02:28:18.251Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Sources/Features/Git/GitStatusParser.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:18.251Z"
+    },
+    {
+      "id": "bug-022",
+      "timestamp": "2026-05-02T02:28:29.781Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:29.781Z"
+    },
+    {
+      "id": "bug-023",
+      "timestamp": "2026-05-02T02:28:33.993Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/FeaturesTests/GitTests/GitProcessTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:33.993Z"
+    },
+    {
+      "id": "bug-024",
+      "timestamp": "2026-05-02T02:30:32.262Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/roadmap/stevedore-mvp/session-01-handoff.md",
+      "root_cause": "12 lines replaced/restructured",
+      "fix": "Rewrote 19→24 lines (12 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:30:32.262Z"
     }
   ]
 }

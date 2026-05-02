@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 215058,
-    "total_reads": 445,
-    "total_writes": 70,
-    "total_sessions": 29,
-    "anatomy_hits": 71,
-    "anatomy_misses": 371,
-    "repeated_reads_blocked": 7,
-    "estimated_savings_vs_bare_cli": 20268
+    "total_tokens_estimated": 225702,
+    "total_reads": 459,
+    "total_writes": 79,
+    "total_sessions": 32,
+    "anatomy_hits": 78,
+    "anatomy_misses": 378,
+    "repeated_reads_blocked": 8,
+    "estimated_savings_vs_bare_cli": 22552
   },
   "sessions": [
     {
@@ -3432,6 +3432,168 @@
         "reads_count": 15,
         "writes_count": 1,
         "repeated_reads_blocked": 0,
+        "anatomy_lookups": 6
+      }
+    },
+    {
+      "id": "session-2026-05-02-2020",
+      "started": "2026-05-02T02:20:45.355Z",
+      "ended": "2026-05-02T02:22:25.058Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/claude-sessions/stevedore-mvp/session-01-charter-and-scaffolding.md",
+          "tokens_estimated": 1125,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-1-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 1125,
+        "output_tokens_estimated": 0,
+        "reads_count": 4,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 1
+      }
+    },
+    {
+      "id": "session-2026-05-02-2022",
+      "started": "2026-05-02T02:22:25.599Z",
+      "ended": "2026-05-02T02:31:09.441Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Package.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/.swiftlint.yml",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/.claude/projects/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s01-charter-and-scaffolding/2df6d5ca-5b8a-42bd-bcaf-194a9b7dabfe/tool-results/bnnfml78t.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+          "tokens_estimated": 1210,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+          "tokens_estimated": 1753,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift",
+          "tokens_estimated": 1016,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift",
+          "tokens_estimated": 1702,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
+          "tokens_estimated": 1028,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+          "tokens_estimated": 884,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+          "tokens_estimated": 125,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+          "tokens_estimated": 64,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+          "tokens_estimated": 69,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+          "tokens_estimated": 78,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift",
+          "tokens_estimated": 77,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift",
+          "tokens_estimated": 1093,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+          "tokens_estimated": 21,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
+          "tokens_estimated": 21,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md",
+          "tokens_estimated": 378,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 7593,
+        "output_tokens_estimated": 1926,
+        "reads_count": 10,
+        "writes_count": 9,
+        "repeated_reads_blocked": 1,
         "anatomy_lookups": 6
       }
     }
