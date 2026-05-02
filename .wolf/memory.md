@@ -639,3 +639,17 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 16:56 | Edited Sources/UI/MainWindow/WindowState.swift | inline fix | ~11 |
+| 16:58 | Created docs/roadmap/stevedore-mvp/session-26-handoff.md | — | ~1645 |
+| 16:58 | Session end: 2 writes across 2 files (WindowState.swift, session-26-handoff.md) | 2 reads | ~4444 tok |
+
+## Session: 2026-05-02 (Session 26 — Main Window Shell, continuation)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:55 | Verified fixes compile: Core.Tab explicit qualifier + import Core in TransfersPanel | PaneHost.swift, TransfersPanel.swift | swift build --target MainWindow EXIT:0 | ~400 tok |
+| 16:56 | Full package build -warnings-as-errors | all targets | Build complete EXIT:0 | ~1200 tok |
+| 16:57 | swift test --filter MainWindow | Tests/UITests/MainWindowTests/ | 12/12 passed | ~600 tok |
+| 16:57 | swift test (full suite) | all | 952 tests, 1 pre-existing failure, 0 regressions | ~800 tok |
+| 16:57 | swiftformat lint + swiftlint --strict | App/Stevedore, Sources/UI/MainWindow | 0 violations | ~200 tok |
+| 16:58 | Created session-26-handoff.md | docs/roadmap/stevedore-mvp/ | handoff doc written | ~600 tok |
+| 16:59 | Staged and committed Session 26 | all S26 files | feat: Session 26 — main window shell | ~200 tok |

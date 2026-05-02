@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:56:27.718Z
-> Files: 570 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T22:58:24.792Z
+> Files: 571 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -851,3 +851,4 @@
 - `session-14-handoff.md` — Session 14 Handoff — Git Status Integration (~2042 tok)
 - `session-24-handoff.md` — Session 24 Handoff — Settings UI (~1680 tok)
 - `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)
+- `session-26-handoff.md` — Session 26 Handoff — Main Window Shell (~1542 tok)
