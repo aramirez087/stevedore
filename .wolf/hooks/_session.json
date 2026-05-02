@@ -1,171 +1,125 @@
 {
-  "session_id": "session-2026-05-01-1748",
-  "started": "2026-05-01T23:48:07.040Z",
+  "session_id": "session-2026-05-02-2022",
+  "started": "2026-05-02T02:22:25.599Z",
   "files_read": {
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Git/Placeholder.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Package.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:48:15.780Z"
+      "first_read": "2026-05-02T02:22:33.967Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Git/FeaturesGitSmokeTests.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/.swiftlint.yml": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:48:16.631Z"
+      "first_read": "2026-05-02T02:22:34.485Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/GitFileStatus.swift": {
+    "/Users/aramirez/.claude/projects/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s01-charter-and-scaffolding/2df6d5ca-5b8a-42bd-bcaf-194a9b7dabfe/tool-results/bnnfml78t.txt": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:48:26.361Z"
+      "first_read": "2026-05-02T02:23:02.721Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/GitStatusProvider.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:48:26.489Z"
+      "tokens": 1210,
+      "first_read": "2026-05-02T02:25:23.908Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Types/FilePath.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:48:28.925Z"
+      "tokens": 1753,
+      "first_read": "2026-05-02T02:25:24.591Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Core/Utilities/PathUtilities.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift": {
+      "count": 1,
+      "tokens": 1016,
+      "first_read": "2026-05-02T02:26:56.095Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift": {
+      "count": 1,
+      "tokens": 1702,
+      "first_read": "2026-05-02T02:26:56.516Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift": {
+      "count": 1,
+      "tokens": 1028,
+      "first_read": "2026-05-02T02:27:02.702Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift": {
       "count": 2,
-      "tokens": 0,
-      "first_read": "2026-05-01T23:48:34.418Z"
+      "tokens": 884,
+      "first_read": "2026-05-02T02:27:03.599Z"
     },
-    "/Users/aramirez/Code/Stevedore/Package.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-01T23:54:19.408Z"
+      "first_read": "2026-05-02T02:30:12.834Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/FeaturesGitModule.swift",
-      "action": "create",
-      "tokens": 30,
-      "at": "2026-05-01T23:48:54.871Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitError.swift",
-      "action": "create",
-      "tokens": 121,
-      "at": "2026-05-01T23:49:05.314Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitProcess.swift",
-      "action": "create",
-      "tokens": 1088,
-      "at": "2026-05-01T23:49:23.425Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/RepositoryDetector.swift",
-      "action": "create",
-      "tokens": 412,
-      "at": "2026-05-01T23:49:34.614Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusParser.swift",
-      "action": "create",
-      "tokens": 1823,
-      "at": "2026-05-01T23:50:00.736Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusCache.swift",
-      "action": "create",
-      "tokens": 1884,
-      "at": "2026-05-01T23:53:23.988Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusService.swift",
-      "action": "create",
-      "tokens": 486,
-      "at": "2026-05-01T23:53:31.331Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Git/GitStatusCache.swift",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
       "action": "edit",
-      "tokens": 46,
-      "at": "2026-05-01T23:53:49.704Z"
+      "tokens": 125,
+      "at": "2026-05-02T02:25:45.378Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
-      "action": "create",
-      "tokens": 889,
-      "at": "2026-05-01T23:54:32.765Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
-      "action": "create",
-      "tokens": 1101,
-      "at": "2026-05-01T23:54:49.670Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/RepositoryDetectorTests.swift",
-      "action": "create",
-      "tokens": 738,
-      "at": "2026-05-01T23:54:59.274Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusParserTests.swift",
-      "action": "create",
-      "tokens": 1670,
-      "at": "2026-05-01T23:55:21.781Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
-      "action": "create",
-      "tokens": 1156,
-      "at": "2026-05-01T23:55:37.064Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusProviderTests.swift",
-      "action": "create",
-      "tokens": 1738,
-      "at": "2026-05-01T23:55:55.771Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
       "action": "edit",
-      "tokens": 84,
-      "at": "2026-05-01T23:56:09.088Z"
+      "tokens": 64,
+      "at": "2026-05-02T02:25:50.978Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
-      "action": "create",
-      "tokens": 1205,
-      "at": "2026-05-01T23:56:24.508Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
-      "action": "create",
-      "tokens": 1269,
-      "at": "2026-05-01T23:56:45.270Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
       "action": "edit",
-      "tokens": 224,
-      "at": "2026-05-01T23:56:55.233Z"
+      "tokens": 69,
+      "at": "2026-05-02T02:25:57.792Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
+      "action": "edit",
+      "tokens": 78,
+      "at": "2026-05-02T02:26:02.636Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift",
+      "action": "edit",
+      "tokens": 77,
+      "at": "2026-05-02T02:27:48.341Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift",
+      "action": "edit",
+      "tokens": 1093,
+      "at": "2026-05-02T02:28:18.250Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "action": "edit",
+      "tokens": 21,
+      "at": "2026-05-02T02:28:29.780Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
+      "action": "edit",
+      "tokens": 21,
+      "at": "2026-05-02T02:28:33.993Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md",
+      "action": "edit",
+      "tokens": 378,
+      "at": "2026-05-02T02:30:32.262Z"
     }
   ],
   "edit_counts": {
-    "Sources/Features/Git/FeaturesGitModule.swift": 1,
-    "Sources/Features/Git/GitError.swift": 1,
+    "Sources/Features/Git/GitStatusCache.swift": 4,
     "Sources/Features/Git/GitProcess.swift": 1,
-    "Sources/Features/Git/RepositoryDetector.swift": 1,
     "Sources/Features/Git/GitStatusParser.swift": 1,
-    "Sources/Features/Git/GitStatusCache.swift": 2,
-    "Sources/Features/Git/GitStatusService.swift": 1,
-    "Tests/FeaturesTests/GitTests/GitTestSupport.swift": 2,
+    "Tests/FeaturesTests/GitTests/GitTestSupport.swift": 1,
     "Tests/FeaturesTests/GitTests/GitProcessTests.swift": 1,
-    "Tests/FeaturesTests/GitTests/RepositoryDetectorTests.swift": 1,
-    "Tests/FeaturesTests/GitTests/GitStatusParserTests.swift": 1,
-    "Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift": 4,
-    "Tests/FeaturesTests/GitTests/GitStatusProviderTests.swift": 1
+    "docs/roadmap/stevedore-mvp/session-01-handoff.md": 1
   },
-  "anatomy_hits": 0,
-  "anatomy_misses": 7,
+  "anatomy_hits": 6,
+  "anatomy_misses": 4,
   "repeated_reads_warned": 1,
   "cerebrum_warnings": 0,
-  "stop_count": 0
+  "stop_count": 1
 }

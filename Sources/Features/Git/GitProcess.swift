@@ -36,19 +36,19 @@ public enum GitProcess: Sendable {
         workingDirectory: URL,
         timeoutSeconds: Double = 30
     ) async throws -> Result {
-        guard FileManager.default.isExecutableFile(atPath: executablePath) else {
+        guard FileManager.default.isExecutableFile(atPath: self.executablePath) else {
             throw GitError.gitNotFound
         }
 
         // Build whitelisted environment.
         let callerEnv = ProcessInfo.processInfo.environment
         var env: [String: String] = [:]
-        for key in allowedEnvKeys {
+        for key in self.allowedEnvKeys {
             if let value = callerEnv[key] {
                 env[key] = value
             }
         }
-        for (key, value) in injectedEnv {
+        for (key, value) in self.injectedEnv {
             env[key] = value
         }
 
@@ -59,14 +59,16 @@ public enum GitProcess: Sendable {
         // the structured-concurrency handoff.
         final class ProcessBox: @unchecked Sendable {
             let process: Process
-            init(_ process: Process) { self.process = process }
+            init(_ process: Process) {
+                self.process = process
+            }
         }
 
         let stdoutPipe = Pipe()
         let stderrPipe = Pipe()
 
         let proc = Process()
-        proc.executableURL = URL(fileURLWithPath: executablePath)
+        proc.executableURL = URL(fileURLWithPath: self.executablePath)
         proc.arguments = arguments
         proc.currentDirectoryURL = workingDirectory
         proc.environment = env
@@ -96,7 +98,10 @@ public enum GitProcess: Sendable {
             }
 
             // Take the first result (process finish or timeout).
-            let result = try await group.next()!
+            guard let result = try await group.next() else {
+                group.cancelAll()
+                throw GitError.timeout
+            }
             group.cancelAll()
             return result
         }

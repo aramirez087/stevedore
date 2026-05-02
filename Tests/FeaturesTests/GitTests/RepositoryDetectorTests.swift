@@ -22,7 +22,7 @@ final class RepositoryDetectorTests: XCTestCase {
         XCTAssertEqual(found?.posixString, repo.rootPath.posixString)
     }
 
-    func testReturnsNilOutsideRepo() async throws {
+    func testReturnsNilOutsideRepo() throws {
         let tmpDir = FileManager.default.temporaryDirectory
             .appendingPathComponent("no-repo-\(UUID().uuidString)")
         try FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)

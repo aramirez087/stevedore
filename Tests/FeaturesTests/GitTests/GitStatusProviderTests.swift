@@ -12,21 +12,21 @@ final class GitStatusProviderTests: XCTestCase {
     }
 
     override func setUp() async throws {
-        repo = try await GitTestRepo.create()
-        service = GitStatusService()
+        self.repo = try await GitTestRepo.create()
+        self.service = GitStatusService()
     }
 
     override func tearDown() {
-        repo.tearDown()
-        repo = nil
-        service = nil
+        self.repo.tearDown()
+        self.repo = nil
+        self.service = nil
     }
 
     func testCleanRepo() async throws {
-        try await repo.makeAndStage(file: "clean.txt")
-        try await repo.commit(message: "initial")
+        try await self.repo.makeAndStage(file: "clean.txt")
+        try await self.repo.commit(message: "initial")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         // No dirty files; nothing should appear (clean files are not emitted).
         XCTAssertTrue(statuses.isEmpty || statuses.allSatisfy {
             $0.indexState == .unmodified && $0.worktreeState == .unmodified
@@ -34,93 +34,93 @@ final class GitStatusProviderTests: XCTestCase {
     }
 
     func testDirtyFile() async throws {
-        try await repo.makeAndStage(file: "file.txt", content: "original\n")
-        try await repo.commit(message: "initial")
-        try repo.modifyFile(name: "file.txt", content: "dirty\n")
+        try await self.repo.makeAndStage(file: "file.txt", content: "original\n")
+        try await self.repo.commit(message: "initial")
+        try self.repo.modifyFile(name: "file.txt", content: "dirty\n")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "file.txt" }
         XCTAssertNotNil(entry, "should report modified file")
         XCTAssertEqual(entry?.worktreeState, .modified)
     }
 
     func testStagedFile() async throws {
-        try await repo.makeAndStage(file: "staged.txt", content: "v1\n")
-        try await repo.commit(message: "initial")
-        try repo.modifyFile(name: "staged.txt", content: "v2\n")
-        try await repo.git("add", "staged.txt")
+        try await self.repo.makeAndStage(file: "staged.txt", content: "v1\n")
+        try await self.repo.commit(message: "initial")
+        try self.repo.modifyFile(name: "staged.txt", content: "v2\n")
+        try await self.repo.git("add", "staged.txt")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "staged.txt" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.indexState, .modified)
     }
 
     func testDeletedFile() async throws {
-        try await repo.makeAndStage(file: "gone.txt")
-        try await repo.commit(message: "initial")
-        try repo.deleteFile(name: "gone.txt")
+        try await self.repo.makeAndStage(file: "gone.txt")
+        try await self.repo.commit(message: "initial")
+        try self.repo.deleteFile(name: "gone.txt")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "gone.txt" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.worktreeState, .deleted)
     }
 
     func testStagedDeletion() async throws {
-        try await repo.makeAndStage(file: "remove.txt")
-        try await repo.commit(message: "initial")
-        try await repo.git("rm", "remove.txt")
+        try await self.repo.makeAndStage(file: "remove.txt")
+        try await self.repo.commit(message: "initial")
+        try await self.repo.git("rm", "remove.txt")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "remove.txt" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.indexState, .deleted)
     }
 
     func testRenamedFile() async throws {
-        try await repo.makeAndStage(file: "old.txt")
-        try await repo.commit(message: "initial")
-        try await repo.git("mv", "old.txt", "new.txt")
+        try await self.repo.makeAndStage(file: "old.txt")
+        try await self.repo.commit(message: "initial")
+        try await self.repo.git("mv", "old.txt", "new.txt")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "new.txt" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.indexState, .renamed)
     }
 
     func testUntrackedFile() async throws {
-        try await repo.makeAndStage(file: "tracked.txt")
-        try await repo.commit(message: "initial")
-        try repo.makeFile(name: "untracked.txt")
+        try await self.repo.makeAndStage(file: "tracked.txt")
+        try await self.repo.commit(message: "initial")
+        try self.repo.makeFile(name: "untracked.txt")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "untracked.txt" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.worktreeState, .untracked)
     }
 
     func testIgnoredFile() async throws {
-        try await repo.makeAndStage(file: "tracked.txt")
-        try await repo.commit(message: "initial")
-        try await repo.addToGitignore(pattern: "*.log")
-        try repo.makeFile(name: "ignored.log")
+        try await self.repo.makeAndStage(file: "tracked.txt")
+        try await self.repo.commit(message: "initial")
+        try await self.repo.addToGitignore(pattern: "*.log")
+        try self.repo.makeFile(name: "ignored.log")
 
-        let statuses = try await service.status(under: repo.rootPath)
+        let statuses = try await service.status(under: self.repo.rootPath)
         let entry = statuses.first { $0.path.lastComponent == "ignored.log" }
         XCTAssertNotNil(entry)
         XCTAssertEqual(entry?.worktreeState, .ignored)
     }
 
     func testRepositoryRootResolution() async throws {
-        let subdir = repo.rootURL.appendingPathComponent("sub/dir")
+        let subdir = self.repo.rootURL.appendingPathComponent("sub/dir")
         try FileManager.default.createDirectory(at: subdir, withIntermediateDirectories: true)
 
         let subdirPath = FilePath(scheme: .local, posix: subdir.path)
         let root = await service.repositoryRoot(for: subdirPath)
 
         XCTAssertNotNil(root)
-        XCTAssertEqual(root?.posixString, repo.rootPath.posixString)
+        XCTAssertEqual(root?.posixString, self.repo.rootPath.posixString)
     }
 
     func testNonGitDirectory() async throws {
@@ -135,16 +135,16 @@ final class GitStatusProviderTests: XCTestCase {
     }
 
     func testStatusFilteredToSubdirectory() async throws {
-        try await repo.makeAndStage(file: "root.txt", content: "r\n")
+        try await self.repo.makeAndStage(file: "root.txt", content: "r\n")
         try FileManager.default.createDirectory(
-            at: repo.rootURL.appendingPathComponent("sub"),
+            at: self.repo.rootURL.appendingPathComponent("sub"),
             withIntermediateDirectories: true
         )
-        try await repo.makeAndStage(file: "sub/nested.txt", content: "n\n")
-        try await repo.commit(message: "initial")
+        try await self.repo.makeAndStage(file: "sub/nested.txt", content: "n\n")
+        try await self.repo.commit(message: "initial")
 
         // Modify only the nested file.
-        try repo.modifyFile(name: "sub/nested.txt", content: "modified\n")
+        try self.repo.modifyFile(name: "sub/nested.txt", content: "modified\n")
 
         let subPath = FilePath(scheme: .local, posix: repo.rootURL.appendingPathComponent("sub").path)
         let statuses = try await service.status(under: subPath)

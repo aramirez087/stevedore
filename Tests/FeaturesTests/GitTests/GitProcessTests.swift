@@ -13,7 +13,7 @@ final class GitProcessTests: XCTestCase {
             workingDirectory: FileManager.default.temporaryDirectory
         )
         XCTAssertEqual(result.exitCode, 0)
-        let output = String(decoding: result.stdout, as: UTF8.self)
+        let output = String(bytes: result.stdout, encoding: .utf8) ?? ""
         XCTAssertTrue(output.hasPrefix("git version"), "Expected 'git version …', got: \(output)")
     }
 
