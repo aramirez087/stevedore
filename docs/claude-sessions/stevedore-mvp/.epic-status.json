@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777742401.028404,
+  "started_at": 1777747359.5123358,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -243,25 +243,25 @@
       "elapsed": 0.0
     },
     "25": {
-      "status": "failed",
+      "status": "skipped",
       "slug": "uninstaller-ui",
       "wave": 4,
       "title": "Uninstaller Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 1312.0,
-      "started_at": 1777742401.600559
+      "elapsed": 0.0
     },
     "26": {
-      "status": "pending",
+      "status": "running",
       "slug": "main-window-shell",
       "wave": 5,
       "title": "Main Window Shell",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 0.0
+      "elapsed": 7441.6084632873535,
+      "started_at": 1777747360.1261492
     },
     "27": {
       "status": "pending",
