@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777763498.787113,
+  "started_at": 1777763520.6448781,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -263,25 +263,25 @@
       "elapsed": 0.0
     },
     "27": {
-      "status": "skipped",
+      "status": "failed",
       "slug": "menu-commands",
       "wave": 6,
       "title": "Menu Commands",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 413.9594728946686
+      "elapsed": 1186.0
     },
     "28": {
-      "status": "running",
+      "status": "failed",
       "slug": "ci-gate",
       "wave": 7,
       "title": "Ci Gate",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 20.81053113937378,
-      "started_at": 1777763499.558524
+      "elapsed": 419.0,
+      "started_at": 1777763521.433426
     }
   }
 }
