@@ -592,6 +592,42 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T22:56:27.753Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "signal 11 crash during WindowStateTests — testSplitFractionClampedAboveMaximum",
+      "file": "Sources/UI/MainWindow/WindowState.swift",
+      "root_cause": "splitFraction didSet unconditionally re-assigns self.splitFraction, causing infinite recursion and stack overflow",
+      "fix": "Added guard: compute clamped value, return early if unchanged, only assign when value differs",
+      "tags": ["swift", "infinite-recursion", "didSet", "observable", "stack-overflow"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "'Tab' is ambiguous for type lookup in this context (Core.Tab vs SwiftUI.Tab)",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "macOS 15+ SwiftUI introduces Tab type; bare 'Tab' is ambiguous in files importing both Core and SwiftUI",
+      "fix": "Qualify as Core.Tab in PaneTabButton struct declaration",
+      "tags": ["swift", "type-ambiguity", "swiftui", "core-tab", "macos15"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "ConnectionStatus.disconnected does not exist — Type 'ConnectionStatus' has no member 'disconnected'",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "ConnectionStatus enum only has .idle, .connecting, .connected, .error — .disconnected was used by mistake",
+      "fix": "Changed .disconnected to .idle in StubConnectionStatusProvider.status(for:)",
+      "tags": ["swift", "wrong-enum-case", "connection-status"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
     }
   ]
 }

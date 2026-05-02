@@ -18,6 +18,17 @@
 |------|--------|---------|---------|--------|
 | 00:00 | Wrote 16 Swift source files for FeaturesUninstaller module | Sources/Features/Uninstaller/ (11 files + 3 Protocols + 3 Testing) | All files created; anatomy.md updated | ~3000 |
 | 16:14 | Ran all quality gates | swift build/test, swiftformat, swiftlint | 587 tests pass, 0 violations, 0 format issues | ~500 |
+
+## Session: 2026-05-02 16:50 (Session 26 — main window shell fixes)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:50 | Fixed WindowState.splitFraction infinite recursion | Sources/UI/MainWindow/WindowState.swift | Added guard in didSet; signal 11 crash resolved | ~300 |
+| 16:52 | Fixed Tab ambiguity in PaneHost | Sources/UI/MainWindow/PaneHost.swift | Core.Tab qualification; build error resolved | ~200 |
+| 16:53 | Fixed .disconnected -> .idle in StubConnectionStatusProvider | App/Stevedore/AppEnvironment.swift | ConnectionStatus has no .disconnected case | ~100 |
+| 16:54 | MW-prefixed fakes in MainWindowTestSupport | Tests/UITests/MainWindowTests/MainWindowTestSupport.swift | Avoids collision with SidebarTestSupport fakes | ~200 |
+| 16:57 | Build clean, 17 tests pass, swiftformat + swiftlint clean | All session 26 files | Build complete, EXIT:0, no lint violations | ~400 |
+| 17:00 | Committed fixes | 73cad9f | fix: Session 26 post-commit corrections | ~100 |
 | 16:15 | Session end: Session 10 operations engine fully verified. All quality gates pass. | — | ~100 |
 
 ## Session: 2026-05-01 20:31
