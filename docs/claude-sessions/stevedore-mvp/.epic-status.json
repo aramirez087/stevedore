@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777741062.588297,
+  "started_at": 1777741100.034531,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -183,26 +183,26 @@
       "elapsed": 0.0
     },
     "23": {
-      "status": "failed",
+      "status": "done",
       "slug": "connect-dialog-ui",
       "wave": 3,
       "title": "Connect Dialog Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 0.0,
-      "started_at": 1777741063.050928
+      "elapsed": 1268.0,
+      "started_at": 1777741100.489693
     },
     "24": {
-      "status": "failed",
+      "status": "done",
       "slug": "settings-ui",
       "wave": 3,
       "title": "Settings Ui",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 2.0,
-      "started_at": 1777741063.203089
+      "elapsed": 1148.0,
+      "started_at": 1777741100.651228
     },
     "16": {
       "status": "pending",
