@@ -1,125 +1,21 @@
 {
-  "session_id": "session-2026-05-02-2022",
-  "started": "2026-05-02T02:22:25.599Z",
-  "files_read": {
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Package.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T02:22:33.967Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/.swiftlint.yml": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T02:22:34.485Z"
-    },
-    "/Users/aramirez/.claude/projects/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s01-charter-and-scaffolding/2df6d5ca-5b8a-42bd-bcaf-194a9b7dabfe/tool-results/bnnfml78t.txt": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T02:23:02.721Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitStatusCacheTests.swift": {
-      "count": 1,
-      "tokens": 1210,
-      "first_read": "2026-05-02T02:25:23.908Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift": {
-      "count": 1,
-      "tokens": 1753,
-      "first_read": "2026-05-02T02:25:24.591Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift": {
-      "count": 1,
-      "tokens": 1016,
-      "first_read": "2026-05-02T02:26:56.095Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift": {
-      "count": 1,
-      "tokens": 1702,
-      "first_read": "2026-05-02T02:26:56.516Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift": {
-      "count": 1,
-      "tokens": 1028,
-      "first_read": "2026-05-02T02:27:02.702Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift": {
-      "count": 2,
-      "tokens": 884,
-      "first_read": "2026-05-02T02:27:03.599Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-02T02:30:12.834Z"
-    }
-  },
+  "session_id": "session-2026-05-02-2126",
+  "started": "2026-05-02T03:26:59.024Z",
+  "files_read": {},
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
-      "action": "edit",
-      "tokens": 125,
-      "at": "2026-05-02T02:25:45.378Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
-      "action": "edit",
-      "tokens": 64,
-      "at": "2026-05-02T02:25:50.978Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
-      "action": "edit",
-      "tokens": 69,
-      "at": "2026-05-02T02:25:57.792Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusCache.swift",
-      "action": "edit",
-      "tokens": 78,
-      "at": "2026-05-02T02:26:02.636Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitProcess.swift",
-      "action": "edit",
-      "tokens": 77,
-      "at": "2026-05-02T02:27:48.341Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Sources/Features/Git/GitStatusParser.swift",
-      "action": "edit",
-      "tokens": 1093,
-      "at": "2026-05-02T02:28:18.250Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitTestSupport.swift",
-      "action": "edit",
-      "tokens": 21,
-      "at": "2026-05-02T02:28:29.780Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/Tests/FeaturesTests/GitTests/GitProcessTests.swift",
-      "action": "edit",
-      "tokens": 21,
-      "at": "2026-05-02T02:28:33.993Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s01-charter-and-scaffolding/docs/roadmap/stevedore-mvp/session-01-handoff.md",
-      "action": "edit",
-      "tokens": 378,
-      "at": "2026-05-02T02:30:32.262Z"
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s14-git-integration/docs/roadmap/stevedore-mvp/session-14-handoff.md",
+      "action": "create",
+      "tokens": 2334,
+      "at": "2026-05-02T03:30:02.331Z"
     }
   ],
   "edit_counts": {
-    "Sources/Features/Git/GitStatusCache.swift": 4,
-    "Sources/Features/Git/GitProcess.swift": 1,
-    "Sources/Features/Git/GitStatusParser.swift": 1,
-    "Tests/FeaturesTests/GitTests/GitTestSupport.swift": 1,
-    "Tests/FeaturesTests/GitTests/GitProcessTests.swift": 1,
-    "docs/roadmap/stevedore-mvp/session-01-handoff.md": 1
+    "docs/roadmap/stevedore-mvp/session-14-handoff.md": 1
   },
-  "anatomy_hits": 6,
-  "anatomy_misses": 4,
-  "repeated_reads_warned": 1,
+  "anatomy_hits": 0,
+  "anatomy_misses": 0,
+  "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
   "stop_count": 1
 }

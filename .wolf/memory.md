@@ -453,3 +453,18 @@
 | 20:28 | Edited Tests/FeaturesTests/GitTests/GitProcessTests.swift | added nullish coalescing | ~20 |
 | 20:30 | Edited docs/roadmap/stevedore-mvp/session-01-handoff.md | failures() → window() | ~353 |
 | 20:31 | Session end: 9 writes across 6 files (GitStatusCache.swift, GitProcess.swift, GitStatusParser.swift, GitTestSupport.swift, GitProcessTests.swift) | 10 reads | ~9519 tok |
+
+## Session: 2026-05-02 21:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:26 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-14-plan.md | — | ~2934 |
+| 21:26 | Session end: 1 writes across 1 files (.session-14-plan.md) | 17 reads | ~20331 tok |
+
+## Session: 2026-05-02 21:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:30 | Created docs/roadmap/stevedore-mvp/session-14-handoff.md | — | ~2178 |
+| 21:30 | Session 14 complete — git status integration; all 43 Git tests pass, all quality gates green | docs/roadmap/stevedore-mvp/session-14-handoff.md | success | ~500 |
+| 21:30 | Session end: 1 writes across 1 files (session-14-handoff.md) | 0 reads | ~2334 tok |
