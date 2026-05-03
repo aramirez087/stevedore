@@ -19,6 +19,7 @@ func makeTestBundle(
     ]
     if let version {
         plist["CFBundleShortVersionString"] = version
+        plist["CFBundleVersion"] = version
     }
     let data = try PropertyListSerialization.data(fromPropertyList: plist, format: .xml, options: 0)
     let plistURL = contentsURL.appending(path: "Info.plist", directoryHint: .notDirectory)
@@ -35,24 +36,29 @@ func makeAppMetadata(
     AppMetadata(
         bundleURL: bundleURL,
         bundleID: bundleID,
-        bundleName: bundleName,
+        displayName: bundleName,
         executableName: executableName,
         version: "1.0",
-        bundleSizeInBytes: 1024
+        shortVersion: nil
     )
 }
 
 func makeAssociatedFile(
     url: URL,
-    confidence: Confidence = .high,
+    confidence: ConfidenceLevel = .high,
     requiresAdmin: Bool = false
 ) -> AssociatedFile {
-    AssociatedFile(
+    let score: Double
+    switch confidence {
+    case .high: score = 0.80
+    case .medium: score = 0.40
+    case .low: score = 0.10
+    }
+    return AssociatedFile(
         url: url,
         sizeInBytes: 512,
-        lastModified: Date(),
-        confidence: confidence,
-        reason: "Test",
+        modificationDate: Date(),
+        scoreResult: ScoreResult(score: score, reasons: ["Test"]),
         requiresAdmin: requiresAdmin
     )
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T12:42:54.424Z
-> Files: 590 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T14:40:23.179Z
+> Files: 592 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -14,8 +14,9 @@
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
+- `.mcp.json` (~37 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2481 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2234 tok)
 
 ## .build/
 
@@ -394,7 +395,7 @@
 
 ## .claude/
 
-- `settings.json` (~441 tok)
+- `settings.json` (~454 tok)
 
 ## .claude/rules/
 
@@ -498,7 +499,7 @@
 - `SearchPaths.swift` — Declares SearchPaths (~294 tok)
 - `UninstallerError.swift` — `public enum UninstallerError: LocalizedError, Sendable`; cases notAnAppBundle/invalidInfoPlist/trashFailed with localized descriptions. (~120 tok)
 - `UninstallerError.swift` — Declares UninstallerError (~185 tok)
-- `UninstallExecutor.swift` — `public actor UninstallExecutor: UninstallExecuting`; trashes non-admin associated files then the app bundle. (~80 tok)
+- `UninstallExecutor.swift` — MARK: - UninstallResult (~598 tok)
 - `UninstallExecutor.swift` (~179 tok)
 - `UninstallPlan.swift` — Struct: UninstallPlan (~122 tok)
 - `UninstallPlan.swift` — Struct: UninstallPlan (~77 tok)
@@ -745,15 +746,15 @@
 
 ## Tests/FeaturesTests/UninstallerTests/
 
-- `AppMetadataReaderTests.swift` — 5 tests: valid bundle metadata, missing plist → notAnAppBundle, missing bundleID → invalidInfoPlist, optional version, non-zero bundle size. (~350 tok)
+- `AppMetadataReaderTests.swift` — Class: AppMetadataReaderTests (~704 tok)
 - `AppMetadataReaderTests.swift` — Class: AppMetadataReaderTests (~737 tok)
-- `AssociatedFilesScannerTests.swift` — 4 tests: finds matching top-level item, excludes non-matching items, system-path files flagged requiresAdmin, empty directory returns empty. (~280 tok)
+- `AssociatedFilesScannerTests.swift` — Class: AssociatedFilesScannerTests (~1251 tok)
 - `AssociatedFilesScannerTests.swift` — Class: AssociatedFilesScannerTests (~807 tok)
-- `MatchScorerTests.swift` — 5 tests: bundle-ID component high confidence, bundle name medium/high, executable name medium, short component not high, Confidence.from(score:) mapping. Uses @testable import for internal from(score:). (~300 tok)
+- `MatchScorerTests.swift` — Class: MatchScorerTests (~1316 tok)
 - `MatchScorerTests.swift` — Class: MatchScorerTests (~724 tok)
-- `UninstallerTestSupport.swift` — `makeTestBundle`, `makeAppMetadata`, `makeAssociatedFile`, `makeTempDirectory` fixture helpers shared across all Uninstaller tests. (~150 tok)
+- `UninstallerTestSupport.swift` (~598 tok)
 - `UninstallerTestSupport.swift` (~546 tok)
-- `UninstallExecutorTests.swift` — Class: UninstallExecutorTests (~975 tok)
+- `UninstallExecutorTests.swift` — Class: UninstallExecutorTests (~1104 tok)
 - `UninstallExecutorTests.swift` — Class: UninstallExecutorTests (~965 tok)
 
 ## Tests/FileSystemTests/LocalTests/
@@ -810,9 +811,10 @@
 
 ## Tests/UITests/UninstallerUITests/
 
-- `UninstallerSheetTests.swift` — Struct: ScanError (~1264 tok)
+- `UninstallerSheetTests.swift` — Class: UninstallerSheetTests (~368 tok)
 - `UninstallerSheetTests.swift` — Struct: ScanError (~1260 tok)
-- `UninstallerViewModelTests.swift` — `@MainActor final class`; 10 tests covering default selections (high/medium/admin), admin toggle lock, confirmation text, drop error handling, sort direction, and toggle round-trip. (~370 tok)
+- `UninstallerUITestSupport.swift` (~418 tok)
+- `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
 
 ## docs/claude-sessions/stevedore-mvp/

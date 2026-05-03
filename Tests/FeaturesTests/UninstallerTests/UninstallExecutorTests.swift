@@ -21,62 +21,63 @@ final class UninstallExecutorTests: XCTestCase {
         return url
     }
 
-    func testExecute_trashesAssociatedFiles_sourceMissing() async throws {
+    func testExecute_trashesAppBundleAndAssociatedFiles() throws {
         let fileURL = try self.makeTempFile(name: "com.test.SomeApp Preferences")
         let bundleURL = try makeTestBundle(in: self.tmpDir)
-        let metadata = try AppMetadataReader().readMetadata(from: bundleURL)
-        let file = AssociatedFile(
-            url: fileURL,
-            sizeInBytes: 0,
-            lastModified: Date(),
-            confidence: .high,
-            reason: "Test",
-            requiresAdmin: false
-        )
-        let plan = UninstallPlan(appMetadata: metadata, selectedFiles: [file])
-        let executor = UninstallExecutor()
-        try await executor.execute(plan: plan)
+        let metadata = try AppMetadataReader().read(from: bundleURL)
+        let file = makeAssociatedFile(url: fileURL)
+        let plan = UninstallPlan(metadata: metadata, selectedFiles: [file])
+        let summary = UninstallExecutor().execute(plan)
+        XCTAssertTrue(summary.allSucceeded)
         XCTAssertFalse(FileManager.default.fileExists(atPath: fileURL.path(percentEncoded: false)))
         XCTAssertFalse(FileManager.default.fileExists(atPath: bundleURL.path(percentEncoded: false)))
     }
 
-    func testExecute_skipsRequiresAdminFiles() async throws {
-        let adminFileURL = self.tmpDir.appending(path: "admin_file", directoryHint: .notDirectory)
-        let bundleURL = try makeTestBundle(in: self.tmpDir)
-        let metadata = try AppMetadataReader().readMetadata(from: bundleURL)
-        let adminFile = AssociatedFile(
-            url: adminFileURL,
-            sizeInBytes: 0,
-            lastModified: Date(),
-            confidence: .high,
-            reason: "Test",
-            requiresAdmin: true
-        )
-        let plan = UninstallPlan(appMetadata: metadata, selectedFiles: [adminFile])
-        let executor = UninstallExecutor()
-        try await executor.execute(plan: plan)
-        // adminFile was never created, but no error expected since requiresAdmin files are skipped
-        XCTAssertFalse(FileManager.default.fileExists(atPath: bundleURL.path(percentEncoded: false)))
-    }
-
-    func testExecute_throwsTrashFailed_onError() async throws {
+    func testExecute_missingBundle_recordsFailure() {
         let nonexistentURL = self.tmpDir.appending(path: "DoesNotExist.app", directoryHint: .isDirectory)
         let metadata = AppMetadata(
             bundleURL: nonexistentURL,
             bundleID: "com.test.Gone",
-            bundleName: "Gone",
+            displayName: "Gone",
             executableName: "Gone",
             version: nil,
-            bundleSizeInBytes: 0
+            shortVersion: nil
         )
-        let plan = UninstallPlan(appMetadata: metadata, selectedFiles: [])
-        let executor = UninstallExecutor()
-        do {
-            try await executor.execute(plan: plan)
-            XCTFail("Expected error")
-        } catch UninstallerError.trashFailed(let url, _) {
-            XCTAssertEqual(url, nonexistentURL)
-        }
+        let plan = UninstallPlan(metadata: metadata, selectedFiles: [])
+        let summary = UninstallExecutor().execute(plan)
+        XCTAssertFalse(summary.allSucceeded)
+        XCTAssertEqual(summary.failed.first?.url, nonexistentURL)
+    }
+
+    func testExecute_partialSuccess_separatesSucceededAndFailed() throws {
+        let existingURL = try self.makeTempFile(name: "existing_file")
+        let missingURL = self.tmpDir.appending(path: "ghost.file", directoryHint: .notDirectory)
+        let metadata = AppMetadata(
+            bundleURL: existingURL,
+            bundleID: "com.test.Partial",
+            displayName: "Partial",
+            executableName: "Partial",
+            version: nil,
+            shortVersion: nil
+        )
+        let missingFile = makeAssociatedFile(url: missingURL)
+        let plan = UninstallPlan(metadata: metadata, selectedFiles: [missingFile])
+        let summary = UninstallExecutor().execute(plan)
+        // existingURL (bundle) succeeds, missingURL fails
+        XCTAssertEqual(summary.succeeded.count, 1)
+        XCTAssertEqual(summary.failed.count, 1)
+        XCTAssertFalse(summary.allSucceeded)
+        XCTAssertEqual(summary.failed.first?.url, missingURL)
+    }
+
+    func testExecute_emptyPlan_bundleOnlyTrashed() throws {
+        let bundleURL = try makeTestBundle(in: self.tmpDir)
+        let metadata = try AppMetadataReader().read(from: bundleURL)
+        let plan = UninstallPlan(metadata: metadata, selectedFiles: [])
+        let summary = UninstallExecutor().execute(plan)
+        XCTAssertTrue(summary.allSucceeded)
+        XCTAssertEqual(summary.itemResults.count, 1)
+        XCTAssertFalse(FileManager.default.fileExists(atPath: bundleURL.path(percentEncoded: false)))
     }
 
     func testNoRemoveItemCall() throws {

@@ -852,3 +852,33 @@
 | 07:10 | Session 28: created Makefile with ci, format-check, lint, build, test, app targets | Makefile | created | ~100 |
 | 07:10 | Session 28: created .github/workflows/ci.yml for macos-14 GitHub Actions | .github/workflows/ci.yml | created | ~150 |
 | 07:15 | Session 28: all gates green — 977 tests, 0 failures, make ci exits 0, ARCHIVE SUCCEEDED | docs/ci-report.md | created | ~200 |
+| 07:12 | Edited Package.swift | 2→2 lines | ~63 |
+| 07:12 | Edited Package.swift | 2→2 lines | ~68 |
+| 07:12 | Edited Package.swift | inline fix | ~33 |
+| 07:13 | Edited Package.swift | inline fix | ~43 |
+| 07:13 | Edited Package.swift | expanded (+7 lines) | ~88 |
+| 07:14 | Edited Package.swift | 6→10 lines | ~113 |
+| 07:20 | Created Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift | — | ~598 |
+| 07:21 | Created Tests/FeaturesTests/UninstallerTests/AppMetadataReaderTests.swift | — | ~704 |
+| 07:21 | Created Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift | — | ~765 |
+| 07:21 | Created Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift | — | ~734 |
+| 07:21 | Created Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | — | ~706 |
+| 07:25 | Created Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift | — | ~368 |
+| 07:25 | Created Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | — | ~1118 |
+| 08:21 | Edited Sources/Features/Uninstaller/UninstallExecutor.swift | 2→2 lines | ~45 |
+| 08:21 | Session end: 14 writes across 9 files (Package.swift, UninstallerTestSupport.swift, AppMetadataReaderTests.swift, AssociatedFilesScannerTests.swift, MatchScorerTests.swift) | 44 reads | ~23878 tok |
+
+## Session: 2026-05-03 08:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:38 | Created Tests/UITests/UninstallerUITests/UninstallerUITestSupport.swift | — | ~418 |
+| 08:38 | Created .mcp.json | — | ~37 |
+| 08:38 | Edited .claude/settings.json | 2→3 lines | ~18 |
+| 08:38 | Edited Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift | modified testConfidenceLevel_mappedCorrectly() | ~711 |
+| 08:39 | Edited Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift | modified testScan_emptyDirectory_returnsEmpty() | ~553 |
+| 08:39 | Edited Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | added optional chaining | ~410 |
+| 08:39 | Edited Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | added optional chaining | ~1255 |
+| 08:40 | Edited Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | removed 67 lines | ~10 |
+| 08:40 | Installed XcodeBuildMCP; configured .mcp.json project-scoped; added 9 new uninstaller tests across MatchScorer/Scanner/Executor/ViewModel | .mcp.json, .claude/settings.json, Tests/FeaturesTests/UninstallerTests/{MatchScorerTests,AssociatedFilesScannerTests,UninstallExecutorTests}.swift, Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | all Uninstaller suites green (10/10 passed) | ~2k |
+| 08:41 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |

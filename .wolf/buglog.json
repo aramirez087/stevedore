@@ -600,7 +600,13 @@
       "file": "Sources/UI/MainWindow/WindowState.swift",
       "root_cause": "splitFraction didSet unconditionally re-assigns self.splitFraction, causing infinite recursion and stack overflow",
       "fix": "Added guard: compute clamped value, return early if unchanged, only assign when value differs",
-      "tags": ["swift", "infinite-recursion", "didSet", "observable", "stack-overflow"],
+      "tags": [
+        "swift",
+        "infinite-recursion",
+        "didSet",
+        "observable",
+        "stack-overflow"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T17:00:00.000Z"
@@ -612,7 +618,13 @@
       "file": "Sources/UI/MainWindow/PaneHost.swift",
       "root_cause": "macOS 15+ SwiftUI introduces Tab type; bare 'Tab' is ambiguous in files importing both Core and SwiftUI",
       "fix": "Qualify as Core.Tab in PaneTabButton struct declaration",
-      "tags": ["swift", "type-ambiguity", "swiftui", "core-tab", "macos15"],
+      "tags": [
+        "swift",
+        "type-ambiguity",
+        "swiftui",
+        "core-tab",
+        "macos15"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T17:00:00.000Z"
@@ -624,10 +636,78 @@
       "file": "App/Stevedore/AppEnvironment.swift",
       "root_cause": "ConnectionStatus enum only has .idle, .connecting, .connected, .error — .disconnected was used by mistake",
       "fix": "Changed .disconnected to .idle in StubConnectionStatusProvider.status(for:)",
-      "tags": ["swift", "wrong-enum-case", "connection-status"],
+      "tags": [
+        "swift",
+        "wrong-enum-case",
+        "connection-status"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-02T17:00:00.000Z"
+    },
+    {
+      "id": "bug-041",
+      "timestamp": "2026-05-03T13:12:49.049Z",
+      "error_message": "Incorrect value in code",
+      "file": "Package.swift",
+      "root_cause": "Had \"UIToolbar\"",
+      "fix": "Changed to \"DesignSystem\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-05-03T13:12:52.913Z"
+    },
+    {
+      "id": "bug-042",
+      "timestamp": "2026-05-03T14:38:43.190Z",
+      "error_message": "Incorrect value in code",
+      "file": ".claude/settings.json",
+      "root_cause": "Had \"hooks\"",
+      "fix": "Changed to \"enabledMcpjsonServers\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T14:38:43.190Z"
+    },
+    {
+      "id": "bug-043",
+      "timestamp": "2026-05-03T14:39:12.621Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T14:39:12.621Z"
+    },
+    {
+      "id": "bug-044",
+      "timestamp": "2026-05-03T14:39:31.330Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T14:39:31.330Z"
     }
   ]
 }

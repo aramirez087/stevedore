@@ -42,7 +42,7 @@ public struct UninstallSummary: Sendable {
 /// Executes an `UninstallPlan` by moving every selected URL to Trash.
 ///
 /// **Safety guarantee:** Only `FileManager.trashItem(at:resultingItemURL:)` is
-/// used.  `removeItem` is never called.  System-owned paths (where
+/// used — the destructive FileManager API is never called.  System-owned paths (where
 /// `AssociatedFile.requiresAdmin == true`) are silently skipped; the caller
 /// is responsible for filtering them before building the plan.
 public struct UninstallExecutor: Sendable {

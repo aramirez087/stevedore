@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 441319,
-    "total_reads": 653,
-    "total_writes": 159,
-    "total_sessions": 56,
-    "anatomy_hits": 212,
-    "anatomy_misses": 437,
+    "total_tokens_estimated": 487506,
+    "total_reads": 726,
+    "total_writes": 181,
+    "total_sessions": 57,
+    "anatomy_hits": 273,
+    "anatomy_misses": 448,
     "repeated_reads_blocked": 21,
-    "estimated_savings_vs_bare_cli": 61299
+    "estimated_savings_vs_bare_cli": 73499
   },
   "sessions": [
     {
@@ -5445,6 +5445,604 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 20
+      }
+    },
+    {
+      "id": "session-2026-05-03-0643",
+      "started": "2026-05-03T12:43:04.089Z",
+      "ended": "2026-05-03T13:06:54.455Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Shortcuts.swift",
+          "tokens_estimated": 586,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/PaneCommandProxy.swift",
+          "tokens_estimated": 1171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/WindowCommandProxy.swift",
+          "tokens_estimated": 322,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Sections/FileMenu.swift",
+          "tokens_estimated": 393,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/AppCommands.swift",
+          "tokens_estimated": 160,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 1849,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 1091,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowModel.swift",
+          "tokens_estimated": 1195,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/ShortcutsTests.swift",
+          "tokens_estimated": 520,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/PaneCommandProxyTests.swift",
+          "tokens_estimated": 853,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/MenusTestSupport.swift",
+          "tokens_estimated": 855,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 8995,
+        "output_tokens_estimated": 0,
+        "reads_count": 11,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 11
+      }
+    },
+    {
+      "id": "session-2026-05-03-0643",
+      "started": "2026-05-03T12:43:04.089Z",
+      "ended": "2026-05-03T14:21:39.841Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Shortcuts.swift",
+          "tokens_estimated": 586,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/PaneCommandProxy.swift",
+          "tokens_estimated": 1171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/WindowCommandProxy.swift",
+          "tokens_estimated": 322,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Sections/FileMenu.swift",
+          "tokens_estimated": 393,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/AppCommands.swift",
+          "tokens_estimated": 160,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 1849,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 1091,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowModel.swift",
+          "tokens_estimated": 1195,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/ShortcutsTests.swift",
+          "tokens_estimated": 520,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/PaneCommandProxyTests.swift",
+          "tokens_estimated": 853,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/MenusTestSupport.swift",
+          "tokens_estimated": 855,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 2481,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/Toolbar/SearchField.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AppMetadata.swift",
+          "tokens_estimated": 187,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AppMetadataReader.swift",
+          "tokens_estimated": 200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AssociatedFile.swift",
+          "tokens_estimated": 100,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AssociatedFilesScanner.swift",
+          "tokens_estimated": 200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/DesignSystem/Theme/Theme.swift",
+          "tokens_estimated": 100,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/UninstallerLauncher.swift",
+          "tokens_estimated": 90,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/ScanState.swift",
+          "tokens_estimated": 30,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 1358,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/UninstallerSheet.swift",
+          "tokens_estimated": 150,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AppMetadataReaderTests.swift",
+          "tokens_estimated": 350,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
+          "tokens_estimated": 300,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift",
+          "tokens_estimated": 150,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/MatchScorer.swift",
+          "tokens_estimated": 100,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/Confidence.swift",
+          "tokens_estimated": 80,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/SearchPaths.swift",
+          "tokens_estimated": 120,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 975,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallPlan.swift",
+          "tokens_estimated": 122,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallExecutor.swift",
+          "tokens_estimated": 80,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallerError.swift",
+          "tokens_estimated": 120,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/Uninstaller/FeaturesUninstallerSmokeTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 1264,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/FakeUninstallerEngine.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/Testing/FakeAssociatedFilesScanner.swift",
+          "tokens_estimated": 60,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/Testing/FakeAppMetadataReader.swift",
+          "tokens_estimated": 60,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 370,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/ConfirmationTextTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/DefaultSelectionTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/DropHandlingTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/SystemPathLockTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/PathRedactionTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 68,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 73,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 35,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 46,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 95,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 121,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift",
+          "tokens_estimated": 641,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AppMetadataReaderTests.swift",
+          "tokens_estimated": 754,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
+          "tokens_estimated": 820,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
+          "tokens_estimated": 787,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 756,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 394,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 1198,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallExecutor.swift",
+          "tokens_estimated": 48,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 18042,
+        "output_tokens_estimated": 5836,
+        "reads_count": 44,
+        "writes_count": 14,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 35
+      }
+    },
+    {
+      "id": "session-2026-05-03-0833",
+      "started": "2026-05-03T14:33:19.338Z",
+      "ended": "2026-05-03T14:41:06.458Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.claude/settings.json",
+          "tokens_estimated": 441,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallExecutor.swift",
+          "tokens_estimated": 598,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 706,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AppMetadataReader.swift",
+          "tokens_estimated": 200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 1118,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AssociatedFilesScanner.swift",
+          "tokens_estimated": 200,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/MatchScorer.swift",
+          "tokens_estimated": 100,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/UninstallerViewModel.swift",
+          "tokens_estimated": 1358,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift",
+          "tokens_estimated": 598,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallPlan.swift",
+          "tokens_estimated": 122,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/SearchPaths.swift",
+          "tokens_estimated": 120,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift",
+          "tokens_estimated": 368,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
+          "tokens_estimated": 765,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
+          "tokens_estimated": 734,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Package.swift",
+          "tokens_estimated": 2234,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/DefaultSelectionTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/SystemPathLockTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/ConfirmationTextTests.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerUITestSupport.swift",
+          "tokens_estimated": 448,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.mcp.json",
+          "tokens_estimated": 37,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/.claude/settings.json",
+          "tokens_estimated": 18,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
+          "tokens_estimated": 762,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
+          "tokens_estimated": 593,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
+          "tokens_estimated": 439,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 1344,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
+          "tokens_estimated": 11,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 9662,
+        "output_tokens_estimated": 3652,
+        "reads_count": 18,
+        "writes_count": 8,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 15
       }
     }
   ],

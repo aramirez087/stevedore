@@ -67,20 +67,27 @@ let libraryModules: [LibraryModule] = [
     LibraryModule(name: "DesignSystem", path: "Sources/UI/DesignSystem", extraDependencies: []),
     LibraryModule(name: "UIPane", path: "Sources/UI/Pane", extraDependencies: []),
     LibraryModule(name: "UITabs", path: "Sources/UI/Tabs", extraDependencies: []),
-    LibraryModule(name: "UISidebar", path: "Sources/UI/Sidebar", extraDependencies: []),
-    LibraryModule(name: "UIToolbar", path: "Sources/UI/Toolbar", extraDependencies: []),
+    LibraryModule(name: "UISidebar", path: "Sources/UI/Sidebar", extraDependencies: [.target(name: "DesignSystem")]),
+    LibraryModule(name: "UIToolbar", path: "Sources/UI/Toolbar", extraDependencies: [.target(name: "DesignSystem")]),
     LibraryModule(name: "UITransfers", path: "Sources/UI/Transfers", extraDependencies: []),
     LibraryModule(name: "UISyncDialog", path: "Sources/UI/SyncDialog", extraDependencies: []),
     LibraryModule(name: "UIRenameDialog", path: "Sources/UI/RenameDialog", extraDependencies: []),
-    LibraryModule(name: "UIConnectDialog", path: "Sources/UI/ConnectDialog", extraDependencies: []),
-    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: []),
+    LibraryModule(name: "UIConnectDialog", path: "Sources/UI/ConnectDialog", extraDependencies: [.target(name: "DesignSystem")]),
+    LibraryModule(name: "UISettingsUI", path: "Sources/UI/SettingsUI", extraDependencies: [.target(name: "DesignSystem"), .target(name: "ServicesSettings")]),
     LibraryModule(
         name: "UIUninstallerUI",
         path: "Sources/UI/UninstallerUI",
         extraDependencies: [.target(name: "FeaturesUninstaller")]
     ),
     LibraryModule(name: "UIMenus", path: "Sources/UI/Menus", extraDependencies: []),
-    LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: []),
+    LibraryModule(name: "MainWindow", path: "Sources/UI/MainWindow", extraDependencies: [
+        .target(name: "DesignSystem"),
+        .target(name: "FeaturesOperations"),
+        .target(name: "ServicesSettings"),
+        .target(name: "UIMenus"),
+        .target(name: "UISidebar"),
+        .target(name: "UIToolbar"),
+    ]),
 ]
 
 // MARK: - Helpers
@@ -202,6 +209,10 @@ let package = Package(
                 dependencies: [
                     .target(name: "Core"),
                     .target(name: "MainWindow"),
+                    .target(name: "FeaturesOperations"),
+                    .target(name: "FileSystemLocal"),
+                    .target(name: "ServicesSettings"),
+                    .target(name: "UISidebar"),
                 ],
                 path: "App/Stevedore",
                 swiftSettings: baseSwiftSettings

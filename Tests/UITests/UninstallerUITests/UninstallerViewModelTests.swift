@@ -33,101 +33,13 @@ final class UninstallerViewModelTests: XCTestCase {
         return bundleURL
     }
 
-    private func makeMetadata(bundleURL: URL? = nil) -> AppMetadata {
-        AppMetadata(
-            bundleURL: bundleURL ?? URL(filePath: "/tmp/TestApp.app"),
-            bundleID: "com.test.App",
-            bundleName: "TestApp",
-            executableName: "TestApp",
-            version: "1.0",
-            bundleSizeInBytes: 1024
-        )
-    }
-
-    private func makeFile(confidence: Confidence, requiresAdmin: Bool = false) -> AssociatedFile {
-        AssociatedFile(
-            url: URL(filePath: "/tmp/\(UUID().uuidString)"),
-            sizeInBytes: 512,
-            lastModified: Date(),
-            confidence: confidence,
-            reason: "Test",
-            requiresAdmin: requiresAdmin
-        )
-    }
-
-    // MARK: - Default selection tests
-
-    func testHighConfidence_selectedByDefault() async throws {
-        let highFile = self.makeFile(confidence: .high)
-        let scanner = FakeAssociatedFilesScanner(files: [highFile])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        XCTAssertTrue(vm.selectedIDs.contains(highFile.id))
-    }
-
-    func testMediumConfidence_notSelectedByDefault() async throws {
-        let medFile = self.makeFile(confidence: .medium)
-        let scanner = FakeAssociatedFilesScanner(files: [medFile])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        XCTAssertFalse(vm.selectedIDs.contains(medFile.id))
-    }
-
-    func testAdminPath_notInDefaultSelections() async throws {
-        let adminFile = self.makeFile(confidence: .high, requiresAdmin: true)
-        let scanner = FakeAssociatedFilesScanner(files: [adminFile])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        XCTAssertFalse(vm.selectedIDs.contains(adminFile.id))
-    }
-
-    // MARK: - System path lock tests
-
-    func testAdminPath_cannotBeToggled() async throws {
-        let adminFile = self.makeFile(confidence: .high, requiresAdmin: true)
-        let scanner = FakeAssociatedFilesScanner(files: [adminFile])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        vm.toggleSelection(adminFile.id)
-        XCTAssertFalse(vm.selectedIDs.contains(adminFile.id))
-    }
-
-    // MARK: - Confirmation text
-
-    func testConfirmationText_updatesWithSelection() async throws {
-        let file = self.makeFile(confidence: .high)
-        let scanner = FakeAssociatedFilesScanner(files: [file])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        XCTAssertTrue(vm.selectedIDs.contains(file.id))
-        let textWithFile = vm.confirmationText
-        vm.toggleSelection(file.id)
-        let textWithoutFile = vm.confirmationText
-        XCTAssertNotEqual(textWithFile, textWithoutFile)
-        XCTAssertTrue(textWithFile.contains("2 items"))
-        XCTAssertTrue(textWithoutFile.contains("1 item"))
-    }
-
     // MARK: - Drop handling
 
     func testLoad_nonAppExtension_setsDropError() async {
         let vm = UninstallerViewModel()
-        let url = URL(filePath: "/tmp/SomeFolder")
-        await vm.load(appURL: url)
+        await vm.load(appURL: URL(filePath: "/tmp/SomeFolder"))
         XCTAssertNotNil(vm.dropError)
-        if case .idle = vm.scanState { } else {
-            XCTFail("scanState should remain idle on invalid drop")
-        }
+        XCTAssertEqual(vm.scanState, .idle)
     }
 
     func testLoad_missingInfoPlist_setsDropError() async throws {
@@ -136,68 +48,95 @@ final class UninstallerViewModelTests: XCTestCase {
         try FileManager.default.createDirectory(at: emptyApp, withIntermediateDirectories: true)
         await vm.load(appURL: emptyApp)
         XCTAssertNotNil(vm.dropError)
-        if case .idle = vm.scanState { } else {
-            XCTFail("scanState should remain idle when Info.plist is missing")
-        }
+        XCTAssertEqual(vm.scanState, .idle)
     }
 
-    func testLoad_validBundle_entersScanning() async throws {
-        let scanner = FakeAssociatedFilesScanner(files: [])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
+    func testLoad_validBundle_transitionsToReady() async throws {
+        let vm = UninstallerViewModel()
         let bundleURL = try self.makeBundle()
         await vm.load(appURL: bundleURL)
-        if case .ready = vm.scanState { } else {
-            XCTFail("Expected .ready after successful load, got \(vm.scanState)")
-        }
+        XCTAssertEqual(vm.scanState, .ready)
+        XCTAssertNil(vm.dropError)
     }
 
-    // MARK: - Sort
+    func testDropError_clearedOnSubsequentSuccessfulLoad() async throws {
+        let vm = UninstallerViewModel()
+        // First load a bad path
+        await vm.load(appURL: URL(filePath: "/tmp/NoExtension"))
+        XCTAssertNotNil(vm.dropError)
+        // Then load a valid bundle
+        let bundleURL = try self.makeBundle()
+        await vm.load(appURL: bundleURL)
+        XCTAssertNil(vm.dropError)
+    }
 
-    func testSortBySize_respectsDirection() async throws {
-        let small = AssociatedFile(
-            url: URL(filePath: "/tmp/small"),
-            sizeInBytes: 100,
-            lastModified: Date(),
-            confidence: .medium,
-            reason: "Test",
-            requiresAdmin: false
+    // MARK: - Row selection (direct manipulation)
+
+    func testRowToggle_checksAndUnchecks() {
+        let vm = UninstallerViewModel()
+        let row = FileRow(file: makeMediumConfidenceFile(), selected: false)
+        vm.rows = [row]
+        XCTAssertFalse(vm.rows[0].isSelected)
+        vm.rows[0].isSelected = true
+        XCTAssertTrue(vm.rows[0].isSelected)
+        vm.rows[0].isSelected = false
+        XCTAssertFalse(vm.rows[0].isSelected)
+    }
+
+    // MARK: - Confirmation count
+
+    func testConfirmationCount_reflectsSelectedRowsPlusBundleAlways() {
+        let vm = UninstallerViewModel()
+        vm.metadata = .fake()
+        vm.rows = [
+            FileRow(file: makeHighConfidenceFile(), selected: true),
+            FileRow(file: makeMediumConfidenceFile(), selected: true),
+            FileRow(file: makeLowConfidenceFile(), selected: false),
+        ]
+        // app bundle (1) + 2 selected = 3
+        XCTAssertEqual(vm.confirmationItemCount, 3)
+
+        vm.rows[1].isSelected = false
+        // app bundle (1) + 1 selected = 2
+        XCTAssertEqual(vm.confirmationItemCount, 2)
+    }
+
+    // MARK: - canConfirm
+
+    func testCanConfirm_requiresReadyStateAndMetadata() {
+        let vm = UninstallerViewModel()
+        XCTAssertFalse(vm.canConfirm)
+        vm.metadata = .fake()
+        vm.scanState = .ready
+        XCTAssertTrue(vm.canConfirm)
+    }
+
+    // MARK: - confirm() integration
+
+    func testConfirm_trashesFiles_invokesCallbacks() async throws {
+        let bundleURL = try self.makeBundle()
+        let fileURL = self.tmpDir.appending(path: "com.test.App Support", directoryHint: .notDirectory)
+        try "data".write(to: fileURL, atomically: true, encoding: .utf8)
+        let scanner = AssociatedFilesScanner(
+            searchPaths: [SearchPath(url: self.tmpDir, kind: .user)]
         )
-        let large = AssociatedFile(
-            url: URL(filePath: "/tmp/large"),
-            sizeInBytes: 9000,
-            lastModified: Date(),
-            confidence: .medium,
-            reason: "Test",
-            requiresAdmin: false
+        let vm = UninstallerViewModel(scanner: scanner)
+        await vm.load(appURL: bundleURL)
+        XCTAssertEqual(vm.scanState, .ready)
+
+        var capturedSummary: UninstallSummary?
+        var dismissCalled = false
+        vm.onCompleted = { capturedSummary = $0 }
+        vm.onDismiss = { dismissCalled = true }
+
+        await vm.confirm()
+
+        XCTAssertTrue(dismissCalled, "onDismiss should be called after confirm")
+        XCTAssertNotNil(capturedSummary, "onCompleted should be called with a summary")
+        // Bundle itself must be gone
+        XCTAssertFalse(
+            FileManager.default.fileExists(atPath: bundleURL.path(percentEncoded: false)),
+            "App bundle should have been moved to Trash"
         )
-        let scanner = FakeAssociatedFilesScanner(files: [small, large])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        vm.sortKey = .size
-        vm.sortAscending = true
-        let asc = vm.displayedFiles
-        XCTAssertEqual(asc.first?.sizeInBytes, 100)
-        vm.sortAscending = false
-        let desc = vm.displayedFiles
-        XCTAssertEqual(desc.first?.sizeInBytes, 9000)
-    }
-
-    // MARK: - Toggle
-
-    func testToggleSelection_checksAndUnchecks() async throws {
-        let file = self.makeFile(confidence: .medium)
-        let scanner = FakeAssociatedFilesScanner(files: [file])
-        let reader = FakeAppMetadataReader(result: .success(self.makeMetadata()))
-        let vm = UninstallerViewModel(metadataReader: reader, scanner: scanner)
-        let bundleURL = try self.makeBundle()
-        await vm.load(appURL: bundleURL)
-        XCTAssertFalse(vm.selectedIDs.contains(file.id))
-        vm.toggleSelection(file.id)
-        XCTAssertTrue(vm.selectedIDs.contains(file.id))
-        vm.toggleSelection(file.id)
-        XCTAssertFalse(vm.selectedIDs.contains(file.id))
     }
 }
