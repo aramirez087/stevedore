@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:12:54.979Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:08:25.211Z
 > Files: 602 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
@@ -9,8 +9,8 @@
 
 ## ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/
 
-- `.session-02-plan.md` — Session 02 Implementation Plan — Fix Back Navigation (Bug #054) (~3370 tok)
-- `session-02-handoff.md` — Session 02 Handoff — Fix Back Navigation (Bug #054); root cause, SDK discovery, changes, quality gate results (~600 tok)
+- `.session-03-plan.md` — Session 03 Implementation Plan — Bug #055: Home Sidebar Wrong Path (~2450 tok)
+- `session-03-handoff.md` — Session 03 Handoff — Bug #055 fixed: SidebarViewModel.normalizeVolumes() filters autofs /home and prepends real homeDirectoryForCurrentUser (~900 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -602,9 +602,9 @@
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~3180 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
-- `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~966 tok)
+- `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
 - `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~543 tok)
 
@@ -621,7 +621,7 @@
 - `ConnectMenu.swift` — / Connect menu: Connect to Server dialog (Cmd+K), Recent Connections submenu. (~177 tok)
 - `EditMenu.swift` — / Edit menu: Find (Cmd+F focuses the toolbar search field). (~140 tok)
 - `FileMenu.swift` — / File menu: New File, New Folder, Open, Open With, Move to Trash, Compress, Decompress. (~393 tok)
-- `GoMenu.swift` — / Go menu: Up, Back, Forward, Home, Computer, Recent Folders. (~351 tok)
+- `GoMenu.swift` — / Go menu: Up, Back, Forward, Home, Computer, Recent Folders. (~337 tok)
 - `ToolsMenu.swift` — / Tools menu: Compare/Sync, Multi-Rename, Application Uninstaller, Open in Terminal. (~249 tok)
 - `ViewMenu.swift` — / View menu: Show Hidden Files, Refresh, Sort By submenu, View As submenu. (~364 tok)
 - `WindowMenu.swift` — / Window menu: New Tab, Close Tab, Reopen Closed Tab, Next/Previous Tab. (~330 tok)
@@ -649,7 +649,7 @@
 - `Sidebar.swift` — / Top-level sidebar view composing the four sections. (~244 tok)
 - `SidebarItemID.swift` — / Uniquely identifies any selectable row in the sidebar. (~69 tok)
 - `SidebarRow.swift` — / Shared row for all sidebar sections: icon + title styled with design-system tokens. (~113 tok)
-- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~797 tok)
+- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~1032 tok)
 - `SidebarVolume.swift` — / Local mirror of a mounted volume, keeping `UISidebar` independent of `FileSystemLocal`. (~191 tok)
 
 ## Sources/UI/Sidebar/Previews/
@@ -799,7 +799,7 @@
 
 ## Tests/UITests/MainWindowTests/
 
-- `MainWindowTests.swift` — Class: MainWindowTests (~1936 tok)
+- `MainWindowTests.swift` — Class: MainWindowTests (~1013 tok)
 - `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
 - `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
@@ -821,8 +821,8 @@
 - `DevicesSectionTests.swift` — Class: SidebarDevicesSectionTests (~529 tok)
 - `FavoritesSectionTests.swift` — Class: SidebarFavoritesSectionTests (~500 tok)
 - `SidebarTestSupport.swift` — Struct: FakeTagsProvider (~1208 tok)
-- `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1171 tok)
-- `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~362 tok)
+- `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1619 tok)
+- `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~409 tok)
 
 ## Tests/UITests/UninstallerUITests/
 
@@ -834,7 +834,7 @@
 
 ## docs/claude-sessions/bugs-054-056-navigation-and-loading/
 
-- `session-02-handoff.md` — Session 02 Handoff — Fix Back Navigation (Bug #054) (~1090 tok)
+- `session-03-handoff.md` — Session 03 Handoff — Bug #055: Home Sidebar Wrong Path (~1035 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 

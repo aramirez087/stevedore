@@ -3,13 +3,12 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
+| 2026-05-03 | S03 planning: wrote .session-03-plan.md for bug-055 (home sidebar wrong path); plan covers SidebarViewModel.swift filter+synthetic-home fix + 3 new tests + 2 test updates | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | plan written | ~3500 |
+| 16:07 | S03 execute: fixed bug-055 — SidebarViewModel.normalizeVolumes() filters autofs /home and prepends FileManager.homeDirectoryForCurrentUser; updated 2 tests, added 3 new tests, fixed 1 collateral TagsSectionTests; build + 40 tests green | Sources/UI/Sidebar/SidebarViewModel.swift, Tests/UITests/SidebarTests/SidebarViewModelTests.swift, Tests/UITests/SidebarTests/TagsSectionTests.swift | bug-055 fixed | ~2000 |
+
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
 
-| 2026-05-03 | Session 02 read-only planning for bug #054 (back navigation broken). Root cause: .focusedValue doesn't propagate to GoMenuCommands when keyboard focus is outside PaneHost. Fix: .focusedSceneValue in PaneHost + @FocusedSceneValue in GoMenu + PaneSession convenience methods. Plan written to .session-02-plan.md | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-02-plan.md | plan written | ~3200 tok |
-
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
-
-| 16:12 | Session 02 — fixed bug #054 back navigation: .focusedValue→.focusedSceneValue in PaneHost, added PaneSession convenience methods (goBack/goForward/goUp/goHome/goToComputer), 5 new tests, handoff written. Note: @FocusedSceneValue property wrapper absent from macOS 26 SDK | PaneSession.swift PaneHost.swift GoMenu.swift MainWindowTests.swift | Build clean, 36 tests pass | ~2000 tok |
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
@@ -996,19 +995,18 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 16:04 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-02-plan.md | — | ~3595 |
-| 16:04 | Session end: 1 writes across 1 files (.session-02-plan.md) | 14 reads | ~13491 tok |
+| 16:02 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | — | ~2613 |
+| 16:02 | Session end: 1 writes across 1 files (.session-03-plan.md) | 8 reads | ~7627 tok |
 
-## Session: 2026-05-03 16:04
+## Session: 2026-05-03 16:02
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 16:05 | Edited Sources/UI/MainWindow/PaneSession.swift | modified navigate() | ~258 |
-| 16:05 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~16 |
-| 16:05 | Edited Sources/UI/MainWindow/PaneHost.swift | inline fix | ~24 |
-| 16:06 | Edited Sources/UI/MainWindow/PaneHost.swift | reduced (-8 lines) | ~123 |
-| 16:06 | Edited Tests/UITests/MainWindowTests/MainWindowTests.swift | modified testPaneSessionCanGoBackIsFalseAtInit() | ~362 |
-| 16:08 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~22 |
-| 16:11 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~15 |
-| 16:11 | Edited Sources/UI/MainWindow/PaneSession.swift | added 1 import(s) | ~18 |
-| 16:12 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-handoff.md | — | ~1162 |
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified currentVolumes() | ~35 |
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified mounted() | ~69 |
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified isAutofsHome() | ~216 |
+| 16:03 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~142 |
+| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | modified testStartIdempotent() | ~82 |
+| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~498 |
+| 16:07 | Edited Tests/UITests/SidebarTests/TagsSectionTests.swift | modified testTagsLoadedForSyntheticHome() | ~113 |
+| 16:08 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-handoff.md | — | ~1104 |

@@ -50,7 +50,9 @@ final class SidebarViewModelTests: XCTestCase {
         let fakeVols = FakeVolumeDiscovery(volumes: [vol1, vol2])
         let vm = makeSidebarViewModel(volumes: fakeVols)
         await vm.start()
-        XCTAssertEqual(vm.volumes.count, 2)
+        XCTAssertEqual(vm.volumes.count, 3)
+        XCTAssertEqual(vm.volumes.first?.url, FileManager.default.homeDirectoryForCurrentUser)
+        XCTAssertEqual(vm.volumes.first?.name, "Home")
     }
 
     func testStartPopulatesTags() async {
@@ -106,7 +108,7 @@ final class SidebarViewModelTests: XCTestCase {
         let vm = makeSidebarViewModel(volumes: fakeVols)
         await vm.start()
         await vm.start() // second call should be a no-op
-        XCTAssertEqual(vm.volumes.count, 1)
+        XCTAssertEqual(vm.volumes.count, 2)
     }
 
     func testEjectCallsInjectedEjector() async {
@@ -124,5 +126,38 @@ final class SidebarViewModelTests: XCTestCase {
         let vm = makeSidebarViewModel(ejector: ejector)
         await vm.ejectVolume(url: url)
         XCTAssertEqual(ejector.ejectCalls.count, 1)
+    }
+
+    func testStartFiltersAutofsHome() async {
+        let autofs = SidebarVolume.fake(path: "/System/Volumes/Data/home", name: "home")
+        let fakeVols = FakeVolumeDiscovery(volumes: [autofs])
+        let vm = makeSidebarViewModel(volumes: fakeVols)
+        await vm.start()
+        XCTAssertFalse(vm.volumes.contains(where: { $0.url.path == "/System/Volumes/Data/home" }))
+        XCTAssertFalse(vm.volumes.contains(where: { $0.url.path == "/home" }))
+    }
+
+    func testStartPrependsRealHomeVolume() async {
+        let vol = SidebarVolume.fake(path: "/Volumes/A", name: "A")
+        let fakeVols = FakeVolumeDiscovery(volumes: [vol])
+        let vm = makeSidebarViewModel(volumes: fakeVols)
+        await vm.start()
+        XCTAssertEqual(vm.volumes.first?.url, FileManager.default.homeDirectoryForCurrentUser)
+        XCTAssertEqual(vm.volumes.first?.name, "Home")
+        XCTAssertFalse(vm.volumes.first?.isEjectable ?? true)
+    }
+
+    func testMountedEventIgnoresAutofsHome() async {
+        let fakeVols = FakeVolumeDiscovery(volumes: [])
+        let vm = makeSidebarViewModel(volumes: fakeVols)
+        await vm.start()
+        let countAfterStart = vm.volumes.count
+
+        let autofs = SidebarVolume.fake(path: "/System/Volumes/Data/home", name: "home")
+        fakeVols.emit(.mounted(autofs))
+        try? await Task.sleep(for: .milliseconds(50))
+
+        XCTAssertEqual(vm.volumes.count, countAfterStart)
+        XCTAssertFalse(vm.volumes.contains(where: { $0.url.path == "/System/Volumes/Data/home" }))
     }
 }
