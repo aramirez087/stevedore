@@ -876,7 +876,15 @@ run_one_session() {
   local done_subject="feat: Session ${sid} — ${friendly}"
   local plan_cached=false
   if ! $FRESH; then
-    if git log --format='%s' 2>/dev/null | grep -qxF "$done_subject"; then
+    # Materialize git log into a variable before grep. Piping `git log | grep -q`
+    # under `set -o pipefail` is broken: grep -q exits at first match, closes
+    # the pipe, and git log then dies with SIGPIPE (141). Pipefail propagates
+    # that as a non-zero pipeline exit even though the match succeeded — which
+    # silently disables the resume logic. Reading once into a string + here-doc
+    # grep avoids the pipe entirely.
+    local committed_subjects
+    committed_subjects="$(git log --format='%s' 2>/dev/null || true)"
+    if grep -qxF -- "$done_subject" <<<"$committed_subjects"; then
       log "  ✓ session ${padded_sid} already committed on this branch — skipping (use --fresh to force re-run)"
       cd "$prev_cwd"
       return 0
@@ -1090,20 +1098,7 @@ classify_error() {
 # ---------------------------------------------------------------------------
 write_epic_result() {
   local epic_status="$1"  # "success" or "failed"
-  # Result file lives outside the repo so external watchers (orchestrators,
-  # CI, supervisor scripts) get a stable completion sentinel that survives:
-  #   - `git add -A` in the cleanup commit (would otherwise stage it as new)
-  #   - the orchestrator artifact cleanup loop
-  #   - worktree teardown
-  # Persisted on both success and failure for symmetry — file-based pollers
-  # were previously broken on success because the file was deleted (#bug:
-  # success-path watchers hung indefinitely). Override base via EPIC_RESULT_DIR.
-  local result_dir="${EPIC_RESULT_DIR:-${TMPDIR:-/tmp}/epic-toolkit}"
-  mkdir -p "$result_dir" 2>/dev/null || true
-  local repo_id
-  repo_id="$(basename "${ORIG_REPO_ROOT:-$REPO_ROOT}")"
-  local result_file="${result_dir}/${repo_id}--${EPIC_NAME_SLUG}.result.json"
-  EPIC_RESULT_FILE="$result_file"
+  local result_file="${TRUNK_SESSIONS_DIR}/.epic-result.json"
   local result_wave
   if $EPIC_FAILED; then result_wave="$wn"; else result_wave="$WAVE_COUNT"; fi
   
@@ -1236,10 +1231,11 @@ else:
 PYEOF_PRINT
   echo "[EPIC_RESULT_END]"
   echo ""
-
-  # Result file is always retained (success and failure) — see path-computation
-  # comment above. External watchers can poll EPIC_RESULT_FILE as a uniform
-  # completion sentinel.
+  
+  # Only retain result file on failure (clean up on success)
+  if [[ "$epic_status" == "success" ]]; then
+    rm -f "$result_file"
+  fi
 }
 
 # ---------------------------------------------------------------------------
@@ -1516,9 +1512,8 @@ if ! $EPIC_FAILED; then
     done
   fi
   ok ""
-  ok "Logs:   ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-{plan,exec}.log"
-  ok "Plans:  ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-plan.md"
-  ok "Result: ${EPIC_RESULT_FILE/#$HOME/~}"
+  ok "Logs:  ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-{plan,exec}.log"
+  ok "Plans: ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-plan.md"
   if [[ "$TIMEOUT" -gt 0 || "$RETRY" -gt 0 ]]; then
     ok ""
     ok "Runtime settings:"
@@ -1630,6 +1625,6 @@ else
     err "Trunk worktree preserved : $TRUNK_WORKTREE_DIR"
     err "Failed session worktrees : $WORKTREE_BASE/${BRANCH_SANITIZED}--s*-* (inspect, then re-run)"
   fi
-  err "Detailed results: ${EPIC_RESULT_FILE/#$HOME/~}"
+  err "Detailed results: ${TRUNK_SESSIONS_DIR}/.epic-result.json"
   exit 1
 fi

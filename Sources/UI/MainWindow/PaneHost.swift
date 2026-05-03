@@ -1,3 +1,4 @@
+import AppKit
 import Core
 import DesignSystem
 import Foundation
@@ -173,12 +174,13 @@ private struct PaneTabButton: View {
 
 /// Observes `session` directly so path changes (sidebar clicks, toolbar nav, in-pane
 /// folder clicks) all update this view without relying on PaneHost to re-render first.
-private struct FileBrowserView: View {
+struct FileBrowserView: View {
     @Bindable var session: PaneSession
 
     @State private var items: [FileItem] = []
     @State private var isLoading = true
     @State private var errorMessage: String?
+    @State private var selectedItemPath: FilePath?
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -234,12 +236,11 @@ private struct FileBrowserView: View {
                                 .frame(width: 90, alignment: .trailing)
                         }
                     }
+                    .background(self.rowBackground(for: item))
                     .contentShape(Rectangle())
-                    .onTapGesture {
-                        if item.kind == .directory {
-                            self.session.navigate(to: item.path)
-                        }
-                    }
+                    .onTapGesture(count: 2) { self.handleDoubleTap(item) }
+                    .onTapGesture(count: 1) { self.selectedItemPath = item.path }
+                    .contextMenu { self.contextMenu(for: item) }
                 }
                 .listStyle(.plain)
             }
@@ -247,6 +248,54 @@ private struct FileBrowserView: View {
         .task(id: self.session.currentPath) {
             await self.loadItems()
         }
+        .onChange(of: self.session.currentPath) { _, _ in
+            self.selectedItemPath = nil
+        }
+    }
+
+    private func rowBackground(for item: FileItem) -> Color {
+        self.selectedItemPath == item.path
+            ? self.theme.colors.accent.opacity(0.15)
+            : Color.clear
+    }
+
+    private func handleDoubleTap(_ item: FileItem) {
+        if item.kind == .directory {
+            self.session.navigate(to: item.path)
+        } else if item.path.scheme == .local {
+            NSWorkspace.shared.open(URL(fileURLWithPath: item.path.posixString))
+        }
+    }
+
+    @ViewBuilder
+    private func contextMenu(for item: FileItem) -> some View {
+        let isLocal = item.path.scheme == .local
+        let openDisabled = item.kind != .directory && !isLocal
+
+        Button("Open") {
+            if item.kind == .directory {
+                self.session.navigate(to: item.path)
+            } else if isLocal {
+                NSWorkspace.shared.open(URL(fileURLWithPath: item.path.posixString))
+            }
+        }
+        .disabled(openDisabled)
+
+        Button("Reveal in Finder") {
+            NSWorkspace.shared.activateFileViewerSelecting(
+                [URL(fileURLWithPath: item.path.posixString)]
+            )
+        }
+        .disabled(!isLocal)
+
+        Divider()
+
+        Button("Move to Trash") {
+            let descriptor = OperationDescriptor(kind: .trash, sources: [item.path])
+            let provider = self.session.provider
+            Task { _ = try? await provider.execute(descriptor, progress: nil) }
+        }
+        .disabled(!isLocal)
     }
 
     private func loadItems() async {
@@ -265,8 +314,8 @@ private struct FileBrowserView: View {
             self.errorMessage = error.localizedDescription
         }
         self.items = collected.sorted {
-            if $0.kind == .directory && $1.kind != .directory { return true }
-            if $0.kind != .directory && $1.kind == .directory { return false }
+            if $0.kind == .directory, $1.kind != .directory { return true }
+            if $0.kind != .directory, $1.kind == .directory { return false }
             return $0.displayName.localizedCompare($1.displayName) == .orderedAscending
         }
         self.isLoading = false
