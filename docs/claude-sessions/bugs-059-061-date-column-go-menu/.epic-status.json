@@ -1,27 +1,27 @@
 {
   "epic": "bugs-059-061-date-column-go-menu",
-  "started_at": 1777850814.1465259,
+  "started_at": 1777851283.185556,
   "sessions": {
     "1": {
-      "status": "done",
+      "status": "skipped",
       "slug": "charter-audit",
       "wave": 1,
       "title": "Charter Audit",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 388.0,
-      "started_at": 1777850814.2900019
+      "elapsed": 0.0
     },
     "2": {
-      "status": "pending",
+      "status": "done",
       "slug": "fix-bugs",
       "wave": 2,
       "title": "Fix Bugs",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 0.0
+      "elapsed": 393.0,
+      "started_at": 1777851283.389639
     },
     "3": {
       "status": "pending",
