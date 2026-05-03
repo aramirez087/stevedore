@@ -80,8 +80,15 @@ final class UninstallExecutorTests: XCTestCase {
     }
 
     func testNoRemoveItemCall() throws {
-        let worktree = "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s25-uninstaller-ui"
-        let sourcePath = "\(worktree)/Sources/Features/Uninstaller/UninstallExecutor.swift"
+        let testFileURL = URL(fileURLWithPath: #filePath)
+        let repoRoot = testFileURL
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+        let sourcePath = repoRoot
+            .appendingPathComponent("Sources/Features/Uninstaller/UninstallExecutor.swift")
+            .path
         let source = try String(contentsOfFile: sourcePath, encoding: .utf8)
         XCTAssertFalse(source.contains("removeItem"), "UninstallExecutor must not call removeItem")
     }
