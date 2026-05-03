@@ -31,3 +31,6 @@ App/Stevedore.xcodeproj/
 .epic-worktrees/
 docs/claude-sessions/**/.session-*.log
 docs/claude-sessions/**/.session-*.tmp
+
+# Wolf session state
+.wolf/hooks/

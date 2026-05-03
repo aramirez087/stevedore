@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:18:02.608Z
-> Files: 599 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:24:52.143Z
+> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
@@ -22,6 +22,7 @@
 ## ./
 
 - `.epic-orchestrator.log` (~10719 tok)
+- `.gitignore` — Git ignore rules (~153 tok)
 - `.mcp.json` (~37 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `Package.swift` — swift-tools-version: 6.0 (~2070 tok)
