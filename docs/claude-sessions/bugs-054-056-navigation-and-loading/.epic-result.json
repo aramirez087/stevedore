@@ -1,0 +1,34 @@
+{
+  "epic": "bugs-054-056-navigation-and-loading",
+  "status": "failed",
+  "first_failed_id": "session-03",
+  "sessions": {
+    "session-01": {
+      "status": "skipped",
+      "slug": "charter-audit-bugs-054-056",
+      "elapsed": 0
+    },
+    "session-02": {
+      "status": "done",
+      "slug": "fix-back-navigation-bug-054",
+      "elapsed": 879
+    },
+    "session-03": {
+      "status": "done",
+      "slug": "fix-home-sidebar-bug-055",
+      "elapsed": 598
+    },
+    "session-04": {
+      "status": "done",
+      "slug": "fix-directory-loading-bug-056",
+      "elapsed": 538
+    }
+  },
+  "merged_sessions": [
+    "2 session-02-fix-back-navigation-bug-054.md"
+  ],
+  "wave": 2,
+  "runtime_seconds": 879,
+  "started_at": 1777845566,
+  "ended_at": 1777846445
+}
