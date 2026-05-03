@@ -9,6 +9,10 @@
 
 | 19:24 | Verified S26 already committed; all quality gates pass: swift build, swift test --filter MainWindow (12/12), swiftformat 0/16, swiftlint 0 violations | Sources/UI/MainWindow/, App/Stevedore/, Tests/UITests/MainWindowTests/ | All passing | ~500 tok |
 
+## Session: 2026-05-03 06:45 (Session 27 — Menu Commands verification)
+
+| 06:45 | Verified S27 already committed (861cab5); all quality gates pass: UIMenus build 0 warnings, MainWindow build 0 warnings, full build 0 warnings, 25/25 menu tests pass (ShortcutsTests+PaneCommandProxyTests+WindowCommandProxyTests), swiftformat 0/20, swiftlint 0 violations, full suite 977 tests with only pre-existing failures (SidebarViewModelTests async flake + UninstallExecutorTests worktree path) | Sources/UI/Menus/, Sources/UI/MainWindow/, Tests/UITests/MenusTests/ | All passing | ~800 tok |
+
 ## Session: 2026-05-02 18:57 (Session 27 — Menu Commands & Keyboard Shortcuts)
 
 | 18:50 | Verified all S27 source files already complete from epic bootstrap | Sources/UI/Menus/, Sources/UI/MainWindow/ | No changes needed | ~800 tok |
@@ -806,3 +810,15 @@
 | 06:38 | swiftformat --lint App Sources/UI/MainWindow Tests/UITests/MainWindowTests | 16 files | 0/16 files require formatting | ~50 |
 | 06:38 | swiftlint --strict App Sources/UI/MainWindow | 824 files | 0 violations | ~50 |
 | 06:38 | swift test (full suite) | all | 977 tests, 2 pre-existing failures (SidebarViewModelTests.testMountedEventAddsVolume + UninstallExecutorTests.testNoRemoveItemCall) | ~200 |
+
+## Session: 2026-05-03 06:40
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 06:42 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-27-plan.md | — | ~4547 |
+| 06:43 | Session end: 1 writes across 1 files (.session-27-plan.md) | 21 reads | ~18361 tok |
+
+## Session: 2026-05-03 06:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
