@@ -22,7 +22,7 @@ public enum OpenInTerminal {
     ///     app from `knownBundleIDs` when empty or not found.
     public static func launch(path: FilePath, using preferred: String) {
         guard path.scheme == .local else { return }
-        let bundleID = resolvedBundleID(preferred: preferred)
+        let bundleID = self.resolvedBundleID(preferred: preferred)
         guard let bundleID,
               let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleID)
         else { return }
@@ -37,7 +37,7 @@ public enum OpenInTerminal {
            NSWorkspace.shared.urlForApplication(withBundleIdentifier: preferred) != nil {
             return preferred
         }
-        return knownBundleIDs.first {
+        return self.knownBundleIDs.first {
             NSWorkspace.shared.urlForApplication(withBundleIdentifier: $0) != nil
         }
     }

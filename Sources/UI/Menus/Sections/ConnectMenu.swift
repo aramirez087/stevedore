@@ -9,7 +9,7 @@ public struct ConnectMenuCommands: Commands {
     public var body: some Commands {
         CommandMenu("Connect") {
             Button("Connect to Server\u{2026}") {
-                windowProxy?.showConnectDialog()
+                self.windowProxy?.showConnectDialog()
             }
             .keyboardShortcut(Shortcuts.connectToServer)
 

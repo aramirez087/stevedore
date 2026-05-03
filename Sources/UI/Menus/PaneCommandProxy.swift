@@ -55,12 +55,74 @@ public struct PaneCommandProxy {
     public let sortByDateModified: () -> Void
     public let sortBySize: () -> Void
     public let sortByKind: () -> Void
+
+    public init(
+        currentPath: FilePath,
+        canGoBack: Bool,
+        canGoForward: Bool,
+        isRemoteReadOnly: Bool,
+        goBack: @escaping () -> Void,
+        goForward: @escaping () -> Void,
+        goUp: @escaping () -> Void,
+        goHome: @escaping () -> Void,
+        goToComputer: @escaping () -> Void,
+        newFolder: @escaping () -> Void,
+        newFile: @escaping () -> Void,
+        open: @escaping () -> Void,
+        openWith: @escaping () -> Void,
+        moveToTrash: @escaping () -> Void,
+        compress: @escaping () -> Void,
+        decompress: @escaping () -> Void,
+        toggleHiddenFiles: @escaping () -> Void,
+        refresh: @escaping () -> Void,
+        openInTerminal: @escaping () -> Void,
+        openNewTab: @escaping () -> Void,
+        closeActiveTab: @escaping () -> Void,
+        reopenClosedTab: @escaping () -> Void,
+        nextTab: @escaping () -> Void,
+        previousTab: @escaping () -> Void,
+        selectAll: @escaping () -> Void,
+        sortByName: @escaping () -> Void,
+        sortByDateModified: @escaping () -> Void,
+        sortBySize: @escaping () -> Void,
+        sortByKind: @escaping () -> Void
+    ) {
+        self.currentPath = currentPath
+        self.canGoBack = canGoBack
+        self.canGoForward = canGoForward
+        self.isRemoteReadOnly = isRemoteReadOnly
+        self.goBack = goBack
+        self.goForward = goForward
+        self.goUp = goUp
+        self.goHome = goHome
+        self.goToComputer = goToComputer
+        self.newFolder = newFolder
+        self.newFile = newFile
+        self.open = open
+        self.openWith = openWith
+        self.moveToTrash = moveToTrash
+        self.compress = compress
+        self.decompress = decompress
+        self.toggleHiddenFiles = toggleHiddenFiles
+        self.refresh = refresh
+        self.openInTerminal = openInTerminal
+        self.openNewTab = openNewTab
+        self.closeActiveTab = closeActiveTab
+        self.reopenClosedTab = reopenClosedTab
+        self.nextTab = nextTab
+        self.previousTab = previousTab
+        self.selectAll = selectAll
+        self.sortByName = sortByName
+        self.sortByDateModified = sortByDateModified
+        self.sortBySize = sortBySize
+        self.sortByKind = sortByKind
+    }
 }
 
-// Closures are always constructed and invoked on the main thread (SwiftUI guarantees this
-// for Commands body evaluation and button action dispatch).
+/// Closures are always constructed and invoked on the main thread (SwiftUI guarantees this
+/// for Commands body evaluation and button action dispatch).
 extension PaneCommandProxy: @unchecked Sendable {}
 
-extension FocusedValues {
-    @Entry public var paneCommandProxy: PaneCommandProxy?
+public extension FocusedValues {
+    @Entry var paneCommandProxy: PaneCommandProxy?
 }

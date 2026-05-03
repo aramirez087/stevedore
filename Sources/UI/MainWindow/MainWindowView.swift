@@ -2,6 +2,7 @@ import Core
 import DesignSystem
 import FeaturesOperations
 import SwiftUI
+import UIMenus
 import UISidebar
 
 /// Top-level window view: sidebar + dual panes + optional transfers panel.
@@ -32,6 +33,23 @@ public struct MainWindowView: View {
             .animation(.easeInOut(duration: 0.2), value: self.model.activeOperations.isEmpty)
         }
         .frame(minWidth: 800, minHeight: 500)
+        .focusedValue(\.windowCommandProxy, self.buildWindowProxy())
+        .sheet(isPresented: self.$model.showConnectDialog) {
+            Text("Connect to Server\u{2026}")
+                .padding()
+        }
+        .sheet(isPresented: self.$model.showSyncDialog) {
+            Text("Compare/Sync Folders\u{2026}")
+                .padding()
+        }
+        .sheet(isPresented: self.$model.showRenameDialog) {
+            Text("Multi-Rename\u{2026}")
+                .padding()
+        }
+        .sheet(isPresented: self.$model.showUninstallerDialog) {
+            Text("Application Uninstaller\u{2026}")
+                .padding()
+        }
         .task { await self.model.restore() }
         .onChange(of: self.model.sidebarViewModel.selection) { _, newValue in
             self.routeSidebarSelection(newValue)
@@ -79,5 +97,15 @@ public struct MainWindowView: View {
         case .connection, .tag:
             nil
         }
+    }
+
+    private func buildWindowProxy() -> WindowCommandProxy {
+        WindowCommandProxy(
+            showConnectDialog: { [m = model] in m.showConnectDialog = true },
+            showSyncDialog: { [m = model] in m.showSyncDialog = true },
+            showRenameDialog: { [m = model] in m.showRenameDialog = true },
+            showUninstallerDialog: { [m = model] in m.showUninstallerDialog = true },
+            focusSearch: {}
+        )
     }
 }

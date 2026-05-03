@@ -10,7 +10,7 @@ public struct EditMenuCommands: Commands {
     public var body: some Commands {
         CommandGroup(after: .pasteboard) {
             Button("Find\u{2026}") {
-                windowProxy?.focusSearch()
+                self.windowProxy?.focusSearch()
             }
             .keyboardShortcut(Shortcuts.find)
         }

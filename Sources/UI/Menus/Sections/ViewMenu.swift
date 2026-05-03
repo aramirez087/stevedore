@@ -9,37 +9,37 @@ public struct ViewMenuCommands: Commands {
     public var body: some Commands {
         CommandMenu("View") {
             Button("Show Hidden Files") {
-                proxy?.toggleHiddenFiles()
+                self.proxy?.toggleHiddenFiles()
             }
             .keyboardShortcut(Shortcuts.showHiddenFiles)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Refresh") {
-                proxy?.refresh()
+                self.proxy?.refresh()
             }
             .keyboardShortcut(Shortcuts.refresh)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Divider()
 
             Menu("Sort By") {
-                Button("Name") { proxy?.sortByName() }
-                    .disabled(proxy == nil)
-                Button("Date Modified") { proxy?.sortByDateModified() }
-                    .disabled(proxy == nil)
-                Button("Size") { proxy?.sortBySize() }
-                    .disabled(proxy == nil)
-                Button("Kind") { proxy?.sortByKind() }
-                    .disabled(proxy == nil)
+                Button("Name") { self.proxy?.sortByName() }
+                    .disabled(self.proxy == nil)
+                Button("Date Modified") { self.proxy?.sortByDateModified() }
+                    .disabled(self.proxy == nil)
+                Button("Size") { self.proxy?.sortBySize() }
+                    .disabled(self.proxy == nil)
+                Button("Kind") { self.proxy?.sortByKind() }
+                    .disabled(self.proxy == nil)
             }
 
             Divider()
 
-            Button("as List") { }
+            Button("as List") {}
                 .disabled(true)
-            Button("as Columns") { }
+            Button("as Columns") {}
                 .disabled(true)
-            Button("as Icons") { }
+            Button("as Icons") {}
                 .disabled(true)
         }
     }

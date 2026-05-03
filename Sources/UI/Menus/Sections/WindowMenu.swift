@@ -11,36 +11,36 @@ public struct WindowMenuCommands: Commands {
             Divider()
 
             Button("New Tab") {
-                proxy?.openNewTab()
+                self.proxy?.openNewTab()
             }
             .keyboardShortcut(Shortcuts.newTab)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Close Tab") {
-                proxy?.closeActiveTab()
+                self.proxy?.closeActiveTab()
             }
             .keyboardShortcut(Shortcuts.closeTab)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Reopen Closed Tab") {
-                proxy?.reopenClosedTab()
+                self.proxy?.reopenClosedTab()
             }
             .keyboardShortcut(Shortcuts.reopenClosedTab)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Divider()
 
             Button("Next Tab") {
-                proxy?.nextTab()
+                self.proxy?.nextTab()
             }
             .keyboardShortcut(Shortcuts.nextTab)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Previous Tab") {
-                proxy?.previousTab()
+                self.proxy?.previousTab()
             }
             .keyboardShortcut(Shortcuts.previousTab)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
         }
     }
 }

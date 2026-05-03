@@ -700,3 +700,34 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 17:48 | Session 26 verification — all quality gates pass | App/, Sources/UI/MainWindow/, Tests/UITests/MainWindowTests/ | ✅ Already fully implemented; 952 tests, 1 pre-existing failure | ~200 |
+
+## Session: 2026-05-02 17:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:54 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-27-plan.md | — | ~7201 |
+| 17:54 | Session end: 1 writes across 1 files (.session-27-plan.md) | 19 reads | ~17148 tok |
+
+## Session: 2026-05-02 17:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:55 | Edited Sources/UI/MainWindow/MainWindowModel.swift | expanded (+6 lines) | ~114 |
+| 17:55 | Edited Sources/UI/MainWindow/PaneHost.swift | added 1 import(s) | ~21 |
+| 17:55 | Edited Sources/UI/MainWindow/PaneHost.swift | modified dropDestination() | ~91 |
+| 17:56 | Edited Sources/UI/MainWindow/PaneHost.swift | modified buildProxy() | ~689 |
+| 17:56 | Edited Sources/UI/MainWindow/MainWindowView.swift | added 1 import(s) | ~28 |
+| 17:56 | Edited Sources/UI/MainWindow/MainWindowView.swift | modified sheet() | ~236 |
+| 17:56 | Edited Sources/UI/Menus/PaneCommandProxy.swift | expanded (+63 lines) | ~688 |
+| 17:56 | Edited Sources/UI/MainWindow/MainWindowView.swift | modified filePath() | ~228 |
+| 17:56 | Edited Sources/UI/Menus/WindowCommandProxy.swift | expanded (+14 lines) | ~164 |
+| 17:57 | Created Tests/UITests/MenusTests/MenusTestSupport.swift | — | ~880 |
+| 17:57 | Created Tests/UITests/MenusTests/ShortcutsTests.swift | — | ~520 |
+| 17:57 | Created Tests/UITests/MenusTests/PaneCommandProxyTests.swift | — | ~853 |
+| 17:58 | Created Tests/UITests/MenusTests/WindowCommandProxyTests.swift | — | ~328 |
+| 17:59 | Edited Sources/UI/MainWindow/PaneHost.swift | modified buildProxy() | ~14 |
+| 18:00 | Edited Sources/UI/Menus/PaneCommandProxy.swift | removed 2 lines | ~5 |
+| 18:00 | Edited Tests/UITests/MenusTests/MenusTestSupport.swift | 2→1 lines | ~8 |
+| 18:00 | Edited Tests/UITests/MenusTests/MenusTestSupport.swift | 3→1 lines | ~8 |
+| 18:03 | Created docs/roadmap/stevedore-mvp/session-27-handoff.md | — | ~2250 |
+| 18:03 | Session 27 — wired menu commands via PaneCommandProxy/WindowCommandProxy; added dialog flags to MainWindowModel; created 25 MenusTests | Sources/UI/Menus/, Sources/UI/MainWindow/*, Tests/UITests/MenusTests/ | 0 build warnings, 25 tests pass, 0 lint violations | ~2500 |
