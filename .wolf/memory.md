@@ -1042,3 +1042,4 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 11:59 | session-03 ci-gate: ran 6 gates; 1-4 PASS (build, xcodebuild, MainWindowTests 16/16, full 1013/1013); 5-6 FAIL with only pre-existing failures verified on base 4cd7960 (10 swiftformat in 2 test-support files; 4 swiftlint in Package.swift) | docs/roadmap/stevedore-file-browser-bugs/session-03-handoff.md | GO verdict | ~5000 |
+| 12:00 | Session end: 1 writes across 1 files (session-03-handoff.md) | 1 reads | ~6716 tok |
