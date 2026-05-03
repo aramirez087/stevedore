@@ -967,7 +967,7 @@
       "error_message": "Date column wraps to two lines in FileBrowserView; row height inflates and column alignment breaks",
       "file": "Sources/UI/MainWindow/PaneHost.swift",
       "root_cause": "Date Text at lines 224-229 has .frame(width: 90, alignment: .trailing) but no .lineLimit(1). Text(date, style: .date) renders locale-default long-style date (e.g. 'December 31, 2025', ~17 chars at caption font) which exceeds 90pt and SwiftUI wraps it onto two lines.",
-      "fix": "Planned for Session 02: insert .lineLimit(1) before the .frame and widen frame width from 90 to 130. Diff captured in docs/roadmap/bugs-059-061-date-column-go-menu/session-01-handoff.md.",
+      "fix": "Applied in Session 02: inserted .lineLimit(1) before .frame and widened frame width from 90 to 130 at Sources/UI/MainWindow/PaneHost.swift:228-229. All CI gates pass.",
       "tags": [
         "ui",
         "layout",
@@ -985,7 +985,7 @@
       "error_message": "Right pane appears to have no modification dates while left pane shows them",
       "file": "Sources/UI/MainWindow/PaneHost.swift",
       "root_cause": "Both panes share the same LocalFileSystemProvider instance and same enumerate(...,options:.default) call (App/Stevedore/AppEnvironment.swift:50-51, Sources/UI/MainWindow/PaneSession.swift:23-30, Sources/UI/MainWindow/PaneHost.swift:293-314). Per-pane attribute divergence is structurally impossible. The asymmetry is a rendering side-effect of bug #059: when the right pane is narrower in the dual-pane split, the unbounded date Text wraps to two lines and is visually clipped/eclipsed by the row baseline, producing the appearance of 'no dates'.",
-      "fix": "No separate change planned. Resolved by the bug #059 fix (.lineLimit(1) + width 130). Fallback escalation path documented in handoff if symptom persists post-fix (audit URLResourceMapperKeys / LocalDirectoryEnumerator attribute prefetch).",
+      "fix": "Resolved by the bug #059 fix applied in Session 02 (.lineLimit(1) + width 130 at PaneHost.swift:228-229). No separate provider change needed. Fallback escalation path documented in session-02-handoff if symptom persists post visual verification.",
       "tags": [
         "ui",
         "layout",

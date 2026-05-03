@@ -1067,3 +1067,19 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 17:32 | Created docs/roadmap/bugs-059-061-date-column-go-menu/session-01-handoff.md | — | ~3096 |
+
+## Session: 2026-05-03 17:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:36 | Created ../epic-bugs-059-061-date-column-go-menu/docs/claude-sessions/bugs-059-061-date-column-go-menu/.session-02-plan.md | — | ~2303 |
+| 17:36 | Session end: 1 writes across 1 files (.session-02-plan.md) | 1 reads | ~5301 tok |
+
+## Session: 2026-05-03 17:36
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:36 | Edited Sources/UI/MainWindow/PaneHost.swift | 6→7 lines | ~113 |
+| 17:39 | Edited Package.swift | expanded (+8 lines) | ~93 |
+| 17:40 | Created docs/roadmap/bugs-059-061-date-column-go-menu/session-02-handoff.md | — | ~1388 |
+| 17:41 | Session 02 complete — bugs #059/#060 fixed (PaneHost.swift lineLimit+width130), #061 already fixed, Package.swift lint clean; all 4 CI gates pass | PaneHost.swift, Package.swift | ~200 |

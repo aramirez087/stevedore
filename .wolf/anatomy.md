@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T23:32:00.992Z
-> Files: 611 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T23:40:13.558Z
+> Files: 613 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
@@ -10,6 +10,7 @@
 ## ../epic-bugs-059-061-date-column-go-menu/docs/claude-sessions/bugs-059-061-date-column-go-menu/
 
 - `.session-01-plan.md` — Session 01 Plan — Charter Audit (Bugs #059, #060, #061) (~3568 tok)
+- `.session-02-plan.md` — Session 02 Implementation Plan — Fix Bugs #059, #060, #061 (~2159 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -29,7 +30,7 @@
 - `.gitignore` — Git ignore rules (~153 tok)
 - `.mcp.json` (~37 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2070 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2086 tok)
 - `project.yml` (~456 tok)
 
 ## .build/
@@ -601,7 +602,7 @@
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~3193 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
@@ -899,6 +900,7 @@
 ## docs/roadmap/bugs-059-061-date-column-go-menu/
 
 - `session-01-handoff.md` — Session 01 Handoff — Audit Bugs #059, #060, #061 (~2903 tok)
+- `session-02-handoff.md` — Session 02 Handoff — Fix Bugs #059, #060, #061 (~1301 tok)
 
 ## docs/roadmap/stevedore-mvp/
 
