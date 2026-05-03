@@ -776,8 +776,7 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T15:45:51.314Z"
-    }
-    ,
+    },
     {
       "id": "bug-049",
       "timestamp": "2026-05-03T18:53:00.000Z",
@@ -785,7 +784,13 @@
       "file": "Sources/UI/MainWindow/PaneHost.swift",
       "root_cause": "FileBrowserView List rows have no .contextMenu modifier; right-clicking does nothing because no context menu is registered on the row HStack",
       "fix": "Add .contextMenu { ... } modifier to the row HStack inside FileBrowserView with standard file operations (Open, Rename, Move to Trash, etc.)",
-      "tags": ["ui", "context-menu", "file-browser", "missing-feature", "swiftui"],
+      "tags": [
+        "ui",
+        "context-menu",
+        "file-browser",
+        "missing-feature",
+        "swiftui"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T18:53:00.000Z"
@@ -797,10 +802,34 @@
       "file": "Sources/UI/MainWindow/PaneHost.swift",
       "root_cause": "FileBrowserView uses .onTapGesture (single tap) to call session.navigate(to:) for directories. First tap navigates into folder; when the new listing loads, the second tap of a double-click hits whatever item is now at that screen position and navigates again — going two levels deep unintentionally. Also no item selection state exists.",
       "fix": "Replace single .onTapGesture with: (1) single-tap sets a @State selectedItemPath, highlighting the row; (2) double-tap (TapGesture(count: 2)) calls session.navigate(to:) for directories or opens files. This matches standard macOS file manager UX.",
-      "tags": ["ui", "navigation", "tap-gesture", "double-click", "file-browser", "swiftui", "ux"],
+      "tags": [
+        "ui",
+        "navigation",
+        "tap-gesture",
+        "double-click",
+        "file-browser",
+        "swiftui",
+        "ux"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T18:53:00.000Z"
+    },
+    {
+      "id": "bug-051",
+      "timestamp": "2026-05-03T17:27:34.543Z",
+      "error_message": "Significant refactor of ",
+      "file": "../epic-toolkit/scripts/run-sessions.sh",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 8→27 lines (2 removed) | Also: local plan_file=\"$TRUNK_SESSIONS_DIR/.session-${si; local plan_log=\"$TRUNK_SESSIONS_DIR/.session-${sid",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "sh"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-05-03T17:27:51.125Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T16:00:53.556Z
-> Files: 593 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:27:51.118Z
+> Files: 598 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -10,6 +10,10 @@
 - `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
 - `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~7075 tok)
 - `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~4263 tok)
+
+## ../epic-toolkit/scripts/
+
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15243 tok)
 
 ## ./
 
@@ -817,6 +821,13 @@
 - `UninstallerUITestSupport.swift` (~418 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
+
+## docs/claude-sessions/stevedore-file-browser-bugs/
+
+- `session-00-operator-rules.md` — Operator Rules — Stevedore File Browser Bug Fixes (~601 tok)
+- `session-01-charter.md` — Session 01: Charter — FileBrowserView Bug Audit (~608 tok)
+- `session-02-implement.md` — Session 02: Implement Both Fixes (~847 tok)
+- `session-03-ci-gate.md` — Session 03: CI Gate (~569 tok)
 
 ## docs/claude-sessions/stevedore-mvp/
 
