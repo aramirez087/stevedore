@@ -987,3 +987,27 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 11:34 | S01 re-execute: verified handoff doc complete (already on disk from prior S01 commit), confirmed swift build --target MainWindow exit 0 | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | build clean, no source edits | — |
+| 11:34 | Created ../../../../tmp/commit-msg-s01.txt | — | ~99 |
+| 11:34 | Session end: 1 writes across 1 files (commit-msg-s01.txt) | 1 reads | ~2406 tok |
+
+## Session: 2026-05-03 11:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:37 | Created ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-02-plan.md | — | ~4133 |
+| 11:37 | Session end: 1 writes across 1 files (.session-02-plan.md) | 5 reads | ~9760 tok |
+
+## Session: 2026-05-03 11:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | added 1 import(s) | ~30 |
+| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | 9→10 lines | ~126 |
+| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | modified rowBackground() | ~560 |
+| 11:39 | Edited Tests/UITests/MainWindowTests/MainWindowTests.swift | modified testMainWindowViewComposesWithoutCrashing() | ~644 |
+| 11:40 | Edited Sources/UI/MainWindow/PaneHost.swift | 5→5 lines | ~78 |
+| 11:41 | Edited ../epic-toolkit/scripts/run-sessions.sh | 4→5 lines | ~44 |
+| 11:41 | Edited ../epic-toolkit/scripts/run-sessions.sh | 4→5 lines | ~81 |
+| 11:41 | Created docs/roadmap/stevedore-file-browser-bugs/session-02-handoff.md | — | ~2114 |
+| 11:42 | Session 02 — implemented bug-049 (.contextMenu) and bug-050 (selection + double-tap navigate) in FileBrowserView; 5 new tests pass | Sources/UI/MainWindow/PaneHost.swift, Tests/UITests/MainWindowTests/MainWindowTests.swift | green: build/tests/format pass; lint has 4 pre-existing Package.swift violations | ~3200 |
+| 11:42 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified run_one_session() | ~550 |

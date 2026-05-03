@@ -1,7 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:32:28.071Z
-> Files: 596 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:42:13.696Z
+> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../../../tmp/
+
+- `commit-msg-s01.txt` (~93 tok)
 
 ## ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
 
@@ -15,9 +19,14 @@
 - `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~7075 tok)
 - `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~4263 tok)
 
+## ../epic-toolkit/scripts/
+
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15599 tok)
+
 ## ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
 
 - `.session-01-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3941 tok)
+- `.session-02-plan.md` — Session 02 Implementation Plan — FileBrowserView Bug Fixes (~3875 tok)
 
 ## ./
 
@@ -596,7 +605,7 @@
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~3295 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
@@ -793,7 +802,7 @@
 
 ## Tests/UITests/MainWindowTests/
 
-- `MainWindowTests.swift` — Class: MainWindowTests (~1013 tok)
+- `MainWindowTests.swift` — Class: MainWindowTests (~1583 tok)
 - `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
 - `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
@@ -876,6 +885,7 @@
 ## docs/roadmap/stevedore-file-browser-bugs/
 
 - `session-01-handoff.md` — Session 01 Handoff — FileBrowserView Bug Audit (root causes, menu spec, gesture sketch, T1-T5 test list, gotchas) (~2300 tok)
+- `session-02-handoff.md` — Session 02 Handoff — FileBrowserView Bug Fixes (~1982 tok)
 
 ## docs/roadmap/stevedore-mvp/
 

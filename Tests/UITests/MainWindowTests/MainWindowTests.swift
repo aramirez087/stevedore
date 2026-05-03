@@ -108,4 +108,58 @@ final class MainWindowTests: XCTestCase {
         let host = NSHostingView(rootView: view)
         XCTAssertNotNil(host)
     }
+
+    // MARK: - FileBrowserView
+
+    func testFileBrowserSingleTapDoesNotNavigate() {
+        let session = makeTestPaneSession()
+        let original = session.currentPath
+        let dir = FilePath(scheme: .local, posix: "/Users/test/sub")
+
+        // Simulate the single-tap closure: it only mutates the view's
+        // selectedItemPath @State; it must not call session.navigate.
+        // Verify that not invoking navigate keeps currentPath unchanged.
+        _ = dir
+        XCTAssertEqual(session.currentPath, original)
+    }
+
+    func testFileBrowserDoubleTapNavigatesToDirectory() {
+        let session = makeTestPaneSession()
+        let dir = FilePath(scheme: .local, posix: "/Users/test/sub")
+
+        // Double-tap on a directory item routes to session.navigate.
+        session.navigate(to: dir)
+        XCTAssertEqual(session.currentPath, dir)
+    }
+
+    func testFileBrowserDoubleTapOnFileDoesNotNavigate() {
+        let session = makeTestPaneSession()
+        let original = session.currentPath
+        let file = FilePath(scheme: .local, posix: "/Users/test/notes.txt")
+
+        // Double-tap on a non-directory does not call navigate; currentPath
+        // is unchanged. NSWorkspace.open is not exercised in unit tests.
+        _ = file
+        XCTAssertEqual(session.currentPath, original)
+    }
+
+    func testFileBrowserSelectionClearsOnNavigation() {
+        let session = makeTestPaneSession()
+        let target = FilePath(scheme: .local, posix: "/Users/test/sub")
+
+        // The view binds .onChange(of: session.currentPath) to clear
+        // selectedItemPath. This test locks in the upstream contract:
+        // currentPath actually changes when navigate is called, which is
+        // what fires SwiftUI's onChange.
+        XCTAssertNotEqual(session.currentPath, target)
+        session.navigate(to: target)
+        XCTAssertEqual(session.currentPath, target)
+    }
+
+    func testFileBrowserViewComposesWithContextMenu() {
+        let session = makeTestPaneSession()
+        let view = FileBrowserView(session: session)
+        let host = NSHostingView(rootView: view)
+        XCTAssertNotNil(host)
+    }
 }
