@@ -1,211 +1,109 @@
 {
-  "session_id": "session-2026-05-03-1449",
-  "started": "2026-05-03T20:49:23.851Z",
+  "session_id": "session-2026-05-03-1721",
+  "started": "2026-05-03T23:21:18.370Z",
   "files_read": {
-    "/Users/aramirez/.claude/projects/-Users-aramirez-Code-Stevedore/56b6c91b-a5d7-45c4-94b4-24e2ada8f7ed/tool-results/b9etd8ffq.txt": {
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift": {
+      "count": 1,
+      "tokens": 2833,
+      "first_read": "2026-05-03T23:22:58.777Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/UI/Menus/Sections/GoMenu.swift": {
+      "count": 1,
+      "tokens": 337,
+      "first_read": "2026-05-03T23:22:59.216Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowView.swift": {
+      "count": 1,
+      "tokens": 1091,
+      "first_read": "2026-05-03T23:23:51.764Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowModel.swift": {
+      "count": 1,
+      "tokens": 1195,
+      "first_read": "2026-05-03T23:24:04.455Z"
+    },
+    "/Users/aramirez/Code/Stevedore/App/Stevedore/AppEnvironment.swift": {
+      "count": 1,
+      "tokens": 1650,
+      "first_read": "2026-05-03T23:24:12.340Z"
+    },
+    "/Users/aramirez/.claude/projects/-Users-aramirez-Code-Stevedore/d667b41d-2e90-4cb9-b28d-5e2b07fffee7/tool-results/bgfqoamsa.txt": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-03T21:30:12.792Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s01-charter-audit-root-causes/docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T21:30:47.100Z"
-    },
-    "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-charter-audit-bugs-054-056.md": {
-      "count": 1,
-      "tokens": 829,
-      "first_read": "2026-05-03T21:33:34.631Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-handoff.md": {
-      "count": 2,
-      "tokens": 0,
-      "first_read": "2026-05-03T21:59:02.832Z"
-    },
-    "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh": {
-      "count": 2,
-      "tokens": 16154,
-      "first_read": "2026-05-03T22:15:52.441Z"
+      "first_read": "2026-05-03T23:33:38.792Z"
     },
     "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh": {
-      "count": 2,
-      "tokens": 16154,
-      "first_read": "2026-05-03T22:16:12.677Z"
+      "count": 1,
+      "tokens": 16321,
+      "first_read": "2026-05-03T23:45:01.794Z"
+    },
+    "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh": {
+      "count": 1,
+      "tokens": 16322,
+      "first_read": "2026-05-03T23:45:25.316Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-00-operator-rules.md",
+      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-00-operator-rules.md",
       "action": "create",
-      "tokens": 578,
-      "at": "2026-05-03T20:50:03.516Z"
+      "tokens": 554,
+      "at": "2026-05-03T23:25:38.355Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-charter-audit-root-causes.md",
+      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-01-charter-audit.md",
       "action": "create",
-      "tokens": 788,
-      "at": "2026-05-03T20:50:14.381Z"
+      "tokens": 778,
+      "at": "2026-05-03T23:25:59.099Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md",
+      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-02-fix-bugs.md",
       "action": "create",
-      "tokens": 559,
-      "at": "2026-05-03T20:50:21.005Z"
+      "tokens": 816,
+      "at": "2026-05-03T23:26:15.893Z"
     },
     {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-fix-home-sidebar-bug-055.md",
+      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-03-ci-gate.md",
       "action": "create",
-      "tokens": 532,
-      "at": "2026-05-03T20:50:26.910Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-fix-directory-loading-bug-056.md",
-      "action": "create",
-      "tokens": 709,
-      "at": "2026-05-03T20:50:34.120Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-ci-gate-verification.md",
-      "action": "create",
-      "tokens": 765,
-      "at": "2026-05-03T20:50:42.873Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-00-operator-rules.md",
-      "action": "create",
-      "tokens": 598,
-      "at": "2026-05-03T21:32:40.788Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-charter-audit-bugs-054-056.md",
-      "action": "create",
-      "tokens": 948,
-      "at": "2026-05-03T21:32:52.923Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md",
-      "action": "create",
-      "tokens": 627,
-      "at": "2026-05-03T21:33:01.377Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-fix-home-sidebar-bug-055.md",
-      "action": "create",
-      "tokens": 542,
-      "at": "2026-05-03T21:33:06.456Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-fix-directory-loading-bug-056.md",
-      "action": "create",
-      "tokens": 720,
-      "at": "2026-05-03T21:33:13.751Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-ci-gate-bugs-054-056.md",
-      "action": "create",
-      "tokens": 665,
-      "at": "2026-05-03T21:33:21.904Z"
+      "tokens": 581,
+      "at": "2026-05-03T23:26:27.447Z"
     },
     {
       "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
       "action": "edit",
-      "tokens": 604,
-      "at": "2026-05-03T22:16:05.049Z"
+      "tokens": 12,
+      "at": "2026-05-03T23:44:55.872Z"
     },
     {
       "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
       "action": "edit",
-      "tokens": 516,
-      "at": "2026-05-03T22:16:33.847Z"
+      "tokens": 12,
+      "at": "2026-05-03T23:45:13.959Z"
     },
     {
       "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
       "action": "edit",
-      "tokens": 217,
-      "at": "2026-05-03T22:18:09.507Z"
+      "tokens": 13,
+      "at": "2026-05-03T23:45:29.196Z"
     },
     {
       "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
       "action": "edit",
-      "tokens": 110,
-      "at": "2026-05-03T22:18:23.441Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 44,
-      "at": "2026-05-03T22:40:52.354Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 56,
-      "at": "2026-05-03T22:40:56.321Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 211,
-      "at": "2026-05-03T22:41:04.264Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 643,
-      "at": "2026-05-03T22:41:31.989Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 128,
-      "at": "2026-05-03T22:41:48.451Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 44,
-      "at": "2026-05-03T22:42:03.593Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 56,
-      "at": "2026-05-03T22:42:08.312Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 165,
-      "at": "2026-05-03T22:42:15.279Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 501,
-      "at": "2026-05-03T22:42:37.998Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
-      "action": "edit",
-      "tokens": 128,
-      "at": "2026-05-03T22:42:55.885Z"
+      "tokens": 13,
+      "at": "2026-05-03T23:45:35.697Z"
     }
   ],
   "edit_counts": {
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-00-operator-rules.md": 2,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-charter-audit-root-causes.md": 1,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md": 2,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-fix-home-sidebar-bug-055.md": 2,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-fix-directory-loading-bug-056.md": 2,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-ci-gate-verification.md": 1,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-charter-audit-bugs-054-056.md": 1,
-    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-ci-gate-bugs-054-056.md": 1,
-    "../epic-toolkit/scripts/run-sessions.sh": 7,
-    "scripts/run-sessions.sh": 7
+    "docs/claude-sessions/bugs-059-061-date-column-go-menu/session-00-operator-rules.md": 1,
+    "docs/claude-sessions/bugs-059-061-date-column-go-menu/session-01-charter-audit.md": 1,
+    "docs/claude-sessions/bugs-059-061-date-column-go-menu/session-02-fix-bugs.md": 1,
+    "docs/claude-sessions/bugs-059-061-date-column-go-menu/session-03-ci-gate.md": 1,
+    "../epic-toolkit/scripts/run-sessions.sh": 2,
+    "scripts/run-sessions.sh": 2
   },
-  "anatomy_hits": 1,
-  "anatomy_misses": 5,
-  "repeated_reads_warned": 3,
+  "anatomy_hits": 7,
+  "anatomy_misses": 1,
+  "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 11
+  "stop_count": 5
 }

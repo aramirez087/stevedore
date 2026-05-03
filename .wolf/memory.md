@@ -3,6 +3,8 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
+| 21:05 | Live user-testing session: found bug-059 (date column wraps long month names to 2 lines), bug-060 (right pane missing all dates), bug-061 (Go > Home / Computer menu items no-op) | Sources/UI/MainWindow/PaneHost.swift, Sources/UI/Menus/Sections/GoMenu.swift | bugs logged, report at docs/bug-report-2026-05-03.md | ~6000 tok |
+
 | 21:42 | Live user-testing session (real user): found bug-054 (back navigation broken), bug-055 ("home" sidebar → wrong path /System/Volumes/Data/home), bug-056 (slow directory load spinner 3+ sec) | Sources/UI/MainWindow/PaneSession.swift, Sources/UI/Sidebar/SidebarViewModel.swift, Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~3500 |
 
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
@@ -1045,3 +1047,37 @@
 | 16:44 | Session end: 26 writes across 9 files (session-00-operator-rules.md, session-01-charter-audit-root-causes.md, session-02-fix-back-navigation-bug-054.md, session-03-fix-home-sidebar-bug-055.md, session-04-fix-directory-loading-bug-056.md) | 6 reads | ~44591 tok |
 | 16:45 | Session end: 26 writes across 9 files (session-00-operator-rules.md, session-01-charter-audit-root-causes.md, session-02-fix-back-navigation-bug-054.md, session-03-fix-home-sidebar-bug-055.md, session-04-fix-directory-loading-bug-056.md) | 6 reads | ~44591 tok |
 | 16:48 | Session end: 26 writes across 9 files (session-00-operator-rules.md, session-01-charter-audit-root-causes.md, session-02-fix-back-navigation-bug-054.md, session-03-fix-home-sidebar-bug-055.md, session-04-fix-directory-loading-bug-056.md) | 6 reads | ~44591 tok |
+| 16:49 | Session end: 26 writes across 9 files (session-00-operator-rules.md, session-01-charter-audit-root-causes.md, session-02-fix-back-navigation-bug-054.md, session-03-fix-home-sidebar-bug-055.md, session-04-fix-directory-loading-bug-056.md) | 6 reads | ~44591 tok |
+| 16:50 | Session end: 26 writes across 9 files (session-00-operator-rules.md, session-01-charter-audit-root-causes.md, session-02-fix-back-navigation-bug-054.md, session-03-fix-home-sidebar-bug-055.md, session-04-fix-directory-loading-bug-056.md) | 6 reads | ~44591 tok |
+
+## Session: 2026-05-03 16:52
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 16:56
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:08 | Created docs/bug-report-2026-05-03.md | — | ~979 |
+| 17:08 | Session end: 1 writes across 1 files (bug-report-2026-05-03.md) | 0 reads | ~1049 tok |
+
+## Session: 2026-05-03 17:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:25 | Created docs/claude-sessions/bugs-059-061-date-column-go-menu/session-00-operator-rules.md | — | ~517 |
+| 17:25 | Created docs/claude-sessions/bugs-059-061-date-column-go-menu/session-01-charter-audit.md | — | ~726 |
+| 17:26 | Created docs/claude-sessions/bugs-059-061-date-column-go-menu/session-02-fix-bugs.md | — | ~761 |
+| 17:26 | Created docs/claude-sessions/bugs-059-061-date-column-go-menu/session-03-ci-gate.md | — | ~542 |
+| 17:26 | Generated epic bugs-059-061-date-column-go-menu (3 sessions) from docs/bug-report-2026-05-03.md | docs/claude-sessions/bugs-059-061-date-column-go-menu/ | created 4 session files | ~8k |
+| 17:29 | Session end: 4 writes across 4 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md) | 5 reads | ~9835 tok |
+| 17:36 | Session end: 4 writes across 4 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md) | 6 reads | ~9835 tok |
+| 17:42 | Ran epic bugs-059-061-date-column-go-menu (3 sessions) — all CI gates pass | Sources/UI/MainWindow/PaneHost.swift | .lineLimit(1) + width:130 for date column | ~15k |
+| 17:43 | Session end: 4 writes across 4 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md) | 6 reads | ~9835 tok |
+| 17:44 | Edited ../epic-toolkit/scripts/run-sessions.sh | inline fix | ~11 |
+| 17:45 | Edited scripts/run-sessions.sh | inline fix | ~11 |
+| 17:45 | Edited ../epic-toolkit/scripts/run-sessions.sh | inline fix | ~12 |
+| 17:45 | Edited scripts/run-sessions.sh | inline fix | ~12 |
+| 17:45 | Session end: 8 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~42528 tok |
+| 17:48 | Session end: 8 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~42528 tok |
