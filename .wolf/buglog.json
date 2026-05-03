@@ -860,7 +860,10 @@
         "file-watcher",
         "completion-sentinel"
       ],
-      "related_bugs": ["bug-051", "bug-052"],
+      "related_bugs": [
+        "bug-051",
+        "bug-052"
+      ],
       "occurrences": 1,
       "last_seen": "2026-05-03T19:18:00.000Z"
     },
@@ -924,6 +927,38 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T15:35:00.000Z"
+    },
+    {
+      "id": "bug-057",
+      "timestamp": "2026-05-03T22:03:45.185Z",
+      "error_message": "Wrong reference: utility should be userInitiated",
+      "file": "Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
+      "root_cause": "Used \"utility\" instead of \"userInitiated\"",
+      "fix": "Changed utility → userInitiated",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T22:03:45.185Z"
+    },
+    {
+      "id": "bug-058",
+      "timestamp": "2026-05-03T22:04:07.075Z",
+      "error_message": "Wrong reference: utility should be userInitiated",
+      "file": "Sources/FileSystem/Local/LocalFileSystemProvider.swift",
+      "root_cause": "Used \"utility\" instead of \"userInitiated\"",
+      "fix": "Changed utility → userInitiated",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T22:04:07.075Z"
     }
   ]
 }

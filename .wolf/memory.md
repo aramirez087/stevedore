@@ -5,7 +5,10 @@
 
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
 
+| 2026-05-03 | Session 04 read-only planning: wrote .session-04-plan.md for Bug #056 (3s spinner). Root causes: .utility QoS + .fileSecurityKey prefetch + redundant resourceValues call. Fix plan: bump to .userInitiated, add enumerationKeys without expensive keys, collapse per-item loop. | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md | Plan written | ~3500 tok |
+
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
+| 2026-05-03 16:07 | Session 04: Fixed Bug #056 — bumped Task.detached QoS to .userInitiated in LocalDirectoryEnumerator+LocalFileSystemProvider; added enumerationKeys without .fileSecurityKey/.isPackageKey; collapsed dual resourceValues calls. Build clean, 20/20 tests pass. | Sources/FileSystem/Local/LocalDirectoryEnumerator.swift, LocalFileSystemProvider.swift | Bug #056 fixed | ~2000 tok |
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
@@ -987,3 +990,21 @@
 | 12:24 | Edited .gitignore | 5→8 lines | ~54 |
 | 12:25 | Session end: 1 writes across 1 files (.gitignore) | 1 reads | ~58 tok |
 | 15:35 | session 01 charter audit complete | session-01-handoff.md, .session-01-plan.md | three root causes documented; build green | ~6000 tok |
+
+## Session: 2026-05-03 15:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:02 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md | — | ~3667 |
+| 16:03 | Session end: 1 writes across 1 files (.session-04-plan.md) | 5 reads | ~5259 tok |
+
+## Session: 2026-05-03 16:03
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | inline fix | ~18 |
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | expanded (+10 lines) | ~124 |
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | 5→5 lines | ~52 |
+| 16:04 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | 21→17 lines | ~225 |
+| 16:04 | Edited Sources/FileSystem/Local/LocalFileSystemProvider.swift | inline fix | ~18 |
+| 16:07 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md | — | ~1028 |

@@ -1,11 +1,15 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:24:52.143Z
-> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:07:35.452Z
+> Files: 602 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
 - `epic.md` — Validate (~811 tok)
+
+## ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `.session-04-plan.md` — Session 04 Implementation Plan — Fix Directory Loading Bug #056 (~3438 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -537,9 +541,9 @@
 - `ConflictDescriptor.swift` — `public struct: Hashable, Sendable` with `Reason` enum (`.destinationExists`, `.destinationIsDirectory`, `.destinationReadOnly`, `.crossDeviceMove`) for conflict metadata. (~120 tok)
 - `FileSystemLocalModule.swift` — Module sentinel `public enum FileSystemLocalModule` with `moduleName` constant; preserves smoke-test assertion. (~60 tok)
 - `FSEventsWatcher.swift` — `public actor` wrapping `FSEventStreamCreate`; exposes `AsyncStream<FilePath>` per watch path; `onTermination` stops/invalidates/releases the stream. (~300 tok)
-- `LocalDirectoryEnumerator.swift` — Bridges `FileManager.enumerator` into `AsyncThrowingStream<FileItem, any Error>`; honors hidden/recursive/followSymlinks options; checks readability before enumeration. (~280 tok)
+- `LocalDirectoryEnumerator.swift` — / Bridges `FileManager.enumerator(at:includingPropertiesForKeys:options:)` into (~1038 tok)
 - `LocalFileOperations.swift` — Stateless `struct: Sendable` implementing copy/move/delete/rename/mkdir/symlink/trash; creates fresh `FileManager()` per `Task.detached` call; reports progress via `OperationProgressReporting`. (~350 tok)
-- `LocalFileSystemProvider.swift` — `public actor` conforming to `FileSystemProvider`; `enumerate`/`watch` nonisolated, I/O dispatched via `Task.detached`; exposes `detectConflicts(for:)` preflight. (~400 tok)
+- `LocalFileSystemProvider.swift` — / Actor-based `FileSystemProvider` for the local macOS filesystem. (~1019 tok)
 - `Sandbox/SecurityScopedBookmarks.swift` — `public enum` namespace for encode/decode of security-scoped bookmarks; `withAccess(to:_:)` balances start/stop via `defer`. (~200 tok)
 - `URLResourceMapper.swift` — Internal `enum` mapping `URLResourceValues` → `FileKind` and `FileAttributes`; reads POSIX permissions via `CFFileSecurityGetMode`. (~250 tok)
 - `VolumeDiscovery.swift` — `public actor` enumerating mounted volumes and publishing mount/unmount events via DiskArbitration; actor-owned `DACallbackBox` prevents retain leaks. (~1460 tok)
@@ -826,6 +830,10 @@
 - `UninstallerUITestSupport.swift` (~418 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
+
+## docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `session-04-handoff.md` — Session 04 Handoff — Fix Directory Loading Bug #056 (~964 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 

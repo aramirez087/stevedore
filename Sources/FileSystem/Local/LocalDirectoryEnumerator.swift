@@ -10,7 +10,7 @@ enum LocalDirectoryEnumerator {
         options: EnumerationOptions
     ) -> AsyncThrowingStream<FileItem, any Error> {
         AsyncThrowingStream { continuation in
-            let task = Task.detached(priority: .utility) {
+            let task = Task.detached(priority: .userInitiated) {
                 do {
                     try Self.enumerate(
                         at: directoryURL,
@@ -25,6 +25,16 @@ enum LocalDirectoryEnumerator {
             continuation.onTermination = { _ in task.cancel() }
         }
     }
+
+    // Keys sufficient for directory listing. Omits .fileSecurityKey and
+    // .isPackageKey to avoid per-entry ACL/UTI syscalls during enumeration.
+    // attributes(at:) uses the full URLResourceMapperKeys for single-item queries.
+    private static let enumerationKeys: Set<URLResourceKey> = {
+        var keys = URLResourceMapperKeys
+        keys.remove(.fileSecurityKey)
+        keys.remove(.isPackageKey)
+        return keys
+    }()
 
     // MARK: - Private
 
@@ -57,7 +67,7 @@ enum LocalDirectoryEnumerator {
 
         guard let enumerator = fm.enumerator(
             at: directoryURL,
-            includingPropertiesForKeys: Array(URLResourceMapperKeys),
+            includingPropertiesForKeys: Array(Self.enumerationKeys),
             options: fmOptions
         ) else {
             throw StevedoreError.fileSystem(
@@ -68,15 +78,11 @@ enum LocalDirectoryEnumerator {
         for case let url as URL in enumerator {
             if Task.isCancelled { break }
 
-            if !options.followsSymbolicLinks {
-                let values = try? url.resourceValues(forKeys: [.isSymbolicLinkKey])
-                if values?.isSymbolicLink == true {
+            do {
+                let values = try url.resourceValues(forKeys: Self.enumerationKeys)
+                if !options.followsSymbolicLinks && values.isSymbolicLink == true {
                     enumerator.skipDescendants()
                 }
-            }
-
-            do {
-                let values = try url.resourceValues(forKeys: URLResourceMapperKeys)
                 let item = URLResourceMapper.fileItem(url: url, values: values)
                 continuation.yield(item)
             } catch let nsError as NSError where nsError.code == NSFileReadNoPermissionError {
