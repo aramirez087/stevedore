@@ -9,49 +9,49 @@ public struct FileMenuCommands: Commands {
     public var body: some Commands {
         CommandGroup(replacing: .newItem) {
             Button("New File") {
-                proxy?.newFile()
+                self.proxy?.newFile()
             }
             .keyboardShortcut(Shortcuts.newFile)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("New Folder") {
-                proxy?.newFolder()
+                self.proxy?.newFolder()
             }
             .keyboardShortcut(Shortcuts.newFolder)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Divider()
 
             Button("Open") {
-                proxy?.open()
+                self.proxy?.open()
             }
             .keyboardShortcut(Shortcuts.open)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Open With\u{2026}") {
-                proxy?.openWith()
+                self.proxy?.openWith()
             }
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Divider()
 
             Button("Move to Trash") {
-                proxy?.moveToTrash()
+                self.proxy?.moveToTrash()
             }
             .keyboardShortcut(Shortcuts.moveToTrash)
-            .disabled(proxy == nil || proxy?.isRemoteReadOnly == true)
+            .disabled(self.proxy == nil || self.proxy?.isRemoteReadOnly == true)
 
             Divider()
 
             Button("Compress") {
-                proxy?.compress()
+                self.proxy?.compress()
             }
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Decompress") {
-                proxy?.decompress()
+                self.proxy?.decompress()
             }
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
         }
     }
 }

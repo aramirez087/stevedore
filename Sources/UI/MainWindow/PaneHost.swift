@@ -1,6 +1,7 @@
 import Core
 import DesignSystem
 import SwiftUI
+import UIMenus
 import UIToolbar
 
 /// Per-pane composition: PaneToolbar + minimal tab strip + content placeholder.
@@ -44,12 +45,71 @@ public struct PaneHost: View {
             self.onDropped(paths)
             return !paths.isEmpty
         }
+        .focusedValue(\.paneCommandProxy, self.isActive ? self.buildProxy() : nil)
     }
 
     private var activeBorder: some View {
         Rectangle().strokeBorder(
             self.isActive ? Color.accentColor : Color.clear,
             lineWidth: 2
+        )
+    }
+
+    private func buildProxy() -> PaneCommandProxy {
+        let session = self.session
+        return PaneCommandProxy(
+            currentPath: session.currentPath,
+            canGoBack: session.toolbarViewModel.canGoBack,
+            canGoForward: session.toolbarViewModel.canGoForward,
+            isRemoteReadOnly: session.currentPath.scheme != .local,
+            goBack: { session.toolbarViewModel.goBack() },
+            goForward: { session.toolbarViewModel.goForward() },
+            goUp: {
+                let parent = (session.currentPath.posixString as NSString)
+                    .deletingLastPathComponent
+                session.navigate(to: FilePath(scheme: session.currentPath.scheme, posix: parent))
+            },
+            goHome: {
+                session.navigate(to: FilePath(scheme: .local, posix: NSHomeDirectory()))
+            },
+            goToComputer: {
+                session.navigate(to: FilePath(scheme: .local, posix: "/"))
+            },
+            newFolder: {},
+            newFile: {},
+            open: {},
+            openWith: {},
+            moveToTrash: {},
+            compress: {},
+            decompress: {},
+            toggleHiddenFiles: {},
+            refresh: {},
+            openInTerminal: {
+                OpenInTerminal.launch(path: session.currentPath, using: "")
+            },
+            openNewTab: { session.openTab(at: session.currentPath) },
+            closeActiveTab: {
+                guard let tabID = session.activeTabID else { return }
+                session.closeTab(tabID)
+            },
+            reopenClosedTab: {},
+            nextTab: {
+                guard let cur = session.activeTabID,
+                      let idx = session.tabs.firstIndex(where: { $0.id == cur }),
+                      idx + 1 < session.tabs.count else { return }
+                session.activateTab(session.tabs[idx + 1].id)
+            },
+            previousTab: {
+                guard let cur = session.activeTabID,
+                      let idx = session.tabs.firstIndex(where: { $0.id == cur }),
+                      idx > 0 else { return }
+                session.activateTab(session.tabs[idx - 1].id)
+            },
+            selectAll: {},
+            sortByName: {},
+            sortByDateModified: {},
+            sortBySize: {},
+            sortByKind: {}
         )
     }
 }

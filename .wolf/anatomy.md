@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-02T23:45:35.351Z
-> Files: 585 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T00:03:01.150Z
+> Files: 590 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -9,7 +9,7 @@
 - `.session-24-plan.md` — Session 24 Implementation Plan — Settings UI (~6070 tok)
 - `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
 - `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~4532 tok)
-- `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~9160 tok)
+- `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~6751 tok)
 
 ## ./
 
@@ -582,11 +582,11 @@
 
 - `AppCommands.swift` — / Top-level `Commands` that compose all seven menu-bar sections. (~160 tok)
 - `DualPaneLayout.swift` — / Custom horizontal split that exposes `splitFraction` as a `Binding`. (~592 tok)
-- `MainWindowModel.swift` — / Owns all window state and coordinates the sidebar, two pane sessions, and operation queue. (~1104 tok)
+- `MainWindowModel.swift` — / Owns all window state and coordinates the sidebar, two pane sessions, and operation queue. (~1195 tok)
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
-- `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~774 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~1158 tok)
+- `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~1849 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
@@ -595,10 +595,10 @@
 ## Sources/UI/Menus/
 
 - `OpenInTerminal.swift` — / Launches a terminal application at the given local directory path. (~460 tok)
-- `PaneCommandProxy.swift` — / Per-pane command proxy injected via `FocusedValues` so menu-bar Commands can (~564 tok)
+- `PaneCommandProxy.swift` — / Per-pane command proxy injected via `FocusedValues` so menu-bar Commands can (~1171 tok)
 - `Shortcuts.swift` — / Canonical keyboard shortcut registry for all Stevedore menu commands. (~586 tok)
 - `UIMenusModule.swift` — / Marker namespace for the `UIMenus` module — menu-bar commands. (~44 tok)
-- `WindowCommandProxy.swift` — / Window-level command proxy injected via `FocusedValues`. (~186 tok)
+- `WindowCommandProxy.swift` — / Window-level command proxy injected via `FocusedValues`. (~322 tok)
 
 ## Sources/UI/Menus/Sections/
 
@@ -787,6 +787,13 @@
 - `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
 - `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
+## Tests/UITests/MenusTests/
+
+- `MenusTestSupport.swift` (~855 tok)
+- `PaneCommandProxyTests.swift` — Class: PaneCommandProxyTests (~853 tok)
+- `ShortcutsTests.swift` — Class: ShortcutsTests (~520 tok)
+- `WindowCommandProxyTests.swift` — Class: WindowCommandProxyTests (~328 tok)
+
 ## Tests/UITests/SettingsUITests/
 
 - `SettingBindingTests.swift` — Class: SettingBindingTests (~993 tok)
@@ -872,3 +879,4 @@
 - `session-24-handoff.md` — Session 24 Handoff — Settings UI (~1680 tok)
 - `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)
 - `session-26-handoff.md` — Session 26 Handoff — Main Window Shell (~1542 tok)
+- `session-27-handoff.md` — Session 27 Handoff — Menu Commands & Keyboard Shortcuts (~2109 tok)

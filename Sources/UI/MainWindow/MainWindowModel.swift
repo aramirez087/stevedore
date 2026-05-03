@@ -22,6 +22,12 @@ public final class MainWindowModel {
     /// Current queue snapshot; updated from `operationQueue.operationStream()`.
     public private(set) var activeOperations: [FeaturesOperations.Operation] = []
 
+    // Dialog presentation flags — toggled by WindowCommandProxy closures.
+    public var showConnectDialog: Bool = false
+    public var showSyncDialog: Bool = false
+    public var showRenameDialog: Bool = false
+    public var showUninstallerDialog: Bool = false
+
     @ObservationIgnored private let repository: WorkspacesRepository?
     @ObservationIgnored private var streamTask: Task<Void, Never>?
 

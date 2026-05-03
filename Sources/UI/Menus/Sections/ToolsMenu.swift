@@ -10,24 +10,24 @@ public struct ToolsMenuCommands: Commands {
     public var body: some Commands {
         CommandMenu("Tools") {
             Button("Compare/Sync Folders\u{2026}") {
-                windowProxy?.showSyncDialog()
+                self.windowProxy?.showSyncDialog()
             }
 
             Button("Multi-Rename\u{2026}") {
-                windowProxy?.showRenameDialog()
+                self.windowProxy?.showRenameDialog()
             }
 
             Button("Application Uninstaller\u{2026}") {
-                windowProxy?.showUninstallerDialog()
+                self.windowProxy?.showUninstallerDialog()
             }
 
             Divider()
 
             Button("Open in Terminal") {
-                proxy?.openInTerminal()
+                self.proxy?.openInTerminal()
             }
             .keyboardShortcut(Shortcuts.openInTerminal)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
         }
     }
 }

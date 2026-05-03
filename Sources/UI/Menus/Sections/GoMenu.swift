@@ -9,35 +9,35 @@ public struct GoMenuCommands: Commands {
     public var body: some Commands {
         CommandMenu("Go") {
             Button("Up") {
-                proxy?.goUp()
+                self.proxy?.goUp()
             }
             .keyboardShortcut(Shortcuts.goUp)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Back") {
-                proxy?.goBack()
+                self.proxy?.goBack()
             }
             .keyboardShortcut(Shortcuts.goBack)
-            .disabled(proxy?.canGoBack != true)
+            .disabled(self.proxy?.canGoBack != true)
 
             Button("Forward") {
-                proxy?.goForward()
+                self.proxy?.goForward()
             }
             .keyboardShortcut(Shortcuts.goForward)
-            .disabled(proxy?.canGoForward != true)
+            .disabled(self.proxy?.canGoForward != true)
 
             Divider()
 
             Button("Home") {
-                proxy?.goHome()
+                self.proxy?.goHome()
             }
             .keyboardShortcut(Shortcuts.goHome)
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Button("Computer") {
-                proxy?.goToComputer()
+                self.proxy?.goToComputer()
             }
-            .disabled(proxy == nil)
+            .disabled(self.proxy == nil)
 
             Divider()
 
