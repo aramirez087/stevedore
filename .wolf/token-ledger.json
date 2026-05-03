@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 615003,
-    "total_reads": 887,
-    "total_writes": 244,
-    "total_sessions": 71,
-    "anatomy_hits": 389,
-    "anatomy_misses": 490,
+    "total_tokens_estimated": 628031,
+    "total_reads": 902,
+    "total_writes": 245,
+    "total_sessions": 73,
+    "anatomy_hits": 397,
+    "anatomy_misses": 497,
     "repeated_reads_blocked": 54,
-    "estimated_savings_vs_bare_cli": 115752
+    "estimated_savings_vs_bare_cli": 117352
   },
   "sessions": [
     {
@@ -7643,6 +7643,118 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 4
+      }
+    },
+    {
+      "id": "session-2026-05-03-1618",
+      "started": "2026-05-03T22:18:50.627Z",
+      "ended": "2026-05-03T22:25:14.488Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-fix-home-sidebar-bug-055.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-fix-directory-loading-bug-056.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-01-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/MainWindow/PaneSession.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Menus/PaneCommandProxy.swift",
+          "tokens_estimated": 1171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Sidebar/SidebarViewModel.swift",
+          "tokens_estimated": 797,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
+          "tokens_estimated": 1038,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalFileSystemProvider.swift",
+          "tokens_estimated": 1019,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Menus/Sections/GoMenu.swift",
+          "tokens_estimated": 337,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.epic-status.json",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Toolbar/PaneToolbarViewModel.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-05-plan.md",
+          "tokens_estimated": 5090,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 7938,
+        "output_tokens_estimated": 5090,
+        "reads_count": 15,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 8
       }
     }
   ],

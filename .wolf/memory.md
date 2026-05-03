@@ -8,6 +8,8 @@
 | 2026-05-03 | Session 04 read-only planning: wrote .session-04-plan.md for Bug #056 (3s spinner). Root causes: .utility QoS + .fileSecurityKey prefetch + redundant resourceValues call. Fix plan: bump to .userInitiated, add enumerationKeys without expensive keys, collapse per-item loop. | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md | Plan written | ~3500 tok |
 
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
+
+| 2026-05-03 16:30 | Session 05 CI gate: verified bugs #054/055/056 fixes present, fixed 2 swiftformat violations (docComments SidebarViewModel, andOperator LocalDirectoryEnumerator), all gates green (swift build, xcodebuild, 1021 tests, 0/49 format, 0 lint in modified dirs), GO verdict | Sources/UI/Sidebar/SidebarViewModel.swift, Sources/FileSystem/Local/LocalDirectoryEnumerator.swift, docs/claude-sessions/.../session-05-handoff.md | GO | ~6000 tok |
 | 2026-05-03 16:07 | Session 04: Fixed Bug #056 — bumped Task.detached QoS to .userInitiated in LocalDirectoryEnumerator+LocalFileSystemProvider; added enumerationKeys without .fileSecurityKey/.isPackageKey; collapsed dual resourceValues calls. Build clean, 20/20 tests pass. | Sources/FileSystem/Local/LocalDirectoryEnumerator.swift, LocalFileSystemProvider.swift | Bug #056 fixed | ~2000 tok |
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
@@ -1008,3 +1010,19 @@
 | 16:04 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | 21→17 lines | ~225 |
 | 16:04 | Edited Sources/FileSystem/Local/LocalFileSystemProvider.swift | inline fix | ~18 |
 | 16:07 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md | — | ~1028 |
+
+## Session: 2026-05-03 16:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:24 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-05-plan.md | — | ~4751 |
+| 16:24 | S05 planning: verified bugs #054/055/056 fixes via code+git; wrote .session-05-plan.md with DAG-handoff-mismatch alert | ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-05-plan.md | complete | ~4500 |
+| 16:25 | Session end: 1 writes across 1 files (.session-05-plan.md) | 15 reads | ~13028 tok |
+
+## Session: 2026-05-03 16:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:29 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified isAutofsHome() | ~39 |
+| 16:29 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | inline fix | ~22 |
+| 16:31 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-handoff.md | — | ~1892 |
