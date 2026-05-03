@@ -1,7 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:27:51.118Z
-> Files: 598 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:18:02.608Z
+> Files: 599 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../.claude/commands/
+
+- `epic.md` — Validate (~811 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 

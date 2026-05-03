@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 605875,
-    "total_reads": 876,
-    "total_writes": 238,
-    "total_sessions": 67,
-    "anatomy_hits": 384,
-    "anatomy_misses": 484,
-    "repeated_reads_blocked": 45,
-    "estimated_savings_vs_bare_cli": 114752
+    "total_tokens_estimated": 609686,
+    "total_reads": 881,
+    "total_writes": 242,
+    "total_sessions": 68,
+    "anatomy_hits": 385,
+    "anatomy_misses": 488,
+    "repeated_reads_blocked": 54,
+    "estimated_savings_vs_bare_cli": 114952
   },
   "sessions": [
     {
@@ -7494,6 +7494,73 @@
         "output_tokens_estimated": 855,
         "reads_count": 4,
         "writes_count": 3,
+        "repeated_reads_blocked": 9,
+        "anatomy_lookups": 1
+      }
+    },
+    {
+      "id": "session-2026-05-03-1119",
+      "started": "2026-05-03T17:19:17.676Z",
+      "ended": "2026-05-03T18:18:46.647Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.epic-result.json",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs/docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/.claude/commands/epic.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 431,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 253,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 171,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/.claude/commands/epic.md",
+          "tokens_estimated": 123,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 2833,
+        "output_tokens_estimated": 978,
+        "reads_count": 5,
+        "writes_count": 4,
         "repeated_reads_blocked": 9,
         "anatomy_lookups": 1
       }
