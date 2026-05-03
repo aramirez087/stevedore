@@ -784,3 +784,25 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 06:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 06:35 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md | — | ~7547 |
+| 06:35 | Session end: 1 writes across 1 files (.session-26-plan.md) | 8 reads | ~16200 tok |
+
+## Session: 2026-05-03 06:35
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 06:38 (Session 26 — final quality gate verification)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 06:38 | swift build (full package) | all targets | Build complete, EXIT:0, 0 warnings | ~500 |
+| 06:38 | swift test --filter MainWindow | Tests/UITests/MainWindowTests/ | 12/12 passed (MainWindowTests + MainWindowSmokeTests) | ~200 |
+| 06:38 | swiftformat --lint App Sources/UI/MainWindow Tests/UITests/MainWindowTests | 16 files | 0/16 files require formatting | ~50 |
+| 06:38 | swiftlint --strict App Sources/UI/MainWindow | 824 files | 0 violations | ~50 |
+| 06:38 | swift test (full suite) | all | 977 tests, 2 pre-existing failures (SidebarViewModelTests.testMountedEventAddsVolume + UninstallExecutorTests.testNoRemoveItemCall) | ~200 |
