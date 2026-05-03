@@ -5,6 +5,10 @@
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
+## Session: 2026-05-02 19:24 (Session 26 — Main Window Shell verification)
+
+| 19:24 | Verified S26 already committed; all quality gates pass: swift build, swift test --filter MainWindow (12/12), swiftformat 0/16, swiftlint 0 violations | Sources/UI/MainWindow/, App/Stevedore/, Tests/UITests/MainWindowTests/ | All passing | ~500 tok |
+
 ## Session: 2026-05-02 18:57 (Session 27 — Menu Commands & Keyboard Shortcuts)
 
 | 18:50 | Verified all S27 source files already complete from epic bootstrap | Sources/UI/Menus/, Sources/UI/MainWindow/ | No changes needed | ~800 tok |
@@ -749,6 +753,18 @@
 |------|--------|---------|---------|--------|
 
 ## Session: 2026-05-03 18:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 19:19
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:23 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-26-plan.md | — | ~6068 |
+| 19:23 | Session end: 1 writes across 1 files (.session-26-plan.md) | 8 reads | ~12585 tok |
+
+## Session: 2026-05-03 19:23
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
