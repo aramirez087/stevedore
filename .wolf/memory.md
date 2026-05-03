@@ -957,89 +957,25 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 11:02 | Created docs/claude-sessions/stevedore-file-browser-bugs/session-00-operator-rules.md | — | ~642 |
+| 11:02 | Created docs/claude-sessions/stevedore-file-browser-bugs/session-01-charter.md | — | ~649 |
+| 11:03 | Created docs/claude-sessions/stevedore-file-browser-bugs/session-02-implement.md | — | ~904 |
+| 11:03 | Created docs/claude-sessions/stevedore-file-browser-bugs/session-03-ci-gate.md | — | ~607 |
+| 11:05 | Session end: 4 writes across 4 files (session-00-operator-rules.md, session-01-charter.md, session-02-implement.md, session-03-ci-gate.md) | 6 reads | ~8531 tok |
+| 11:08 | Session end: 4 writes across 4 files (session-00-operator-rules.md, session-01-charter.md, session-02-implement.md, session-03-ci-gate.md) | 8 reads | ~8531 tok |
 
-## Session: 2026-05-03 11:03
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:07 | Created ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-1-plan.md | — | ~3612 |
-| 11:07 | Session end: 1 writes across 1 files (.session-1-plan.md) | 16 reads | ~13752 tok |
-
-## Session: 2026-05-03 11:07
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:11 | Created docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | — | ~3692 |
-| 11:50 | S01 audit: confirmed bug-049 (no .contextMenu on rows) and bug-050 (single-tap navigates, no selection state) via grep; inventoried OperationKind.trash + LocalFileOperations.performTrash | PaneHost.swift, OperationKind.swift, LocalFileOperations.swift | confirmed | ~5000 |
-| 11:51 | Wrote handoff: confirmed root causes, 7-item context menu spec (Open, Reveal in Finder, Trash, Copy/Rename placeholders), double-tap-before-single-tap gesture sketch, T1-T5 test list, 7 SwiftUI gotchas | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | created (~2300 tok) | ~2400 |
-| 11:52 | swift build --target MainWindow | — | EXIT:0, 40.63s, zero warnings | — |
-| 11:52 | Session end: handoff doc + .wolf bookkeeping; no source/test edits | session-01-handoff.md, .wolf/anatomy.md, .wolf/memory.md | 0 fixes (charter only) | — |
-
-## Session: 2026-05-03 11:29
+## Session: 2026-05-03 11:19
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 11:32 | Created ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4204 |
-| 11:32 | Session end: 1 writes across 1 files (.session-01-plan.md) | 10 reads | ~9093 tok |
+| 11:27 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified _realpath() | ~402 |
+| 11:27 | Edited ../epic-toolkit/scripts/run-sessions.sh | expanded (+11 lines) | ~236 |
+| 11:27 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified run_one_session() | ~160 |
+| 11:28 | Session end: 3 writes across 1 files (run-sessions.sh) | 4 reads | ~3688 tok |
+| 12:18 | Edited ../../.claude/commands/epic.md | "STATUS=failed" → ".epic-result.json" | ~115 |
+| 12:18 | Session end: 4 writes across 2 files (run-sessions.sh, epic.md) | 5 reads | ~3811 tok |
 
-## Session: 2026-05-03 11:32
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:34 | S01 re-execute: verified handoff doc complete (already on disk from prior S01 commit), confirmed swift build --target MainWindow exit 0 | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | build clean, no source edits | — |
-| 11:34 | Created ../../../../tmp/commit-msg-s01.txt | — | ~99 |
-| 11:34 | Session end: 1 writes across 1 files (commit-msg-s01.txt) | 1 reads | ~2406 tok |
-
-## Session: 2026-05-03 11:34
+## Session: 2026-05-03 12:19
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 11:37 | Created ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-02-plan.md | — | ~4133 |
-| 11:37 | Session end: 1 writes across 1 files (.session-02-plan.md) | 5 reads | ~9760 tok |
-
-## Session: 2026-05-03 11:37
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | added 1 import(s) | ~30 |
-| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | 9→10 lines | ~126 |
-| 11:38 | Edited Sources/UI/MainWindow/PaneHost.swift | modified rowBackground() | ~560 |
-| 11:39 | Edited Tests/UITests/MainWindowTests/MainWindowTests.swift | modified testMainWindowViewComposesWithoutCrashing() | ~644 |
-| 11:40 | Edited Sources/UI/MainWindow/PaneHost.swift | 5→5 lines | ~78 |
-| 11:41 | Edited ../epic-toolkit/scripts/run-sessions.sh | 4→5 lines | ~44 |
-| 11:41 | Edited ../epic-toolkit/scripts/run-sessions.sh | 4→5 lines | ~81 |
-| 11:41 | Created docs/roadmap/stevedore-file-browser-bugs/session-02-handoff.md | — | ~2114 |
-| 11:42 | Session 02 — implemented bug-049 (.contextMenu) and bug-050 (selection + double-tap navigate) in FileBrowserView; 5 new tests pass | Sources/UI/MainWindow/PaneHost.swift, Tests/UITests/MainWindowTests/MainWindowTests.swift | green: build/tests/format pass; lint has 4 pre-existing Package.swift violations | ~3200 |
-| 11:42 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified run_one_session() | ~550 |
-
-## Session: 2026-05-03 11:45
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:47 | Edited scripts/run-sessions.sh | expanded (+7 lines) | ~236 |
-
-## Session: 2026-05-03 11:47
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:48 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4195 |
-| 11:48 | Session end: 1 writes across 1 files (.session-01-plan.md) | 5 reads | ~8532 tok |
-| 11:49 | Edited scripts/run-sessions.sh | 19→18 lines | ~220 |
-| 11:50 | Edited scripts/run-sessions.sh | expanded (+15 lines) | ~415 |
-| 11:52 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4134 |
-| 11:52 | Session end: 4 writes across 2 files (.session-01-plan.md, run-sessions.sh) | 5 reads | ~17575 tok |
-| 11:52 | Edited scripts/run-sessions.sh | reduced (-13 lines) | ~262 |
-
-## Session: 2026-05-03 11:53
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:54 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-03-plan.md | — | ~3298 |
-| 11:54 | Session end: 1 writes across 1 files (.session-03-plan.md) | 0 reads | ~3533 tok |
-
-## Session: 2026-05-03 11:54
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-| 11:59 | session-03 ci-gate: ran 6 gates; 1-4 PASS (build, xcodebuild, MainWindowTests 16/16, full 1013/1013); 5-6 FAIL with only pre-existing failures verified on base 4cd7960 (10 swiftformat in 2 test-support files; 4 swiftlint in Package.swift) | docs/roadmap/stevedore-file-browser-bugs/session-03-handoff.md | GO verdict | ~5000 |
-| 12:00 | Session end: 1 writes across 1 files (session-03-handoff.md) | 1 reads | ~6716 tok |

@@ -1,15 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:59:54.203Z
-> Files: 604 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:18:02.608Z
+> Files: 599 tracked | Anatomy hits: 0 | Misses: 0
 
-## ../../../../tmp/
+## ../../.claude/commands/
 
-- `commit-msg-s01.txt` (~93 tok)
-
-## ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
-
-- `.session-1-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3387 tok)
+- `epic.md` — Validate (~811 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -21,12 +17,7 @@
 
 ## ../epic-toolkit/scripts/
 
-- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15599 tok)
-
-## ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
-
-- `.session-01-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3941 tok)
-- `.session-02-plan.md` — Session 02 Implementation Plan — FileBrowserView Bug Fixes (~3875 tok)
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15243 tok)
 
 ## ./
 
@@ -605,7 +596,7 @@
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~3295 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
@@ -802,7 +793,7 @@
 
 ## Tests/UITests/MainWindowTests/
 
-- `MainWindowTests.swift` — Class: MainWindowTests (~1583 tok)
+- `MainWindowTests.swift` — Class: MainWindowTests (~1013 tok)
 - `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
 - `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
@@ -837,8 +828,10 @@
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 
-- `.session-01-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3876 tok)
-- `.session-03-plan.md` — Session 03 Implementation Plan — CI Gate & Go/No-Go Report (~3092 tok)
+- `session-00-operator-rules.md` — Operator Rules — Stevedore File Browser Bug Fixes (~601 tok)
+- `session-01-charter.md` — Session 01: Charter — FileBrowserView Bug Audit (~608 tok)
+- `session-02-implement.md` — Session 02: Implement Both Fixes (~847 tok)
+- `session-03-ci-gate.md` — Session 03: CI Gate (~569 tok)
 
 ## docs/claude-sessions/stevedore-mvp/
 
@@ -887,12 +880,6 @@
 - `session-27-menu-commands.md` — Session 27: Menu Commands & Keyboard Shortcuts (~850 tok)
 - `session-28-ci-gate.md` — Session 28: CI Gate — Final Verification (~856 tok)
 
-## docs/roadmap/stevedore-file-browser-bugs/
-
-- `session-01-handoff.md` — Session 01 Handoff — FileBrowserView Bug Audit (root causes, menu spec, gesture sketch, T1-T5 test list, gotchas) (~2300 tok)
-- `session-02-handoff.md` — Session 02 Handoff — FileBrowserView Bug Fixes (~1982 tok)
-- `session-03-handoff.md` — Session 03 Handoff — CI Gate & Go/No-Go Report (~4142 tok)
-
 ## docs/roadmap/stevedore-mvp/
 
 - `session-01-handoff.md` — Session 01 Handoff — Charter & Scaffolding (~2546 tok)
@@ -911,7 +898,3 @@
 - `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)
 - `session-26-handoff.md` — Session 26 Handoff — Main Window Shell (~1542 tok)
 - `session-27-handoff.md` — Session 27 Handoff — Menu Commands & Keyboard Shortcuts (~2109 tok)
-
-## scripts/
-
-- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15877 tok)
