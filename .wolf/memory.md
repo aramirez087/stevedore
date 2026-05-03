@@ -3,12 +3,12 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
-| 2026-05-03 | S03 planning: wrote .session-03-plan.md for bug-055 (home sidebar wrong path); plan covers SidebarViewModel.swift filter+synthetic-home fix + 3 new tests + 2 test updates | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | plan written | ~3500 |
-| 16:07 | S03 execute: fixed bug-055 — SidebarViewModel.normalizeVolumes() filters autofs /home and prepends FileManager.homeDirectoryForCurrentUser; updated 2 tests, added 3 new tests, fixed 1 collateral TagsSectionTests; build + 40 tests green | Sources/UI/Sidebar/SidebarViewModel.swift, Tests/UITests/SidebarTests/SidebarViewModelTests.swift, Tests/UITests/SidebarTests/TagsSectionTests.swift | bug-055 fixed | ~2000 |
-
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
 
+| 2026-05-03 | Session 04 read-only planning: wrote .session-04-plan.md for Bug #056 (3s spinner). Root causes: .utility QoS + .fileSecurityKey prefetch + redundant resourceValues call. Fix plan: bump to .userInitiated, add enumerationKeys without expensive keys, collapse per-item loop. | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md | Plan written | ~3500 tok |
+
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
+| 2026-05-03 16:07 | Session 04: Fixed Bug #056 — bumped Task.detached QoS to .userInitiated in LocalDirectoryEnumerator+LocalFileSystemProvider; added enumerationKeys without .fileSecurityKey/.isPackageKey; collapsed dual resourceValues calls. Build clean, 20/20 tests pass. | Sources/FileSystem/Local/LocalDirectoryEnumerator.swift, LocalFileSystemProvider.swift | Bug #056 fixed | ~2000 tok |
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
@@ -995,18 +995,16 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 16:02 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | — | ~2613 |
-| 16:02 | Session end: 1 writes across 1 files (.session-03-plan.md) | 8 reads | ~7627 tok |
+| 16:02 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md | — | ~3667 |
+| 16:03 | Session end: 1 writes across 1 files (.session-04-plan.md) | 5 reads | ~5259 tok |
 
-## Session: 2026-05-03 16:02
+## Session: 2026-05-03 16:03
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
-| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified currentVolumes() | ~35 |
-| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified mounted() | ~69 |
-| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified isAutofsHome() | ~216 |
-| 16:03 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~142 |
-| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | modified testStartIdempotent() | ~82 |
-| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~498 |
-| 16:07 | Edited Tests/UITests/SidebarTests/TagsSectionTests.swift | modified testTagsLoadedForSyntheticHome() | ~113 |
-| 16:08 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-handoff.md | — | ~1104 |
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | inline fix | ~18 |
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | expanded (+10 lines) | ~124 |
+| 16:03 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | 5→5 lines | ~52 |
+| 16:04 | Edited Sources/FileSystem/Local/LocalDirectoryEnumerator.swift | 21→17 lines | ~225 |
+| 16:04 | Edited Sources/FileSystem/Local/LocalFileSystemProvider.swift | inline fix | ~18 |
+| 16:07 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md | — | ~1028 |
