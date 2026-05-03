@@ -1,82 +1,67 @@
 {
-  "session_id": "session-2026-05-03-0635",
-  "started": "2026-05-03T12:35:32.774Z",
+  "session_id": "session-2026-05-03-0643",
+  "started": "2026-05-03T12:43:04.089Z",
   "files_read": {
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowModule.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Shortcuts.swift": {
       "count": 1,
-      "tokens": 49,
-      "first_read": "2026-05-03T12:35:49.353Z"
+      "tokens": 586,
+      "first_read": "2026-05-03T12:43:20.365Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/WindowState.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/PaneCommandProxy.swift": {
       "count": 1,
-      "tokens": 543,
-      "first_read": "2026-05-03T12:35:50.071Z"
+      "tokens": 1171,
+      "first_read": "2026-05-03T12:43:20.688Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneSession.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/WindowCommandProxy.swift": {
       "count": 1,
-      "tokens": 743,
-      "first_read": "2026-05-03T12:35:50.589Z"
+      "tokens": 322,
+      "first_read": "2026-05-03T12:43:21.231Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowModel.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/Menus/Sections/FileMenu.swift": {
       "count": 1,
-      "tokens": 1195,
-      "first_read": "2026-05-03T12:35:55.403Z"
+      "tokens": 393,
+      "first_read": "2026-05-03T12:43:25.531Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowView.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/AppCommands.swift": {
       "count": 1,
-      "tokens": 1091,
-      "first_read": "2026-05-03T12:35:55.906Z"
+      "tokens": 160,
+      "first_read": "2026-05-03T12:43:26.338Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/PaneHost.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/PaneHost.swift": {
       "count": 1,
       "tokens": 1849,
-      "first_read": "2026-05-03T12:35:59.085Z"
+      "first_read": "2026-05-03T12:43:26.764Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Sources/UI/MainWindow/MainWindowScene.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowView.swift": {
       "count": 1,
-      "tokens": 156,
-      "first_read": "2026-05-03T12:35:59.618Z"
+      "tokens": 1091,
+      "first_read": "2026-05-03T12:43:31.765Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/AppEnvironment.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Sources/UI/MainWindow/MainWindowModel.swift": {
       "count": 1,
-      "tokens": 1650,
-      "first_read": "2026-05-03T12:36:03.996Z"
+      "tokens": 1195,
+      "first_read": "2026-05-03T12:43:32.096Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/App/Stevedore/StevedoreApp.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/ShortcutsTests.swift": {
       "count": 1,
-      "tokens": 54,
-      "first_read": "2026-05-03T12:36:04.227Z"
+      "tokens": 520,
+      "first_read": "2026-05-03T12:43:37.218Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/MainWindowTests.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/PaneCommandProxyTests.swift": {
       "count": 1,
-      "tokens": 1013,
-      "first_read": "2026-05-03T12:36:09.451Z"
+      "tokens": 853,
+      "first_read": "2026-05-03T12:43:37.927Z"
     },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/MainWindowTestSupport.swift": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s27-menu-commands/Tests/UITests/MenusTests/MenusTestSupport.swift": {
       "count": 1,
-      "tokens": 743,
-      "first_read": "2026-05-03T12:36:09.686Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/Tests/UITests/MainWindowTests/WindowStateTests.swift": {
-      "count": 1,
-      "tokens": 521,
-      "first_read": "2026-05-03T12:36:13.041Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-mvp--s26-main-window-shell/docs/roadmap/stevedore-mvp/session-26-handoff.md": {
-      "count": 1,
-      "tokens": 1542,
-      "first_read": "2026-05-03T12:36:13.930Z"
-    },
-    "/Users/aramirez/.claude/projects/-Users-aramirez-Code--epic-worktrees-Stevedore-epic-stevedore-mvp--s26-main-window-shell/5053b1af-53be-4b1c-bc87-9ff858197117/tool-results/btxwf1al9.txt": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T12:37:41.672Z"
+      "tokens": 855,
+      "first_read": "2026-05-03T12:43:38.316Z"
     }
   },
   "files_written": [],
   "edit_counts": {},
-  "anatomy_hits": 13,
-  "anatomy_misses": 1,
+  "anatomy_hits": 11,
+  "anatomy_misses": 0,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
   "stop_count": 0
