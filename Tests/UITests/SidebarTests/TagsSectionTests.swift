@@ -30,10 +30,12 @@ final class SidebarTagsSectionTests: XCTestCase {
         XCTAssertEqual(vm.selection, .tag("Work"))
     }
 
-    func testTagsNotLoadedWithoutVolumes() async {
+    func testTagsLoadedForSyntheticHome() async {
+        // normalizeVolumes always prepends the synthetic Home volume, so tags are
+        // fetched even when no real mounted volumes are provided.
         let fakeTags = FakeTagsProvider(tags: ["Red"])
-        let vm = makeSidebarViewModel(tags: fakeTags) // no volumes
+        let vm = makeSidebarViewModel(tags: fakeTags) // no real volumes, but Home is injected
         await vm.start()
-        XCTAssertTrue(vm.tags.isEmpty)
+        XCTAssertEqual(vm.tags, ["Red"])
     }
 }

@@ -33,7 +33,7 @@ public actor LocalFileSystemProvider: FileSystemProvider {
             )
         }
         let url = URL(fileURLWithPath: path.posixString)
-        return try await Task.detached(priority: .utility) {
+        return try await Task.detached(priority: .userInitiated) {
             try Self.readAttributes(url: url)
         }.value
     }

@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 609744,
-    "total_reads": 882,
-    "total_writes": 243,
-    "total_sessions": 69,
-    "anatomy_hits": 385,
-    "anatomy_misses": 489,
+    "total_tokens_estimated": 628031,
+    "total_reads": 902,
+    "total_writes": 245,
+    "total_sessions": 73,
+    "anatomy_hits": 397,
+    "anatomy_misses": 497,
     "repeated_reads_blocked": 54,
-    "estimated_savings_vs_bare_cli": 114952
+    "estimated_savings_vs_bare_cli": 117352
   },
   "sessions": [
     {
@@ -7591,6 +7591,170 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-05-03-1559",
+      "started": "2026-05-03T21:59:27.555Z",
+      "ended": "2026-05-03T22:03:15.215Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s04-fix-directory-loading-bug-056/Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
+          "tokens_estimated": 280,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s04-fix-directory-loading-bug-056/Sources/FileSystem/Local/LocalFileSystemProvider.swift",
+          "tokens_estimated": 400,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s04-fix-directory-loading-bug-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s04-fix-directory-loading-bug-056/Sources/FileSystem/Local/URLResourceMapper.swift",
+          "tokens_estimated": 250,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s04-fix-directory-loading-bug-056/Tests/FileSystemTests/LocalTests/LocalDirectoryEnumeratorTests.swift",
+          "tokens_estimated": 400,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md",
+          "tokens_estimated": 3929,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 1330,
+        "output_tokens_estimated": 3929,
+        "reads_count": 5,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 4
+      }
+    },
+    {
+      "id": "session-2026-05-03-1618",
+      "started": "2026-05-03T22:18:50.627Z",
+      "ended": "2026-05-03T22:25:14.488Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-04-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-fix-home-sidebar-bug-055.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-fix-directory-loading-bug-056.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-01-plan.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/MainWindow/PaneSession.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Menus/PaneCommandProxy.swift",
+          "tokens_estimated": 1171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Sidebar/SidebarViewModel.swift",
+          "tokens_estimated": 797,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
+          "tokens_estimated": 1038,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalFileSystemProvider.swift",
+          "tokens_estimated": 1019,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Menus/Sections/GoMenu.swift",
+          "tokens_estimated": 337,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/.epic-status.json",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Toolbar/PaneToolbarViewModel.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-05-plan.md",
+          "tokens_estimated": 5090,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 7938,
+        "output_tokens_estimated": 5090,
+        "reads_count": 15,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 8
       }
     }
   ],

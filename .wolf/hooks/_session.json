@@ -1,27 +1,61 @@
 {
-  "session_id": "session-2026-05-03-1222",
-  "started": "2026-05-03T18:22:41.479Z",
+  "session_id": "session-2026-05-03-1625",
+  "started": "2026-05-03T22:25:15.489Z",
   "files_read": {
-    "/Users/aramirez/Code/Stevedore/.gitignore": {
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/MainWindow/PaneHost.swift": {
+      "count": 1,
+      "tokens": 2833,
+      "first_read": "2026-05-03T22:25:36.461Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Sidebar/SidebarViewModel.swift": {
+      "count": 2,
+      "tokens": 797,
+      "first_read": "2026-05-03T22:25:37.322Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalDirectoryEnumerator.swift": {
+      "count": 2,
+      "tokens": 1038,
+      "first_read": "2026-05-03T22:25:46.642Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Menus/Sections/GoMenu.swift": {
+      "count": 1,
+      "tokens": 337,
+      "first_read": "2026-05-03T22:25:47.541Z"
+    },
+    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-ci-gate-bugs-054-056.md": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-03T18:24:48.288Z"
+      "first_read": "2026-05-03T22:30:37.694Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/aramirez/Code/Stevedore/.gitignore",
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/UI/Sidebar/SidebarViewModel.swift",
       "action": "edit",
-      "tokens": 58,
-      "at": "2026-05-03T18:24:52.149Z"
+      "tokens": 42,
+      "at": "2026-05-03T22:29:22.362Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
+      "action": "edit",
+      "tokens": 24,
+      "at": "2026-05-03T22:29:23.667Z"
+    },
+    {
+      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s05-ci-gate-bugs-054-056/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-handoff.md",
+      "action": "create",
+      "tokens": 2027,
+      "at": "2026-05-03T22:31:43.265Z"
     }
   ],
   "edit_counts": {
-    ".gitignore": 1
+    "Sources/UI/Sidebar/SidebarViewModel.swift": 1,
+    "Sources/FileSystem/Local/LocalDirectoryEnumerator.swift": 1,
+    "docs/claude-sessions/bugs-054-056-navigation-and-loading/session-05-handoff.md": 1
   },
-  "anatomy_hits": 0,
+  "anatomy_hits": 4,
   "anatomy_misses": 1,
-  "repeated_reads_warned": 0,
+  "repeated_reads_warned": 2,
   "cerebrum_warnings": 0,
-  "stop_count": 2
+  "stop_count": 0
 }
