@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 609744,
-    "total_reads": 882,
-    "total_writes": 243,
-    "total_sessions": 69,
-    "anatomy_hits": 385,
-    "anatomy_misses": 489,
+    "total_tokens_estimated": 623235,
+    "total_reads": 896,
+    "total_writes": 244,
+    "total_sessions": 71,
+    "anatomy_hits": 394,
+    "anatomy_misses": 494,
     "repeated_reads_blocked": 54,
-    "estimated_savings_vs_bare_cli": 114952
+    "estimated_savings_vs_bare_cli": 116752
   },
   "sessions": [
     {
@@ -7591,6 +7591,112 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-05-03-1559",
+      "started": "2026-05-03T21:59:27.205Z",
+      "ended": "2026-05-03T22:04:31.325Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/MainWindow/PaneSession.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-handoff.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/Menus/PaneCommandProxy.swift",
+          "tokens_estimated": 1171,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/Menus/Sections/GoMenu.swift",
+          "tokens_estimated": 337,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/Toolbar/PaneToolbarViewModel.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/Toolbar/HistoryStack.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/Toolbar/PaneToolbar.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 1091,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Tests/UITests/MenusTests/PaneCommandProxyTests.swift",
+          "tokens_estimated": 853,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Tests/UITests/MenusTests/MenusTestSupport.swift",
+          "tokens_estimated": 855,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Tests/UITests/MainWindowTests/MainWindowTests.swift",
+          "tokens_estimated": 1013,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/Tests/UITests/MainWindowTests/MainWindowTestSupport.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading--s02-fix-back-navigation-bug-054/docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-fix-back-navigation-bug-054.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-02-plan.md",
+          "tokens_estimated": 3852,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 9639,
+        "output_tokens_estimated": 3852,
+        "reads_count": 14,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 9
       }
     }
   ],

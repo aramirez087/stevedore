@@ -1,11 +1,16 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:24:52.143Z
-> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:12:54.979Z
+> Files: 602 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
 - `epic.md` — Validate (~811 tok)
+
+## ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `.session-02-plan.md` — Session 02 Implementation Plan — Fix Back Navigation (Bug #054) (~3370 tok)
+- `session-02-handoff.md` — Session 02 Handoff — Fix Back Navigation (Bug #054); root cause, SDK discovery, changes, quality gate results (~600 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -597,9 +602,9 @@
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~3180 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
-- `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
+- `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~966 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
 - `WindowState.swift` — / Live, observable window-arrangement state for the current session. (~543 tok)
 
@@ -616,7 +621,7 @@
 - `ConnectMenu.swift` — / Connect menu: Connect to Server dialog (Cmd+K), Recent Connections submenu. (~177 tok)
 - `EditMenu.swift` — / Edit menu: Find (Cmd+F focuses the toolbar search field). (~140 tok)
 - `FileMenu.swift` — / File menu: New File, New Folder, Open, Open With, Move to Trash, Compress, Decompress. (~393 tok)
-- `GoMenu.swift` — / Go menu: Up, Back, Forward, Home, Computer, Recent Folders. (~337 tok)
+- `GoMenu.swift` — / Go menu: Up, Back, Forward, Home, Computer, Recent Folders. (~351 tok)
 - `ToolsMenu.swift` — / Tools menu: Compare/Sync, Multi-Rename, Application Uninstaller, Open in Terminal. (~249 tok)
 - `ViewMenu.swift` — / View menu: Show Hidden Files, Refresh, Sort By submenu, View As submenu. (~364 tok)
 - `WindowMenu.swift` — / Window menu: New Tab, Close Tab, Reopen Closed Tab, Next/Previous Tab. (~330 tok)
@@ -794,7 +799,7 @@
 
 ## Tests/UITests/MainWindowTests/
 
-- `MainWindowTests.swift` — Class: MainWindowTests (~1013 tok)
+- `MainWindowTests.swift` — Class: MainWindowTests (~1936 tok)
 - `MainWindowTestSupport.swift` — Struct: MWFakeTagsProvider (~743 tok)
 - `WindowStateTests.swift` — Class: WindowStateTests (~521 tok)
 
@@ -826,6 +831,10 @@
 - `UninstallerUITestSupport.swift` (~418 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
+
+## docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `session-02-handoff.md` — Session 02 Handoff — Fix Back Navigation (Bug #054) (~1090 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 
