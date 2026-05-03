@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T01:23:13.448Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T01:30:10.654Z
 > Files: 590 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/

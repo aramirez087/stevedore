@@ -18,6 +18,10 @@
 | 18:57 | swiftformat lint (19 files) | Sources/UI/Menus/, Tests/UITests/MenusTests/ | 0 files require formatting | ~30 tok |
 | 18:57 | swiftlint --strict (824 files) | Sources/UI/Menus/, Tests/UITests/MenusTests/ | 0 violations | ~30 tok |
 | 18:57 | swift build -Xswiftc -warnings-as-errors (full) | all targets | PASS 0 warnings | ~50 tok |
+
+## Session: 2026-05-02 19:32 (Session 27 re-verification pass)
+
+| 19:32 | Verified S27 already complete; ran all CI gates: swift build UIMenus+MainWindow+full, 25 MenusTests, swiftformat 0/19, swiftlint 0, xcodebuild SUCCESS | Sources/UI/Menus/, Sources/UI/MainWindow/, Tests/UITests/MenusTests/ | All passing | ~400 tok |
 | 18:57 | swift test (full suite) | all targets | 977 tests, 2 pre-existing failures (S18 flake + S25 worktree path) | ~50 tok |
 
 ## Session: 2026-05-01 16:10 (Session 10 verification)
@@ -765,6 +769,18 @@
 | 19:23 | Session end: 1 writes across 1 files (.session-26-plan.md) | 8 reads | ~12585 tok |
 
 ## Session: 2026-05-03 19:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 19:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:30 | Created ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-27-plan.md | — | ~7201 |
+| 19:30 | Session end: 1 writes across 1 files (.session-27-plan.md) | 6 reads | ~10475 tok |
+
+## Session: 2026-05-03 19:30
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
