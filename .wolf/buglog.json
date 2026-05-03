@@ -869,96 +869,97 @@
     },
     {
       "id": "bug-054",
-      "timestamp": "2026-05-03T15:35:00.000Z",
-      "error_message": "Back navigation broken: toolbar back button, Go > Back, and Cmd+[ all fail to return to the previous directory after navigating into Desktop.",
-      "file": "Sources/UI/MainWindow/PaneHost.swift",
-      "root_cause": "PaneCommandProxy is delivered to menu-bar Commands via `.focusedValue(\\.paneCommandProxy, isActive ? buildProxy() : nil)` at PaneHost.swift:50. SwiftUI's FocusedValue only propagates when a focused element exists inside the pane's subtree. The pane's `isActive` is driven by the custom `WindowState.activePaneID` (set on tap at MainWindowView.swift:69,75), but nothing in PaneHost is focusable until the user clicks a row in the FileBrowserView's List. Result: GoMenuCommands' @FocusedValue resolves to nil, Button(\"Back\") {...} is `.disabled(self.proxy?.canGoBack != true)`, so Go > Back and Cmd+[ no-op. HistoryStack/PaneToolbarViewModel/PaneSession unit logic is correct (ToolbarTests pass).",
-      "fix": "DIAGNOSIS-ONLY (Session 02 implements). Within Session 02 scope (PaneSession.swift, PaneCommandProxy.swift): expose first-class goBack/goForward/goUp/goHome/canGoBack/canGoForward on PaneSession that delegate to the toolbar view-model. Likely also needs PaneHost.swift scope-extension to add `.focusable()` (or switch to `.focusedSceneValue`) so the proxy reaches the menu Commands. Reproduce first to disambiguate chevron-only vs all-three failure.",
+      "timestamp": "2026-05-03T21:42:00.000Z",
+      "error_message": "Back navigation completely broken — toolbar back button, Go > Back menu, and ⌘[ keyboard shortcut all fail to navigate to previous folder",
+      "file": "Sources/UI/MainWindow/PaneSession.swift",
+      "root_cause": "Navigation history is not being recorded when navigating via double-click, OR the back action is not consuming the history stack correctly. After double-clicking into a subfolder, all back navigation methods leave the pane path unchanged.",
+      "fix": "Not yet fixed. Investigate PaneSession history stack push on navigate(to:) and verify PaneCommandProxy routes the back action to the correct pane session.",
       "tags": [
+        "ui",
         "navigation",
+        "back-button",
         "history",
-        "swiftui-focus",
-        "focused-value",
-        "menu-bar",
-        "diagnosis-only",
-        "session-02"
+        "file-browser",
+        "swiftui",
+        "user-reported"
       ],
-      "related_bugs": [],
+      "related_bugs": [
+        "bug-050"
+      ],
       "occurrences": 1,
-      "last_seen": "2026-05-03T15:35:00.000Z"
+      "last_seen": "2026-05-03T21:42:00.000Z"
     },
     {
       "id": "bug-055",
-      "timestamp": "2026-05-03T15:35:00.000Z",
-      "error_message": "Sidebar 'home' entry navigates to /System/Volumes/Data/home instead of the user's real home directory (/Users/<name>).",
+      "timestamp": "2026-05-03T21:42:00.000Z",
+      "error_message": "\"home\" sidebar item navigates to /System/Volumes/Data/home (empty system folder) instead of user home directory ~/",
       "file": "Sources/UI/Sidebar/SidebarViewModel.swift",
-      "root_cause": "There is no synthetic Home sidebar item. `SidebarViewModel.start()` (line 52-57) populates `volumes` from `volumeDiscovery.currentVolumes()` which calls `FileManager().mountedVolumeURLs(... [.skipHiddenVolumes])` (VolumeDiscovery.swift:36-41). On macOS that list includes the autofs mount at `/System/Volumes/Data/home` with `volumeName == \"home\"`. Selection routes via MainWindowView.filePath(for: .volume(url)) -> FilePath(scheme: .local, posix: url.path) (MainWindowView.swift:91-92), so the pane navigates to /System/Volumes/Data/home. Note: AppEnvironment.swift:49 and PaneHost.swift:74-76 use NSHomeDirectory() correctly for the pane initial path and Go > Home menu action; the bug is exclusive to the sidebar volumes pipeline.",
-      "fix": "DIAGNOSIS-ONLY (Session 03 implements). Within Session 03 scope (SidebarViewModel.swift): in start() and the .mounted event branch, drop the `/System/Volumes/Data/home` entry and prepend a synthetic SidebarVolume(name: \"Home\", url: FileManager.default.homeDirectoryForCurrentUser, isEjectable: false, isRemovable: false). Recommended over a pure filter because it preserves the user's mental model.",
+      "root_cause": "The 'home' SidebarItemID is resolving via a firmlink path on APFS (/System/Volumes/Data/home) instead of resolving via FileManager.default.homeDirectoryForCurrentUser which returns /Users/aramirez.",
+      "fix": "Not yet fixed. In SidebarViewModel or the provider that resolves the home URL, use FileManager.default.homeDirectoryForCurrentUser (or URL.homeDirectory) instead of constructing path from volume firmlinks.",
       "tags": [
+        "ui",
         "sidebar",
+        "navigation",
         "home-directory",
-        "macos-firmlinks",
-        "autofs",
-        "volume-discovery",
-        "diagnosis-only",
-        "session-03"
+        "firmlink",
+        "apfs",
+        "user-reported"
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-03T15:35:00.000Z"
+      "last_seen": "2026-05-03T21:42:00.000Z"
     },
     {
       "id": "bug-056",
-      "timestamp": "2026-05-03T15:35:00.000Z",
-      "error_message": "Opening a folder with a single file shows the ProgressView for 3+ seconds (e.g. Desktop with one .md file).",
-      "file": "Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
-      "root_cause": "Multiple compounding issues: (1) FileBrowserView.loadItems (PaneHost.swift:301-322) only flips isLoading=false after the entire AsyncThrowingStream finishes, so even a fast first-yield is invisible until the loop terminates. (2) LocalDirectoryEnumerator.stream wraps work in Task.detached(priority: .utility) (line 13); .utility QoS can be deprioritised under load. LocalFileSystemProvider.attributes makes the same choice (LocalFileSystemProvider.swift:36). (3) The enumerator prefetches the full URLResourceMapperKeys set, which includes .fileSecurityKey and .isPackageKey (URLResourceMapper.swift:5-18). (4) Per-item the loop calls url.resourceValues(forKeys: URLResourceMapperKeys) AGAIN (LocalDirectoryEnumerator.swift:78-81), duplicating the prefetch's work and forcing an extra kernel round-trip per file. (5) An additional resourceValues(forKeys: [.isSymbolicLinkKey]) call when followsSymbolicLinks==false (lines 71-76) is also redundant. (6) macOS TCC consent prompt for Desktop/Documents/Downloads is a one-time first-launch latency partly outside app control.",
-      "fix": "DIAGNOSIS-ONLY (Session 04 implements). Within Session 04 scope (LocalFileSystemProvider.swift, LocalDirectoryEnumerator.swift): bump priority from .utility to .userInitiated; eliminate the duplicate per-item resourceValues fetch; introduce a smaller in-file enumerationKeys constant (without .fileSecurityKey) for prefetch and read fileSecurity lazily in attributes(at:). Out-of-scope follow-up: flip isLoading=false in FileBrowserView.loadItems on first yielded item so single-item folders render instantly (lives in PaneHost.swift).",
+      "timestamp": "2026-05-03T21:42:00.000Z",
+      "error_message": "Directory listing shows indefinite loading spinner for several seconds before content appears, even for small folders",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "Directory enumeration via LocalFileSystemProvider appears to be slow or blocking on first access. The Desktop folder (1 file) took 3+ seconds with a visible spinner. Likely a thread scheduling or async handoff issue — enumeration may be hitting a slow path or not being dispatched promptly.",
+      "fix": "Not yet fixed. Profile the LocalDirectoryEnumerator / LocalFileSystemProvider enumerate() path. Verify Task.detached dispatch is actually running promptly and not being delayed by actor contention.",
       "tags": [
+        "ui",
         "performance",
-        "filesystem",
-        "async-await",
-        "qos",
-        "url-resource-values",
-        "tcc",
-        "diagnosis-only",
-        "session-04"
+        "spinner",
+        "directory-load",
+        "enumeration",
+        "file-browser",
+        "user-reported"
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-03T15:35:00.000Z"
+      "last_seen": "2026-05-03T21:42:00.000Z"
     },
     {
       "id": "bug-057",
-      "timestamp": "2026-05-03T22:03:45.185Z",
-      "error_message": "Wrong reference: utility should be userInitiated",
-      "file": "Sources/FileSystem/Local/LocalDirectoryEnumerator.swift",
-      "root_cause": "Used \"utility\" instead of \"userInitiated\"",
-      "fix": "Changed utility → userInitiated",
+      "timestamp": "2026-05-03T22:18:09.508Z",
+      "error_message": "Significant refactor of ",
+      "file": "../epic-toolkit/scripts/run-sessions.sh",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→13 lines (2 removed)",
       "tags": [
         "auto-detected",
-        "wrong-reference",
-        "swift"
+        "refactor",
+        "sh"
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-03T22:03:45.185Z"
+      "last_seen": "2026-05-03T22:18:09.508Z"
     },
     {
       "id": "bug-058",
-      "timestamp": "2026-05-03T22:04:07.075Z",
-      "error_message": "Wrong reference: utility should be userInitiated",
-      "file": "Sources/FileSystem/Local/LocalFileSystemProvider.swift",
-      "root_cause": "Used \"utility\" instead of \"userInitiated\"",
-      "fix": "Changed utility → userInitiated",
+      "timestamp": "2026-05-03T22:41:31.990Z",
+      "error_message": "Significant refactor of ",
+      "file": "../epic-toolkit/scripts/run-sessions.sh",
+      "root_cause": "16 lines replaced/restructured",
+      "fix": "Rewrote 37→53 lines (16 removed)",
       "tags": [
         "auto-detected",
-        "wrong-reference",
-        "swift"
+        "refactor",
+        "sh"
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-03T22:04:07.075Z"
+      "last_seen": "2026-05-03T22:41:31.990Z"
     }
   ]
 }
