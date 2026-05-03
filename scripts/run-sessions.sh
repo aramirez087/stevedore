@@ -1456,7 +1456,7 @@ for (( wn=1; wn<=WAVE_COUNT; wn++ )); do
             ! $LIVE_UI && ok "  ⇢ merged session $(printf '%02d' "$sid") into trunk"
             MERGED_SESSIONS+=("$sid ${SESSION_FILE_BASENAME[$sid]}")
           else
-            local _conflicted _non_meta
+            _conflicted=""; _non_meta=""
             _conflicted="$(git -C "$TRUNK_WORKTREE_DIR" diff --name-only --diff-filter=U 2>/dev/null || true)"
             _non_meta="$(printf '%s\n' "$_conflicted" | grep -v '^\.wolf/' | grep -v '^$' || true)"
             if [[ -n "$_conflicted" ]] && [[ -z "$_non_meta" ]]; then
@@ -1504,7 +1504,7 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null
         if [[ -d "$sess_wt" ]]; then
           git -C "$TRUNK_WORKTREE_DIR" worktree remove "$sess_wt" --force 2>/dev/null || true
         fi
-        local _sb="${SESSION_BRANCH_BY_ID[$sid]:-}"
+        _sb="${SESSION_BRANCH_BY_ID[$sid]:-}"
         if [[ -n "$_sb" && "$_sb" != "$BRANCH" ]]; then
           git branch -D "$_sb" 2>/dev/null || true
         fi
