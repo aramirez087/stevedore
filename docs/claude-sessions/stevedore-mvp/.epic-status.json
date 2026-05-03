@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777765236.6486678,
+  "started_at": 1777771178.258899,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -260,8 +260,8 @@
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 458.0,
-      "started_at": 1777765237.301627
+      "elapsed": 439.0,
+      "started_at": 1777771178.868472
     },
     "27": {
       "status": "done",
@@ -271,19 +271,18 @@
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 954.0,
-      "started_at": 1777765704.244711
+      "elapsed": 426.0,
+      "started_at": 1777771619.744907
     },
     "28": {
-      "status": "running",
+      "status": "pending",
       "slug": "ci-gate",
       "wave": 7,
       "title": "Ci Gate",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 2341.700264930725,
-      "started_at": 1777766665.5874271
+      "elapsed": 0.0
     }
   }
 }
