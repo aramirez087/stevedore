@@ -1,5 +1,6 @@
 import Core
 import DesignSystem
+import Foundation
 import SwiftUI
 import UIMenus
 import UIToolbar
@@ -34,7 +35,7 @@ public struct PaneHost: View {
             PaneToolbar(viewModel: self.session.toolbarViewModel)
             PaneTabStrip(session: self.session)
             Divider()
-            PaneContentPlaceholder(path: self.session.currentPath)
+            FileBrowserView(session: self.session)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .overlay(self.activeBorder)
@@ -168,28 +169,106 @@ private struct PaneTabButton: View {
     }
 }
 
-// MARK: - PaneContentPlaceholder
+// MARK: - FileBrowserView
 
-/// Minimal content area — full implementation deferred to UIPane (Session 16).
-private struct PaneContentPlaceholder: View {
-    let path: FilePath
+/// Observes `session` directly so path changes (sidebar clicks, toolbar nav, in-pane
+/// folder clicks) all update this view without relying on PaneHost to re-render first.
+private struct FileBrowserView: View {
+    @Bindable var session: PaneSession
+
+    @State private var items: [FileItem] = []
+    @State private var isLoading = true
+    @State private var errorMessage: String?
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack {
-            Spacer()
-            Image(systemName: "folder")
-                .font(.system(size: 48))
-                .foregroundStyle(self.theme.colors.textSecondary)
-            Text(self.path.posixString)
-                .font(self.theme.typography.caption)
-                .foregroundStyle(self.theme.colors.textSecondary)
-                .lineLimit(1)
-                .truncationMode(.middle)
-                .padding(.horizontal, Spacing.md)
-            Spacer()
+        ZStack {
+            self.theme.colors.background.ignoresSafeArea()
+            if self.isLoading {
+                ProgressView()
+            } else if self.items.isEmpty {
+                VStack(spacing: Spacing.sm) {
+                    if let msg = self.errorMessage {
+                        Image(systemName: "exclamationmark.triangle")
+                            .font(.system(size: 32))
+                            .foregroundStyle(self.theme.colors.textSecondary)
+                        Text(msg)
+                            .font(self.theme.typography.caption)
+                            .foregroundStyle(self.theme.colors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, Spacing.md)
+                    } else {
+                        Text("Empty folder")
+                            .font(self.theme.typography.caption)
+                            .foregroundStyle(self.theme.colors.textSecondary)
+                        Text("Hidden items are not shown")
+                            .font(self.theme.typography.caption)
+                            .foregroundStyle(self.theme.colors.textSecondary.opacity(0.6))
+                    }
+                }
+            } else {
+                List(self.items, id: \.path) { item in
+                    HStack(spacing: Spacing.sm) {
+                        FileKindIcon(
+                            kind: item.kind,
+                            fileExtension: {
+                                let ext = (item.displayName as NSString).pathExtension
+                                return ext.isEmpty ? nil : ext
+                            }(),
+                            size: .sm
+                        )
+                        Text(item.displayName)
+                            .font(self.theme.typography.body)
+                            .foregroundStyle(self.theme.colors.textPrimary)
+                        Spacer()
+                        if item.kind != .directory, let bytes = item.attributes.sizeInBytes {
+                            Text(ByteCountFormatter.string(fromByteCount: bytes, countStyle: .file))
+                                .font(self.theme.typography.caption)
+                                .foregroundStyle(self.theme.colors.textSecondary)
+                                .frame(width: 80, alignment: .trailing)
+                        }
+                        if let date = item.attributes.modificationDate {
+                            Text(date, style: .date)
+                                .font(self.theme.typography.caption)
+                                .foregroundStyle(self.theme.colors.textSecondary)
+                                .frame(width: 90, alignment: .trailing)
+                        }
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if item.kind == .directory {
+                            self.session.navigate(to: item.path)
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(self.theme.colors.background)
+        .task(id: self.session.currentPath) {
+            await self.loadItems()
+        }
+    }
+
+    private func loadItems() async {
+        self.isLoading = true
+        self.errorMessage = nil
+        var collected: [FileItem] = []
+        do {
+            for try await item in self.session.provider.enumerate(
+                at: self.session.currentPath,
+                options: .default
+            ) {
+                collected.append(item)
+                if Task.isCancelled { break }
+            }
+        } catch {
+            self.errorMessage = error.localizedDescription
+        }
+        self.items = collected.sorted {
+            if $0.kind == .directory && $1.kind != .directory { return true }
+            if $0.kind != .directory && $1.kind == .directory { return false }
+            return $0.displayName.localizedCompare($1.displayName) == .orderedAscending
+        }
+        self.isLoading = false
     }
 }

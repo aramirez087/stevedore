@@ -1,160 +1,38 @@
 {
-  "session_id": "session-2026-05-03-0833",
-  "started": "2026-05-03T14:33:19.338Z",
+  "session_id": "session-2026-05-03-1044",
+  "started": "2026-05-03T16:44:50.469Z",
   "files_read": {
-    "/Users/aramirez/Code/Stevedore/.claude/settings.json": {
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift": {
       "count": 1,
-      "tokens": 441,
-      "first_read": "2026-05-03T14:35:26.167Z"
+      "tokens": 2833,
+      "first_read": "2026-05-03T16:55:00.222Z"
     },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallExecutor.swift": {
-      "count": 1,
-      "tokens": 598,
-      "first_read": "2026-05-03T14:35:35.281Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift": {
-      "count": 1,
-      "tokens": 706,
-      "first_read": "2026-05-03T14:35:42.750Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AppMetadataReader.swift": {
-      "count": 1,
-      "tokens": 200,
-      "first_read": "2026-05-03T14:36:11.555Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift": {
-      "count": 1,
-      "tokens": 1118,
-      "first_read": "2026-05-03T14:36:11.995Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/AssociatedFilesScanner.swift": {
-      "count": 1,
-      "tokens": 200,
-      "first_read": "2026-05-03T14:36:16.119Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/MatchScorer.swift": {
-      "count": 1,
-      "tokens": 100,
-      "first_read": "2026-05-03T14:36:16.314Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/UI/UninstallerUI/UninstallerViewModel.swift": {
-      "count": 1,
-      "tokens": 1358,
-      "first_read": "2026-05-03T14:36:20.450Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallerTestSupport.swift": {
-      "count": 1,
-      "tokens": 598,
-      "first_read": "2026-05-03T14:36:20.824Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/UninstallPlan.swift": {
-      "count": 1,
-      "tokens": 122,
-      "first_read": "2026-05-03T14:36:23.781Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Sources/Features/Uninstaller/SearchPaths.swift": {
-      "count": 1,
-      "tokens": 120,
-      "first_read": "2026-05-03T14:36:24.153Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerSheetTests.swift": {
-      "count": 1,
-      "tokens": 368,
-      "first_read": "2026-05-03T14:36:28.278Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift": {
-      "count": 1,
-      "tokens": 765,
-      "first_read": "2026-05-03T14:37:15.540Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift": {
-      "count": 1,
-      "tokens": 734,
-      "first_read": "2026-05-03T14:37:15.871Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Package.swift": {
-      "count": 1,
-      "tokens": 2234,
-      "first_read": "2026-05-03T14:38:13.712Z"
-    },
-    "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/DefaultSelectionTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/UI/Toolbar/PaneToolbar.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-03T14:39:48.760Z"
+      "first_read": "2026-05-03T16:55:35.691Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/SystemPathLockTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/UI/Toolbar/PaneToolbarViewModel.swift": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-05-03T14:39:56.127Z"
+      "first_read": "2026-05-03T16:55:41.385Z"
     },
-    "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/ConfirmationTextTests.swift": {
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneSession.swift": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T14:39:56.409Z"
+      "tokens": 743,
+      "first_read": "2026-05-03T16:55:53.144Z"
+    },
+    "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowView.swift": {
+      "count": 2,
+      "tokens": 1091,
+      "first_read": "2026-05-03T16:57:03.614Z"
     }
   },
-  "files_written": [
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerUITestSupport.swift",
-      "action": "create",
-      "tokens": 448,
-      "at": "2026-05-03T14:38:28.098Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/.mcp.json",
-      "action": "create",
-      "tokens": 37,
-      "at": "2026-05-03T14:38:40.135Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/.claude/settings.json",
-      "action": "edit",
-      "tokens": 18,
-      "at": "2026-05-03T14:38:43.189Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift",
-      "action": "edit",
-      "tokens": 762,
-      "at": "2026-05-03T14:38:57.968Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift",
-      "action": "edit",
-      "tokens": 593,
-      "at": "2026-05-03T14:39:06.383Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift",
-      "action": "edit",
-      "tokens": 439,
-      "at": "2026-05-03T14:39:12.621Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
-      "action": "edit",
-      "tokens": 1344,
-      "at": "2026-05-03T14:39:31.330Z"
-    },
-    {
-      "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift",
-      "action": "edit",
-      "tokens": 11,
-      "at": "2026-05-03T14:40:23.184Z"
-    }
-  ],
-  "edit_counts": {
-    "Tests/UITests/UninstallerUITests/UninstallerUITestSupport.swift": 1,
-    ".mcp.json": 1,
-    ".claude/settings.json": 1,
-    "Tests/FeaturesTests/UninstallerTests/MatchScorerTests.swift": 1,
-    "Tests/FeaturesTests/UninstallerTests/AssociatedFilesScannerTests.swift": 1,
-    "Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift": 1,
-    "Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift": 2
-  },
-  "anatomy_hits": 15,
-  "anatomy_misses": 3,
-  "repeated_reads_warned": 0,
+  "files_written": [],
+  "edit_counts": {},
+  "anatomy_hits": 3,
+  "anatomy_misses": 2,
+  "repeated_reads_warned": 1,
   "cerebrum_warnings": 0,
-  "stop_count": 2
+  "stop_count": 1
 }

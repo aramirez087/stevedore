@@ -3,6 +3,10 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
+| 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
+
+| 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
+
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
 ## Session: 2026-05-02 19:24 (Session 26 — Main Window Shell verification)
@@ -882,3 +886,74 @@
 | 08:40 | Edited Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | removed 67 lines | ~10 |
 | 08:40 | Installed XcodeBuildMCP; configured .mcp.json project-scoped; added 9 new uninstaller tests across MatchScorer/Scanner/Executor/ViewModel | .mcp.json, .claude/settings.json, Tests/FeaturesTests/UninstallerTests/{MatchScorerTests,AssociatedFilesScannerTests,UninstallExecutorTests}.swift, Tests/UITests/UninstallerUITests/UninstallerViewModelTests.swift | all Uninstaller suites green (10/10 passed) | ~2k |
 | 08:41 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |
+| 08:52 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |
+| 08:56 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |
+| 08:57 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |
+| 09:01 | Session end: 8 writes across 7 files (UninstallerUITestSupport.swift, .mcp.json, settings.json, MatchScorerTests.swift, AssociatedFilesScannerTests.swift) | 18 reads | ~13314 tok |
+
+## Session: 2026-05-03 09:02
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:03 | Fixed "Invalid frame dimension" crash in DualPaneLayout | Sources/UI/MainWindow/DualPaneLayout.swift | Added guard total > 0 and max(0, width) clamping to leftWidth() | ~97 |
+| 09:03 | Updated buglog.json with frame dimension fix (bug-045) | .wolf/buglog.json | Documented root cause and fix | ~50 |
+| 09:04 | Updated cerebrum.md Do-Not-Repeat section | .wolf/cerebrum.md | Added reminder about frame dimension calculations in layout | ~75 |
+| 09:04 | Session end: 1 writes across 1 files (DualPaneLayout.swift) | 1 reads | ~696 tok |
+
+## Session: 2026-05-03 09:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:07 | Edited Sources/UI/Sidebar/Sections/DevicesSection.swift | modified Section() | ~251 |
+| 09:08 | Session end: 1 writes across 1 files (DevicesSection.swift) | 6 reads | ~2328 tok |
+
+## Session: 2026-05-03 09:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 09:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:22 | Created project.yml | — | ~389 |
+| 09:23 | Edited Package.swift | 3→2 lines | ~18 |
+| 09:23 | Edited Package.swift | removed 18 lines | ~29 |
+| 09:25 | Fixed app not starting — SPM exe target built bare binary, not .app bundle | Package.swift, project.yml, Stevedore.xcodeproj | created xcodeproj via xcodegen; removed executableTarget from Package.swift | ~800 |
+| 09:24 | Session end: 3 writes across 2 files (project.yml, Package.swift) | 0 reads | ~439 tok |
+
+## Session: 2026-05-03 09:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:28 | Edited project.yml | expanded (+16 lines) | ~159 |
+| 09:28 | Session end: 1 writes across 1 files (project.yml) | 1 reads | ~548 tok |
+
+## Session: 2026-05-03 09:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 09:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 09:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:45 | Edited Sources/UI/MainWindow/PaneHost.swift | added 1 import(s) | ~26 |
+| 09:45 | Edited Sources/UI/MainWindow/PaneHost.swift | modified FileBrowserView() | ~73 |
+| 09:45 | Edited Sources/UI/MainWindow/PaneHost.swift | added error handling | ~1082 |
+| 09:47 | Session end: 3 writes across 1 files (PaneHost.swift) | 20 reads | ~13853 tok |
+| 10:00 | Edited Sources/UI/MainWindow/PaneHost.swift | 7→2 lines | ~31 |
+| 10:00 | Edited Sources/UI/MainWindow/PaneHost.swift | modified loadItems() | ~1215 |
+
+| 15:58 | Refactored FileBrowserView: @Bindable session (direct observation), single-click dir nav, partial results on error, hidden-files hint | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~200 tok |
+| 10:01 | Session end: 5 writes across 1 files (PaneHost.swift) | 22 reads | ~16929 tok |
+
+## Session: 2026-05-03 10:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

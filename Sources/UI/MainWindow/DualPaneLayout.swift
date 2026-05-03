@@ -35,9 +35,11 @@ public struct DualPaneLayout<Left: View, Right: View>: View {
     }
 
     private func leftWidth(in total: CGFloat) -> CGFloat {
+        guard total > 0 else { return 0 }
         let clamped = max(WindowState.minFraction, min(WindowState.maxFraction, self.splitFraction))
         // Subtract half the divider strip (8 pt) so left + divider + right = total.
-        return total * clamped - 4
+        let width = total * clamped - 4
+        return max(0, width)
     }
 }
 

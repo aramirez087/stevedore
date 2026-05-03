@@ -1,0 +1,69 @@
+name: Stevedore
+
+options:
+  bundleIdPrefix: com.stevedore
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: false
+  xcodeVersion: "16"
+
+packages:
+  Stevedore:
+    path: .
+
+targets:
+  Stevedore:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: App/Stevedore
+        excludes:
+          - "*.entitlements"
+    info:
+      path: App/Stevedore/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundlePackageType: APPL
+        NSHighResolutionCapable: true
+        LSApplicationCategoryType: public.app-category.utilities
+    entitlements:
+      path: App/Stevedore/Stevedore.entitlements
+    dependencies:
+      - package: Stevedore
+        product: Core
+      - package: Stevedore
+        product: MainWindow
+      - package: Stevedore
+        product: FeaturesOperations
+      - package: Stevedore
+        product: FileSystemLocal
+      - package: Stevedore
+        product: ServicesSettings
+      - package: Stevedore
+        product: UISidebar
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        PRODUCT_BUNDLE_IDENTIFIER: com.stevedore.app
+        ENABLE_HARDENED_RUNTIME: NO
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+        SWIFT_STRICT_CONCURRENCY: complete
+        OTHER_SWIFT_FLAGS: -enable-upcoming-feature ExistentialAny
+
+schemes:
+  Stevedore:
+    build:
+      targets:
+        Stevedore: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

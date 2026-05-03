@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9D76F8F3419EA2B3E0358E /* StevedoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DACDEFB717302A2C215E44D /* StevedoreApp.swift */; };
+		72C901DAA5BDED336957E6A0 /* ServicesSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 6E03A6BF846C7AD09EBA16CC /* ServicesSettings */; };
+		8382AFFD9F01FFC6BC470524 /* FileSystemLocal in Frameworks */ = {isa = PBXBuildFile; productRef = 749901ECC379229058C5FDAB /* FileSystemLocal */; };
+		8F130CE0AB45E13696EBBD70 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE954BBA7FAF28C5AA4D51 /* Core */; };
+		9C0C85EC78E985B05B030F39 /* FeaturesOperations in Frameworks */ = {isa = PBXBuildFile; productRef = 6294977DFDCFA5091C111A35 /* FeaturesOperations */; };
+		A7AC52CC706432CE1D203CF1 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B103BDFCA22D90DBB42DAF6 /* AppEnvironment.swift */; };
+		A900CEF6A115303D59F71D42 /* UISidebar in Frameworks */ = {isa = PBXBuildFile; productRef = 5951D5C3D7C601B061F03827 /* UISidebar */; };
+		EF315F74F9E850AE704B0CB1 /* MainWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAAABBA0F5BB510A882848E /* MainWindow */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DACDEFB717302A2C215E44D /* StevedoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StevedoreApp.swift; sourceTree = "<group>"; };
+		2D70268DB9FA02C33667A8B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3DC7247D734BBA54EA8E61B9 /* Stevedore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stevedore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68167EE028493BB02D4D4C56 /* Stevedore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stevedore; path = .; sourceTree = SOURCE_ROOT; };
+		7B103BDFCA22D90DBB42DAF6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5472A82AA1DD42082F23E03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F130CE0AB45E13696EBBD70 /* Core in Frameworks */,
+				EF315F74F9E850AE704B0CB1 /* MainWindow in Frameworks */,
+				9C0C85EC78E985B05B030F39 /* FeaturesOperations in Frameworks */,
+				8382AFFD9F01FFC6BC470524 /* FileSystemLocal in Frameworks */,
+				72C901DAA5BDED336957E6A0 /* ServicesSettings in Frameworks */,
+				A900CEF6A115303D59F71D42 /* UISidebar in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1359EB43BF125230C6200E5C /* Stevedore */ = {
+			isa = PBXGroup;
+			children = (
+				7B103BDFCA22D90DBB42DAF6 /* AppEnvironment.swift */,
+				2D70268DB9FA02C33667A8B6 /* Info.plist */,
+				1DACDEFB717302A2C215E44D /* StevedoreApp.swift */,
+			);
+			name = Stevedore;
+			path = App/Stevedore;
+			sourceTree = "<group>";
+		};
+		28DC83C70308BC26ABB7952E = {
+			isa = PBXGroup;
+			children = (
+				90D90774304201D221A5582E /* Packages */,
+				1359EB43BF125230C6200E5C /* Stevedore */,
+				3777BDEEBAAEBDDBBC450CBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3777BDEEBAAEBDDBBC450CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DC7247D734BBA54EA8E61B9 /* Stevedore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90D90774304201D221A5582E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				68167EE028493BB02D4D4C56 /* Stevedore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		489800C816A4DAAD222FA48F /* Stevedore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9A78DBC0B94E23D5E0DA2A /* Build configuration list for PBXNativeTarget "Stevedore" */;
+			buildPhases = (
+				19DB9C24AAE98DB2B9E30080 /* Sources */,
+				F5472A82AA1DD42082F23E03 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stevedore;
+			packageProductDependencies = (
+				6EEE954BBA7FAF28C5AA4D51 /* Core */,
+				0AAAABBA0F5BB510A882848E /* MainWindow */,
+				6294977DFDCFA5091C111A35 /* FeaturesOperations */,
+				749901ECC379229058C5FDAB /* FileSystemLocal */,
+				6E03A6BF846C7AD09EBA16CC /* ServicesSettings */,
+				5951D5C3D7C601B061F03827 /* UISidebar */,
+			);
+			productName = Stevedore;
+			productReference = 3DC7247D734BBA54EA8E61B9 /* Stevedore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F22A2CFACEA11B5B105DAD22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					489800C816A4DAAD222FA48F = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8DD30D61D83F655631DF8EC8 /* Build configuration list for PBXProject "Stevedore" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 28DC83C70308BC26ABB7952E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AB291D369A099635856ACD41 /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				489800C816A4DAAD222FA48F /* Stevedore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19DB9C24AAE98DB2B9E30080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7AC52CC706432CE1D203CF1 /* AppEnvironment.swift in Sources */,
+				3A9D76F8F3419EA2B3E0358E /* StevedoreApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		09D585B3BDA07CA885934851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/Stevedore/Stevedore.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = App/Stevedore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature ExistentialAny";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stevedore.app;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		162107BE5FBB8115C46C7187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		77C866C39E6D04CF8E645FF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/Stevedore/Stevedore.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = App/Stevedore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				OTHER_SWIFT_FLAGS = "-enable-upcoming-feature ExistentialAny";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stevedore.app;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A729C291F7D936CEB6B4AA30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DD30D61D83F655631DF8EC8 /* Build configuration list for PBXProject "Stevedore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A729C291F7D936CEB6B4AA30 /* Debug */,
+				162107BE5FBB8115C46C7187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FD9A78DBC0B94E23D5E0DA2A /* Build configuration list for PBXNativeTarget "Stevedore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D585B3BDA07CA885934851 /* Debug */,
+				77C866C39E6D04CF8E645FF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AB291D369A099635856ACD41 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AAAABBA0F5BB510A882848E /* MainWindow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MainWindow;
+		};
+		5951D5C3D7C601B061F03827 /* UISidebar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UISidebar;
+		};
+		6294977DFDCFA5091C111A35 /* FeaturesOperations */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeaturesOperations;
+		};
+		6E03A6BF846C7AD09EBA16CC /* ServicesSettings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ServicesSettings;
+		};
+		6EEE954BBA7FAF28C5AA4D51 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		749901ECC379229058C5FDAB /* FileSystemLocal */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileSystemLocal;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F22A2CFACEA11B5B105DAD22 /* Project object */;
+}

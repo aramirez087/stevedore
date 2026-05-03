@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T14:40:23.179Z
-> Files: 592 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T16:00:53.556Z
+> Files: 593 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -16,7 +16,8 @@
 - `.epic-orchestrator.log` (~10719 tok)
 - `.mcp.json` (~37 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
-- `Package.swift` — swift-tools-version: 6.0 (~2234 tok)
+- `Package.swift` — swift-tools-version: 6.0 (~2070 tok)
+- `project.yml` (~456 tok)
 
 ## .build/
 
@@ -582,12 +583,12 @@
 ## Sources/UI/MainWindow/
 
 - `AppCommands.swift` — / Top-level `Commands` that compose all seven menu-bar sections. (~160 tok)
-- `DualPaneLayout.swift` — / Custom horizontal split that exposes `splitFraction` as a `Binding`. (~592 tok)
+- `DualPaneLayout.swift` — / Custom horizontal split that exposes `splitFraction` as a `Binding`. (~632 tok)
 - `MainWindowModel.swift` — / Owns all window state and coordinates the sidebar, two pane sessions, and operation queue. (~1195 tok)
 - `MainWindowModule.swift` — / Marker namespace for the `MainWindow` module — root window scene and DI composition root. (~49 tok)
 - `MainWindowScene.swift` — / The application's primary window scene. (~156 tok)
 - `MainWindowView.swift` — / Top-level window view: sidebar + dual panes + optional transfers panel. (~1091 tok)
-- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~1849 tok)
+- `PaneHost.swift` — / Per-pane composition: PaneToolbar + minimal tab strip + content placeholder. (~2833 tok)
 - `PaneID.swift` — / Identifies one of the two panes in the dual-pane layout. (~40 tok)
 - `PaneSession.swift` — / Per-pane view model: owns the active provider, current path, history, and tab list. (~743 tok)
 - `TransfersPanel.swift` — / Minimal transfers queue view that auto-shows when the operation queue is non-empty. (~774 tok)
@@ -651,7 +652,7 @@
 ## Sources/UI/Sidebar/Sections/
 
 - `ConnectionsSection.swift` — / Lists saved remote host descriptors with a live status indicator. (~542 tok)
-- `DevicesSection.swift` — / Lists mounted volumes; shows an eject button for ejectable disks. (~299 tok)
+- `DevicesSection.swift` — / Lists mounted volumes; shows an eject button for ejectable disks. (~300 tok)
 - `FavoritesSection.swift` — / Editable list of user bookmarks; supports add-via-drop and remove/reorder via context menu. (~312 tok)
 - `TagsSection.swift` — / Read-only list of Finder tag names loaded by `SidebarViewModel.start()`. (~111 tok)
 

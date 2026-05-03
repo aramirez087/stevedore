@@ -15,7 +15,6 @@ struct DevicesSection: View {
                             ? "externaldrive.connected.to.line.below"
                             : "internaldrive"
                     )
-                    .tag(SidebarItemID.volume(volume.url))
                     if volume.isEjectable {
                         Spacer()
                         Button {
@@ -27,6 +26,7 @@ struct DevicesSection: View {
                         .buttonStyle(.plain)
                     }
                 }
+                .tag(SidebarItemID.volume(volume.url))
             }
         }
     }

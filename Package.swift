@@ -193,8 +193,7 @@ let package = Package(
     name: "Stevedore",
     platforms: [.macOS(.v14)],
     products:
-    libraryModules.map { libraryProduct($0.name) }
-        + [.executable(name: "Stevedore", targets: ["Stevedore"])],
+    libraryModules.map { libraryProduct($0.name) },
     dependencies: [
         .package(url: "https://github.com/orlandos-nl/Citadel.git", .upToNextMajor(from: "0.7.0")),
         .package(url: "https://github.com/soto-project/soto.git", .upToNextMajor(from: "7.0.0")),
@@ -203,21 +202,6 @@ let package = Package(
     ],
     targets:
     libraryModules.map { libraryTarget($0) }
-        + [
-            .executableTarget(
-                name: "Stevedore",
-                dependencies: [
-                    .target(name: "Core"),
-                    .target(name: "MainWindow"),
-                    .target(name: "FeaturesOperations"),
-                    .target(name: "FileSystemLocal"),
-                    .target(name: "ServicesSettings"),
-                    .target(name: "UISidebar"),
-                ],
-                path: "App/Stevedore",
-                swiftSettings: baseSwiftSettings
-            ),
-        ]
         + testTargetSpecs.map { testTarget($0) },
     swiftLanguageModes: [.v6]
 )

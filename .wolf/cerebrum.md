@@ -11,6 +11,7 @@
 ## Key Learnings
 
 - **Project:** Stevedore
+- **SwiftUI List selection with .tag() inside containers:** When a List row contains multiple subviews (e.g., HStack with row + button), the `.tag()` modifier must be on the outermost container (the HStack), not on a child view inside it. Otherwise, only the child view becomes selectable, not the entire row. This affects both click target and selection binding updates.
 - **SwiftFormat `--lint` argument order (0.59 bug):** Pass paths BEFORE `--lint` flag: `swiftformat <paths> --lint`, not `swiftformat --lint <paths>`.
 - **`ByteCountFormatter` has no `locale` property on macOS:** The property does not exist in the public API. Store locale in wrapper but don't apply it; test against a reference formatter with same countStyle.
 - **`TimeZone.gmt` vs `TimeZone(secondsFromGMT:)`:** On macOS 26 SDK, `TimeZone(secondsFromGMT:)` returns `TimeZone?` (optional). Use `TimeZone.gmt` (macOS 13+, non-optional) in tests to stay warning-clean.
@@ -26,6 +27,8 @@
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
 
+- [2026-05-03] **SPM executableTarget does NOT produce a .app bundle in Xcode.** Xcode treats it as a command-line tool; `Bundle.main.bundleIdentifier` is nil, SwiftUI's WindowGroup never shows a window, and the log says "Cannot index window tabs due to missing main bundle identifier". Fix: use `xcodegen` + `project.yml` to create a real `.xcodeproj` with `type: application`. Remove the `executableTarget` from Package.swift to avoid `@main` conflicts. Tests and library builds still work via `swift build`.
+- [2026-05-03] **Frame dimension calculations in layout:** `DualPaneLayout.leftWidth()` can produce negative widths if the total available width is small or zero during initial layout. Always guard against zero/negative widths with `guard total > 0` and `max(0, calculatedValue)` to prevent "Invalid frame dimension" crashes.
 - [2026-05-02] `swift test --filter SidebarTests` matches **zero** classes — none of the test class names contain that exact substring. Use `--filter Sidebar` instead, which matches all sidebar test classes (`SidebarViewModelTests`, `SidebarFavoritesSectionTests`, etc.).
 - [2026-05-02] `swiftlint --path <dir>` is not a valid flag. Correct form: `swiftlint --strict <dir1> <dir2>` (positional path arguments).
 - [2026-05-02] `@testable import UISidebar` is required in all sidebar test files — `start()`, `ejectVolume(url:)`, and all section views are `internal`. Plain `import UISidebar` causes "inaccessible due to 'internal' protection level" errors.

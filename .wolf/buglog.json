@@ -115,7 +115,7 @@
     },
     {
       "id": "bug-008",
-      "timestamp": "2026-05-01T15:19:57.658Z",
+      "timestamp": "2026-05-01T15:19:57.880Z",
       "error_message": "Wrong reference: file should be regularFile",
       "file": "Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift",
       "root_cause": "Used \"file\" instead of \"regularFile\"",
@@ -127,7 +127,7 @@
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-01T15:19:57.658Z"
+      "last_seen": "2026-05-01T15:19:57.880Z"
     },
     {
       "id": "bug-009",
@@ -708,6 +708,99 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T14:39:31.330Z"
+    },
+    {
+      "id": "bug-045",
+      "timestamp": "2026-05-03T15:03:38.685Z",
+      "error_message": "Invalid frame dimension (negative or non-finite) when app starts",
+      "file": "Sources/UI/MainWindow/DualPaneLayout.swift",
+      "root_cause": "leftWidth() calculated total * clamped - 4, which becomes negative when GeometryReader provides 0 width during initial layout, or when the calculation produces negative values",
+      "fix": "Added guard total > 0 check and clamped result: let width = total * clamped - 4; return max(0, width)",
+      "tags": [
+        "frame-dimension",
+        "layout",
+        "geometry-reader",
+        "swift",
+        "ui-crash"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T15:03:38.685Z"
+    },
+    {
+      "id": "bug-046",
+      "timestamp": "2026-05-03T15:10:00.000Z",
+      "error_message": "Devices sidebar section not responding to clicks — no volume selection when clicking device rows",
+      "file": "Sources/UI/Sidebar/Sections/DevicesSection.swift",
+      "root_cause": "The .tag(SidebarItemID.volume(url)) modifier was applied to the SidebarRow inside the HStack container. In SwiftUI's List with selection binding, the tag must be on the outermost container for the entire row to be selectable",
+      "fix": "Moved .tag() modifier from the SidebarRow (line 18) to the HStack (now line 19), making the entire row — including the eject button area — tagged and selectable",
+      "tags": [
+        "swiftui",
+        "list-selection",
+        "tag-placement",
+        "sidebar",
+        "user-reported"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T15:10:00.000Z"
+    },
+    {
+      "id": "bug-047",
+      "timestamp": "2026-05-03T15:23:40.691Z",
+      "error_message": "Significant refactor of ",
+      "file": "Package.swift",
+      "root_cause": "15 lines replaced/restructured",
+      "fix": "Rewrote 18→3 lines (15 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T15:23:40.691Z"
+    },
+    {
+      "id": "bug-048",
+      "timestamp": "2026-05-03T15:45:51.314Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T15:45:51.314Z"
+    }
+    ,
+    {
+      "id": "bug-049",
+      "timestamp": "2026-05-03T18:53:00.000Z",
+      "error_message": "Right-click on files/folders in the file pane shows no context menu",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "FileBrowserView List rows have no .contextMenu modifier; right-clicking does nothing because no context menu is registered on the row HStack",
+      "fix": "Add .contextMenu { ... } modifier to the row HStack inside FileBrowserView with standard file operations (Open, Rename, Move to Trash, etc.)",
+      "tags": ["ui", "context-menu", "file-browser", "missing-feature", "swiftui"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T18:53:00.000Z"
+    },
+    {
+      "id": "bug-050",
+      "timestamp": "2026-05-03T18:53:00.000Z",
+      "error_message": "Single-click on a folder immediately navigates into it; double-click goes two levels deep",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "FileBrowserView uses .onTapGesture (single tap) to call session.navigate(to:) for directories. First tap navigates into folder; when the new listing loads, the second tap of a double-click hits whatever item is now at that screen position and navigates again — going two levels deep unintentionally. Also no item selection state exists.",
+      "fix": "Replace single .onTapGesture with: (1) single-tap sets a @State selectedItemPath, highlighting the row; (2) double-tap (TapGesture(count: 2)) calls session.navigate(to:) for directories or opens files. This matches standard macOS file manager UX.",
+      "tags": ["ui", "navigation", "tap-gesture", "double-click", "file-browser", "swiftui", "ux"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T18:53:00.000Z"
     }
   ]
 }
