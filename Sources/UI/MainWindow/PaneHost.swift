@@ -47,7 +47,7 @@ public struct PaneHost: View {
             self.onDropped(paths)
             return !paths.isEmpty
         }
-        .focusedValue(\.paneCommandProxy, self.isActive ? self.buildProxy() : nil)
+        .focusedSceneValue(\.paneCommandProxy, self.isActive ? self.buildProxy() : nil)
     }
 
     private var activeBorder: some View {
@@ -61,22 +61,14 @@ public struct PaneHost: View {
         let session = self.session
         return PaneCommandProxy(
             currentPath: session.currentPath,
-            canGoBack: session.toolbarViewModel.canGoBack,
-            canGoForward: session.toolbarViewModel.canGoForward,
+            canGoBack: session.canGoBack,
+            canGoForward: session.canGoForward,
             isRemoteReadOnly: session.currentPath.scheme != .local,
-            goBack: { session.toolbarViewModel.goBack() },
-            goForward: { session.toolbarViewModel.goForward() },
-            goUp: {
-                let parent = (session.currentPath.posixString as NSString)
-                    .deletingLastPathComponent
-                session.navigate(to: FilePath(scheme: session.currentPath.scheme, posix: parent))
-            },
-            goHome: {
-                session.navigate(to: FilePath(scheme: .local, posix: NSHomeDirectory()))
-            },
-            goToComputer: {
-                session.navigate(to: FilePath(scheme: .local, posix: "/"))
-            },
+            goBack: { session.goBack() },
+            goForward: { session.goForward() },
+            goUp: { session.goUp() },
+            goHome: { session.goHome() },
+            goToComputer: { session.goToComputer() },
             newFolder: {},
             newFile: {},
             open: {},

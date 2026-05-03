@@ -1,4 +1,5 @@
 import Core
+import Foundation
 import Observation
 import UIToolbar
 
@@ -38,6 +39,39 @@ public final class PaneSession {
     /// All external navigations route through here to keep back/forward history in sync.
     public func navigate(to path: FilePath) {
         self.toolbarViewModel.navigate(to: path)
+    }
+
+    // MARK: - Navigation convenience (delegates to toolbarViewModel)
+
+    public var canGoBack: Bool {
+        self.toolbarViewModel.canGoBack
+    }
+
+    public var canGoForward: Bool {
+        self.toolbarViewModel.canGoForward
+    }
+
+    public func goBack() {
+        self.toolbarViewModel.goBack()
+    }
+
+    public func goForward() {
+        self.toolbarViewModel.goForward()
+    }
+
+    public func goUp() {
+        self.toolbarViewModel.goUp()
+    }
+
+    public func goHome() {
+        self.navigate(to: FilePath(
+            scheme: .local,
+            posix: FileManager.default.homeDirectoryForCurrentUser.path
+        ))
+    }
+
+    public func goToComputer() {
+        self.navigate(to: FilePath(scheme: .local, posix: "/"))
     }
 
     // MARK: - Tab management

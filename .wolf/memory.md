@@ -5,7 +5,11 @@
 
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
 
+| 2026-05-03 | Session 02 read-only planning for bug #054 (back navigation broken). Root cause: .focusedValue doesn't propagate to GoMenuCommands when keyboard focus is outside PaneHost. Fix: .focusedSceneValue in PaneHost + @FocusedSceneValue in GoMenu + PaneSession convenience methods. Plan written to .session-02-plan.md | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-02-plan.md | plan written | ~3200 tok |
+
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
+
+| 16:12 | Session 02 — fixed bug #054 back navigation: .focusedValue→.focusedSceneValue in PaneHost, added PaneSession convenience methods (goBack/goForward/goUp/goHome/goToComputer), 5 new tests, handoff written. Note: @FocusedSceneValue property wrapper absent from macOS 26 SDK | PaneSession.swift PaneHost.swift GoMenu.swift MainWindowTests.swift | Build clean, 36 tests pass | ~2000 tok |
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
@@ -987,3 +991,24 @@
 | 12:24 | Edited .gitignore | 5→8 lines | ~54 |
 | 12:25 | Session end: 1 writes across 1 files (.gitignore) | 1 reads | ~58 tok |
 | 15:35 | session 01 charter audit complete | session-01-handoff.md, .session-01-plan.md | three root causes documented; build green | ~6000 tok |
+
+## Session: 2026-05-03 15:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:04 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-02-plan.md | — | ~3595 |
+| 16:04 | Session end: 1 writes across 1 files (.session-02-plan.md) | 14 reads | ~13491 tok |
+
+## Session: 2026-05-03 16:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:05 | Edited Sources/UI/MainWindow/PaneSession.swift | modified navigate() | ~258 |
+| 16:05 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~16 |
+| 16:05 | Edited Sources/UI/MainWindow/PaneHost.swift | inline fix | ~24 |
+| 16:06 | Edited Sources/UI/MainWindow/PaneHost.swift | reduced (-8 lines) | ~123 |
+| 16:06 | Edited Tests/UITests/MainWindowTests/MainWindowTests.swift | modified testPaneSessionCanGoBackIsFalseAtInit() | ~362 |
+| 16:08 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~22 |
+| 16:11 | Edited Sources/UI/Menus/Sections/GoMenu.swift | inline fix | ~15 |
+| 16:11 | Edited Sources/UI/MainWindow/PaneSession.swift | added 1 import(s) | ~18 |
+| 16:12 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-02-handoff.md | — | ~1162 |

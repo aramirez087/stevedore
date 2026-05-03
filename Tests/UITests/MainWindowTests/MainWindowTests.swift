@@ -63,6 +63,43 @@ final class MainWindowTests: XCTestCase {
         XCTAssertEqual(session.activeTabID, firstTabID)
     }
 
+    // MARK: - PaneSession navigation convenience methods
+
+    func testPaneSessionCanGoBackIsFalseAtInit() {
+        let session = makeTestPaneSession()
+        XCTAssertFalse(session.canGoBack)
+    }
+
+    func testPaneSessionCanGoBackIsTrueAfterNavigation() {
+        let session = makeTestPaneSession()
+        session.navigate(to: FilePath(scheme: .local, posix: "/Users/test/Desktop"))
+        XCTAssertTrue(session.canGoBack)
+    }
+
+    func testPaneSessionGoBackRestoresPreviousPath() {
+        let session = makeTestPaneSession()
+        let original = session.currentPath
+        session.navigate(to: FilePath(scheme: .local, posix: "/Users/test/Desktop"))
+        session.goBack()
+        XCTAssertEqual(session.currentPath, original)
+    }
+
+    func testPaneSessionGoBackIsNoOpWhenNoPriorHistory() {
+        let session = makeTestPaneSession()
+        let original = session.currentPath
+        session.goBack()
+        XCTAssertEqual(session.currentPath, original)
+    }
+
+    func testPaneSessionGoForwardAfterGoBackRestoresForwardPath() {
+        let session = makeTestPaneSession()
+        let forward = FilePath(scheme: .local, posix: "/Users/test/Desktop")
+        session.navigate(to: forward)
+        session.goBack()
+        session.goForward()
+        XCTAssertEqual(session.currentPath, forward)
+    }
+
     // MARK: - MainWindowModel
 
     func testDropOntoOppositePaneEnqueuesOperation() async {
