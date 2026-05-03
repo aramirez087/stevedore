@@ -84,6 +84,7 @@ SKIP_PLAN=false
 USE_WORKTREE=true
 KEEP_WORKTREE=false
 KEEP_SESSION_WORKTREES=false
+KEEP_SESSION_DOCS=false       # When true, skip removing session prompts+handoffs from the epic branch
 FRESH=false  # When true, ignore cached plans and previously-committed sessions
 CLI_OVERRIDE=""
 TIMEOUT=0
@@ -111,6 +112,7 @@ while [[ $# -gt 0 ]]; do
     --no-worktree)              USE_WORKTREE=false; shift ;;
     --keep-worktree)            KEEP_WORKTREE=true; shift ;;
     --keep-session-worktrees)   KEEP_SESSION_WORKTREES=true; shift ;;
+    --keep-session-docs)        KEEP_SESSION_DOCS=true; shift ;;
     --fresh)                    FRESH=true; shift ;;
     --help|-h)                  usage ;;
     *)
@@ -1502,8 +1504,13 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null
         if [[ -d "$sess_wt" ]]; then
           git -C "$TRUNK_WORKTREE_DIR" worktree remove "$sess_wt" --force 2>/dev/null || true
         fi
+        local _sb="${SESSION_BRANCH_BY_ID[$sid]:-}"
+        if [[ -n "$_sb" && "$_sb" != "$BRANCH" ]]; then
+          git branch -D "$_sb" 2>/dev/null || true
+        fi
       fi
     done
+    git worktree prune 2>/dev/null || true
   fi
 done
 
@@ -1529,40 +1536,51 @@ if ! $EPIC_FAILED; then
     done
   fi
   ok ""
-  ok "Logs:  ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-{plan,exec}.log"
-  ok "Plans: ${TRUNK_SESSIONS_DIR/#$HOME/~}/.session-*-plan.md"
+  ok ""
   if [[ "$TIMEOUT" -gt 0 || "$RETRY" -gt 0 ]]; then
-    ok ""
     ok "Runtime settings:"
-    [[ "$TIMEOUT" -gt 0 ]] && ok "  Timeout: ${TIMEOUT}m per session"  
+    [[ "$TIMEOUT" -gt 0 ]] && ok "  Timeout: ${TIMEOUT}m per session"
     [[ "$RETRY" -gt 0 ]] && ok "  Retry: up to $RETRY attempts per session"
+    ok ""
   fi
   ok "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-  # --- Cleanup orchestrator artifacts before PR ---
-  # Only remove the orchestrator's internal working files (dotfiles like
-  # `.session-NN-plan.md`, `.session-NN-{plan,exec}.log`). The session prompt
-  # files (`session-NN-*.md`) and the handoff docs under
-  # `docs/roadmap/<epic>/session-NN-handoff.md` are user-facing deliverables —
-  # they document the work, contain the CI-gate verdict, and are needed for
-  # epic resume / audit. Keeping them on the branch is the safe default.
-  log "Cleaning up orchestrator artifacts..."
+  # --- Cleanup: orchestrator artifacts + session scaffolding ---
+  log "Cleaning up session scaffolding..."
+  cd "$REPO_ROOT"
+
   CLEANED=0
   for f in "$TRUNK_SESSIONS_DIR"/.session-* \
             "${STATUS_FILE:-}" "${DAG_PLAN_FILE:-}" \
             "${STATUS_FILE:-}.lock" "${STATUS_FILE:-}.tmp"; do
     [[ -f "$f" ]] && rm -f "$f" && CLEANED=$((CLEANED + 1))
   done
+  [[ $CLEANED -gt 0 ]] && git add -A 2>/dev/null || true
 
-  if [[ $CLEANED -gt 0 ]]; then
-    cd "$REPO_ROOT"
-    git add -A
-    git commit -q -m "chore: clean up orchestrator artifacts
+  _EPIC_SLUG="$(basename "$TRUNK_SESSIONS_REL")"
+  if ! $KEEP_SESSION_DOCS; then
+    if git ls-files --error-unmatch "$TRUNK_SESSIONS_REL" &>/dev/null 2>&1; then
+      git rm -r -q "$TRUNK_SESSIONS_REL" 2>/dev/null || true
+    fi
+    _ROADMAP_REL="docs/roadmap/$_EPIC_SLUG"
+    if git ls-files --error-unmatch "$_ROADMAP_REL" &>/dev/null 2>&1; then
+      git rm -r -q "$_ROADMAP_REL" 2>/dev/null || true
+    fi
+  fi
 
-Remove $CLEANED internal working files (per-session plans + logs).
+  if ! git diff --cached --quiet 2>/dev/null; then
+    git commit -q -m "chore: remove epic session scaffolding
+
+Removes docs/claude-sessions/${_EPIC_SLUG}/ and any per-epic roadmap
+handoffs. These files served as AI orchestration scaffolding during the
+run; they do not belong in the final PR diff or repository history.
 
 Co-Authored-By: AI <noreply@ai>" 2>/dev/null || true
-    ok "Cleaned $CLEANED orchestrator artifacts (handoffs preserved)"
+    if $KEEP_SESSION_DOCS; then
+      ok "Cleaned orchestrator artefacts (session docs preserved via --keep-session-docs)"
+    else
+      ok "Cleaned session scaffolding — PR diff contains only product code"
+    fi
   fi
 
   # --- Auto-PR ---
@@ -1618,17 +1636,20 @@ ${DIFF_STATS}
     warn "gh CLI not found — skipping PR creation"
   fi
 
-  # --- Trunk worktree cleanup ---
+  # --- Trunk worktree + stale ref cleanup ---
+  cd "$ORIG_REPO_ROOT"
   if $USE_WORKTREE && [[ -n "$TRUNK_WORKTREE_DIR" ]]; then
     if $KEEP_WORKTREE; then
       log "Keeping trunk worktree: $TRUNK_WORKTREE_DIR"
     else
-      cd "$ORIG_REPO_ROOT"
-      log "Removing trunk worktree (work is on remote branch)..."
       git worktree remove "$TRUNK_WORKTREE_DIR" --force 2>/dev/null || true
-      ok "Trunk worktree cleaned. Branch '$BRANCH' remains for the PR."
     fi
   fi
+  git worktree prune 2>/dev/null || true
+
+  ok ""
+  ok "Branch ready: $BRANCH"
+  ok "Next step  : gh pr create --base main --head $BRANCH"
 else
   write_epic_result "failed"
   err "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
