@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-mvp",
-  "started_at": 1777771178.258899,
+  "started_at": 1777772132.6912608,
   "sessions": {
     "1": {
       "status": "skipped",
@@ -253,26 +253,24 @@
       "elapsed": 0.0
     },
     "26": {
-      "status": "done",
+      "status": "skipped",
       "slug": "main-window-shell",
       "wave": 5,
       "title": "Main Window Shell",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 439.0,
-      "started_at": 1777771178.868472
+      "elapsed": 0.0
     },
     "27": {
-      "status": "done",
+      "status": "skipped",
       "slug": "menu-commands",
       "wave": 6,
       "title": "Menu Commands",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 426.0,
-      "started_at": 1777771619.744907
+      "elapsed": 0.0
     },
     "28": {
       "status": "pending",
