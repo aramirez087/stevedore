@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T00:03:01.150Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T01:23:13.448Z
 > Files: 590 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
@@ -8,7 +8,7 @@
 - `.session-14-plan.md` — Session 14 Implementation Plan — Git Status Integration (~2751 tok)
 - `.session-24-plan.md` — Session 24 Implementation Plan — Settings UI (~6070 tok)
 - `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
-- `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~4532 tok)
+- `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~5689 tok)
 - `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~6751 tok)
 
 ## ./
