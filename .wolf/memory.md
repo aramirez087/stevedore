@@ -5,6 +5,17 @@
 
 | 12:00 | Created UninstallerViewModelTests + UninstallerSheetTests for UIUninstallerUI module | Tests/UITests/UninstallerUITests/ | 2 files written, anatomy updated | ~600 tok |
 
+## Session: 2026-05-02 18:57 (Session 27 — Menu Commands & Keyboard Shortcuts)
+
+| 18:50 | Verified all S27 source files already complete from epic bootstrap | Sources/UI/Menus/, Sources/UI/MainWindow/ | No changes needed | ~800 tok |
+| 18:56 | swift build --target UIMenus -Xswiftc -warnings-as-errors | Sources/UI/Menus/ | PASS 0 warnings | ~50 tok |
+| 18:56 | swift build --target MainWindow -Xswiftc -warnings-as-errors | Sources/UI/MainWindow/ | PASS 0 warnings | ~50 tok |
+| 18:56 | swift test --filter "ShortcutsTests|PaneCommandProxyTests|WindowCommandProxyTests" | Tests/UITests/MenusTests/ | 25/25 PASS | ~50 tok |
+| 18:57 | swiftformat lint (19 files) | Sources/UI/Menus/, Tests/UITests/MenusTests/ | 0 files require formatting | ~30 tok |
+| 18:57 | swiftlint --strict (824 files) | Sources/UI/Menus/, Tests/UITests/MenusTests/ | 0 violations | ~30 tok |
+| 18:57 | swift build -Xswiftc -warnings-as-errors (full) | all targets | PASS 0 warnings | ~50 tok |
+| 18:57 | swift test (full suite) | all targets | 977 tests, 2 pre-existing failures (S18 flake + S25 worktree path) | ~50 tok |
+
 ## Session: 2026-05-01 16:10 (Session 10 verification)
 
 | Time | Action | File(s) | Outcome | ~Tokens |
@@ -731,3 +742,13 @@
 | 18:00 | Edited Tests/UITests/MenusTests/MenusTestSupport.swift | 3→1 lines | ~8 |
 | 18:03 | Created docs/roadmap/stevedore-mvp/session-27-handoff.md | — | ~2250 |
 | 18:03 | Session 27 — wired menu commands via PaneCommandProxy/WindowCommandProxy; added dialog flags to MainWindowModel; created 25 MenusTests | Sources/UI/Menus/, Sources/UI/MainWindow/*, Tests/UITests/MenusTests/ | 0 build warnings, 25 tests pass, 0 lint violations | ~2500 |
+
+## Session: 2026-05-03 18:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 18:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
