@@ -1,11 +1,15 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T23:45:35.691Z
-> Files: 614 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T23:32:00.992Z
+> Files: 611 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
 - `epic.md` — Validate (~811 tok)
+
+## ../epic-bugs-059-061-date-column-go-menu/docs/claude-sessions/bugs-059-061-date-column-go-menu/
+
+- `.session-01-plan.md` — Session 01 Plan — Charter Audit (Bugs #059, #060, #061) (~3568 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -17,7 +21,7 @@
 
 ## ../epic-toolkit/scripts/
 
-- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~16870 tok)
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~16871 tok)
 
 ## ./
 
@@ -827,10 +831,6 @@
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
 
-## docs/
-
-- `bug-report-2026-05-03.md` — Bug Report — Stevedore Live User Testing (~918 tok)
-
 ## docs/claude-sessions/bugs-054-056-navigation-and-loading/
 
 - `session-00-operator-rules.md` — Session 00: Operator Rules — Bugs #054, #055, #056 (~524 tok)
@@ -841,13 +841,6 @@
 - `session-04-fix-directory-loading-bug-056.md` — Session 04: Fix Directory Loading Spinner Delay (Bug #056) (~630 tok)
 - `session-05-ci-gate-bugs-054-056.md` — Session 05: CI Gate — Verify All Three Bugs Fixed (~582 tok)
 - `session-05-ci-gate-verification.md` — Session 05: CI Gate — Verify All Fixes and Run Full Test Suite (~669 tok)
-
-## docs/claude-sessions/bugs-059-061-date-column-go-menu/
-
-- `session-00-operator-rules.md` — Operator Rules — Bugs #059, #060, #061 (~485 tok)
-- `session-01-charter-audit.md` — Session 01: Charter — Audit Bugs #059, #060, #061 (~681 tok)
-- `session-02-fix-bugs.md` — Session 02: Fix Bugs #059, #060, #061 (~714 tok)
-- `session-03-ci-gate.md` — Session 03: CI Gate — Verify All Fixes (~508 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 
@@ -903,6 +896,10 @@
 - `session-27-menu-commands.md` — Session 27: Menu Commands & Keyboard Shortcuts (~850 tok)
 - `session-28-ci-gate.md` — Session 28: CI Gate — Final Verification (~856 tok)
 
+## docs/roadmap/bugs-059-061-date-column-go-menu/
+
+- `session-01-handoff.md` — Session 01 Handoff — Audit Bugs #059, #060, #061 (~2903 tok)
+
 ## docs/roadmap/stevedore-mvp/
 
 - `session-01-handoff.md` — Session 01 Handoff — Charter & Scaffolding (~2546 tok)
@@ -924,4 +921,4 @@
 
 ## scripts/
 
-- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~16320 tok)
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~16321 tok)
