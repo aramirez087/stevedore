@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:42:13.696Z
-> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:59:54.203Z
+> Files: 604 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../../../tmp/
 
@@ -835,6 +835,11 @@
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
 
+## docs/claude-sessions/stevedore-file-browser-bugs/
+
+- `.session-01-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3876 tok)
+- `.session-03-plan.md` — Session 03 Implementation Plan — CI Gate & Go/No-Go Report (~3092 tok)
+
 ## docs/claude-sessions/stevedore-mvp/
 
 - `.session-1-plan-stderr.tmp` (~0 tok)
@@ -886,6 +891,7 @@
 
 - `session-01-handoff.md` — Session 01 Handoff — FileBrowserView Bug Audit (root causes, menu spec, gesture sketch, T1-T5 test list, gotchas) (~2300 tok)
 - `session-02-handoff.md` — Session 02 Handoff — FileBrowserView Bug Fixes (~1982 tok)
+- `session-03-handoff.md` — Session 03 Handoff — CI Gate & Go/No-Go Report (~4142 tok)
 
 ## docs/roadmap/stevedore-mvp/
 
@@ -905,3 +911,7 @@
 - `session-25-handoff.md` — Session 25 Handoff — Uninstaller UI (~2126 tok)
 - `session-26-handoff.md` — Session 26 Handoff — Main Window Shell (~1542 tok)
 - `session-27-handoff.md` — Session 27 Handoff — Menu Commands & Keyboard Shortcuts (~2109 tok)
+
+## scripts/
+
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~15877 tok)

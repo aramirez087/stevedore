@@ -1,6 +1,6 @@
 {
   "epic": "stevedore-file-browser-bugs",
-  "started_at": 1777829387.549808,
+  "started_at": 1777830786.480288,
   "sessions": {
     "1": {
       "status": "done",
@@ -10,29 +10,30 @@
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 309.0,
-      "started_at": 1777829387.575485
+      "elapsed": 2.0,
+      "started_at": 1777830786.5046358
     },
     "2": {
-      "status": "running",
+      "status": "done",
       "slug": "implement",
       "wave": 2,
       "title": "Implement",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 323.81869101524353,
-      "started_at": 1777829696.519281
+      "elapsed": 2.0,
+      "started_at": 1777830788.584217
     },
     "3": {
-      "status": "pending",
+      "status": "running",
       "slug": "ci-gate",
       "wave": 3,
       "title": "Ci Gate",
       "step": 0,
       "tool": "",
       "target": "",
-      "elapsed": 0.0
+      "elapsed": 339.3669800758362,
+      "started_at": 1777830790.677548
     }
   }
 }

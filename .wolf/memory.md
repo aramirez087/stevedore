@@ -1011,3 +1011,34 @@
 | 11:41 | Created docs/roadmap/stevedore-file-browser-bugs/session-02-handoff.md | — | ~2114 |
 | 11:42 | Session 02 — implemented bug-049 (.contextMenu) and bug-050 (selection + double-tap navigate) in FileBrowserView; 5 new tests pass | Sources/UI/MainWindow/PaneHost.swift, Tests/UITests/MainWindowTests/MainWindowTests.swift | green: build/tests/format pass; lint has 4 pre-existing Package.swift violations | ~3200 |
 | 11:42 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified run_one_session() | ~550 |
+
+## Session: 2026-05-03 11:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:47 | Edited scripts/run-sessions.sh | expanded (+7 lines) | ~236 |
+
+## Session: 2026-05-03 11:47
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:48 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4195 |
+| 11:48 | Session end: 1 writes across 1 files (.session-01-plan.md) | 5 reads | ~8532 tok |
+| 11:49 | Edited scripts/run-sessions.sh | 19→18 lines | ~220 |
+| 11:50 | Edited scripts/run-sessions.sh | expanded (+15 lines) | ~415 |
+| 11:52 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4134 |
+| 11:52 | Session end: 4 writes across 2 files (.session-01-plan.md, run-sessions.sh) | 5 reads | ~17575 tok |
+| 11:52 | Edited scripts/run-sessions.sh | reduced (-13 lines) | ~262 |
+
+## Session: 2026-05-03 11:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:54 | Created docs/claude-sessions/stevedore-file-browser-bugs/.session-03-plan.md | — | ~3298 |
+| 11:54 | Session end: 1 writes across 1 files (.session-03-plan.md) | 0 reads | ~3533 tok |
+
+## Session: 2026-05-03 11:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:59 | session-03 ci-gate: ran 6 gates; 1-4 PASS (build, xcodebuild, MainWindowTests 16/16, full 1013/1013); 5-6 FAIL with only pre-existing failures verified on base 4cd7960 (10 swiftformat in 2 test-support files; 4 swiftlint in Package.swift) | docs/roadmap/stevedore-file-browser-bugs/session-03-handoff.md | GO verdict | ~5000 |

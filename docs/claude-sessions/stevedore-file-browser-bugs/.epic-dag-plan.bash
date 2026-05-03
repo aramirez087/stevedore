@@ -1,4 +1,4 @@
-META operator_path=/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-00-operator-rules.md
+META operator_path=/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-00-operator-rules.md
 META operator_file=session-00-operator-rules.md
 META wave_count=3
 META any_frontmatter=true
