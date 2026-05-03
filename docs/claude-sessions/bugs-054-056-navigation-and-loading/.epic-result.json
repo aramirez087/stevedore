@@ -1,7 +1,7 @@
 {
   "epic": "bugs-054-056-navigation-and-loading",
   "status": "failed",
-  "first_failed_id": "session-03",
+  "first_failed_id": "session-05",
   "sessions": {
     "session-01": {
       "status": "skipped",
@@ -9,26 +9,32 @@
       "elapsed": 0
     },
     "session-02": {
-      "status": "done",
+      "status": "skipped",
       "slug": "fix-back-navigation-bug-054",
-      "elapsed": 879
+      "elapsed": 0
     },
     "session-03": {
-      "status": "done",
+      "status": "skipped",
       "slug": "fix-home-sidebar-bug-055",
-      "elapsed": 598
+      "elapsed": 0
     },
     "session-04": {
-      "status": "done",
+      "status": "skipped",
       "slug": "fix-directory-loading-bug-056",
-      "elapsed": 538
+      "elapsed": 0
+    },
+    "session-05": {
+      "status": "failed",
+      "slug": "ci-gate-bugs-054-056",
+      "elapsed": 2,
+      "exit_code": 2,
+      "error_type": "prompt_error",
+      "log_path": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-05-exec.log"
     }
   },
-  "merged_sessions": [
-    "2 session-02-fix-back-navigation-bug-054.md"
-  ],
-  "wave": 2,
-  "runtime_seconds": 879,
-  "started_at": 1777845566,
-  "ended_at": 1777846445
+  "merged_sessions": [],
+  "wave": 3,
+  "runtime_seconds": 2,
+  "started_at": 1777846649,
+  "ended_at": 1777846651
 }

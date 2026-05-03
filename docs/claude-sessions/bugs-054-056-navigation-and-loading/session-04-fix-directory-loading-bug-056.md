@@ -3,8 +3,8 @@ session: 4
 title: "Fix Directory Loading Spinner Delay (Bug #056)"
 depends_on: [1]
 touches:
-  - LocalFileSystemProvider.swift
-  - LocalDirectoryEnumerator.swift
+  - Sources/FileSystem/Local/LocalFileSystemProvider.swift
+  - Sources/FileSystem/Local/LocalDirectoryEnumerator.swift
 parallel_safe: true
 ---
 
@@ -17,42 +17,42 @@ Paste this into a new Claude Code session:
 Continue from Session 01 artifacts: docs/claude-sessions/bugs-054-056-navigation-and-loading/session-01-handoff.md
 
 ## Mission
-Eliminate the 3+ second spinner delay when opening a folder with only one file (e.g., Desktop with PRD-2026-02-24.md). Identify and fix actor scheduling delays, excessive FSEvents setup, or permission-check bottlenecks in LocalFileSystemProvider/LocalDirectoryEnumerator.
+SCOPE-LOCKED TO BUG #056 ONLY: Eliminate the 3+ second spinner delay when opening a folder with only one file (Desktop with PRD-2026-02-24.md). Identify and fix the bottleneck (FSEvents, actor scheduling, permission checks, or sync I/O). Do NOT work on bugs #054 or #055.
+
+## CRITICAL: Verify You Are Fixing Bug #056
+Read session-01-handoff.md. It MUST contain root cause analysis for bug #056 with suspected bottleneck and line numbers in LocalFileSystemProvider.swift and/or LocalDirectoryEnumerator.swift. If the handoff does not mention bug #056, STOP and ask the user to restart.
 
 ## Repository Anchors
-- LocalFileSystemProvider.swift — async enumeration entry point
-- LocalDirectoryEnumerator.swift — directory enumeration logic, FSEvents setup, permission checks
+- Sources/FileSystem/Local/LocalFileSystemProvider.swift — async enumeration entry point
+- Sources/FileSystem/Local/LocalDirectoryEnumerator.swift — directory enumeration logic
 
 ## Tasks
 
-1. Read session-01-handoff.md to get the exact lines in LocalFileSystemProvider and LocalDirectoryEnumerator causing the delay.
+1. Read session-01-handoff.md and extract the suspected bottleneck and line numbers for bug #056.
 
-2. Profile the delay: Check for:
-   - Unnecessary FSEvents subscriptions that could be deferred or removed for small directories
-   - Actor scheduling overhead that could be reduced by batching or streamlining
-   - Permission prompts that trigger on first access—consider caching or deferring
-   - Synchronous filesystem operations that should be async
+2. Profile the delay by examining:
+   - FSEvents subscription setup — is it necessary for small folders? Can it be lazy-loaded?
+   - Actor scheduling overhead — are there unnecessary context switches?
+   - Permission checks — is there a first-access prompt that could be cached?
+   - Synchronous filesystem operations — should they be async?
 
-3. Implement the fix:
-   - If FSEvents is the bottleneck, consider lazy-loading or skipping for small directories
-   - If actor scheduling is the issue, optimize the async/await pattern or reduce context switches
-   - If permissions are the culprit, cache results or make prompts async
+3. Implement the fix based on the identified bottleneck.
 
 4. Manually test:
-   - Open local:/ > Users > aramirez
+   - Navigate to local:/ > Users > aramirez
    - Double-click Desktop folder
-   - Verify the spinner appears for <500ms (or not at all) before the single file loads
+   - **Verify**: Spinner appears for <500ms (or not at all) before single file loads
 
 ## Deliverables
-- Modified LocalFileSystemProvider.swift and/or LocalDirectoryEnumerator.swift with performance fix.
-- `docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md` documenting the fix, suspected root cause, changes made, and timing measurements.
+- Modified LocalFileSystemProvider.swift and/or LocalDirectoryEnumerator.swift with bug #056 fix
+- `docs/claude-sessions/bugs-054-056-navigation-and-loading/session-04-handoff.md` with root cause, fix details, and timing measurements
 
 ## Quality Gates
 - Build passes: `xcodebuild build`
-- Manual testing: single-file folder loads with minimal or no spinner delay.
+- Manual testing: single-file folder loads quickly (<1 second, ideally <500ms)
 
 ## Exit Criteria
-- Directory with one file loads in <1 second (ideally <500ms) with no perceptible spinner.
-- No new compiler warnings or test failures.
-- Performance improvement measured and documented.
+- Bug #056 is fixed (spinner delay eliminated)
+- Directory with one file loads with minimal spinner
+- No new compiler warnings or test failures
 ```
