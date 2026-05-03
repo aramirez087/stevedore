@@ -957,3 +957,20 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 11:03
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:07 | Created ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-1-plan.md | — | ~3612 |
+| 11:07 | Session end: 1 writes across 1 files (.session-1-plan.md) | 16 reads | ~13752 tok |
+
+## Session: 2026-05-03 11:07
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:11 | Created docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | — | ~3692 |
+| 11:50 | S01 audit: confirmed bug-049 (no .contextMenu on rows) and bug-050 (single-tap navigates, no selection state) via grep; inventoried OperationKind.trash + LocalFileOperations.performTrash | PaneHost.swift, OperationKind.swift, LocalFileOperations.swift | confirmed | ~5000 |
+| 11:51 | Wrote handoff: confirmed root causes, 7-item context menu spec (Open, Reveal in Finder, Trash, Copy/Rename placeholders), double-tap-before-single-tap gesture sketch, T1-T5 test list, 7 SwiftUI gotchas | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | created (~2300 tok) | ~2400 |
+| 11:52 | swift build --target MainWindow | — | EXIT:0, 40.63s, zero warnings | — |
+| 11:52 | Session end: handoff doc + .wolf bookkeeping; no source/test edits | session-01-handoff.md, .wolf/anatomy.md, .wolf/memory.md | 0 fixes (charter only) | — |

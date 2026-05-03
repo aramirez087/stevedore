@@ -1,7 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T16:00:53.556Z
-> Files: 593 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:11:12.493Z
+> Files: 595 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
+
+- `.session-1-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3387 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -864,6 +868,10 @@
 - `session-26-main-window-shell.md` — Session 26: Main Window & Dual-Pane Shell (~961 tok)
 - `session-27-menu-commands.md` — Session 27: Menu Commands & Keyboard Shortcuts (~850 tok)
 - `session-28-ci-gate.md` — Session 28: CI Gate — Final Verification (~856 tok)
+
+## docs/roadmap/stevedore-file-browser-bugs/
+
+- `session-01-handoff.md` — Session 01 Handoff — FileBrowserView Bug Audit (root causes, menu spec, gesture sketch, T1-T5 test list, gotchas) (~2300 tok)
 
 ## docs/roadmap/stevedore-mvp/
 
