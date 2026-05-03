@@ -80,7 +80,7 @@ enum LocalDirectoryEnumerator {
 
             do {
                 let values = try url.resourceValues(forKeys: Self.enumerationKeys)
-                if !options.followsSymbolicLinks && values.isSymbolicLink == true {
+                if !options.followsSymbolicLinks, values.isSymbolicLink == true {
                     enumerator.skipDescendants()
                 }
                 let item = URLResourceMapper.fileItem(url: url, values: values)

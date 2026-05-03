@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:07:35.452Z
-> Files: 602 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:31:43.258Z
+> Files: 604 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
@@ -10,6 +10,7 @@
 ## ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/
 
 - `.session-04-plan.md` — Session 04 Implementation Plan — Fix Directory Loading Bug #056 (~3438 tok)
+- `.session-05-plan.md` — Session 05 Implementation Plan — CI Gate: Bugs #054, #055, #056 (~4454 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -648,7 +649,7 @@
 - `Sidebar.swift` — / Top-level sidebar view composing the four sections. (~244 tok)
 - `SidebarItemID.swift` — / Uniquely identifies any selectable row in the sidebar. (~69 tok)
 - `SidebarRow.swift` — / Shared row for all sidebar sections: icon + title styled with design-system tokens. (~113 tok)
-- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~797 tok)
+- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~1032 tok)
 - `SidebarVolume.swift` — / Local mirror of a mounted volume, keeping `UISidebar` independent of `FileSystemLocal`. (~191 tok)
 
 ## Sources/UI/Sidebar/Previews/
@@ -834,6 +835,7 @@
 ## docs/claude-sessions/bugs-054-056-navigation-and-loading/
 
 - `session-04-handoff.md` — Session 04 Handoff — Fix Directory Loading Bug #056 (~964 tok)
+- `session-05-handoff.md` — Session 05 Handoff — CI Gate: Bugs #054, #055, #056 (~1774 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 

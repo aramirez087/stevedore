@@ -89,7 +89,7 @@ public final class SidebarViewModel {
 
     // MARK: - Private helpers
 
-    // Returns true for the macOS autofs /home firmlink — never the user's real home.
+    /// Returns true for the macOS autofs /home firmlink — never the user's real home.
     private static func isAutofsHome(_ url: URL) -> Bool {
         url.path == "/System/Volumes/Data/home" || url.path == "/home"
     }
