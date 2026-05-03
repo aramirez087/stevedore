@@ -1,86 +1,17 @@
 {
-  "session_id": "session-2026-05-03-1107",
-  "started": "2026-05-03T17:07:18.162Z",
+  "session_id": "session-2026-05-03-1132",
+  "started": "2026-05-03T17:32:46.237Z",
   "files_read": {
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-01-charter.md": {
+    "/Users/aramirez/Code/Stevedore/docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md": {
       "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:07:50.042Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-00-operator-rules.md": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:07:53.255Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/UI/MainWindow/PaneHost.swift": {
-      "count": 1,
-      "tokens": 2833,
-      "first_read": "2026-05-03T17:08:06.691Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/UI/MainWindow/PaneSession.swift": {
-      "count": 1,
-      "tokens": 743,
-      "first_read": "2026-05-03T17:08:10.252Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/UI/Toolbar/PaneToolbarViewModel.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:08:13.767Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Tests/UITests/MainWindowTests/MainWindowTests.swift": {
-      "count": 1,
-      "tokens": 1013,
-      "first_read": "2026-05-03T17:08:17.601Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Tests/UITests/MainWindowTests/MainWindowTestSupport.swift": {
-      "count": 1,
-      "tokens": 743,
-      "first_read": "2026-05-03T17:08:21.038Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/Core/Protocols/FileSystemProvider.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:08:52.033Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/Core/Types/OperationKind.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:08:59.198Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/Core/Types/OperationDescriptor.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:09:05.548Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/FileSystem/Local/LocalFileOperations.swift": {
-      "count": 1,
-      "tokens": 350,
-      "first_read": "2026-05-03T17:09:16.610Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/Features/Operations/OperationQueue.swift": {
-      "count": 1,
-      "tokens": 1724,
-      "first_read": "2026-05-03T17:09:22.922Z"
-    },
-    "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/Sources/Core/Testing/InMemoryFileSystemProvider.swift": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-05-03T17:09:33.814Z"
+      "tokens": 2300,
+      "first_read": "2026-05-03T17:32:58.952Z"
     }
   },
-  "files_written": [
-    {
-      "file": "/Users/aramirez/Code/.epic-worktrees/Stevedore/epic-stevedore-file-browser-bugs--s01-charter/docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md",
-      "action": "create",
-      "tokens": 3955,
-      "at": "2026-05-03T17:11:12.500Z"
-    }
-  ],
-  "edit_counts": {
-    "docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md": 1
-  },
-  "anatomy_hits": 6,
-  "anatomy_misses": 7,
+  "files_written": [],
+  "edit_counts": {},
+  "anatomy_hits": 1,
+  "anatomy_misses": 0,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
   "stop_count": 0

@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 596044,
-    "total_reads": 870,
-    "total_writes": 228,
-    "total_sessions": 68,
-    "anatomy_hits": 382,
-    "anatomy_misses": 480,
+    "total_tokens_estimated": 605137,
+    "total_reads": 880,
+    "total_writes": 229,
+    "total_sessions": 70,
+    "anatomy_hits": 385,
+    "anatomy_misses": 486,
     "repeated_reads_blocked": 28,
-    "estimated_savings_vs_bare_cli": 112170
+    "estimated_savings_vs_bare_cli": 112770
   },
   "sessions": [
     {
@@ -7360,6 +7360,88 @@
         "writes_count": 1,
         "repeated_reads_blocked": 0,
         "anatomy_lookups": 8
+      }
+    },
+    {
+      "id": "session-2026-05-03-1129",
+      "started": "2026-05-03T17:29:47.797Z",
+      "ended": "2026-05-03T17:32:45.468Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-01-charter.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/stevedore-file-browser-bugs/session-02-implement.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneSession.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/Toolbar/PaneToolbarViewModel.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/MainWindowTests/MainWindowTests.swift",
+          "tokens_estimated": 1013,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Tests/UITests/MainWindowTests/MainWindowTestSupport.swift",
+          "tokens_estimated": 743,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Protocols/FileSystemProvider.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationDescriptor.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/Core/Types/OperationKind.swift",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md",
+          "tokens_estimated": 4504,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 4589,
+        "output_tokens_estimated": 4504,
+        "reads_count": 10,
+        "writes_count": 1,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 3
       }
     }
   ],

@@ -974,3 +974,16 @@
 | 11:51 | Wrote handoff: confirmed root causes, 7-item context menu spec (Open, Reveal in Finder, Trash, Copy/Rename placeholders), double-tap-before-single-tap gesture sketch, T1-T5 test list, 7 SwiftUI gotchas | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | created (~2300 tok) | ~2400 |
 | 11:52 | swift build --target MainWindow | — | EXIT:0, 40.63s, zero warnings | — |
 | 11:52 | Session end: handoff doc + .wolf bookkeeping; no source/test edits | session-01-handoff.md, .wolf/anatomy.md, .wolf/memory.md | 0 fixes (charter only) | — |
+
+## Session: 2026-05-03 11:29
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:32 | Created ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/.session-01-plan.md | — | ~4204 |
+| 11:32 | Session end: 1 writes across 1 files (.session-01-plan.md) | 10 reads | ~9093 tok |
+
+## Session: 2026-05-03 11:32
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:34 | S01 re-execute: verified handoff doc complete (already on disk from prior S01 commit), confirmed swift build --target MainWindow exit 0 | docs/roadmap/stevedore-file-browser-bugs/session-01-handoff.md | build clean, no source edits | — |

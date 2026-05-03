@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:11:12.493Z
-> Files: 595 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T17:32:28.071Z
+> Files: 596 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../epic-stevedore-file-browser-bugs/Users/aramirez/Code/stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
 
@@ -14,6 +14,10 @@
 - `.session-25-plan.md` — Session 25 Implementation Plan — Uninstaller UI (~7223 tok)
 - `.session-26-plan.md` — Session 26 Implementation Plan — Main Window & Dual-Pane Shell (~7075 tok)
 - `.session-27-plan.md` — Session 27 Implementation Plan — Menu Commands & Keyboard Shortcuts (~4263 tok)
+
+## ../stevedore/docs/claude-sessions/stevedore-file-browser-bugs/
+
+- `.session-01-plan.md` — Session 01 — Implementation Plan: FileBrowserView Bug Audit (~3941 tok)
 
 ## ./
 

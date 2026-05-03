@@ -1,0 +1,37 @@
+{
+  "epic": "stevedore-file-browser-bugs",
+  "started_at": 1777829387.549808,
+  "sessions": {
+    "1": {
+      "status": "running",
+      "slug": "charter",
+      "wave": 1,
+      "title": "Charter",
+      "step": 0,
+      "tool": "",
+      "target": "",
+      "elapsed": 96.91399812698364,
+      "started_at": 1777829387.575485
+    },
+    "2": {
+      "status": "pending",
+      "slug": "implement",
+      "wave": 2,
+      "title": "Implement",
+      "step": 0,
+      "tool": "",
+      "target": "",
+      "elapsed": 0.0
+    },
+    "3": {
+      "status": "pending",
+      "slug": "ci-gate",
+      "wave": 3,
+      "title": "Ci Gate",
+      "step": 0,
+      "tool": "",
+      "target": "",
+      "elapsed": 0.0
+    }
+  }
+}
