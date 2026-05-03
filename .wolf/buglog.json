@@ -1,0 +1,633 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-05-01T13:02:38.660Z",
+      "error_message": "Missing error handling in throws",
+      "file": "Tests/CoreTests/Utilities/AsyncSequenceHelpersTests.swift",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:38.660Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-05-01T13:02:47.371Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/CoreTests/Utilities/FiltersTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:47.371Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-05-01T13:02:55.724Z",
+      "error_message": "Missing await",
+      "file": "Tests/CoreTests/Utilities/ResultHelpersTests.swift",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:02:55.724Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-05-01T13:04:28.723Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/roadmap/stevedore-mvp/session-02-handoff.md",
+      "root_cause": "10 lines replaced/restructured",
+      "fix": "Rewrote 17→21 lines (10 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T13:04:28.723Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-05-01T14:37:48.887Z",
+      "error_message": "Missing error handling in length",
+      "file": "docs/claude-sessions/stevedore-mvp/.session-5-plan.md",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T14:37:48.887Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-05-01T15:15:55.590Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "Sources/Features/Operations/OperationExecutor.swift",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:15:55.590Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-05-01T15:17:11.857Z",
+      "error_message": "Missing await",
+      "file": "Sources/Features/Operations/OperationQueue.swift",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:17:11.857Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-05-01T15:19:57.658Z",
+      "error_message": "Wrong reference: file should be regularFile",
+      "file": "Tests/FeaturesTests/OperationsTests/OperationsTestSupport.swift",
+      "root_cause": "Used \"file\" instead of \"regularFile\"",
+      "fix": "Changed file → regularFile",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T15:19:57.658Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-05-01T16:32:09.322Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Sources/Features/Operations/OperationExecutor.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T16:32:09.322Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-05-01T22:43:48.715Z",
+      "error_message": "Wrong reference: SyncOptions should be Self",
+      "file": "Sources/Features/Sync/SyncOptions.swift",
+      "root_cause": "Used \"SyncOptions\" instead of \"Self\"",
+      "fix": "Changed SyncOptions → Self",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T22:43:48.715Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-05-01T23:12:48.017Z",
+      "error_message": "Wrong reference: stem should be number",
+      "file": "Sources/Features/Rename/RenameStep.swift",
+      "root_cause": "Used \"stem\" instead of \"number\"",
+      "fix": "Changed stem → number",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-05-01T23:12:51.607Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-05-01T23:33:00.717Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:00.717Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-05-01T23:33:04.883Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:04.883Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-05-01T23:33:08.998Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+      "root_cause": "Was returning: try await Task.detached(priority: .utility) {",
+      "fix": "Now returns: await Task.detached(priority: .utility) {",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:08.998Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-05-01T23:33:15.880Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/TextPreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:15.880Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-05-01T23:33:20.520Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/ImagePreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:20.520Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-05-01T23:33:25.265Z",
+      "error_message": "Wrong reference: throws should be PreviewPayload",
+      "file": "Sources/Features/Preview/Renderers/CodePreviewRenderer.swift",
+      "root_cause": "Used \"throws\" instead of \"PreviewPayload\"",
+      "fix": "Changed throws → PreviewPayload",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:33:25.265Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-05-01T23:38:34.123Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Preview/PreviewService.swift",
+      "root_cause": "Was returning: data.map { PreviewPayload(mimeType: \"image/png\", d",
+      "fix": "Now returns: data.flatMap { $0 }.map { PreviewPayload(mimeType:",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:38:34.123Z"
+    },
+    {
+      "id": "bug-019",
+      "timestamp": "2026-05-01T23:56:09.089Z",
+      "error_message": "Function not marked async",
+      "file": "Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-01T23:56:09.089Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-05-02T02:25:50.979Z",
+      "error_message": "Wrong return value",
+      "file": "Sources/Features/Git/GitStatusCache.swift",
+      "root_cause": "Was returning: immediately.",
+      "fix": "Now returns: immediately if a completed fetch exists with no in",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:25:50.979Z"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-05-02T02:28:18.251Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Sources/Features/Git/GitStatusParser.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:18.251Z"
+    },
+    {
+      "id": "bug-022",
+      "timestamp": "2026-05-02T02:28:29.781Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/FeaturesTests/GitTests/GitTestSupport.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:29.781Z"
+    },
+    {
+      "id": "bug-023",
+      "timestamp": "2026-05-02T02:28:33.993Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/FeaturesTests/GitTests/GitProcessTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:28:33.993Z"
+    },
+    {
+      "id": "bug-024",
+      "timestamp": "2026-05-02T02:30:32.262Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/roadmap/stevedore-mvp/session-01-handoff.md",
+      "root_cause": "12 lines replaced/restructured",
+      "fix": "Rewrote 19→24 lines (12 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T02:30:32.262Z"
+    },
+    {
+      "id": "bug-025",
+      "timestamp": "2026-05-02T14:10:27.436Z",
+      "error_message": "Missing await",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:10:27.436Z"
+    },
+    {
+      "id": "bug-026",
+      "timestamp": "2026-05-02T14:10:33.291Z",
+      "error_message": "Incorrect value in code",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-18-plan.md",
+      "root_cause": "Had `SidebarViewModelTests`",
+      "fix": "Changed to `await Task.yield()`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:10:33.291Z"
+    },
+    {
+      "id": "bug-027",
+      "timestamp": "2026-05-02T14:29:20.307Z",
+      "error_message": "Wrong reference: FavoritesSectionTests should be SidebarFavoritesSectionTests",
+      "file": "Tests/UITests/SidebarTests/FavoritesSectionTests.swift",
+      "root_cause": "Used \"FavoritesSectionTests\" instead of \"SidebarFavoritesSectionTests\"",
+      "fix": "Changed FavoritesSectionTests → SidebarFavoritesSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.307Z"
+    },
+    {
+      "id": "bug-028",
+      "timestamp": "2026-05-02T14:29:20.588Z",
+      "error_message": "Wrong reference: DevicesSectionTests should be SidebarDevicesSectionTests",
+      "file": "Tests/UITests/SidebarTests/DevicesSectionTests.swift",
+      "root_cause": "Used \"DevicesSectionTests\" instead of \"SidebarDevicesSectionTests\"",
+      "fix": "Changed DevicesSectionTests → SidebarDevicesSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.588Z"
+    },
+    {
+      "id": "bug-029",
+      "timestamp": "2026-05-02T14:29:20.911Z",
+      "error_message": "Wrong reference: ConnectionsSectionTests should be SidebarConnectionsSectionTests",
+      "file": "Tests/UITests/SidebarTests/ConnectionsSectionTests.swift",
+      "root_cause": "Used \"ConnectionsSectionTests\" instead of \"SidebarConnectionsSectionTests\"",
+      "fix": "Changed ConnectionsSectionTests → SidebarConnectionsSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:20.911Z"
+    },
+    {
+      "id": "bug-030",
+      "timestamp": "2026-05-02T14:29:21.261Z",
+      "error_message": "Wrong reference: TagsSectionTests should be SidebarTagsSectionTests",
+      "file": "Tests/UITests/SidebarTests/TagsSectionTests.swift",
+      "root_cause": "Used \"TagsSectionTests\" instead of \"SidebarTagsSectionTests\"",
+      "fix": "Changed TagsSectionTests → SidebarTagsSectionTests",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T14:29:21.261Z"
+    },
+    {
+      "id": "bug-031",
+      "timestamp": "2026-05-02T17:04:19.305Z",
+      "error_message": "Significant refactor of ",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 11→17 lines (4 removed) | Also: **Important:** The existing `SettingsCatalogTests`; uniqueness by checking `allKeys` for duplicates. A | Also: # 1. Catalog regression guard; swift test --filter ServicesTests/SettingsCatalogT",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-05-02T17:04:49.099Z"
+    },
+    {
+      "id": "bug-032",
+      "timestamp": "2026-05-02T17:04:45.342Z",
+      "error_message": "Incorrect value in code",
+      "file": "../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-24-plan.md",
+      "root_cause": "Had \"cannot find type\"",
+      "fix": "Changed to \"cannot find type '",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:04:45.342Z"
+    },
+    {
+      "id": "bug-033",
+      "timestamp": "2026-05-02T21:10:40.372Z",
+      "error_message": "Incorrect value in code",
+      "file": "Package.swift",
+      "root_cause": "Had \"UIMenus\"",
+      "fix": "Changed to \"FeaturesUninstaller\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T21:10:40.372Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-05-02T22:27:01.451Z",
+      "error_message": "Wrong reference: disconnected should be idle",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "Used \"disconnected\" instead of \"idle\"",
+      "fix": "Changed disconnected → idle",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:27:01.451Z"
+    },
+    {
+      "id": "bug-035",
+      "timestamp": "2026-05-02T22:27:12.418Z",
+      "error_message": "Incorrect value in code",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "Had `.disconnected`",
+      "fix": "Changed to `.idle`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:27:12.418Z"
+    },
+    {
+      "id": "bug-036",
+      "timestamp": "2026-05-02T22:54:19.860Z",
+      "error_message": "Wrong reference: Tab should be Core",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "Used \"Tab\" instead of \"Core\"",
+      "fix": "Changed Tab → Core",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:54:19.860Z"
+    },
+    {
+      "id": "bug-037",
+      "timestamp": "2026-05-02T22:56:27.753Z",
+      "error_message": "Wrong reference: WindowStateSnapshot should be Self",
+      "file": "Sources/UI/MainWindow/WindowState.swift",
+      "root_cause": "Used \"WindowStateSnapshot\" instead of \"Self\"",
+      "fix": "Changed WindowStateSnapshot → Self",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T22:56:27.753Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "signal 11 crash during WindowStateTests — testSplitFractionClampedAboveMaximum",
+      "file": "Sources/UI/MainWindow/WindowState.swift",
+      "root_cause": "splitFraction didSet unconditionally re-assigns self.splitFraction, causing infinite recursion and stack overflow",
+      "fix": "Added guard: compute clamped value, return early if unchanged, only assign when value differs",
+      "tags": ["swift", "infinite-recursion", "didSet", "observable", "stack-overflow"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "'Tab' is ambiguous for type lookup in this context (Core.Tab vs SwiftUI.Tab)",
+      "file": "Sources/UI/MainWindow/PaneHost.swift",
+      "root_cause": "macOS 15+ SwiftUI introduces Tab type; bare 'Tab' is ambiguous in files importing both Core and SwiftUI",
+      "fix": "Qualify as Core.Tab in PaneTabButton struct declaration",
+      "tags": ["swift", "type-ambiguity", "swiftui", "core-tab", "macos15"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-05-02T17:00:00.000Z",
+      "error_message": "ConnectionStatus.disconnected does not exist — Type 'ConnectionStatus' has no member 'disconnected'",
+      "file": "App/Stevedore/AppEnvironment.swift",
+      "root_cause": "ConnectionStatus enum only has .idle, .connecting, .connected, .error — .disconnected was used by mistake",
+      "fix": "Changed .disconnected to .idle in StubConnectionStatusProvider.status(for:)",
+      "tags": ["swift", "wrong-enum-case", "connection-status"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-02T17:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "epic/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Build & Test
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Cache SwiftPM and DerivedData
+        uses: actions/cache@v4
+        with:
+          # .build/DerivedData is set by `make app` via -derivedDataPath,
+          # keeping all build artifacts in one cacheable tree.
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Install tools
+        run: brew install swiftformat swiftlint
+
+      - name: Resolve dependencies
+        run: swift package resolve
+
+      - name: Run CI gate
+        run: make ci
+
+      - name: Upload xcresult on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ~/Library/Developer/Xcode/DerivedData/**/Logs/Test/**/*.xcresult
+          if-no-files-found: ignore

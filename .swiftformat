@@ -14,3 +14,4 @@
 --patternlet inline
 --header strip
 --exclude .build,.swiftpm,DerivedData,build
+--disable wrapMultilineStatementBraces
