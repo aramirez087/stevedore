@@ -3,6 +3,9 @@
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
 
+| 2026-05-03 | S03 planning: wrote .session-03-plan.md for bug-055 (home sidebar wrong path); plan covers SidebarViewModel.swift filter+synthetic-home fix + 3 new tests + 2 test updates | docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | plan written | ~3500 |
+| 16:07 | S03 execute: fixed bug-055 — SidebarViewModel.normalizeVolumes() filters autofs /home and prepends FileManager.homeDirectoryForCurrentUser; updated 2 tests, added 3 new tests, fixed 1 collateral TagsSectionTests; build + 40 tests green | Sources/UI/Sidebar/SidebarViewModel.swift, Tests/UITests/SidebarTests/SidebarViewModelTests.swift, Tests/UITests/SidebarTests/TagsSectionTests.swift | bug-055 fixed | ~2000 |
+
 | 18:53 | Live user-testing session: found bug-049 (no right-click context menu) and bug-050 (single-tap navigates into folders instead of double-tap) | Sources/UI/MainWindow/PaneHost.swift | bugs logged | ~8000 |
 
 | 15:46 | Replaced PaneContentPlaceholder stub with FileBrowserView: loads dir via provider.enumerate, shows name/size/date, double-click navigates | Sources/UI/MainWindow/PaneHost.swift | Build clean | ~300 tok |
@@ -987,3 +990,23 @@
 | 12:24 | Edited .gitignore | 5→8 lines | ~54 |
 | 12:25 | Session end: 1 writes across 1 files (.gitignore) | 1 reads | ~58 tok |
 | 15:35 | session 01 charter audit complete | session-01-handoff.md, .session-01-plan.md | three root causes documented; build green | ~6000 tok |
+
+## Session: 2026-05-03 15:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:02 | Created ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/.session-03-plan.md | — | ~2613 |
+| 16:02 | Session end: 1 writes across 1 files (.session-03-plan.md) | 8 reads | ~7627 tok |
+
+## Session: 2026-05-03 16:02
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified currentVolumes() | ~35 |
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified mounted() | ~69 |
+| 16:03 | Edited Sources/UI/Sidebar/SidebarViewModel.swift | modified isAutofsHome() | ~216 |
+| 16:03 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~142 |
+| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | modified testStartIdempotent() | ~82 |
+| 16:04 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | added optional chaining | ~498 |
+| 16:07 | Edited Tests/UITests/SidebarTests/TagsSectionTests.swift | modified testTagsLoadedForSyntheticHome() | ~113 |
+| 16:08 | Created docs/claude-sessions/bugs-054-056-navigation-and-loading/session-03-handoff.md | — | ~1104 |

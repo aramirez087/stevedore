@@ -1,11 +1,16 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T18:24:52.143Z
-> Files: 600 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T22:08:25.211Z
+> Files: 602 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
 
 - `epic.md` — Validate (~811 tok)
+
+## ../epic-bugs-054-056-navigation-and-loading/docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `.session-03-plan.md` — Session 03 Implementation Plan — Bug #055: Home Sidebar Wrong Path (~2450 tok)
+- `session-03-handoff.md` — Session 03 Handoff — Bug #055 fixed: SidebarViewModel.normalizeVolumes() filters autofs /home and prepends real homeDirectoryForCurrentUser (~900 tok)
 
 ## ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/
 
@@ -644,7 +649,7 @@
 - `Sidebar.swift` — / Top-level sidebar view composing the four sections. (~244 tok)
 - `SidebarItemID.swift` — / Uniquely identifies any selectable row in the sidebar. (~69 tok)
 - `SidebarRow.swift` — / Shared row for all sidebar sections: icon + title styled with design-system tokens. (~113 tok)
-- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~797 tok)
+- `SidebarViewModel.swift` — / Drives the sidebar: holds observable state and routes mutations to injected providers. (~1032 tok)
 - `SidebarVolume.swift` — / Local mirror of a mounted volume, keeping `UISidebar` independent of `FileSystemLocal`. (~191 tok)
 
 ## Sources/UI/Sidebar/Previews/
@@ -816,8 +821,8 @@
 - `DevicesSectionTests.swift` — Class: SidebarDevicesSectionTests (~529 tok)
 - `FavoritesSectionTests.swift` — Class: SidebarFavoritesSectionTests (~500 tok)
 - `SidebarTestSupport.swift` — Struct: FakeTagsProvider (~1208 tok)
-- `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1171 tok)
-- `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~362 tok)
+- `SidebarViewModelTests.swift` — Class: SidebarViewModelTests (~1619 tok)
+- `TagsSectionTests.swift` — Class: SidebarTagsSectionTests (~409 tok)
 
 ## Tests/UITests/UninstallerUITests/
 
@@ -826,6 +831,10 @@
 - `UninstallerUITestSupport.swift` (~418 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~1438 tok)
 - `UninstallerViewModelTests.swift` — Class: UninstallerViewModelTests (~2256 tok)
+
+## docs/claude-sessions/bugs-054-056-navigation-and-loading/
+
+- `session-03-handoff.md` — Session 03 Handoff — Bug #055: Home Sidebar Wrong Path (~1035 tok)
 
 ## docs/claude-sessions/stevedore-file-browser-bugs/
 

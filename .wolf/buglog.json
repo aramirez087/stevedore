@@ -860,7 +860,10 @@
         "file-watcher",
         "completion-sentinel"
       ],
-      "related_bugs": ["bug-051", "bug-052"],
+      "related_bugs": [
+        "bug-051",
+        "bug-052"
+      ],
       "occurrences": 1,
       "last_seen": "2026-05-03T19:18:00.000Z"
     },
@@ -889,20 +892,20 @@
       "timestamp": "2026-05-03T15:35:00.000Z",
       "error_message": "Sidebar 'home' entry navigates to /System/Volumes/Data/home instead of the user's real home directory (/Users/<name>).",
       "file": "Sources/UI/Sidebar/SidebarViewModel.swift",
-      "root_cause": "There is no synthetic Home sidebar item. `SidebarViewModel.start()` (line 52-57) populates `volumes` from `volumeDiscovery.currentVolumes()` which calls `FileManager().mountedVolumeURLs(... [.skipHiddenVolumes])` (VolumeDiscovery.swift:36-41). On macOS that list includes the autofs mount at `/System/Volumes/Data/home` with `volumeName == \"home\"`. Selection routes via MainWindowView.filePath(for: .volume(url)) -> FilePath(scheme: .local, posix: url.path) (MainWindowView.swift:91-92), so the pane navigates to /System/Volumes/Data/home. Note: AppEnvironment.swift:49 and PaneHost.swift:74-76 use NSHomeDirectory() correctly for the pane initial path and Go > Home menu action; the bug is exclusive to the sidebar volumes pipeline.",
-      "fix": "DIAGNOSIS-ONLY (Session 03 implements). Within Session 03 scope (SidebarViewModel.swift): in start() and the .mounted event branch, drop the `/System/Volumes/Data/home` entry and prepend a synthetic SidebarVolume(name: \"Home\", url: FileManager.default.homeDirectoryForCurrentUser, isEjectable: false, isRemovable: false). Recommended over a pure filter because it preserves the user's mental model.",
+      "root_cause": "SidebarViewModel.start() populated volumes directly from volumeDiscovery.currentVolumes(), which includes the macOS autofs mount at /System/Volumes/Data/home (volumeName == 'home') via FileManager.mountedVolumeURLs. Clicking that sidebar row navigated to the autofs firmlink path, not the user home.",
+      "fix": "Added SidebarViewModel.isAutofsHome(_:) and normalizeVolumes(_:) private static helpers. normalizeVolumes strips the autofs entry (/System/Volumes/Data/home and /home) and prepends a synthetic SidebarVolume with url = FileManager.default.homeDirectoryForCurrentUser. Called in start() and guarded in the .mounted event branch. Updated 2 existing tests (count assertions) and added 3 new tests. Fixed collateral TagsSectionTests test that assumed no tags when no real volumes exist.",
       "tags": [
         "sidebar",
         "home-directory",
         "macos-firmlinks",
         "autofs",
         "volume-discovery",
-        "diagnosis-only",
+        "fixed",
         "session-03"
       ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-05-03T15:35:00.000Z"
+      "last_seen": "2026-05-03T16:07:00.000Z"
     },
     {
       "id": "bug-056",
@@ -924,6 +927,38 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-05-03T15:35:00.000Z"
+    },
+    {
+      "id": "bug-057",
+      "timestamp": "2026-05-03T22:03:54.716Z",
+      "error_message": "Null/undefined access in ",
+      "file": "Tests/UITests/SidebarTests/SidebarViewModelTests.swift",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: func testStartFiltersAutofsHome() async {; let autofs = SidebarVolume.fake(path: \"/System/Volumes/Data/",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-05-03T22:04:14.324Z"
+    },
+    {
+      "id": "bug-058",
+      "timestamp": "2026-05-03T22:07:37.572Z",
+      "error_message": "Significant refactor of ",
+      "file": "Tests/UITests/SidebarTests/TagsSectionTests.swift",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 6→8 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "swift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-05-03T22:07:37.572Z"
     }
   ]
 }

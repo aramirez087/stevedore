@@ -52,8 +52,8 @@ public final class SidebarViewModel {
     func start() async {
         guard self.volumeTask == nil else { return }
 
-        if let initial = try? await volumeDiscovery.currentVolumes() {
-            self.volumes = initial
+        if let raw = try? await volumeDiscovery.currentVolumes() {
+            self.volumes = Self.normalizeVolumes(raw)
         }
         if let firstURL = volumes.first?.url {
             self.tags = await self.tagsProvider.fetchTags(forVolumeAt: firstURL)
@@ -66,6 +66,7 @@ public final class SidebarViewModel {
                 guard let self else { break }
                 switch event {
                 case .mounted(let vol):
+                    guard !Self.isAutofsHome(vol.url) else { break }
                     if !self.volumes.contains(where: { $0.url == vol.url }) {
                         self.volumes.append(vol)
                     }
@@ -84,5 +85,24 @@ public final class SidebarViewModel {
 
     deinit {
         volumeTask?.cancel()
+    }
+
+    // MARK: - Private helpers
+
+    // Returns true for the macOS autofs /home firmlink — never the user's real home.
+    private static func isAutofsHome(_ url: URL) -> Bool {
+        url.path == "/System/Volumes/Data/home" || url.path == "/home"
+    }
+
+    // Strips the autofs entry and prepends a synthetic Home volume.
+    // TODO(orchestrator): consider moving filter to VolumeDiscoveryAdaptor
+    private static func normalizeVolumes(_ raw: [SidebarVolume]) -> [SidebarVolume] {
+        let home = SidebarVolume(
+            url: FileManager.default.homeDirectoryForCurrentUser,
+            name: "Home",
+            isEjectable: false,
+            isRemovable: false
+        )
+        return [home] + raw.filter { !Self.isAutofsHome($0.url) }
     }
 }
