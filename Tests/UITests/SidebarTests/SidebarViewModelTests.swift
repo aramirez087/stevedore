@@ -70,8 +70,7 @@ final class SidebarViewModelTests: XCTestCase {
 
         let newVol = SidebarVolume.fake(path: "/Volumes/B", name: "B")
         fakeVols.emit(.mounted(newVol))
-        await Task.yield()
-        await Task.yield()
+        try? await Task.sleep(for: .milliseconds(50))
 
         XCTAssertTrue(vm.volumes.contains(where: { $0.url == newVol.url }))
     }
@@ -83,8 +82,7 @@ final class SidebarViewModelTests: XCTestCase {
         await vm.start()
 
         fakeVols.emit(.unmounted(vol.url))
-        await Task.yield()
-        await Task.yield()
+        try? await Task.sleep(for: .milliseconds(50))
 
         XCTAssertFalse(vm.volumes.contains(where: { $0.url == vol.url }))
     }

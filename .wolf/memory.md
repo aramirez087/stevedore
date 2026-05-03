@@ -9,6 +9,10 @@
 
 | 19:24 | Verified S26 already committed; all quality gates pass: swift build, swift test --filter MainWindow (12/12), swiftformat 0/16, swiftlint 0 violations | Sources/UI/MainWindow/, App/Stevedore/, Tests/UITests/MainWindowTests/ | All passing | ~500 tok |
 
+## Session: 2026-05-03 (Session 28 — CI Gate planning)
+
+| 12:42 | Wrote S28 implementation plan (read-only phase); identified 2 pre-existing test failures and corrected a path-navigation bug in pre-generated plan (3→4 deletingLastPathComponent calls) | docs/claude-sessions/stevedore-mvp/.session-28-plan.md | Plan written | ~800 tok |
+
 ## Session: 2026-05-03 06:45 (Session 27 — Menu Commands verification)
 
 | 06:45 | Verified S27 already committed (861cab5); all quality gates pass: UIMenus build 0 warnings, MainWindow build 0 warnings, full build 0 warnings, 25/25 menu tests pass (ShortcutsTests+PaneCommandProxyTests+WindowCommandProxyTests), swiftformat 0/20, swiftlint 0 violations, full suite 977 tests with only pre-existing failures (SidebarViewModelTests async flake + UninstallExecutorTests worktree path) | Sources/UI/Menus/, Sources/UI/MainWindow/, Tests/UITests/MenusTests/ | All passing | ~800 tok |
@@ -822,3 +826,29 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-05-03 06:47
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 06:51 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-28-plan.md | modified testNoRemoveItemCall() | ~407 |
+| 06:51 | Edited ../epic-stevedore-mvp/docs/claude-sessions/stevedore-mvp/.session-28-plan.md | inline fix | ~69 |
+| 06:51 | Session end: 2 writes across 1 files (.session-28-plan.md) | 8 reads | ~5380 tok |
+
+## Session: 2026-05-03 06:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 06:52 | Edited Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | modified testNoRemoveItemCall() | ~167 |
+| 06:52 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | 6→5 lines | ~65 |
+| 06:52 | Edited Tests/UITests/SidebarTests/SidebarViewModelTests.swift | 5→4 lines | ~46 |
+| 06:55 | Created Makefile | — | ~164 |
+| 06:56 | Created .github/workflows/ci.yml | — | ~322 |
+| 06:57 | Created docs/ci-report.md | — | ~1123 |
+| 06:58 | Created docs/roadmap/stevedore-mvp/session-28-handoff.md | — | ~1204 |
+
+| 07:05 | Session 28: fixed testNoRemoveItemCall hardcoded path (S25 origin) | Tests/FeaturesTests/UninstallerTests/UninstallExecutorTests.swift | fixed | ~80 |
+| 07:05 | Session 28: fixed testMountedEventAddsVolume/testUnmountedEventRemovesVolume timing (S18 origin) | Tests/UITests/SidebarTests/SidebarViewModelTests.swift | fixed | ~60 |
+| 07:10 | Session 28: created Makefile with ci, format-check, lint, build, test, app targets | Makefile | created | ~100 |
+| 07:10 | Session 28: created .github/workflows/ci.yml for macos-14 GitHub Actions | .github/workflows/ci.yml | created | ~150 |
+| 07:15 | Session 28: all gates green — 977 tests, 0 failures, make ci exits 0, ARCHIVE SUCCEEDED | docs/ci-report.md | created | ~200 |
