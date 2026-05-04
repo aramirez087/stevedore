@@ -36,6 +36,7 @@
 #   --cli CMD            Force CLI: opencode or claude (default: auto-detect)
 #   --no-commit          Skip auto-commit fallback
 #   --no-pr              Skip auto-PR creation
+#   --no-rebase          Skip pre-PR rebase onto origin/<default> (default: rebase + auto-resolve .wolf/)
 #   --skip-plan          Single-pass mode (no separate plan phase)
 #   --no-worktree        Run trunk in CWD (forces --max-parallel 1)
 #   --keep-worktree      Retain trunk worktree on success
@@ -80,6 +81,7 @@ BASE_BRANCH=""
 MODEL="sonnet"
 AUTO_COMMIT=true
 AUTO_PR=true
+AUTO_REBASE=true              # Rebase epic onto origin/<default> before PR (auto-resolves .wolf/ conflicts)
 SKIP_PLAN=false
 USE_WORKTREE=true
 KEEP_WORKTREE=false
@@ -108,6 +110,7 @@ while [[ $# -gt 0 ]]; do
     --retry)                    RETRY="$2"; shift 2 ;;
     --no-commit)                AUTO_COMMIT=false; shift ;;
     --no-pr)                    AUTO_PR=false; shift ;;
+    --no-rebase)                AUTO_REBASE=false; shift ;;
     --skip-plan)                SKIP_PLAN=true; shift ;;
     --no-worktree)              USE_WORKTREE=false; shift ;;
     --keep-worktree)            KEEP_WORKTREE=true; shift ;;
@@ -519,8 +522,13 @@ Install GNU coreutils ('brew install coreutils') to enable reliable realpath res
 or ensure the sessions dir path uses the same case as the repo root."
   fi
   TRUNK_SESSIONS_DIR="$TRUNK_WORKTREE_DIR/$TRUNK_SESSIONS_REL"
+  # Always sync session files from the source — overwrite stale copies that
+  # may exist from a prior run with different filenames (e.g. after regenerating
+  # session prompts). Remove old session-*.md files that no longer exist in the
+  # source so awk's prompt-extraction never picks up a stale session file.
   mkdir -p "$TRUNK_SESSIONS_DIR"
   log "Syncing session files into trunk worktree..."
+  # Remove session files present in trunk but absent from source
   for f in "$TRUNK_SESSIONS_DIR"/session-*.md; do
     [[ -e "$f" ]] || continue
     [[ -e "$ORIG_SESSIONS_DIR/$(basename "$f")" ]] || rm -f "$f"
@@ -627,6 +635,97 @@ fi
 format_elapsed() {
   local s=$1
   printf "%dm%02ds" $((s / 60)) $((s % 60))
+}
+
+# Auto-resolve OpenWolf metadata conflicts in the current working dir.
+# .wolf/ files are append-mostly logs (anatomy.md, memory.md, buglog.json)
+# and per-session state (token-ledger.json, hooks/_session.json) — safe to
+# resolve to whichever side the caller prefers.
+#
+# Args:
+#   $1 = working directory (git checkout root)
+#   $2 = preferred side: "ours" or "theirs"
+# Returns:
+#   0 — all conflicts were .wolf/-only and have been resolved+staged
+#   1 — non-.wolf/ conflicts exist (caller must handle)
+#   2 — no conflicts at all
+auto_resolve_wolf_conflicts() {
+  local workdir="$1" side="$2"
+  local conflicted non_wolf
+  conflicted="$(git -C "$workdir" diff --name-only --diff-filter=U 2>/dev/null || true)"
+  [[ -z "$conflicted" ]] && return 2
+  non_wolf="$(printf '%s\n' "$conflicted" | grep -Ev '^\.wolf/' | grep -v '^$' || true)"
+  [[ -n "$non_wolf" ]] && return 1
+  # All conflicts are .wolf/-only. Resolve each.
+  while IFS= read -r f; do
+    [[ -z "$f" ]] && continue
+    git -C "$workdir" checkout "--$side" -- "$f" 2>/dev/null || true
+    git -C "$workdir" add -- "$f" 2>/dev/null || true
+  done <<< "$conflicted"
+  return 0
+}
+
+# Rebase the current branch onto a target ref, auto-resolving any
+# conflicts that fall entirely within .wolf/ paths. Aborts cleanly if
+# real code conflicts arise.
+#
+# During `git rebase`:
+#   "ours"   = the rebase base (target ref, e.g. origin/main)
+#   "theirs" = the commit being replayed (the epic's commit)
+# We want the epic's wolf state to win, so we use "theirs" for .wolf/.
+#
+# Args:
+#   $1 = working directory
+#   $2 = target ref (e.g. origin/main)
+# Returns:
+#   0 — rebase succeeded (no-op, fast-forward, or with .wolf/ auto-resolve)
+#   1 — rebase aborted due to non-.wolf/ conflicts (workdir restored)
+#   2 — fetch/setup failure (no rebase attempted)
+rebase_with_wolf_resolve() {
+  local workdir="$1" target="$2"
+  # Already a descendant of target? No-op.
+  if git -C "$workdir" merge-base --is-ancestor "$target" HEAD 2>/dev/null; then
+    return 0
+  fi
+  # Try clean rebase first
+  if git -C "$workdir" -c core.editor=true rebase -q "$target" 2>/dev/null; then
+    return 0
+  fi
+  # Rebase paused on conflict. Iterate, resolving .wolf/ conflicts.
+  local max_iters=50 i=0
+  while git -C "$workdir" rev-parse --git-path rebase-merge 2>/dev/null | xargs -I{} test -d {} \
+       || git -C "$workdir" rev-parse --git-path rebase-apply 2>/dev/null | xargs -I{} test -d {}; do
+    i=$((i + 1))
+    if [[ $i -gt $max_iters ]]; then
+      git -C "$workdir" rebase --abort 2>/dev/null || true
+      return 1
+    fi
+    auto_resolve_wolf_conflicts "$workdir" "theirs"
+    case $? in
+      0) # All-wolf resolved; continue rebase
+        if ! git -C "$workdir" -c core.editor=true rebase --continue 2>/dev/null; then
+          # Continue may have triggered a new conflict — loop will catch it
+          # If there's no new conflict and continue still failed, abort.
+          if ! git -C "$workdir" diff --name-only --diff-filter=U 2>/dev/null | grep -q .; then
+            git -C "$workdir" rebase --abort 2>/dev/null || true
+            return 1
+          fi
+        fi
+        ;;
+      1) # Non-wolf conflicts present; bail
+        git -C "$workdir" rebase --abort 2>/dev/null || true
+        return 1
+        ;;
+      2) # No conflicts but rebase still in progress — empty commit?
+        if ! git -C "$workdir" -c core.editor=true rebase --skip 2>/dev/null \
+            && ! git -C "$workdir" -c core.editor=true rebase --continue 2>/dev/null; then
+          git -C "$workdir" rebase --abort 2>/dev/null || true
+          return 1
+        fi
+        ;;
+    esac
+  done
+  return 0
 }
 
 # Look up a session id's handoff file under docs/roadmap/<epic>/
@@ -1102,7 +1201,20 @@ classify_error() {
 # ---------------------------------------------------------------------------
 write_epic_result() {
   local epic_status="$1"  # "success" or "failed"
-  local result_file="${TRUNK_SESSIONS_DIR}/.epic-result.json"
+  # Result file lives outside the repo so external watchers (orchestrators,
+  # CI, supervisor scripts) get a stable completion sentinel that survives:
+  #   - `git add -A` in the cleanup commit (would otherwise stage it as new)
+  #   - the orchestrator artifact cleanup loop
+  #   - worktree teardown
+  # Persisted on both success and failure for symmetry — file-based pollers
+  # were previously broken on success because the file was deleted (#bug:
+  # success-path watchers hung indefinitely). Override base via EPIC_RESULT_DIR.
+  local result_dir="${EPIC_RESULT_DIR:-${TMPDIR:-/tmp}/epic-toolkit}"
+  mkdir -p "$result_dir" 2>/dev/null || true
+  local repo_id
+  repo_id="$(basename "${ORIG_REPO_ROOT:-$REPO_ROOT}")"
+  local result_file="${result_dir}/${repo_id}--${EPIC_NAME_SLUG}.result.json"
+  EPIC_RESULT_FILE="$result_file"
   local result_wave
   if $EPIC_FAILED; then result_wave="$wn"; else result_wave="$WAVE_COUNT"; fi
   
@@ -1235,11 +1347,10 @@ else:
 PYEOF_PRINT
   echo "[EPIC_RESULT_END]"
   echo ""
-  
-  # Only retain result file on failure (clean up on success)
-  if [[ "$epic_status" == "success" ]]; then
-    rm -f "$result_file"
-  fi
+
+  # Result file is always retained (success and failure) — see path-computation
+  # comment above. External watchers can poll EPIC_RESULT_FILE as a uniform
+  # completion sentinel.
 }
 
 # ---------------------------------------------------------------------------
@@ -1456,13 +1567,10 @@ for (( wn=1; wn<=WAVE_COUNT; wn++ )); do
             ! $LIVE_UI && ok "  ⇢ merged session $(printf '%02d' "$sid") into trunk"
             MERGED_SESSIONS+=("$sid ${SESSION_FILE_BASENAME[$sid]}")
           else
-            _conflicted=""; _non_meta=""
-            _conflicted="$(git -C "$TRUNK_WORKTREE_DIR" diff --name-only --diff-filter=U 2>/dev/null || true)"
-            _non_meta="$(printf '%s\n' "$_conflicted" | grep -v '^\.wolf/' | grep -v '^$' || true)"
-            if [[ -n "$_conflicted" ]] && [[ -z "$_non_meta" ]]; then
+            # Wave merge conflict. Try auto-resolving if conflicts are
+            # .wolf/-only (append-only metadata; theirs = session = winner).
+            if auto_resolve_wolf_conflicts "$TRUNK_WORKTREE_DIR" "theirs"; then
               warn "  ⚠ auto-resolving .wolf/ conflicts for session $(printf '%02d' "$sid") (metadata files only)"
-              git -C "$TRUNK_WORKTREE_DIR" checkout --theirs -- .wolf/ 2>/dev/null || true
-              git -C "$TRUNK_WORKTREE_DIR" add .wolf/ 2>/dev/null || true
               git -C "$TRUNK_WORKTREE_DIR" commit -q \
                 -m "Merge session $(printf '%02d' "$sid") (${slug}) into ${BRANCH} [wolf auto-resolved]
 
@@ -1496,7 +1604,7 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null
     break
   fi
 
-  # Remove successful per-session worktrees (keep on failure for inspection)
+  # Remove successful per-session worktrees and branches (keep on failure for inspection)
   if $USE_WORKTREE && ! $KEEP_SESSION_WORKTREES; then
     for sid in "${IN_RANGE[@]}"; do
       if [[ "${SESSION_STATUS[$sid]:-}" == "done" ]]; then
@@ -1504,6 +1612,7 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null
         if [[ -d "$sess_wt" ]]; then
           git -C "$TRUNK_WORKTREE_DIR" worktree remove "$sess_wt" --force 2>/dev/null || true
         fi
+        # Delete the per-session branch — it's fully merged into trunk
         _sb="${SESSION_BRANCH_BY_ID[$sid]:-}"
         if [[ -n "$_sb" && "$_sb" != "$BRANCH" ]]; then
           git branch -D "$_sb" 2>/dev/null || true
@@ -1536,7 +1645,6 @@ if ! $EPIC_FAILED; then
     done
   fi
   ok ""
-  ok ""
   if [[ "$TIMEOUT" -gt 0 || "$RETRY" -gt 0 ]]; then
     ok "Runtime settings:"
     [[ "$TIMEOUT" -gt 0 ]] && ok "  Timeout: ${TIMEOUT}m per session"
@@ -1546,9 +1654,13 @@ if ! $EPIC_FAILED; then
   ok "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
   # --- Cleanup: orchestrator artifacts + session scaffolding ---
+  # Remove everything that isn't actual product code from the epic branch so
+  # the final PR diff is clean: dotfile artefacts, session prompt files, and
+  # the per-epic roadmap/handoff directory. Use --keep-session-docs to skip.
   log "Cleaning up session scaffolding..."
   cd "$REPO_ROOT"
 
+  # 1. Dotfile artefacts (.session-*-plan.md, .epic-*.json, etc.)
   CLEANED=0
   for f in "$TRUNK_SESSIONS_DIR"/.session-* \
             "${STATUS_FILE:-}" "${DAG_PLAN_FILE:-}" \
@@ -1557,11 +1669,14 @@ if ! $EPIC_FAILED; then
   done
   [[ $CLEANED -gt 0 ]] && git add -A 2>/dev/null || true
 
+  # 2. Session prompt files and handoffs (scaffolding, not product code)
   _EPIC_SLUG="$(basename "$TRUNK_SESSIONS_REL")"
   if ! $KEEP_SESSION_DOCS; then
+    # Remove docs/claude-sessions/<epic-name>/ entirely
     if git ls-files --error-unmatch "$TRUNK_SESSIONS_REL" &>/dev/null 2>&1; then
       git rm -r -q "$TRUNK_SESSIONS_REL" 2>/dev/null || true
     fi
+    # Remove docs/roadmap/<epic-name>/ if sessions wrote handoffs there
     _ROADMAP_REL="docs/roadmap/$_EPIC_SLUG"
     if git ls-files --error-unmatch "$_ROADMAP_REL" &>/dev/null 2>&1; then
       git rm -r -q "$_ROADMAP_REL" 2>/dev/null || true
@@ -1583,6 +1698,30 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null || true
     fi
   fi
 
+  # --- Pre-PR rebase: replay epic onto latest origin/<default> with .wolf/ auto-resolve ---
+  # This makes the GitHub PR fast-forward-mergeable even if main has advanced
+  # while the epic ran. Conflicts in .wolf/ paths are auto-resolved (theirs);
+  # any non-.wolf/ conflict aborts the rebase cleanly and the unrebased branch
+  # is pushed as-is for manual conflict resolution on GitHub.
+  REBASE_RESULT="skipped"
+  if $AUTO_REBASE && command -v gh &>/dev/null; then
+    REBASE_DEFAULT="$(gh repo view --json defaultBranchRef -q '.defaultBranchRef.name' 2>/dev/null || echo main)"
+    log "Fetching origin/${REBASE_DEFAULT} for pre-PR rebase..."
+    if git -C "$REPO_ROOT" fetch -q origin "$REBASE_DEFAULT" 2>/dev/null; then
+      log "Rebasing $BRANCH onto origin/${REBASE_DEFAULT} (auto-resolving .wolf/)..."
+      if rebase_with_wolf_resolve "$REPO_ROOT" "origin/${REBASE_DEFAULT}"; then
+        REBASE_RESULT="ok"
+        ok "Rebased onto origin/${REBASE_DEFAULT} — PR will be fast-forward-mergeable"
+      else
+        REBASE_RESULT="conflict"
+        warn "Rebase aborted — non-.wolf/ conflicts require manual resolution on the PR"
+      fi
+    else
+      REBASE_RESULT="fetch-failed"
+      warn "Could not fetch origin/${REBASE_DEFAULT} — skipping rebase, pushing as-is"
+    fi
+  fi
+
   # --- Auto-PR ---
   if $AUTO_PR && command -v gh &>/dev/null; then
     CURRENT_BRANCH="$(git -C "$REPO_ROOT" branch --show-current)"
@@ -1591,10 +1730,19 @@ Co-Authored-By: AI <noreply@ai>" 2>/dev/null || true
       EXISTING_PR="$(gh pr view "$CURRENT_BRANCH" --json url -q '.url' 2>/dev/null || true)"
       if [[ -n "$EXISTING_PR" ]]; then
         ok "PR already exists: $EXISTING_PR"
+        # Even if PR exists, push the rebased history so the PR becomes mergeable
+        if [[ "$REBASE_RESULT" == "ok" ]]; then
+          log "Force-pushing rebased history to existing PR..."
+          git -C "$REPO_ROOT" push --force-with-lease 2>&1 | tail -5 || warn "Force-push failed; PR may still show conflicts"
+        fi
       else
         log "Creating pull request..."
+        # If we rebased, the local branch has diverged from any remote tracking ref;
+        # use force-with-lease to update. For a brand-new branch, plain push -u.
         if ! git -C "$REPO_ROOT" rev-parse --abbrev-ref --symbolic-full-name '@{u}' &>/dev/null; then
           git -C "$REPO_ROOT" push -u origin "$CURRENT_BRANCH"
+        elif [[ "$REBASE_RESULT" == "ok" ]]; then
+          git -C "$REPO_ROOT" push --force-with-lease 2>&1 | tail -5 || git -C "$REPO_ROOT" push
         elif [[ -n "$(git -C "$REPO_ROOT" log '@{u}..HEAD' --oneline 2>/dev/null)" ]]; then
           git -C "$REPO_ROOT" push
         fi
@@ -1663,6 +1811,6 @@ else
     err "Trunk worktree preserved : $TRUNK_WORKTREE_DIR"
     err "Failed session worktrees : $WORKTREE_BASE/${BRANCH_SANITIZED}--s*-* (inspect, then re-run)"
   fi
-  err "Detailed results: ${TRUNK_SESSIONS_DIR}/.epic-result.json"
+  err "Detailed results: ${EPIC_RESULT_FILE/#$HOME/~}"
   exit 1
 fi
