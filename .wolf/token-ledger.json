@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-05-01T00:13:28.320Z",
   "lifetime": {
-    "total_tokens_estimated": 1071912,
-    "total_reads": 970,
-    "total_writes": 488,
+    "total_tokens_estimated": 1159277,
+    "total_reads": 986,
+    "total_writes": 510,
     "total_sessions": 76,
-    "anatomy_hits": 424,
-    "anatomy_misses": 538,
-    "repeated_reads_blocked": 77,
-    "estimated_savings_vs_bare_cli": 348908
+    "anatomy_hits": 438,
+    "anatomy_misses": 540,
+    "repeated_reads_blocked": 81,
+    "estimated_savings_vs_bare_cli": 416988
   },
   "sessions": [
     {
@@ -9663,6 +9663,246 @@
         "reads_count": 8,
         "writes_count": 8,
         "repeated_reads_blocked": 0,
+        "anatomy_lookups": 7
+      }
+    },
+    {
+      "id": "session-2026-05-03-1721",
+      "started": "2026-05-03T23:21:18.370Z",
+      "ended": "2026-05-03T23:55:15.689Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/Menus/Sections/GoMenu.swift",
+          "tokens_estimated": 337,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 1091,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowModel.swift",
+          "tokens_estimated": 1195,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/App/Stevedore/AppEnvironment.swift",
+          "tokens_estimated": 1650,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/.claude/projects/-Users-aramirez-Code-Stevedore/d667b41d-2e90-4cb9-b28d-5e2b07fffee7/tool-results/bgfqoamsa.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 16321,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 16322,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-00-operator-rules.md",
+          "tokens_estimated": 554,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-01-charter-audit.md",
+          "tokens_estimated": 778,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-02-fix-bugs.md",
+          "tokens_estimated": 816,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-03-ci-gate.md",
+          "tokens_estimated": 581,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 12,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 12,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 13,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 13,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 39749,
+        "output_tokens_estimated": 2779,
+        "reads_count": 8,
+        "writes_count": 8,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 7
+      }
+    },
+    {
+      "id": "session-2026-05-03-1721",
+      "started": "2026-05-03T23:21:18.370Z",
+      "ended": "2026-05-04T00:03:39.730Z",
+      "reads": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/PaneHost.swift",
+          "tokens_estimated": 2833,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/Menus/Sections/GoMenu.swift",
+          "tokens_estimated": 337,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowView.swift",
+          "tokens_estimated": 1091,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/Sources/UI/MainWindow/MainWindowModel.swift",
+          "tokens_estimated": 1195,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/App/Stevedore/AppEnvironment.swift",
+          "tokens_estimated": 1650,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/.claude/projects/-Users-aramirez-Code-Stevedore/d667b41d-2e90-4cb9-b28d-5e2b07fffee7/tool-results/bgfqoamsa.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 16321,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 16320,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-00-operator-rules.md",
+          "tokens_estimated": 554,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-01-charter-audit.md",
+          "tokens_estimated": 778,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-02-fix-bugs.md",
+          "tokens_estimated": 816,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/docs/claude-sessions/bugs-059-061-date-column-go-menu/session-03-ci-gate.md",
+          "tokens_estimated": 581,
+          "action": "create"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 12,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 12,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 13,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/Stevedore/scripts/run-sessions.sh",
+          "tokens_estimated": 13,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 1062,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 344,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 35,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 33,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 44,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/aramirez/Code/epic-toolkit/scripts/run-sessions.sh",
+          "tokens_estimated": 793,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 39747,
+        "output_tokens_estimated": 5090,
+        "reads_count": 8,
+        "writes_count": 14,
+        "repeated_reads_blocked": 4,
         "anatomy_lookups": 7
       }
     }

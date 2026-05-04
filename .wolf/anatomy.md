@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-05-03T23:45:35.691Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-05-04T00:00:25.931Z
 > Files: 614 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../.claude/commands/
@@ -17,7 +17,7 @@
 
 ## ../epic-toolkit/scripts/
 
-- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~16870 tok)
+- `run-sessions.sh` — run-sessions.sh — DAG-aware epic runner. Executes a directed acyclic graph (~18279 tok)
 
 ## ./
 

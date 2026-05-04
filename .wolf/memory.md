@@ -1081,3 +1081,13 @@
 | 17:45 | Edited scripts/run-sessions.sh | inline fix | ~12 |
 | 17:45 | Session end: 8 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~42528 tok |
 | 17:48 | Session end: 8 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~42528 tok |
+| 17:54 | Fixed epic-toolkit run-sessions.sh `local` outside function bug; manually completed missing PR + cleanup for epic bugs-059-061 | scripts/run-sessions.sh, ~/Code/epic-toolkit/scripts/run-sessions.sh | PR #4 created, trunk worktree + per-session branches removed | ~5k |
+| 17:55 | Session end: 8 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~42528 tok |
+| 17:59 | Edited ../epic-toolkit/scripts/run-sessions.sh | modified format_elapsed() | ~992 |
+| 17:59 | Edited ../epic-toolkit/scripts/run-sessions.sh | reduced (-7 lines) | ~322 |
+| 17:59 | Edited ../epic-toolkit/scripts/run-sessions.sh | 1→2 lines | ~33 |
+| 17:59 | Edited ../epic-toolkit/scripts/run-sessions.sh | 1→2 lines | ~31 |
+| 17:59 | Edited ../epic-toolkit/scripts/run-sessions.sh | 1→2 lines | ~41 |
+| 18:00 | Edited ../epic-toolkit/scripts/run-sessions.sh | expanded (+33 lines) | ~740 |
+| 18:03 | Toolkit: added rebase-with-wolf-resolve + auto-resolve helpers; refactored wave-merge; tested on PR #4 | scripts/run-sessions.sh | PR #4 now MERGEABLE after force-push | ~12k |
+| 18:03 | Session end: 14 writes across 5 files (session-00-operator-rules.md, session-01-charter-audit.md, session-02-fix-bugs.md, session-03-ci-gate.md, run-sessions.sh) | 8 reads | ~44837 tok |
