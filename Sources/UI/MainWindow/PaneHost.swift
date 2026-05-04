@@ -225,7 +225,8 @@ struct FileBrowserView: View {
                             Text(date, style: .date)
                                 .font(self.theme.typography.caption)
                                 .foregroundStyle(self.theme.colors.textSecondary)
-                                .frame(width: 90, alignment: .trailing)
+                                .lineLimit(1)
+                                .frame(width: 130, alignment: .trailing)
                         }
                     }
                     .background(self.rowBackground(for: item))
