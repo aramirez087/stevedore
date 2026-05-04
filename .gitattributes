@@ -1,0 +1,17 @@
+# OpenWolf metadata files — append-mostly logs and per-session state.
+# These conflict on every cross-branch merge; resolve automatically.
+#
+# Markdown files use git's built-in `union` driver (concatenates both sides
+# line-by-line). Works with no local config required.
+.wolf/anatomy.md       merge=union
+.wolf/memory.md        merge=union
+.wolf/cerebrum.md      merge=union
+
+# JSON files use the custom `wolf-json` driver. The driver is registered in
+# local git config by `.wolf/scripts/install-merge-driver.sh`, which runs
+# automatically on every session start via the SessionStart hook. If the
+# driver isn't registered (fresh clone, hook not yet run), git falls back
+# to a normal three-way merge — run the installer once and you're set.
+.wolf/buglog.json              merge=wolf-json
+.wolf/token-ledger.json        merge=wolf-json
+.wolf/hooks/_session.json      merge=wolf-json

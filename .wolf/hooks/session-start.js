@@ -1,9 +1,22 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { getWolfDir, ensureWolfDir, writeJSON, appendMarkdown, readJSON, timestamp, timeShort } from "./shared.js";
+const execFileAsync = promisify(execFile);
 async function main() {
     ensureWolfDir();
     const wolfDir = getWolfDir();
+    // Register .wolf/ JSON merge driver in local git config (idempotent, ~10ms).
+    // Allows `git pull`/`git merge`/`git rebase` to auto-resolve .wolf/*.json
+    // conflicts without user intervention.
+    try {
+        const installer = path.join(wolfDir, "scripts", "install-merge-driver.sh");
+        if (fs.existsSync(installer)) {
+            await execFileAsync("bash", [installer], { timeout: 3000 });
+        }
+    }
+    catch { /* non-fatal: .gitattributes still works for markdown via built-in union */ }
     // Clean up stale .tmp files left from failed atomic writes
     try {
         const files = fs.readdirSync(wolfDir);
